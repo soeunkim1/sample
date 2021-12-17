@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-2i5w044r" version="1.0.0.0">
+  <head std:sid="head-jd3u003o">
+    <title>impSbpHeader</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-q0fbk25t" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-9r18i831" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-s1911k42" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-13w601u3" width="320px"/>
+    <cl:model std:sid="model-pf2z458l">
+      
+      
+      
+    <cl:datamap id="dmInstance" std:sid="d-map-mwqz9p20">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="root" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmInstance" std:sid="d-map-9bm7zr98">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="root" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqKey" std:sid="d-map-65erv581">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strOprtRoleId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPgmId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCtrlList" std:sid="d-set-5klc4793">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="READ_CTRL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NO_SHOW_CTRL" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsAuthList" std:sid="d-set-jrqmuxpq">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="MENU_AUTH_DIV_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmInstance" std:sid="d-map-x942b1l9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="root" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqKey" std:sid="d-map-cou9d714">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strOprtRoleId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPgmId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCtrlList" std:sid="d-set-6ohd42b1">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="READ_CTRL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NO_SHOW_CTRL" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsAuthList" std:sid="d-set-47mgo59m">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="MENU_AUTH_DIV_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmExcelFileInfo" std:sid="d-map-e8702177">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strExcelPath" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strExcelRealFileNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strExcelChgFileNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmInsExcelReq" std:sid="d-map-lp5q74x2">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="bodyData" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnRoleSbp/" id="subAuth" mediatype="application/x-www-form-urlencoded" std:sid="submission-1fiho3o9">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsAuthList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnPgmAuth/" id="subCheck" mediatype="application/x-www-form-urlencoded" std:sid="submission-b00pj4ks">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsCtrlList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnFileTransUtil/" id="subImpHIsExistFile" mediatype="application/x-www-form-urlencoded" std:sid="submission-2r4vy301">
+        
+        
+      </cl:submission>
+<cl:submission action="/cmn/StdCmnFileTransUtil/" id="subExportExcel_header" mediatype="application/x-www-form-urlencoded" std:sid="submission-rshvg82y">
+        
+        
+      <cl:responsedata dataid="dmExcelFileInfo"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="impSbpHeader"/>
+  </head>
+  <body std:sid="body-2zc1v146" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-3x58q4bg"/>
+  <cl:output id="ImpSbpHeader" std:sid="output-c0whqr4e" value="서브페이지임포트">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="95px"/>
+      </cl:output>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

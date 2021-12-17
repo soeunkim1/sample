@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-529a616q" version="1.0.0.0">
+  <head std:sid="head-bwpk466s">
+    <title>extCgdPEstFctorStudInfo</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-646b2wvd" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-u4tn1mi6" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-25dc6476" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-3dv4275v" width="320px"/>
+    <cl:model std:sid="model-2rnri865">
+      
+      
+      
+    <cl:dataset id="dsCgdIndiRecInput" std:sid="d-set-f754y331">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="STUD_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TLSN_REF_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EST_FACTOR_RCD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PSC_CII" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RFLC_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EST_SCR" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-61s5m025">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strTlsnRefKey" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cgd/ExtCgdEstFctorStudInfo/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-69y80j96">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsCgdIndiRecInput"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="성적평가요소검색"/>
+  </head>
+  <body std:sid="body-h96jrm02" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-ag4g94z6"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-600hv7k9"/>
+<cl:group id="grpData" std:sid="group-496op35f">
+        <cl:xylayoutdata height="220px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="30px" verticalAnchor="TOP" width="540px"/>
+        <cl:xylayout std:sid="xylayout-3x8u2k49"/>
+      <cl:grid datasetid="dsCgdIndiRecInput" id="grdCgdIndiRecInput" std:sid="grid-8svm0256">
+        <cl:xylayoutdata height="208px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="5px" verticalAnchor="TOP" width="528px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCgdIndiRecInputDblclick" name="dblclick" std:sid="listener-n92l25q5"/>
+<cl:gridheader std:sid="gh-band-sx668j4g">
+          <cl:gridrow height="27px" std:sid="g-row-iadq92qd"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-i618ex1e" text="No"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-61jixeq6">
+<cl:langbind category="PROPERTY" keypath="UI-DB-EST_FACTOR_RCD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-661i4tmw">
+<cl:langbind category="PROPERTY" keypath="UI-DB-PSC_CII" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-6nii1zfv">
+<cl:langbind category="PROPERTY" keypath="UI-DB-RFLC_RATE" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-wp83z9ia">
+<cl:langbind category="PROPERTY" keypath="UI-DB-POINT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-x65y85j6" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-STUID" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-2b40ie8m" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-TLSN_REF_KEY" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-6aeh8ti4" width="40px"/>
+<cl:gridcolumn std:sid="g-column-xqwpp258" width="200px"/>
+<cl:gridcolumn std:sid="g-column-ykkmf9i4" width="90px"/>
+<cl:gridcolumn std:sid="g-column-x3m077xq" width="90px"/>
+<cl:gridcolumn std:sid="g-column-o7x80v3x" width="93px"/>
+<cl:gridcolumn std:sid="g-column-1lj966mn" width="90px"/>
+<cl:gridcolumn std:sid="g-column-0o9it377" width="90px"/>
+<cl:griddetail std:sid="gd-band-n4m2n3o1">
+          <cl:gridrow height="25px" std:sid="g-row-f0o24333"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-0k7pvvis" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="EST_FACTOR_RCD_NM" rowindex="0" std:sid="gd-cell-log33635"/>
+<cl:gridcell colindex="2" columnname="PSC_CII" rowindex="0" std:sid="gd-cell-2219m51g" style="text-align:right;"/>
+<cl:gridcell colindex="3" columnname="RFLC_RATE" rowindex="0" std:sid="gd-cell-9y54k475" style="text-align:right;"/>
+<cl:gridcell colindex="4" columnname="EST_SCR" rowindex="0" std:sid="gd-cell-kt1un624" style="text-align:right;"/>
+<cl:gridcell colindex="5" columnname="STUD_ID" rowindex="0" std:sid="gd-cell-83y1357v"/>
+<cl:gridcell colindex="6" columnname="TLSN_REF_KEY" rowindex="0" std:sid="gd-cell-g06h9ijo"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:udc std:sid="ud-control-553nn00z" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="NLS-SCR-EXCHGSRCH" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCgdIndiRecInput"/>
+      </cl:udc>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-h02yn1mq" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="240px" std:sid="xyl-data-fa9a14b9" top="255px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-vun5owv3"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

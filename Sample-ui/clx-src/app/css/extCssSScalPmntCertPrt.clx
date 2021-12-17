@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-s9b9ge6m" version="1.0.0.0">
+  <head std:sid="head-96mc8515">
+    <title>extCssSScalPmntCertPrt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-h94t9q3s" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-6lez55a5" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-230jrg10" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-m5ytx3vh" width="320px"/>
+    <cl:model std:sid="model-za565vo1">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-665n712b">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-9dfe9d5m">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSysdate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strReSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strReSmtRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/css/ExtCssScalPmntCertPrt/" id="subOnload" mediatype="application/x-www-form-urlencoded" std:sid="submission-o9oq12jy">
+        
+        
+      <cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/css/ExtCssScalPmntCertPrt/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-g6aj9r8p">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="장학금(비)수혜확인서"/>
+  </head>
+  <body std:sid="body-07mnbb06" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-61napt20"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-iz40061m"/>
+<cl:udc id="appheader1" std:sid="ud-control-2av3m5g0" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-85mwo6lf">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-82x6kjx7"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-c7568t4u" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-s51121db"/>
+</cl:button>
+<cl:output class="require" id="optStudId" std:sid="output-ed9yeqp3" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-STUD_ID" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbStudId" maxlength="50" std:sid="i-box-5lz3o93z">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="126px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStudId.value" property="fieldLabel"/>
+<cl:listener handler="onIpbStudIdValueChange" name="value-change" std:sid="listener-bz1f8j31"/>
+<cl:datamapbind columnname="strStudNo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-pop-search" id="btnStudPop" std:sid="button-fdb3i5x0" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="217px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="20px"/>
+      <cl:listener handler="onBtnStudPopClick" name="click" std:sid="listener-d1w10qn0"/>
+</cl:button>
+<cl:inputbox id="ipbStudIdObj" std:sid="i-box-1yjf3l6q" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="249px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="5px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStudId.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStudId" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:group id="grpData" std:sid="group-3282n015">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-5qgonhea"/>
+      <cl:htmlobject id="hojReport" std:sid="htmlobject-jml61uva">
+        <cl:xylayoutdata height="588px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-5608d431" top="5px" verticalAnchor="TOP" width="1215px"/>
+      </cl:htmlobject>
+</cl:group>
+<cl:embeddedapp id="emaStdCsrPStSearch" src="../csr/impStdCsrPStSearch.clx" std:sid="e-app-6w7976av">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-7c6988f9" top="673px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-ehx598qj" version="1.0.0.0">
+  <head std:sid="head-29441557">
+    <title>extCrsSStudRegFeeBillPrt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-59bg3p4t" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-5sw5587s" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-xv18mu19" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-ahsa585u" width="320px"/>
+    <cl:model std:sid="model-yc51ntgm">
+      
+      
+      
+    <cl:datamap id="dmDate" std:sid="d-map-muk7qp32">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="YEAR" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SMT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="ST_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="END_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-h77a4wtv">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strPayTypeAll" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPayTypeDiv" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDivPaySeq" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDefPayDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDefPayPlace" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqKey" std:sid="d-map-wk3f3o34">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/crs/ExtCrsStudRegFeeBillPrt/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-xg9au0ml">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmDate"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="등록금고지서(학생용)"/>
+  </head>
+  <body std:sid="body-vs6c7we2" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-6sp732cx"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-k30k3gd5"/>
+<cl:udc id="appheader1" std:sid="ud-control-1v0w6n5s" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-2732x538">
+        <cl:xylayoutdata height="645px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-43aolb33"/>
+      <cl:htmlobject id="hojReport" std:sid="htmlobject-98b8fkfn">
+        <cl:xylayoutdata height="635px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-5608d431" top="5px" verticalAnchor="TOP" width="1215px"/>
+      </cl:htmlobject>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

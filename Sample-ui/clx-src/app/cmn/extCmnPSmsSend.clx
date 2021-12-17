@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-44j7m369" version="1.0.0.0">
+  <head std:sid="head-p855383z">
+    <title>extCmnPSmsSend</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-1ccmv6y2" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-dz9n3r04" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-5b51l7cx" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-1i0mp5x6" width="320px"/>
+    <cl:model std:sid="model-g3ioyfzi">
+      
+      
+      
+    <cl:dataset id="dsSendDivList" std:sid="d-set-f2hs4rrm">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="COL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-5oa68t11">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strEmailDiv" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqKey" std:sid="d-map-yv02p6b4">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strEmailDivCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSndId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsSmsMst" std:sid="d-set-73b4a96p">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PHONE_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REP_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmMst" std:sid="d-map-525p6bc3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="row" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqSmsKey" std:sid="d-map-w7z1tgl0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSenderSms" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strTitle" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strReservedFg" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strReservedDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmsCont" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/ExtCmnSmsEmailSend/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-nyqrt7d8">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+<cl:responsedata dataid="dsSendDivList"/>
+</cl:submission>
+<cl:submission action="/cmn/ExtCmnSmsEmailSend/" id="subSmsSend" mediatype="application/x-www-form-urlencoded" std:sid="submission-t760i537">
+        
+        
+      <cl:requestdata dataid="dmReqSmsKey"/>
+<cl:requestdata dataid="dsSmsMst"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="SMS 보내기"/>
+  </head>
+  <body std:sid="body-g6oiqc4s" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-uc31wv4h"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-w3hwn1m1"/>
+<cl:udc id="appheader1" std:sid="ud-control-y9xz3k2j" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpSms" std:sid="group-yhxnd4v0">
+        <cl:xylayoutdata height="440px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="695px"/>
+        <cl:xylayout std:sid="xylayout-4ziied79"/>
+      <cl:output class="require" id="optSendPhoneNo" std:sid="output-s83wao6j" value="보내는사람">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      </cl:output>
+<cl:inputbox id="ipbSenderSms" std:sid="i-box-026waohm">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="210px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSendPhoneNo.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSenderSms" datacontrolid="dmReqSmsKey" property="value"/>
+</cl:inputbox>
+<cl:output id="optTitle" std:sid="output-zyyl5iv9" value="발송제목">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="310px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      </cl:output>
+<cl:inputbox id="ipbSendTitle" std:sid="i-box-prqtqoei">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="395px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="295px"/>
+      <cl:expbind category="PROPERTY" expression="#optTitle.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strTitle" datacontrolid="dmReqSmsKey" property="value"/>
+</cl:inputbox>
+<cl:output id="optReservedDt" std:sid="output-rq8n6mny" value="예약일">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="310px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="80px"/>
+      </cl:output>
+<cl:output class="require" id="optReservedFg" std:sid="output-155a032w" value="전송유형">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="80px"/>
+      </cl:output>
+<cl:radiobutton id="rdbReservedFg" std:sid="r-button-8ede25d6">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-8688bddc" top="30px" verticalAnchor="TOP" width="210px"/>
+        
+        
+      <cl:item label="즉시전송" std:sid="item-49c109e9" value="0"/>
+<cl:item label="예약전송" std:sid="item-49c109e9" value="1"/>
+<cl:listener handler="onRdbReservedFgValueChange" name="value-change" std:sid="listener-s0892ri4"/>
+<cl:datamapbind columnname="strReservedFg" datacontrolid="dmReqSmsKey" property="value"/>
+</cl:radiobutton>
+<cl:dateinput format="YYYY-MM-DD HH:mm:ss" id="dipReservedDt" std:sid="d-input-527v1q39">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="395px" std:sid="xyl-data-28ed790d" top="30px" verticalAnchor="TOP" width="295px"/>
+      <cl:expbind category="PROPERTY" expression="#optReservedDt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strReservedDt" datacontrolid="dmReqSmsKey" property="value"/>
+</cl:dateinput>
+<cl:udc std:sid="ud-control-sle5ywj2" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="60px" verticalAnchor="TOP" width="150px"/>
+      </cl:udc>
+<cl:udc std:sid="ud-control-1g63n536" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="310px" std:sid="xyl-data-36446f78" top="60px" verticalAnchor="TOP" width="150px"/>
+      </cl:udc>
+<cl:textarea id="txtSmsCont" std:sid="t-area-9jues0x6">
+        <cl:xylayoutdata height="300px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-007df396" top="129px" verticalAnchor="TOP" width="295px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optTitleSmsCont.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSmsCont" datacontrolid="dmReqSmsKey" property="value"/>
+</cl:textarea>
+<cl:grid datasetid="dsSmsMst" id="grdSmsMst" std:sid="grid-kfd2sy65">
+        <cl:xylayoutdata height="350px" horizontalAnchor="LEFT" left="310px" std:sid="xyl-data-f2950b99" top="85px" verticalAnchor="TOP" width="380px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-5n5sitgg">
+          <cl:gridrow height="27px" std:sid="g-row-v4xc5kn6"/>
+          
+        <cl:gridcell class="require" colindex="0" rowindex="0" std:sid="gh-cell-9n0fh829" text="휴대폰번호"/>
+<cl:gridcell class="require" colindex="1" rowindex="0" std:sid="gh-cell-4g21q28e" text="수신자명"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-44rgm02e" width="95px"/>
+<cl:gridcolumn std:sid="g-column-r82b7c40" width="95px"/>
+<cl:griddetail std:sid="gd-band-302tupx9">
+          <cl:gridrow height="25px" std:sid="g-row-825q1loz"/>
+          
+        <cl:gridcell colindex="0" columnname="PHONE_NO" rowindex="0" std:sid="gd-cell-l9o1wi38">
+<cl:inputbox id="gdIpbSms" std:sid="i-box-66z064qa"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columnname="REP_NM" rowindex="0" std:sid="gd-cell-g1v0e5hc">
+<cl:inputbox id="gdIpbRepNm" std:sid="i-box-zzx74666"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:inputbox id="ipbSendDivSms" readonly="true" std:sid="i-box-g32w04k6">
+        <cl:xylayoutdata height="45px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-bb8b81f4" top="85px" verticalAnchor="TOP" width="295px"/>
+      <cl:datamapbind columnname="strEmailDiv" datacontrolid="dmResOnLoad" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-05m026tn" value="" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="627px" std:sid="xyl-data-fa9a14b9" top="59px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDelClick" name="click" std:sid="listener-4391lqgv"/>
+</cl:button>
+</cl:group>
+<cl:button id="btnClose" std:sid="button-cw7l3l11" value="닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="480px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnCloseClick" name="click" std:sid="listener-92xna4wm"/>
+</cl:button>
+<cl:button id="btnSend" std:sid="button-35c49utr" value="발송">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="640px" std:sid="xyl-data-fa9a14b9" top="480px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSendClick" name="click" std:sid="listener-368p53j2"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-111x3c92" version="1.0.0.0">
+  <head std:sid="head-20f3owdl">
+    <title>stdCmnCTbCrtComment</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-c1o947cl" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-cgdm7c79" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-fj8ux72a" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-d78x5892" width="320px"/>
+    <cl:model std:sid="model-4q030o40">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-8a55i0s7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="vsColumNM" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="voGrxwrMstQuery" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsMst" std:sid="d-set-hh3lztu0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="TABLE_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="T_COMMENTS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="COLUMN_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="COMMENTS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MODIFY_COMMENTS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CMN_CODE" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsWrMst" std:sid="d-set-unua6hpi">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="TABLE_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="QUREY_TXT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnTbCrtComment/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-2260pn91">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsMst"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTbCrtComment/" id="subExcute" mediatype="application/x-www-form-urlencoded" std:sid="submission-3e316idm">
+        
+        
+      <cl:requestdata dataid="dsMst"/>
+<cl:responsedata dataid="dsWrMst"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTbCrtComment/" id="subQurey" mediatype="application/x-www-form-urlencoded" std:sid="submission-07ih7f70">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-6ys9er93" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-k8n9oc4m"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-c1q7t6v4"/>
+<cl:group class="search-box" id="grpSearch" std:sid="group-3k791zso">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-49640wrn"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-4c7l3240" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-ug7s7m17"/>
+</cl:button>
+<cl:output class="require" id="optSchcol" std:sid="output-4xvswd03" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH_COL" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbSchcol" imemode="inactive" std:sid="i-box-729lm30k">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="200px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSchcol.value" property="fieldLabel"/>
+<cl:listener handler="onIpbSchcolKeydown" name="keydown" std:sid="listener-culykr30"/>
+<cl:datamapbind columnname="vsColumNM" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:group id="grpMst" std:sid="group-rg2t7p36">
+        <cl:xylayoutdata height="550px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="42px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-p6zef5n2"/>
+      <cl:udc std:sid="ud-control-ns1143c7" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-COMMENT_CRT" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="300px"/>
+        <cl:property name="ctrl" type="control" value="grdMst"/>
+      </cl:udc>
+<cl:grid datasetid="dsMst" id="grdMst" std:sid="grid-5vu1222u">
+        <cl:xylayoutdata height="200px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdMstSelectionChange" name="selection-change" std:sid="listener-6085utjc"/>
+<cl:gridheader std:sid="gh-band-099no20x">
+          <cl:gridrow height="27px" std:sid="g-row-44j7xvd1"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-2v2s1a71"/>
+<cl:gridcell colindex="1" comment="ghBtnNoTableMain" rowindex="0" std:sid="gh-cell-ceum0804">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghBtnTableName" rowindex="0" std:sid="gh-cell-6vz7219y">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TBNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghBtnTComments" rowindex="0" std:sid="gh-cell-3t1z8s8m">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-CREATEDT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" comment="ghBtnColumnName" rowindex="0" std:sid="gh-cell-h7hqcwe6">
+<cl:langbind category="PROPERTY" keypath="UI-DB-COLNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" comment="ghBtnComments" rowindex="0" std:sid="gh-cell-2c1zfd30">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-EXPLAIN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" comment="ghBtnModifyComments" rowindex="0" std:sid="gh-cell-2ct6p7wi">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-EXPLAIN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" comment="ghBtnCmnCode" rowindex="0" std:sid="gh-cell-35b74b45">
+<cl:langbind category="PROPERTY" keypath="UI-DB-CD_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" comment="ghBtnRptUptStatus" rowindex="0" std:sid="gh-cell-3v29t634" text="F"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-81z903l7" width="25px"/>
+<cl:gridcolumn std:sid="g-column-45672tv4" width="40px"/>
+<cl:gridcolumn std:sid="g-column-smh0hn70" width="160px"/>
+<cl:gridcolumn std:sid="g-column-h028her4" width="160px"/>
+<cl:gridcolumn std:sid="g-column-7323621k" width="190px"/>
+<cl:gridcolumn std:sid="g-column-sxbe31it" width="126px"/>
+<cl:gridcolumn std:sid="g-column-009531w4" width="126px"/>
+<cl:gridcolumn std:sid="g-column-841c6gv2" width="126px"/>
+<cl:gridcolumn std:sid="g-column-65u7x3i0" width="25px"/>
+<cl:griddetail std:sid="gd-band-jzi67kp9">
+          <cl:gridrow height="25px" std:sid="g-row-tfdr94xk"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-e6gfb1r3" style="text-align:center;"/>
+<cl:gridcell colindex="1" columntype="rowindex" rowindex="0" std:sid="gd-cell-vir93yh4" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="TABLE_NAME" rowindex="0" std:sid="gd-cell-9071nf3v"/>
+<cl:gridcell colindex="3" columnname="word" rowindex="0" std:sid="gd-cell-s758ocbj"/>
+<cl:gridcell colindex="4" columnname="COLUMN_NAME" rowindex="0" std:sid="gd-cell-1bp3m23q"/>
+<cl:gridcell colindex="5" columnname="COMMENTS" rowindex="0" std:sid="gd-cell-u4nqz0zz"/>
+<cl:gridcell colindex="6" columnname="MODIFY_COMMENTS" rowindex="0" std:sid="gd-cell-wpn76b86">
+<cl:inputbox id="gdIpbModifyComments" std:sid="i-box-0ztf9n86"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="CMN_CODE" rowindex="0" std:sid="gd-cell-53iu5le9">
+<cl:inputbox id="gdIpbCmnCode" std:sid="i-box-373p34k6"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gd-cell-xzn8gfi2">
+<cl:output std:sid="output-9eo57755" style="text-align:center;"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:udc std:sid="ud-control-02wj51f2" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-CRT_QUERY" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="235px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdWrMst"/>
+      </cl:udc>
+<cl:grid datasetid="dsWrMst" id="grdWrMst" std:sid="grid-2yr9o63p">
+        <cl:xylayoutdata height="285px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="260px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdWrMstSelectionChange" name="selection-change" std:sid="listener-vuxc62bj"/>
+<cl:gridheader std:sid="gh-band-8xqplx2c">
+          <cl:gridrow height="27px" std:sid="g-row-bt7r4ys2"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNoTableMain1" rowindex="0" std:sid="gh-cell-29689o9t">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" comment="ghBtnQUREY_TXT" rowindex="0" std:sid="gh-cell-6243oxmn">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-CRT_QUREY_TXT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghBtnCrt" rowindex="0" std:sid="gh-cell-7p7mfo52">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-CRT" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-z2049gi5" width="40px"/>
+<cl:gridcolumn std:sid="g-column-39zyvj63" width="843px"/>
+<cl:gridcolumn std:sid="g-column-k21z538m" width="60px"/>
+<cl:griddetail std:sid="gd-band-3255rg5a">
+          <cl:gridrow height="25px" std:sid="g-row-9j2987ff"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-fd2b2x66" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="QUREY_TXT" rowindex="0" std:sid="gd-cell-ck87k91a"/>
+<cl:gridcell colindex="2" columnname="word" rowindex="0" std:sid="gd-cell-5i6s98se">
+<cl:button id="btnCrt" std:sid="button-185b0za3"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:button id="btnNew" std:sid="button-yb8wkks9" value="쿼리생성">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1095px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnNewClick" name="click" std:sid="listener-2839s53x"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-hd0e4bpm" value="취소">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-2x6s711a"/>
+</cl:button>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-2i87hz9r" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

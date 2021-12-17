@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-rd7ef759" version="1.0.0.0">
+  <head std:sid="head-1hf5ag76">
+    <title>extCrsSRegTransListPrt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-g7hqo96y" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-u9e2n4h1" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-71aiw348" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-5o999ic1" width="320px"/>
+    <cl:model std:sid="model-k0v6y9n4">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-b5v8xa90">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRptSubTitle" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-6a4koek6">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCsrSmtRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/crs/ExtCrsRegTransListPrt/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-9916atco">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="등록이월복학생명단"/>
+  </head>
+  <body std:sid="body-28id1qte" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-ro07tvca"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-cf3j1m89"/>
+<cl:udc id="appheader1" std:sid="ud-control-49pwq722" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-p4ft3u3d">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-273lfh17"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-n7m7qn66" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-60430ydg"/>
+</cl:button>
+<cl:embeddedapp id="emaYearSmt" src="../crs/impCrsYearSmt.clx" std:sid="e-app-17yp43pz">
+        <cl:xylayoutdata height="23px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="5px" verticalAnchor="TOP" width="330px"/>
+      </cl:embeddedapp>
+</cl:group>
+<cl:group id="grpData" std:sid="group-p9z95f8b">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-to9j0o10"/>
+      <cl:htmlobject id="hojReport" std:sid="htmlobject-f51l5q75">
+        <cl:xylayoutdata height="588px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-5608d431" top="5px" verticalAnchor="TOP" width="1215px"/>
+      </cl:htmlobject>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

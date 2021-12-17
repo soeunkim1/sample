@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-1tgm3t7q" version="1.0.0.0">
+  <head std:sid="head-15hi0g8z">
+    <title>extCsrCStudFileUp</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-4l04q9i1" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-d1uoddyw" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-1n6798l8" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-oyq58y6i" width="320px"/>
+    <cl:model std:sid="model-obg3cr37">
+      
+      
+      
+    <cl:dataset id="dsFileDivRcdList" std:sid="d-set-gonz4593">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-on8d277h">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsExtCsrFile" info="EXT_CSR_FILE@STUD_ID,FILE_SERIAL_NO" std:sid="d-set-q8vusm4u">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="STUD_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_SERIAL_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_EXPL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_CNT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/csr/ExtCsrStudFileUp/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-79v3uovh">
+        
+        
+      <cl:responsedata dataid="dsFileDivRcdList"/>
+</cl:submission>
+<cl:submission action="/csr/ExtCsrStudFileUp/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-6aztxaeg">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsExtCsrFile"/>
+</cl:submission>
+<cl:submission action="/csr/ExtCsrStudFileUp/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-pgiyr81f">
+        
+        
+      <cl:requestdata dataid="dsExtCsrFile"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="extCsrCStudFileUp"/>
+  </head>
+  <body std:sid="body-6x56avdn" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-h03742n2"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-9mk9ogod"/>
+<cl:group id="grp_rptExtCsrFile" std:sid="group-ad34mr6p">
+        <cl:xylayoutdata height="463px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-9c4c06d1" top="0px" verticalAnchor="TOP" width="1025px"/>
+        <cl:xylayout std:sid="xylayout-332791gr"/>
+      <cl:udc std:sid="ud-control-v86s781c" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="220px"/>
+        <cl:property name="ctrl" type="control" value="grdExtCsrFile"/>
+      </cl:udc>
+<cl:button class="btn-new" id="btnNew" std:sid="button-62li7d8z" value="신규">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="765px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnNewClick" name="click" std:sid="listener-37s409r5"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-88uc7fk7" value="삭제">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="830px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnDelClick" name="click" std:sid="listener-81fo2677"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-379mn8g4" value="취소">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="895px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-ydo62m3d"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-84yzg18b" value="저장">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="960px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-m4452904"/>
+</cl:button>
+<cl:grid datasetid="dsExtCsrFile" id="grdExtCsrFile" std:sid="grid-zo65f443">
+        <cl:xylayoutdata height="428px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1015px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-p73q916b">
+          <cl:gridrow height="27px" std:sid="g-row-68pn6npr"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-d228bgj8"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-524eajm4" text="F"/>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-xkc56cjw" text="No"/>
+<cl:gridcell class="require" colindex="3" rowindex="0" std:sid="gh-cell-7cb8oz1n" text="파일구분"/>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-y5imhpop" text="파일"/>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-uh5dvqdu" text="파일수"/>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-80uud5bp" text="파일설명"/>
+<cl:gridcell class="require" colindex="7" rowindex="0" std:sid="gh-cell-e492lgc9" text="오브젝트ID" visible="false"/>
+<cl:gridcell class="require" colindex="8" rowindex="0" std:sid="gh-cell-248uwyyr" text="파일" visible="false"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-dr85ogh1" width="25px"/>
+<cl:gridcolumn std:sid="g-column-53b79pv9" width="25px"/>
+<cl:gridcolumn std:sid="g-column-b386fjpn" width="40px"/>
+<cl:gridcolumn std:sid="g-column-y2434jq9" width="151px"/>
+<cl:gridcolumn std:sid="g-column-ewnoci8a" width="55px"/>
+<cl:gridcolumn std:sid="g-column-myv83176" width="69px"/>
+<cl:gridcolumn std:sid="g-column-2l71xm8n" width="424px"/>
+<cl:gridcolumn std:sid="g-column-11nf2nt3" width="118px"/>
+<cl:gridcolumn std:sid="g-column-23k346l7" width="60px"/>
+<cl:griddetail std:sid="gd-band-6zx45u32">
+          <cl:gridrow height="25px" std:sid="g-row-h4sm92oz"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-45ss7226" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-08of7cc9">
+<cl:output std:sid="output-00q7pwz2" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columntype="rowindex" rowindex="0" std:sid="gd-cell-s1g372a7" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="FILE_DIV_RCD" rowindex="0" std:sid="gd-cell-nsd7x8qa">
+<cl:combobox id="gdCbbFileDivRcd" std:sid="c-box-yo86j624">
+<cl:itemset datasetid="dsFileDivRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-31917bz1" value=""/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="" rowindex="0" std:sid="gd-cell-56mln397"/>
+<cl:gridcell colindex="5" columnname="FILE_CNT" rowindex="0" std:sid="gd-cell-56261aic" style="text-align:right;"/>
+<cl:gridcell colindex="6" columnname="FILE_EXPL" rowindex="0" std:sid="gd-cell-y0ps22l4">
+<cl:inputbox id="gdIpbFileExpl" maxlength="300" std:sid="i-box-kx0wuh19"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="STUD_ID" rowindex="0" std:sid="gd-cell-7v7pjbgd">
+<cl:inputbox id="gdIpbStudId" maxlength="20" std:sid="i-box-sm885rkt">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="8" columnname="FILE_SERIAL_NO" rowindex="0" std:sid="gd-cell-x7zq08yk">
+<cl:inputbox id="gdIpbFileSerialNo" maxlength="15" std:sid="i-box-w9nnb2du"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:output id="label1" std:sid="output-wfxfg57g" value="파일업로드 팝업창에서 업로드 한 후 반드시 본 화면의 [작업저장]을 클릭하여야 저장됩니다.">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="115px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="575px"/>
+      </cl:output>
+</cl:group>
+<cl:embeddedapp id="emaFile" src="../imp/impFileUtil.clx" std:sid="e-app-1fm46vva">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-7c6988f9" top="450px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+<cl:embeddedapp id="emaSbpHeader" src="../imp/impSbpHeader.clx" std:sid="e-app-hg22yec7">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="40px" std:sid="xyl-data-7c6988f9" top="450px" verticalAnchor="TOP" width="96px"/>
+      <cl:listener handler="onEmaSbpHeaderAppReady" name="app-ready" std:sid="listener-1j0yra78"/>
+</cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

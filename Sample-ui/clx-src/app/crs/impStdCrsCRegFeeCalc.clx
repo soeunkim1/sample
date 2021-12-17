@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-g94xn3y3" version="1.0.0.0">
+  <head std:sid="head-l7o1q83p">
+    <title>impStdCrsCRegFeeCalc</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-op3bs68q" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-9bb769h9" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-pgnc23i3" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-272yac6j" width="320px"/>
+    <cl:model std:sid="model-o6xkb3t7">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-xw016ab9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strOptGrpCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudIdFrom" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudIdTo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudNoFrom" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudNoTo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUsePlcCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSfMethod" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="ST_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="END_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListOptGrpCd" std:sid="d-set-389u871h">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="OPT_GRP_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OPT_GRP_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PRCD_CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListOptGrpCond" std:sid="d-set-p7ctx11l">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PRT_ORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NM_CONTROL_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OPT_GRP_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SRH_SCREEN_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="INPUT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="INPUT_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MAND_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONTROL_ID" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSimul" std:sid="d-set-u23602x7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="STUD_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STUD_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BIRTHDAY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SSN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SA_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REP_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/crs/StdCrsRegFeeCalc/" id="subInitImp" mediatype="application/x-www-form-urlencoded" std:sid="submission-75tzgo37">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsListOptGrpCd"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsRegFeeCalc/" id="subGrpCdImp" mediatype="application/x-www-form-urlencoded" std:sid="submission-g47viqbs">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsListOptGrpCond"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsRegFeeCalc/" id="subSimulImp" mediatype="application/x-www-form-urlencoded" std:sid="submission-1e37ao5f">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsSimul"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="impStdCrsCRegFeeCalc"/>
+  </head>
+  <body std:sid="body-6058756u" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-t3t2h5q4"/>
+  <cl:combobox id="cbbOptGrpCdImp" std:sid="c-box-fteg1373">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="145px" std:sid="xyl-data-757d2a0f" top="0px" verticalAnchor="TOP" width="325px"/>
+        
+        
+      <cl:itemset datasetid="dsListOptGrpCd" label="OPT_GRP_NM" value="OPT_GRP_CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSchYearImp.value" property="fieldLabel"/>
+<cl:listener handler="onCbbOptGrpCdImpSelectionChange" name="selection-change" std:sid="listener-3l6tq70y"/>
+<cl:datamapbind columnname="strOptGrpCd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optOptGrpCdImp" std:sid="output-1xj2211i" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-STDTCHOIGRP" property="value"/>
+</cl:output>
+<cl:output id="optStudIdImp" std:sid="output-c0ct8ive" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="25px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-STUD_ID" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbStudIdFromImp" maxlength="50" std:sid="i-box-20ra75o2">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="145px" std:sid="xyl-data-bb8b81f4" top="25px" verticalAnchor="TOP" width="140px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStudIdImp.value" property="fieldLabel"/>
+<cl:listener handler="onIpbStudIdFromImpValueChange" name="value-change" std:sid="listener-5s3ri7xt"/>
+<cl:datamapbind columnname="strStudNoFrom" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-pop-search" id="btnStudIdFromPopImp" std:sid="button-0y5w89wh" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-fa9a14b9" top="25px" verticalAnchor="TOP" width="20px"/>
+      <cl:listener handler="onBtnStudIdFromPopImpClick" name="click" std:sid="listener-a326k7si"/>
+</cl:button>
+<cl:inputbox id="ipbStudIdObjFromImp" std:sid="i-box-gs9a8x43" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="499px" std:sid="xyl-data-bb8b81f4" top="25px" verticalAnchor="TOP" width="30px"/>
+      <cl:expbind category="PROPERTY" expression="#optStudIdImp.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStudIdFrom" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbStudIdToImp" maxlength="50" std:sid="i-box-zew4ha6d">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="330px" std:sid="xyl-data-bb8b81f4" top="25px" verticalAnchor="TOP" width="140px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStudIdImp.value" property="fieldLabel"/>
+<cl:listener handler="onIpbStudIdToImpValueChange" name="value-change" std:sid="listener-7dsi7950"/>
+<cl:datamapbind columnname="strStudNoTo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-pop-search" id="btnStudIdToPopImp" std:sid="button-i40h2xn3" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="470px" std:sid="xyl-data-fa9a14b9" top="25px" verticalAnchor="TOP" width="20px"/>
+      <cl:listener handler="onBtnStudIdToPopImpClick" name="click" std:sid="listener-p1u876a5"/>
+</cl:button>
+<cl:inputbox id="ipbStudIdObjToImp" std:sid="i-box-yu74dfaw" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="534px" std:sid="xyl-data-bb8b81f4" top="25px" verticalAnchor="TOP" width="30px"/>
+      <cl:expbind category="PROPERTY" expression="#optStudIdImp.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStudIdTo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:output id="optText1" std:sid="output-2001d538" value="~">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="311px" std:sid="xyl-data-548c5467" top="25px" verticalAnchor="TOP" width="15px"/>
+      </cl:output>
+<cl:embeddedapp id="emaStdCsrPStSch" src="../csr/impStdCsrPStSearch.clx" std:sid="e-app-37mnt6d7">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="35px" std:sid="xyl-data-7c6988f9" top="695px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+<cl:img id="imgParamImp" src="../../images/imgs/card--pencil.png" std:sid="image-01xb20rk">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="475px" std:sid="xyl-data-6e9a9f7d" top="0px" verticalAnchor="TOP" width="20px"/>
+      </cl:img>
+<cl:img id="imgSimulationImp" src="../../images/imgs/card--arrow.png" std:sid="image-e1jd7e9e">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="500px" std:sid="xyl-data-6e9a9f7d" top="0px" verticalAnchor="TOP" width="20px"/>
+      </cl:img>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

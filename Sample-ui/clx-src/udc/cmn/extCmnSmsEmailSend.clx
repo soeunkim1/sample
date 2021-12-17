@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-33d289d7" version="1.0.0.0">
+  <head std:sid="head-9f0219a5">
+    <title>cmnSmsEmailSend</title>
+    <screen std:sid="screen-9c73512f" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-8fd1def1" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-06b9b5be" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-5f5f6e84">
+      <cl:dataset std:sid="d-set-2n2t7zu7" id="dsSendDivList">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="CD"/>
+          <cl:datacolumn name="CD_NM"/>
+          <cl:datacolumn name="CD_PRP1"/>
+        </cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+      <cl:dataset std:sid="d-set-95kz11f0" id="dsListSndNm">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="CD_NM"/>
+          <cl:datacolumn name="COL"/>
+        </cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+      <cl:datamap std:sid="d-map-6y8j59l5" id="dmInstance">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="root"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-cwy8o4z4" id="dmSendInfo">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="SND_ID"/>
+          <cl:datacolumn datatype="string" name="SND_TEL_NO"/>
+          <cl:datacolumn datatype="string" name="NICKNAME"/>
+          <cl:datacolumn datatype="string" name="EMAIL"/>
+          <cl:datacolumn datatype="string" name="SMS_TITLE"/>
+          <cl:datacolumn datatype="string" name="EMAIL_TITLE"/>
+          <cl:datacolumn datatype="string" name="SMS_CONT"/>
+          <cl:datacolumn datatype="string" name="EMAIL_CONT"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-z1410u7z" id="dmReqKey">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="strSndId"/>
+          <cl:datacolumn datatype="string" name="strUnitSystemRcd"/>
+          <cl:datacolumn datatype="string" name="strSendDiv"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:submission std:sid="submission-13eoztvk" id="subImpSendOnLoad" action="cmn/ExtCmnSmsEmailSend/impOnLoad.do" mediatype="application/x-www-form-urlencoded">
+        <cl:responsedata dataid="dsSendDivList"/>
+      </cl:submission>
+      <cl:submission std:sid="submission-76kz0b19" id="subImpSendInfo" action="cmn/ExtCmnSmsEmailSend/getSendInfo.do" mediatype="application/x-www-form-urlencoded">
+        <cl:requestdata dataid="dmReqKey"/>
+        <cl:responsedata dataid="dmSendInfo"/>
+        <cl:responsedata dataid="dsListSndNm"/>
+      </cl:submission>
+    </cl:model>
+    <cl:appspec>
+      <cl:property bindable="true" default="" std:desc="(필수) SMS 그리드 id" name="grdId" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 발송문구구분_발송내용의 @ 키워드와 매핑됨" name="sendDivChar" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 발송id" name="sndId" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 단위시스템구분코드 -- 발송Id입력 시 필수" name="unitSystemRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(필수) 수신자명 그리드 헤더 ID" name="repNm" type="string"/>
+      <cl:property bindable="true" std:desc="(필수) 휴대폰번호 그리드 헤더 ID" name="phoneNo" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 보내는이(SMS)" name="defSenderSms" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) SMS발송 내용" name="sendMsgContSms" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) SMS발송 제목" name="sendTitleSms" type="string"/>
+      <cl:property bindable="true" std:desc="(필수) 이메일 그리드 헤더 ID" name="email" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 보내는이(Email)" name="defSenderEmail" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 보내는이 명(닉네임)(Email)" name="defPersonalNmEmail" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) Email발송 내용" name="sendMsgContEmail" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) Email발송 제목" name="sendTitleEmail" type="string"/>
+      <cl:event name="searchCallBack" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-0ee9b176" style="top:0px; left:0px; width:355px; height:25px;">
+    <cl:listener std:sid="listener-e04e0624" handler="onBodyLoad" name="load"/>
+    <cl:group std:sid="group-520d3be1" id="grpSmsEmailSend">
+      <cl:responsivexylayoutdata std:sid="rxyl-data-bd93c0a9">
+        <cl:xylayoutdata std:sid="sxyl-data-58ff26b2" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH" screenid="default"/>
+      </cl:responsivexylayoutdata>
+      <cl:output std:sid="output-101af11a" id="lblImpSendDiv" class="opt-common" style="text-align:right;" value="발송방법">
+        <cl:formdata std:sid="f-data-ab2d7390" col="0" colspan="1" row="0" rowspan="1" valign="FILL"/>
+      </cl:output>
+      <cl:combobox std:sid="c-box-835045dc" id="cbbImpSendDiv">
+        <cl:listener std:sid="listener-cb978bdb" handler="onCbbImpSendDivSelectionChange" name="selection-change"/>
+        <cl:formdata std:sid="f-data-9840deb1" col="1" height="23" row="0" valign="FILL"/>
+        <cl:itemset datasetid="dsSendDivList" label="CD_NM" value="CD"/>
+      </cl:combobox>
+      <cl:button std:sid="button-f30ed6dc" id="btnImpSendDiv" class="btn-normal" value="발송문작성">
+        <cl:listener std:sid="listener-796c56e1" handler="onBtnImpSendDivClick" name="click"/>
+        <cl:formdata std:sid="f-data-1ed6872b" col="2" row="0" valign="FILL"/>
+      </cl:button>
+      <cl:formlayout std:sid="f-layout-bcdc78c5">
+        <cl:rows length="25" shadecolor="transparent" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="1" unit="FRACTION"/>
+        <cl:columns length="1" unit="FRACTION"/>
+        <cl:columns length="1" unit="FRACTION"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:responsivexylayout std:sid="r-xylayout-b76621a7"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

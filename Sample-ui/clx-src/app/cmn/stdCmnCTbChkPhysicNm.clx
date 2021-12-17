@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-yk43td1w" version="1.0.0.0">
+  <head std:sid="head-36arfv8a">
+    <title>stdCmnCTbChkPhysicNm</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-eu0bd7wp" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-18386w0f" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-18h3oym8" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-r05l6fb4" width="320px"/>
+    <cl:model std:sid="model-km8kix6d">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-m8yr62pn">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strTableName" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsNmChk" std:sid="d-set-34sqhtux">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="TABLE_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="COLUMN_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SUB_STR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RE_VALUE" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnTbChkPhysicNm/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-55kdov0r">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsNmChk"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-339f4pt9" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-2l0efsu6"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-srjru3vf"/>
+<cl:group class="search-box" id="grpSearch" std:sid="group-2o8l318a">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-1rbiwy6s"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-39988e1h" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-k44so9k8"/>
+</cl:button>
+<cl:output class="require" id="optSchTableName" std:sid="output-d6h18tuq" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TBNM" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbTableName" std:sid="i-box-pmo8f3m5">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="200px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSchTableName.value" property="fieldLabel"/>
+<cl:listener handler="onIpbTableNameKeydown" name="keydown" std:sid="listener-0cub14iy"/>
+<cl:datamapbind columnname="strTableName" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:group id="grpUsePhsList" std:sid="group-b2krqf29">
+        <cl:xylayoutdata height="550px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="42px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-79wthn93"/>
+      <cl:udc std:sid="ud-control-vqc8qvav" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PHYSIC_CHK_CONTENT" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="300px"/>
+        <cl:property name="ctrl" type="control" value="grdNmChk"/>
+      </cl:udc>
+<cl:grid datasetid="dsNmChk" id="grdNmChk" std:sid="grid-kj5545f8">
+        <cl:xylayoutdata height="515px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdNmChkSelectionChange" name="selection-change" std:sid="listener-49w02tp1"/>
+<cl:gridheader std:sid="gh-band-o7k81pdh">
+          <cl:gridrow height="27px" std:sid="g-row-91c979l2"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNoTableMain" rowindex="0" std:sid="gh-cell-mmwmps5e">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" comment="ghBtnTableName" rowindex="0" std:sid="gh-cell-horm8078">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TBNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghBtnColumnName" rowindex="0" std:sid="gh-cell-88uj40dq">
+<cl:langbind category="PROPERTY" keypath="UI-DB-COLNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghBtnSubStr" rowindex="0" std:sid="gh-cell-fj6s2z37">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-PHYSIC_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" comment="ghBtnReValue" rowindex="0" std:sid="gh-cell-z51hug2g">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-RE_VAL" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-6ptd1nk1" width="40px"/>
+<cl:gridcolumn std:sid="g-column-ac996833" width="160px"/>
+<cl:gridcolumn std:sid="g-column-v794d187" width="160px"/>
+<cl:gridcolumn std:sid="g-column-vu4xif0q" width="190px"/>
+<cl:gridcolumn std:sid="g-column-u78722a9" width="126px"/>
+<cl:griddetail std:sid="gd-band-r41gwa4o">
+          <cl:gridrow height="25px" std:sid="g-row-c7p220tq"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-r91fp14h" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="TABLE_NAME" rowindex="0" std:sid="gd-cell-x0ut59pe"/>
+<cl:gridcell colindex="2" columnname="COLUMN_NAME" rowindex="0" std:sid="gd-cell-uy48yb0e"/>
+<cl:gridcell colindex="3" columnname="SUB_STR" rowindex="0" std:sid="gd-cell-ry79jo3u"/>
+<cl:gridcell colindex="4" columnname="RE_VALUE" rowindex="0" std:sid="gd-cell-l6f6js8v"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-30b0n94b" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

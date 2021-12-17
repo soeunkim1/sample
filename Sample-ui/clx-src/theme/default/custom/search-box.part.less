@@ -1,0 +1,37 @@
+@import "../custom-settings.part.less";
+
+.cl-container.search-box {
+	border : 1px solid @component-border-color;
+  	background-color: @lighter;
+	.cl-output {
+		font: @font-base;
+		text-align: right;
+//		font-weight: bold; 
+		background-repeat: no-repeat;
+		background-position: left center;
+		
+		&.require {
+			background-image : url(../images/search/output_required.png);
+			background-position: right center;
+			padding-right: 8px;
+		}
+	}
+	
+	&.vertical {
+		.cl-output {
+			text-align: left;
+			
+			&.require {
+				background-position:left center;
+				padding-right: 0px;
+				padding-left: 8px;
+			}
+		}
+	}
+	
+	 /* disabled style */
+	&.cl-disabled {
+		background-image: none;
+		background-color: @component-disabled-background-color;
+	}
+}

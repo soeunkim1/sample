@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-f102zu7q" version="1.0.0.0">
+  <head std:sid="head-103g7xl0">
+    <title>stdCmnCOracleUserSource</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-183psdm6" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-l0911ae5" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-u0vbsk43" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-ed54g28c" width="320px"/>
+    <cl:model std:sid="model-dbq7zc8x">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-596w8dt4">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strLastDdlTime" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strResourceNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strMenuId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="arrUnitSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strGrxResourceNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUnitSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strResouceCd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsResourceList" std:sid="d-set-l7054p1w">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="OBJECT_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CREATED" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAST_DDL_TIME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="WRITER" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DESCRIPT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TEXT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResList" std:sid="d-map-15y6d0j6">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="TEXT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsMenuDiv" std:sid="d-set-3vdbyuam">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="UMENU_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MENU_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MENU_ID" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsMenuSystemList" std:sid="d-set-lrqepcm9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="UMENU_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MENU_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MENU_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UMENU_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MENU_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MENU_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnOracleUserSource/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-x2mf9n9b">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsMenuDiv"/>
+<cl:responsedata dataid="dsMenuSystemList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnOracleUserSource/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-y32qp7sx">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsResourceList"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-eexe7b77" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-814b815s"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-st5r7v9j"/>
+<cl:group class="search-box" id="grpSearch" std:sid="group-473k1nm0">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-pjd8p094"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-5wp4u42n" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-71j078qb"/>
+</cl:button>
+<cl:output id="optResourceNm" std:sid="output-tuicvp11" value="리소스명">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="740px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:inputbox id="ipbResourceNm" std:sid="i-box-92b2xo2q">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="845px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="200px"/>
+      <cl:expbind category="PROPERTY" expression="#optTableNm.value" property="fieldLabel"/>
+<cl:listener handler="onIpbResourceNmKeydown" name="keydown" std:sid="listener-9g2i5w3e"/>
+<cl:datamapbind columnname="strGrxResourceNm" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+<cl:output class="require" id="optMenuGbn" std:sid="output-5uo9h22f" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-MENUDIV" property="value"/>
+</cl:output>
+<cl:combobox id="cbbMenuDivList" std:sid="c-box-w70c87d1">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsMenuDiv" label="MENU_NM" value="MENU_ID"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-7gv0i2mg" value=""/>
+<cl:expbind category="PROPERTY" expression="#optMenuGbn.value" property="fieldLabel"/>
+<cl:listener handler="onCbbMenuDivListSelectionChange" name="selection-change" std:sid="listener-yo796pqu"/>
+<cl:datamapbind columnname="strMenuId" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+<cl:output id="optSystemdiv" std:sid="output-k4v62lf7" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="250px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SYSTEMDIV" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSystemdiv" std:sid="c-box-fgd2u8s2">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="355px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsMenuSystemList" label="MENU_NM" value="UNIT_SYSTEM_RCD"/>
+<cl:item label="전체" std:sid="item-q63oq611" value="%"/>
+<cl:expbind category="PROPERTY" expression="#optUnitSystemRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strUnitSystemRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optResourceCd" std:sid="output-i986119y" value="리소스구분">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="495px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:combobox id="cbbResourceCd" std:sid="c-box-lz9bkc7x">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="600px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:item label="선택" std:sid="item-88c52uy1" value=""/>
+<cl:item label="PROCEDURE" std:sid="item-884m2o3d" value="P"/>
+<cl:item label="FUNCTION" std:sid="item-2bxxeyun" value="F"/>
+<cl:item label="FUNCTION VIEW" std:sid="item-je0pu925" value="FV"/>
+<cl:item label="TYPE" std:sid="item-19276moq" value="TP"/>
+<cl:item label="TYPE COLLECTION" std:sid="item-3mqsf8vy" value="TC"/>
+<cl:item label="VIEW" std:sid="item-5zuipp09" value="VW"/>
+<cl:item label="TRIGGER" std:sid="item-f252st2x" value="TR"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optResourceCd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strResouceCd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+</cl:group>
+<cl:group id="grpResourceList" std:sid="group-v6je969u">
+        <cl:xylayoutdata height="550px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="42px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-d485fr6u"/>
+      <cl:udc std:sid="ud-control-s3i98971" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-TABLELIST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdTableMain"/>
+      </cl:udc>
+<cl:grid datasetid="dsResourceList" id="grdResourceList" std:sid="grid-ozd9y1r8">
+        <cl:xylayoutdata height="200px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdResourceListSelectionChange" name="selection-change" std:sid="listener-da792rp6"/>
+<cl:gridheader std:sid="gh-band-y5w76tq4">
+          <cl:gridrow height="27px" std:sid="g-row-t2mv30jy"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNoTableMain" rowindex="0" std:sid="gh-cell-jg33o17p">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" comment="ghBtnObjectName" rowindex="0" std:sid="gh-cell-aocy1616" text="리소스명"/>
+<cl:gridcell colindex="2" comment="ghBtnCreated" rowindex="0" std:sid="gh-cell-qh15ze6n">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-CREATEDT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghBtnLastDdlTIme" rowindex="0" std:sid="gh-cell-14746yar" text="최종변경일시"/>
+<cl:gridcell colindex="4" comment="ghBtnWriter" rowindex="0" std:sid="gh-cell-36l1o849">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-WRITER" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" comment="ghBtnDescript" rowindex="0" std:sid="gh-cell-3se6f2bq">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-EXPLAIN" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-498m8v71" width="40px"/>
+<cl:gridcolumn std:sid="g-column-qeips2uc" width="180px"/>
+<cl:gridcolumn std:sid="g-column-q4002tj6" width="203px"/>
+<cl:gridcolumn std:sid="g-column-ai58dcm0" width="203px"/>
+<cl:gridcolumn std:sid="g-column-n8x7pk77" width="203px"/>
+<cl:gridcolumn std:sid="g-column-118575l9" width="371px"/>
+<cl:griddetail std:sid="gd-band-d245h8rg">
+          <cl:gridrow height="25px" std:sid="g-row-yl58c4j0"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-fxg9q83v" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="OBJECT_NAME" rowindex="0" std:sid="gd-cell-754w8316"/>
+<cl:gridcell colindex="2" columnname="CREATED" rowindex="0" std:sid="gd-cell-ec47up3e"/>
+<cl:gridcell colindex="3" columnname="LAST_DDL_TIME" rowindex="0" std:sid="gd-cell-b3qjl670"/>
+<cl:gridcell colindex="4" columnname="WRITER" rowindex="0" std:sid="gd-cell-49551612" style="text-align:center;"/>
+<cl:gridcell colindex="5" columnname="DESCRIPT" rowindex="0" std:sid="gd-cell-fto58573"/>
+</cl:griddetail>
+</cl:grid>
+<cl:udc std:sid="ud-control-im178z52" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-TABLELIST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="235px" verticalAnchor="TOP" width="150px"/>
+      </cl:udc>
+<cl:textarea id="txtResourceInfo" std:sid="t-area-56we4516">
+        <cl:xylayoutdata height="285px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-007df396" top="260px" verticalAnchor="TOP" width="1215px"/>
+      <cl:expbind category="PROPERTY" expression="#optTitleTxtResource.value" property="fieldLabel"/>
+<cl:datamapbind columnname="TEXT" datacontrolid="dmResList" property="value"/>
+</cl:textarea>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-cw0l1ud8" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

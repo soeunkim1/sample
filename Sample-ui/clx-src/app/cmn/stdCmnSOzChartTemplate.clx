@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-17ry835w" version="1.0.0.0">
+  <head std:sid="head-15e8717x">
+    <title>stdCmnSOzChartTemplate</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-3v80e539" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-4hne353s" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-ja018k8b" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-i066y5j4" width="320px"/>
+    <cl:model std:sid="model-2zt36lj1">
+      
+      
+      
+    <cl:datamap id="dmInstance" std:sid="d-map-bzm38dsc">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="root" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+</cl:model>
+    <cl:appspec title="stdCmnSOzChartTemplate"/>
+  </head>
+  <body std:sid="body-af903l5t" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-mes50842"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-0bq9bax9"/>
+<cl:udc id="appheader1" std:sid="ud-control-3q29n598" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-4ohae56l">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-41bt725s"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-536pl22j" value="조회">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:datamapbind columnname="MSG_TEXT" datacontrolid="dmText()='UI.SCR.SCH']" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-j6k9uhdx"/>
+</cl:button>
+</cl:group>
+<cl:group id="grp_rptCmnChartTmpReg" std:sid="group-b2yds173">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-514l3ix1"/>
+      <cl:udc std:sid="ud-control-80h0u40p" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCmnChartTmpReg"/>
+      </cl:udc>
+<cl:htmlobject id="hojReport" std:sid="htmlobject-et450573">
+        <cl:xylayoutdata height="561px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-5608d431" top="33px" verticalAnchor="TOP" width="1210px"/>
+      </cl:htmlobject>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

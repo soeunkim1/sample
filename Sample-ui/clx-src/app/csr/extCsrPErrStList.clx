@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-utg543gw" version="1.0.0.0">
+  <head std:sid="head-v868243q">
+    <title>extCsrPErrStList</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-n594y0b8" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-box6epe7" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-8yc34lj9" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-3s1x9f46" width="320px"/>
+    <cl:model std:sid="model-6c031bqq">
+      
+      
+      
+    <cl:dataset id="dsErrStList" std:sid="d-set-862dj30n">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="STUD_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REP_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ERR_MSG" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+</cl:model>
+    <cl:appspec title="에러리스트조회팝업"/>
+  </head>
+  <body std:sid="body-uqhwr7uv" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-a58grjs7"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-s8vz2pn2"/>
+<cl:group id="grp_rptError" std:sid="group-t8125ls2">
+        <cl:xylayoutdata height="372px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="640px"/>
+        <cl:xylayout std:sid="xylayout-dk7038l6"/>
+      <cl:grid datasetid="dsErrStList" id="grdError" std:sid="grid-5t4ymxu0">
+        <cl:xylayoutdata height="337px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="630px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdErrorRowDblclick" name="row-dblclick" std:sid="listener-2d556739"/>
+<cl:gridheader std:sid="gh-band-dxm43y97">
+          <cl:gridrow height="27px" std:sid="g-row-c96c936j"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-ii0v4j9i" text="No"/>
+<cl:gridcell colindex="1" comment="ghStudNo" rowindex="0" std:sid="gh-cell-apf88c84">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STUD_ID" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghRepNm" rowindex="0" std:sid="gh-cell-0a35ax8k">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-PER_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghSpNm" rowindex="0" std:sid="gh-cell-mt824fmx">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-SP" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-8923297q" width="40px"/>
+<cl:gridcolumn std:sid="g-column-50m6r4h3" width="84px"/>
+<cl:gridcolumn std:sid="g-column-78340vt2" width="93px"/>
+<cl:gridcolumn std:sid="g-column-13oo9916" width="396px"/>
+<cl:griddetail std:sid="gd-band-9xfa1lj2">
+          <cl:gridrow height="25px" std:sid="g-row-fl81hcz0"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-d2wxgg7n" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="STUD_NO" rowindex="0" std:sid="gd-cell-8l7zbcq5" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="REP_NM" rowindex="0" std:sid="gd-cell-6an6c59r" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="ERR_MSG" rowindex="0" std:sid="gd-cell-j396ktj9"/>
+</cl:griddetail>
+</cl:grid>
+<cl:udc std:sid="ud-control-64blat71" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdError"/>
+      </cl:udc>
+</cl:group>
+<cl:button id="btnCloseCancel" std:sid="button-y37yx80j" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="295px" std:sid="xyl-data-fa9a14b9" top="412px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-nd68awm9"/>
+</cl:button>
+<cl:udc id="appheader1" std:sid="ud-control-76204u0f" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

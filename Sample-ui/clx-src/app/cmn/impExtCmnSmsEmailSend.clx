@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-pn1209kh" version="1.0.0.0">
+  <head std:sid="head-591ml68e">
+    <title>impExtCmnSmsEmailSend</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-794t9o3k" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-t0puxbae" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-0d0epuh0" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-476az7zm" width="320px"/>
+    <cl:model std:sid="model-03cm3t7o">
+      
+      
+      
+    <cl:datamap id="dmInstance" std:sid="d-map-w7c8850u">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="root" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmInstance" std:sid="d-map-2l3604fr">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="root" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsSendDivList" std:sid="d-set-68f5zu44">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmSendInfo" std:sid="d-map-1075k22j">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="SND_ID" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SND_TEL_NO" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="NICKNAME" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="EMAIL" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SMS_TITLE" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="EMAIL_TITLE" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SMS_CONT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="EMAIL_CONT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListSndNm" std:sid="d-set-xzoxt36l">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="COL" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-46g7f4b3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSndId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUnitSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSendDiv" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/ExtCmnSmsEmailSend/" id="subImpSendOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-l2vsc4ft">
+        
+        
+      <cl:responsedata dataid="dsSendDivList"/>
+</cl:submission>
+<cl:submission action="/cmn/ExtCmnSmsEmailSend/" id="subImpSendInfo" mediatype="application/x-www-form-urlencoded" std:sid="submission-d2803z53">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmSendInfo"/>
+<cl:responsedata dataid="dsListSndNm"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="impExtCmnSmsEmailSend"/>
+  </head>
+  <body std:sid="body-eow1rrmb" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-pw61ns7s"/>
+  <cl:output class="require" id="optImpSendDiv" std:sid="output-29e8128f" value="발송방법">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:combobox id="cbbImpSendDiv" std:sid="c-box-sy267u2m">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="106px" std:sid="xyl-data-757d2a0f" top="0px" verticalAnchor="TOP" width="145px"/>
+        
+        
+      <cl:itemset datasetid="dsSendDivList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optImpSendDiv.value" property="fieldLabel"/>
+<cl:listener handler="onCbbImpSendDivSelectionChange" name="selection-change" std:sid="listener-zqswi0mr"/>
+<cl:datamapbind columnname="strSendDiv" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:button id="btnImpSendDiv" std:sid="button-eef46v33" value="발송문작성">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="255px" std:sid="xyl-data-fa9a14b9" top="0px" verticalAnchor="TOP" width="75px"/>
+      <cl:listener handler="onBtnImpSendDivClick" name="click" std:sid="listener-3j1jg1x0"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-p8878apo" version="1.0.0.0">
+  <head std:sid="head-s9c9rsk1">
+    <title>stdCsrCHandicapInfo</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-124qm0x6" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-1pf885ml" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-873dm980" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-b9rq6xpb" width="320px"/>
+    <cl:model std:sid="model-s1176685">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-r38w0ry0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmFrfList" std:sid="d-map-i56dwln2">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="STUD_ID" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="HDC_GRD_RCD" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="REMARK" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="HDC_DEG" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="HDCP_ID" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="HDC_TYPE" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="HDCP_ID_END_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-8994bt31">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="rowCnt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListHdcGrd" std:sid="d-set-767v99iv">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/csr/StdCsrHandicapInfo/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-d197a89s">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsListHdcGrd"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrHandicapInfo/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-8xmd4yfl">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrHandicapInfo/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-q9z2qdad">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dmFrfList"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCsrCHandicapInfo"/>
+  </head>
+  <body std:sid="body-o62b18zd" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-v4103j34"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-79x29slc"/>
+<cl:group id="grp_frfCsrShreg" std:sid="group-07p391s3">
+        <cl:xylayoutdata height="463" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-9c4c06d1" top="0px" verticalAnchor="TOP" width="1025px"/>
+        <cl:xylayout std:sid="xylayout-1z6n9405"/>
+      <cl:group class="form-box" id="frfCsrHandicap" std:sid="group-3k4w2g9c">
+        <cl:xylayoutdata height="428" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="30px" verticalAnchor="TOP" width="1014px"/>
+        <cl:xylayout std:sid="xylayout-15sa6k80"/>
+      <cl:output class="require" id="optFrfHdcType" std:sid="output-93vxjhr8" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-HDC_TYPE" property="value"/>
+</cl:output>
+<cl:output id="optFrfHdcGrdRcd" std:sid="output-0glttl9v" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-HDC_GRD_RCD" property="value"/>
+</cl:output>
+<cl:output id="optFrfHdcpId" std:sid="output-o6rentja" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="80px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-HDCP_ID" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbFrfHdcType" maxlength="100" std:sid="i-box-0k045ipd">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="310px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optFrfHdcType.value" property="fieldLabel"/>
+<cl:datamapbind columnname="HDC_TYPE" datacontrolid="dmFrfList" property="value"/>
+</cl:inputbox>
+<cl:combobox id="cbbFrfHdcGrdRcd" std:sid="c-box-nh5y50xh">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-757d2a0f" top="30px" verticalAnchor="TOP" width="55px"/>
+        
+        
+      <cl:itemset datasetid="dsListHdcGrd" label="CD_NM" value="CD"/>
+<cl:expbind category="PROPERTY" expression="#optFrfHdcGrdRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="HDC_GRD_RCD" datacontrolid="dmFrfList" property="value"/>
+</cl:combobox>
+<cl:inputbox id="ipbFrfHdcpId" maxlength="100" std:sid="i-box-b390o24v">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-bb8b81f4" top="80px" verticalAnchor="TOP" width="135px"/>
+      <cl:expbind category="PROPERTY" expression="#optFrfHdcpId.value" property="fieldLabel"/>
+<cl:datamapbind columnname="HDCP_ID" datacontrolid="dmFrfList" property="value"/>
+</cl:inputbox>
+<cl:output id="optFrfHdcpIdEndDt" std:sid="output-5l37w696" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="105px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-HDCP_ID_END_DT" property="value"/>
+</cl:output>
+<cl:output id="optFrfHdcDeg" std:sid="output-m15jlahs" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-HDC_DEG" property="value"/>
+</cl:output>
+<cl:output id="optFrfRemark" std:sid="output-x43w1lwu" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="130px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-REMARK" property="value"/>
+</cl:output>
+<cl:dateinput format="YYYY-MM-DD" id="dipFrfHdcpIdEndDt" std:sid="d-input-9uv4uzh7" style="text-align:center;">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-28ed790d" top="105px" verticalAnchor="TOP" width="90px"/>
+      <cl:expbind category="PROPERTY" expression="#optFrfHdcpIdEndDt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="HDCP_ID_END_DT" datacontrolid="dmFrfList" property="value"/>
+</cl:dateinput>
+<cl:numbereditor format="99,999" id="ipbFrfHdcDeg" std:sid="n-editor-j6yx3jg5">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-2cf1f2b6" top="55px" verticalAnchor="TOP" width="55px"/>
+      <cl:expbind category="PROPERTY" expression="#optFrfHdcDeg.value" property="fieldLabel"/>
+<cl:listener handler="onIpbFrfHdcDegValueChange" name="value-change" std:sid="listener-97so2r1h"/>
+<cl:datamapbind columnname="HDC_DEG" datacontrolid="dmFrfList" property="value"/>
+</cl:numbereditor>
+<cl:inputbox id="ipbFrfRemark" maxlength="300" std:sid="i-box-077321i4">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-bb8b81f4" top="130px" verticalAnchor="TOP" width="475px"/>
+      <cl:expbind category="PROPERTY" expression="#optFrfRemark.value" property="fieldLabel"/>
+<cl:datamapbind columnname="REMARK" datacontrolid="dmFrfList" property="value"/>
+</cl:inputbox>
+<cl:output class="require" id="optFrfStudId" std:sid="output-3buxcmq5" value="오브젝트번호">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="455px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:inputbox enabled="false" id="ipbStudId" std:sid="i-box-7icrrm49" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="560px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="75px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optFrfStudId.value" property="fieldLabel"/>
+<cl:datamapbind columnname="STUD_ID" datacontrolid="dmFrfList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:udc std:sid="ud-control-86lb2u40" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-ERRINFO" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="5px" verticalAnchor="TOP" width="136px"/>
+      </cl:udc>
+<cl:button class="btn-save" id="btnSave" std:sid="button-9b9rgv09" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="960px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-d7k2ljly"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-z7y5m1dn" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="830px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDelClick" name="click" std:sid="listener-eqw94373"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-9h2f4e1r" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="895px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-infnkn6f"/>
+</cl:button>
+</cl:group>
+<cl:embeddedapp id="emaSbpHeader" src="../imp/impSbpHeader.clx" std:sid="e-app-31xtdd56">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="40px" std:sid="xyl-data-7c6988f9" top="430px" verticalAnchor="TOP" width="96px"/>
+      <cl:listener handler="onEmaSbpHeaderAppReady" name="app-ready" std:sid="listener-69v9955q"/>
+</cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

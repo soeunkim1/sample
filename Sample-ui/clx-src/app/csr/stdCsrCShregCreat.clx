@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-4771fxsq" version="1.0.0.0">
+  <head std:sid="head-5o9g0x6p">
+    <title>stdCsrCShregCreat</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-70224907" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-76cxvla8" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-fpf910rf" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-4104n32t" width="320px"/>
+    <cl:model std:sid="model-v72611f1">
+      
+      
+      
+    <cl:datamap id="dmResOnLoad" std:sid="d-map-07h27fp9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strMsg" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqKey" std:sid="d-map-20l5snd5">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strProcId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strProcNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strProcCd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsProcList" info="CMN_CONF_CODE@CD,LAN_DIV_RCD" std:sid="d-set-b6ai2rdw">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="dataCnt" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="procCnt" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXEC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TRSF_SEQ" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TRANS_CNT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResList" std:sid="d-map-4s7r2qcz">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strResult" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strTrsfSeq" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strErrorCnt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResSave" std:sid="d-map-76g9592p">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSuccessCnt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFailCnt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strTotalCnt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFileNameLog" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmFileInfo" std:sid="d-map-1tiwplyl">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strFileDir" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFileNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFileChgNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmFilePath" std:sid="d-map-7je47olt">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strTmpFileNms" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/csr/StdCsrShregCreat/" id="subProcExec" mediatype="application/x-www-form-urlencoded" std:sid="submission-1216mppt">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrShregCreat/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-rnt4d1ir">
+        
+        
+      <cl:responsedata dataid="dsProcList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="학적부생성"/>
+  </head>
+  <body std:sid="body-y4taf750" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-k870d8h8"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-7qenx914"/>
+<cl:group id="grpData" std:sid="group-y7j09ukp">
+        <cl:xylayoutdata height="640px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-7d864mt8"/>
+      <cl:grid datasetid="dsProcList" id="grdCsrProc" std:sid="grid-h6la91l1">
+        <cl:xylayoutdata height="605px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-604h1utn">
+          <cl:gridrow height="27px" std:sid="g-row-36xji60a"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-18re7xj8" text="No"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-e6t7dq71">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-DATA" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-lidamx9f">
+<cl:langbind category="PROPERTY" keypath="UI-DB-EXEC_SEQ" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-9n4cd0if">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-EXEC" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-x85rdaml">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-DATACNT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-udtosp83" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-CD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-od8hx148" text="프로시져명" visible="false"/>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gh-cell-um4n9533" text="테이블명" visible="false"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-xa2jx698" width="40px"/>
+<cl:gridcolumn std:sid="g-column-f134g27i" width="397px"/>
+<cl:gridcolumn std:sid="g-column-q0zcqz7z" width="101px"/>
+<cl:gridcolumn std:sid="g-column-3g54m09y" width="120px"/>
+<cl:gridcolumn std:sid="g-column-119e52k1" width="95px"/>
+<cl:gridcolumn std:sid="g-column-kvv9wf3n" width="95px"/>
+<cl:gridcolumn std:sid="g-column-0bb50x86" width="95px"/>
+<cl:gridcolumn std:sid="g-column-p941h8tl" width="95px"/>
+<cl:griddetail std:sid="gd-band-334va3tn">
+          <cl:gridrow height="30px" std:sid="g-row-70i72hn2"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-ka9ys0v0" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="CD_NM" rowindex="0" std:sid="gd-cell-94g83400"/>
+<cl:gridcell colindex="2" columnname="TRSF_SEQ" rowindex="0" std:sid="gd-cell-x68738h1" style="text-align:right;"/>
+<cl:gridcell colindex="3" columnname="EXEC" rowindex="0" std:sid="gd-cell-1o5fxf0j"/>
+<cl:gridcell colindex="4" columnname="word" rowindex="0" std:sid="gd-cell-g9567est">
+<cl:button id="gdBtnProc" std:sid="button-m29bd8hh"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="TRANS_CNT" rowindex="0" std:sid="gd-cell-4s010506" style="text-align:right;"/>
+<cl:gridcell colindex="6" columnname="CD" rowindex="0" std:sid="gd-cell-ol2j4opd"/>
+<cl:gridcell colindex="7" columnname="CD_PRP1" rowindex="0" std:sid="gd-cell-2z850wu8"/>
+<cl:gridcell colindex="8" columnname="CD_PRP2" rowindex="0" std:sid="gd-cell-x08p9q6p"/>
+</cl:griddetail>
+</cl:grid>
+<cl:udc std:sid="ud-control-08459co3" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PRODUCTLIST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCsrProc"/>
+      </cl:udc>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-aillt6da" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

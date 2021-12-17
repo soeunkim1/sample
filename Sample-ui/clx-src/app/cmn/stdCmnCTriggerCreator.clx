@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-p6oi9220" version="1.0.0.0">
+  <head std:sid="head-k77a3gat">
+    <title>stdCmnCTriggerCreator</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-z147cd0k" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-0djf30vt" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-35706l59" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-64si5q79" width="320px"/>
+    <cl:model std:sid="model-n01gva5l">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-1k1374zk">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strTableName" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUnitSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strTableNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsTable" info="CMN_TABLE@TABLE_NAME" std:sid="d-set-54u6trit">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="TABLE_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OBJECT_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EDITION_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="COMMENTS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="GENERATED" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OBJECT_TYPE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OBJECT_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CREATED" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TLG_TRG_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SUBOBJECT_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SECONDARY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TLG_TABLE_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TEMPORARY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TIMESTAMP" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NAMESPACE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DATA_OBJECT_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAST_DDL_TIME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ERROR_YN" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsLanDivRcdList" std:sid="d-set-2123zlvu">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsUnitSystemRcdList" std:sid="d-set-71e8pbl6">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnTriggerCreator/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-l59yr1fc">
+        
+        
+      <cl:responsedata dataid="dsUnitSystemRcdList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTriggerCreator/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-58g3g58x">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsTable"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTriggerCreator/" id="subCrtTbl" mediatype="application/x-www-form-urlencoded" std:sid="submission-35dvbgt1">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTriggerCreator/" id="subCrtTblDel" mediatype="application/x-www-form-urlencoded" std:sid="submission-5t11rrv3">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTriggerCreator/" id="subCrtTlg" mediatype="application/x-www-form-urlencoded" std:sid="submission-0qy1o7q2">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="트리거생성"/>
+  </head>
+  <body std:sid="body-vg627v29" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-43529lw8"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-xlfy0075"/>
+<cl:udc id="appheader1" std:sid="ud-control-4spp136e" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-6y267ams">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-bd57mq32"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-s530srl9" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-4az8ma79"/>
+</cl:button>
+<cl:output id="optUnitSystemRcd" std:sid="output-hp0xf55w" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SYSTEMDIV" property="value"/>
+</cl:output>
+<cl:combobox id="cbbUnitSystemRcd" std:sid="c-box-1lk8o2m4">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsUnitSystemRcdList" label="CD_NM" value="CD"/>
+<cl:item label="전체" std:sid="item-sc7x4b92" value=""/>
+<cl:expbind category="PROPERTY" expression="#optUnitSystemRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strUnitSystemRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+<cl:output id="optTableNm" std:sid="output-l70286tb" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="250px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TBNM" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbTableNm" imemode="inactive" std:sid="i-box-5exp17a8">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="355px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="230px"/>
+      <cl:expbind category="PROPERTY" expression="#optMsgText.value" property="fieldLabel"/>
+<cl:listener handler="onIpbTableNmKeydown" name="keydown" std:sid="listener-8qa65ob1"/>
+<cl:datamapbind columnname="strTableNm" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:group id="grp_rptTable" std:sid="group-lo0m7b5a">
+        <cl:xylayoutdata height="600px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-or2l3au4"/>
+      <cl:udc std:sid="ud-control-33zmyp80" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-TABLELIST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdTable"/>
+      </cl:udc>
+<cl:button class="btn-commit" id="btnCrtTrigger" std:sid="button-9nx7qg3e" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1100px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TLGTRIGGERCRE" property="value"/>
+<cl:listener handler="onBtnCrtTriggerClick" name="click" std:sid="listener-vs3238op"/>
+</cl:button>
+<cl:grid datasetid="dsTable" id="grdTable" std:sid="grid-60hd9wlr">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdTableSelectionChange" name="selection-change" std:sid="listener-981338ra"/>
+<cl:gridheader std:sid="gh-band-tec509w9">
+          <cl:gridrow height="27px" std:sid="g-row-l251hbei"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-5p369e56"/>
+<cl:gridcell colindex="1" comment="ghBtnUptStatus" rowindex="0" std:sid="gh-cell-kmai1f2n" text="F"/>
+<cl:gridcell colindex="2" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-3s45irzq">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghBtnTableName" rowindex="0" std:sid="gh-cell-l47re7l3">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TABID" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" comment="ghBtnTlgTableYn" rowindex="0" std:sid="gh-cell-b4e9qo3e">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TLG_TAB_CREATE_YN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" comment="ghBtnTlgTrgYn" rowindex="0" std:sid="gh-cell-0c12tfj2">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TLG_TRIGGER_YN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" comment="ghBtnTlgTrgYn1" rowindex="0" std:sid="gh-cell-czt03qlb">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TLG_TRIGGER_YN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" comment="ghBtnComment" rowindex="0" std:sid="gh-cell-7m6bbd91">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TBCMT" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-9w63x12y" width="25px"/>
+<cl:gridcolumn std:sid="g-column-4e14s14y" width="25px"/>
+<cl:gridcolumn std:sid="g-column-ic6fozpc" width="40px"/>
+<cl:gridcolumn std:sid="g-column-aejx4qh4" width="200px"/>
+<cl:gridcolumn std:sid="g-column-28q0599f" width="150px"/>
+<cl:gridcolumn std:sid="g-column-ahgw60jy" width="150px"/>
+<cl:gridcolumn std:sid="g-column-83zj81t1" width="148px"/>
+<cl:gridcolumn std:sid="g-column-h63vqqjo" width="471px"/>
+<cl:griddetail std:sid="gd-band-85hv1jko">
+          <cl:gridrow height="25px" std:sid="g-row-pfv9vq10"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-mzxxyyng" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-v07u8srz">
+<cl:output std:sid="output-0myktmr8" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-92x44z6u" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="TABLE_NAME" rowindex="0" std:sid="gd-cell-0zpb4drg"/>
+<cl:gridcell colindex="4" columnname="TLG_TABLE_YN" rowindex="0" std:sid="gd-cell-eld88p6b" style="text-align:center;"/>
+<cl:gridcell colindex="5" columnname="TLG_TRG_YN" rowindex="0" std:sid="gd-cell-b8p40481" style="text-align:center;"/>
+<cl:gridcell colindex="6" columnname="ERROR_YN" rowindex="0" std:sid="gd-cell-w6123i8n" style="text-align:center;"/>
+<cl:gridcell colindex="7" columnname="COMMENTS" rowindex="0" std:sid="gd-cell-rvcmbch6"/>
+</cl:griddetail>
+</cl:grid>
+<cl:button class="btn-commit" id="btnCrtTglTable" std:sid="button-9zaeh13f" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="975px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TLGTABLECRE" property="value"/>
+<cl:listener handler="onBtnCrtTglTableClick" name="click" std:sid="listener-kw4f88f6"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnCrtTglTable1" std:sid="button-57hmfvs9" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="850px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TLGTABDEL" property="value"/>
+<cl:listener handler="onBtnCrtTglTable1Click" name="click" std:sid="listener-415obvu1"/>
+</cl:button>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

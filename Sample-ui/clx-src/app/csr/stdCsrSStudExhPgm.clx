@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-4isco87b" version="1.0.0.0">
+  <head std:sid="head-1365t1d9">
+    <title>stdCsrSStudExhPgm</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-t82w9935" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-98t92z95" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-1h3p94ig" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-r0vwy10g" width="320px"/>
+    <cl:model std:sid="model-3623c45b">
+      
+      
+      
+    <cl:dataset id="dsConMenuNewList" std:sid="d-set-c7iyqfrz">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-fqlbgazb">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strLanGbn" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCsrExhStud" info="CSR_EXH_STUD@STUD_ID,OT_CD,EXH_PGM_CD,ST_DT,END_DT" std:sid="d-set-wnzzckis">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="EXH_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXH_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STUD_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OT_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXH_PGM_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXH_PGM_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ST_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CAT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CAT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REF_KEY" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/csr/StdCsrStudExhPgm/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-l62874t8">
+        
+        
+      <cl:responsedata dataid="dsConMenuNewList"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrStudExhPgm/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-t90148s9">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsCsrExhStud"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrStudExhPgm/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-8832nqj4">
+        
+        
+      <cl:requestdata dataid="dsCsrExhStud"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCsrSStudExhPgm"/>
+  </head>
+  <body std:sid="body-qr8q59k4" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-9m418b11"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-d0i26a95"/>
+<cl:group id="grp_rptCsrExhStud" std:sid="group-81xiv3ds">
+        <cl:xylayoutdata height="463px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-9c4c06d1" top="0px" verticalAnchor="TOP" width="1025px"/>
+        <cl:xylayout std:sid="xylayout-sib007f3"/>
+      <cl:udc std:sid="ud-control-8jn739zz" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCsrExhStud"/>
+      </cl:udc>
+<cl:button class="btn-new" id="btnNew" std:sid="button-982u7o2x" value="신규">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="765px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnNewClick" name="click" std:sid="listener-181bov87"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-f065f657" value="삭제">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="895px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnDelClick" name="click" std:sid="listener-6p1m0dx0"/>
+</cl:button>
+<cl:button id="btnChg" std:sid="button-0yu7yfq1" value="변경">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="830px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnChgClick" name="click" std:sid="listener-q917032t"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-0tvno3zj" value="저장">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="960px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-755v329j"/>
+</cl:button>
+<cl:grid datasetid="dsCsrExhStud" id="grdCsrExhStud" std:sid="grid-7p36m964">
+        <cl:xylayoutdata height="428px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1015px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-0957dyji">
+          <cl:gridrow height="27px" std:sid="g-row-2ypwg04c"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-b3q6sry3" text="F"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-ck6u8l3t" text="No"/>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-74b53879" text="방문/파견"/>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-d16fep1o" text="대상학교"/>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-o165772e" text="교환프로그램"/>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-iu6wo833" text="시작일자"/>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-hnqor0l5" text="종료일자"/>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-f7uh13fh" text="교환프로그램범주"/>
+<cl:gridcell class="require" colindex="8" rowindex="0" std:sid="gh-cell-v733uykb" text="오브젝트ID" visible="false"/>
+<cl:gridcell class="require" colindex="9" rowindex="0" std:sid="gh-cell-bgysnh0b" text="외부부서코드[외부부서-파견대학코드]" visible="false"/>
+<cl:gridcell class="require" colindex="10" rowindex="0" std:sid="gh-cell-x0ln212h" text="교환프로그램코드" visible="false"/>
+<cl:gridcell colindex="11" rowindex="0" std:sid="gh-cell-chkv176c" text="범주코드[CT809]" visible="false"/>
+<cl:gridcell class="require" colindex="12" rowindex="0" std:sid="gh-cell-os6k3g2d" text="참조키" visible="false"/>
+<cl:gridcell colindex="13" rowindex="0" std:sid="gh-cell-5k6283pg" text="방문/파견코드"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-r386b731" width="25px"/>
+<cl:gridcolumn std:sid="g-column-h7ypc452" width="40px"/>
+<cl:gridcolumn std:sid="g-column-dgho5f3x" width="100px"/>
+<cl:gridcolumn std:sid="g-column-50h2zzd1" width="180px"/>
+<cl:gridcolumn std:sid="g-column-g17l6jwe" width="180px"/>
+<cl:gridcolumn std:sid="g-column-wy8773w2" width="70px"/>
+<cl:gridcolumn std:sid="g-column-b8kur2qv" width="70px"/>
+<cl:gridcolumn std:sid="g-column-3d0t4216" width="160px"/>
+<cl:gridcolumn std:sid="g-column-y5ff2fae" width="90px"/>
+<cl:gridcolumn std:sid="g-column-kg22zkn7" width="122px"/>
+<cl:gridcolumn std:sid="g-column-v1t6a7fq" width="70px"/>
+<cl:gridcolumn std:sid="g-column-h5gzi5t5" width="78px"/>
+<cl:gridcolumn std:sid="g-column-u67s834u" width="45px"/>
+<cl:gridcolumn std:sid="g-column-20672h85" width="45px"/>
+<cl:griddetail std:sid="gd-band-9ue220hw">
+          <cl:gridrow height="25px" std:sid="g-row-8m6wtw0i"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gd-cell-tz8h7eh5">
+<cl:output std:sid="output-gc7d3ad2" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columntype="rowindex" rowindex="0" std:sid="gd-cell-22w78kcf" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="EXH_NM" rowindex="0" std:sid="gd-cell-s1g0tp85" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="OT_NM" rowindex="0" std:sid="gd-cell-2e900p47"/>
+<cl:gridcell colindex="4" columnname="EXH_PGM_NM" rowindex="0" std:sid="gd-cell-0xb0266f"/>
+<cl:gridcell colindex="5" columnname="ST_DT" rowindex="0" std:sid="gd-cell-55i083qt"/>
+<cl:gridcell colindex="6" columnname="END_DT" rowindex="0" std:sid="gd-cell-1g5e1lnk"/>
+<cl:gridcell colindex="7" columnname="CAT_NM" rowindex="0" std:sid="gd-cell-2f17025m"/>
+<cl:gridcell colindex="8" columnname="STUD_ID" rowindex="0" std:sid="gd-cell-um0q4rz6">
+<cl:inputbox id="gdIpbStudId" maxlength="20" std:sid="i-box-hnmg0l0u">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="9" columnname="OT_CD" rowindex="0" std:sid="gd-cell-7f65031b">
+<cl:inputbox id="gdIpbOtCd" maxlength="10" std:sid="i-box-1rq0a6ns">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="10" columnname="EXH_PGM_CD" rowindex="0" std:sid="gd-cell-icy1cwqn">
+<cl:inputbox id="gdIpbExhPgmCd" maxlength="10" std:sid="i-box-282pt940">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="11" columnname="CAT_RCD" rowindex="0" std:sid="gd-cell-2f452li0">
+<cl:inputbox id="gdOptCatRcd" std:sid="i-box-8gw13986"/>
+</cl:gridcell>
+<cl:gridcell colindex="12" columnname="REF_KEY" rowindex="0" std:sid="gd-cell-72w312xz">
+<cl:inputbox id="gdIpbRefKey" maxlength="50" std:sid="i-box-27i7gf3q">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="13" columnname="EXH_CD" rowindex="0" std:sid="gd-cell-emz71166"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:embeddedapp id="emaSbpHeader" src="../imp/impSbpHeader.clx" std:sid="e-app-w393a2ag">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="75px" std:sid="xyl-data-7c6988f9" top="465px" verticalAnchor="TOP" width="96px"/>
+      <cl:listener handler="onEmaSbpHeaderAppReady" name="app-ready" std:sid="listener-r02y2ru5"/>
+</cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

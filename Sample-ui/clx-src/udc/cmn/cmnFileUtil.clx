@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-bb56625b" version="1.0.0.0">
+  <head std:sid="head-eeb7ea1b">
+    <title>cmnFileUtil</title>
+    <screen std:sid="screen-b952f4ed" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-fdbd4262" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-a24c5b06" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-0a54812b">
+      <cl:submission std:sid="submission-bbce78b9" id="subTmpFileUpLoad" mediatype="multipart/form-data">
+        <cl:responsedata dataid="dmTmpFilePath"/>
+      </cl:submission>
+      <cl:datamap std:sid="d-map-60a006ff" id="dmTmpFilePath">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="strTmpFileNms"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+    </cl:model>
+    <cl:appspec>
+      <cl:property bindable="true" std:desc="(선택) 파일순번" name="iFileSerialNo" type="string"/>
+      <cl:property bindable="true" default="false" std:desc="(선택) 다운로드만 가능할지 여부(업로드X)" name="iIsDownloadOnly" type="boolean"/>
+      <cl:property bindable="true" std:desc="(선택)업로드가능 확장자  &quot;.xls , .xlsx&quot;" name="iFileExtFilter" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 업로드 제한 파일 사이즈 (kb)" name="iLimitFileSize" type="string"/>
+      <cl:property bindable="true" default="10" std:desc="(선택, 디폴트 10) 업로드 가능 파일수" name="iMaxFileCnt" type="number"/>
+      <cl:property bindable="true" std:desc="파일순번" name="oFileSerailNo" type="string"/>
+      <cl:property bindable="true" std:desc="저장된 파일 갯수" name="oFileCnt" type="string"/>
+      <cl:event name="upLoadCallBack" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-f8b4f760" style="top:0px; left:0px; width:70px; height:25px;">
+    <cl:listener std:sid="listener-fcde9662" handler="onBodyLoad" name="load"/>
+    <cl:group std:sid="group-9eeb91b4" id="grpUdcFileUp">
+      <cl:xylayoutdata std:sid="xyl-data-6ea738ab" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:button std:sid="button-b76add7c" id="btnUdcFileUp" class="btn-file-up" value="Button">
+        <cl:listener std:sid="listener-f8b41f40" handler="onBtnUdcFileUpClick" name="click"/>
+        <cl:langbind property="value" keypath="UI-SCR-FILEATTACH"/>
+        <cl:langbind property="tooltip" keypath="UI-SCR-FILEATTACH-TOOLTIP"/>
+        <cl:formdata std:sid="f-data-43cec43b" col="0" row="0"/>
+      </cl:button>
+      <cl:formlayout std:sid="f-layout-f1417439">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="1" unit="FRACTION"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-4f781330"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

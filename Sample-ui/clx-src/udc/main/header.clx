@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-dee1dfe3" version="1.0.0.0">
+  <head std:sid="head-1e48eb83">
+    <title>header</title>
+    <screen std:sid="screen-85fde0b2" id="main" active="true" customHeight="600" height="768px" minwidth="1024px" name="main" width="1024px"/>
+    <screen std:sid="screen-10b008c9" id="tablet" active="false" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-848cadb4" id="mobile" active="false" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-2bc587f5">
+      <cl:dataset std:sid="d-set-005074e9" id="ds_top_menu">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="MENU_KEY"/>
+          <cl:datacolumn name="UMENU_KEY"/>
+          <cl:datacolumn name="MENU_NM"/>
+          <cl:datacolumn name="CALL_PAGE"/>
+          <cl:datacolumn name="MENU_LVL"/>
+        </cl:datacolumnlist>
+      </cl:dataset>
+      <cl:submission std:sid="submission-5ed1c15e" id="sub_header_load" action="Main/getHeaderList.do">
+        <cl:listener std:sid="listener-6d1577fd" handler="onSub_header_loadSubmitSuccess2" name="submit-success"/>
+        <cl:responsedata dataid="ds_top_menu"/>
+      </cl:submission>
+    </cl:model>
+    <cl:appspec>
+      <cl:event name="logout" type="cpr.events.CUIEvent"/>
+      <cl:event name="close" type="cpr.events.CUIEvent"/>
+      <cl:event name="headerMenuSelection" type="cpr.events.CUIEvent"/>
+      <cl:event name="header_menu_click" type="cpr.events.CUIEvent"/>
+      <cl:event name="logo_click" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-8c402f56" style="top:0px; left:0px; width:1024px; height:55px;">
+    <cl:listener std:sid="listener-5f181654" handler="onBodyLoad" name="load"/>
+    <cl:img std:sid="image-fa8a9059" src="../../theme/images/login/eXCampus_logo.png">
+      <cl:listener std:sid="listener-2a940b28" handler="onImageClick" name="click"/>
+      <cl:responsivexylayoutdata std:sid="rxyl-data-d60ed944">
+        <cl:xylayoutdata std:sid="sxyl-data-f14d4801" height="30px" horizontalAnchor="LEFT" left="0px" top="12px" verticalAnchor="TOP" width="170px" screenid="main"/>
+        <cl:xylayoutdata std:sid="sxyl-data-f14d4801" height="30px" horizontalAnchor="LEFT" left="0px" top="12px" verticalAnchor="TOP" width="83px" screenid="tablet"/>
+        <cl:xylayoutdata std:sid="sxyl-data-f14d4801" height="30px" horizontalAnchor="LEFT" left="0px" top="12px" verticalAnchor="TOP" width="39px" screenid="mobile"/>
+      </cl:responsivexylayoutdata>
+    </cl:img>
+    <cl:group std:sid="group-812b7d07" id="grp1">
+      <cl:responsivexylayoutdata std:sid="rxyl-data-346a5bf4">
+        <cl:xylayoutdata std:sid="sxyl-data-993b5d92" height="53px" horizontalAnchor="RIGHT" right="5px" top="1px" verticalAnchor="TOP" width="261px" screenid="main"/>
+        <cl:xylayoutdata std:sid="sxyl-data-993b5d92" height="53px" horizontalAnchor="RIGHT" right="5px" top="1px" verticalAnchor="TOP" width="248px" screenid="tablet"/>
+        <cl:xylayoutdata std:sid="sxyl-data-993b5d92" height="53px" horizontalAnchor="LEFT" left="250px" top="1px" verticalAnchor="TOP" width="200px" screenid="mobile"/>
+      </cl:responsivexylayoutdata>
+      <cl:output std:sid="output-85b1993d" id="optHeaderUserInfo" style="text-align:left;">
+        <cl:xylayoutdata std:sid="xyl-data-ec17e36b" height="20px" horizontalAnchor="BOTH" left="5px" right="0px" top="3px" verticalAnchor="TOP"/>
+      </cl:output>
+      <cl:button std:sid="button-0dd0a0c8" id="btnHeaderHome" style="background-color:transparent; border-right-style:none; background-repeat:no-repeat; border-left-style:none; border-bottom-style:none; background-image:url('../../theme/images/main/top_icon3-1.png'); border-top-style:none;">
+        <cl:xylayoutdata std:sid="xyl-data-8155e7f7" height="24px" horizontalAnchor="LEFT" left="84px" top="26px" verticalAnchor="TOP" width="24px"/>
+      </cl:button>
+      <cl:button std:sid="button-66a2e026" id="btn3" style="background-color:transparent; border-right-style:none; background-repeat:no-repeat; border-left-style:none; border-bottom-style:none; background-image:url('../../theme/images/main/top_icon9-2.png'); border-top-style:none;">
+        <cl:xylayoutdata std:sid="xyl-data-0fb51f7a" height="24px" horizontalAnchor="LEFT" left="118px" top="26px" verticalAnchor="TOP" width="24px"/>
+      </cl:button>
+      <cl:button std:sid="button-0b420880" id="btn4" style="background-color:transparent; border-right-style:none; background-repeat:no-repeat; border-left-style:none; border-bottom-style:none; background-image:url('../../theme/images/main/top_icon1-1.png'); border-top-style:none;">
+        <cl:xylayoutdata std:sid="xyl-data-24b5e193" height="24px" horizontalAnchor="LEFT" left="152px" top="26px" verticalAnchor="TOP" width="24px"/>
+      </cl:button>
+      <cl:button std:sid="button-789a846f" id="btnFavorite" style="border-right-style:none; background-color:transparent; background-repeat:no-repeat; border-left-style:none; border-bottom-style:none; background-image:url('../../theme/images/main/top_icon4-1.png'); border-top-style:none;">
+        <cl:xylayoutdata std:sid="xyl-data-2981fe68" height="24px" horizontalAnchor="LEFT" left="184px" top="26px" verticalAnchor="TOP" width="24px"/>
+      </cl:button>
+      <cl:button std:sid="button-6febd304" id="btnLogout" style="background-size:cover; background-image:url(../../theme/images/main/btnLogout.gif); background-position:center;">
+        <cl:listener std:sid="listener-42479458" handler="onButtonClick" name="click"/>
+        <cl:xylayoutdata std:sid="xyl-data-6728b92c" height="24px" horizontalAnchor="LEFT" left="5px" top="26px" verticalAnchor="TOP" width="74px"/>
+      </cl:button>
+      <cl:button std:sid="button-f31d1a57" id="btn5" style="background-color:transparent; border-right-style:none; background-repeat:no-repeat; border-left-style:none; border-bottom-style:none; background-image:url('../../theme/images/main/top_icon7-1.png'); border-top-style:none;">
+        <cl:xylayoutdata std:sid="xyl-data-efb88ec5" height="24px" horizontalAnchor="LEFT" left="218px" top="26px" verticalAnchor="TOP" width="24px"/>
+      </cl:button>
+      <cl:xylayout std:sid="xylayout-5ae14e91"/>
+    </cl:group>
+    <cl:navigationbar std:sid="n-bar-ee9a0c46" id="ngbHeaderMenu" class="menu-top" menutype="megamenu">
+      <cl:listener std:sid="listener-662a26ca" handler="onNgbHeaderMenuSelectionChange" name="selection-change"/>
+      <cl:listener std:sid="listener-ebabef5f" handler="onNgbHeaderMenuItemClick" name="item-click"/>
+      <cl:responsivexylayoutdata std:sid="rxyl-data-c6f9831f">
+        <cl:xylayoutdata std:sid="sxyl-data-afbf4281" height="50px" horizontalAnchor="BOTH" left="169px" right="265px" top="3px" verticalAnchor="TOP" screenid="main"/>
+        <cl:xylayoutdata std:sid="sxyl-data-afbf4281" height="50px" horizontalAnchor="LEFT" left="82px" top="3px" verticalAnchor="TOP" width="679px" screenid="tablet"/>
+        <cl:xylayoutdata std:sid="sxyl-data-afbf4281" height="50px" horizontalAnchor="LEFT" left="38px" top="3px" verticalAnchor="TOP" width="213px" screenid="mobile"/>
+      </cl:responsivexylayoutdata>
+      <cl:menuitemset datasetid="ds_top_menu" label="MENU_NM" value="MENU_KEY" parent="UMENU_KEY" accessKey=""/>
+    </cl:navigationbar>
+    <cl:responsivexylayout std:sid="r-xylayout-58b49325" scrollable="false"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

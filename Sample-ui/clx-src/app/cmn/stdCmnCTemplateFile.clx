@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-q12aj48t" version="1.0.0.0">
+  <head std:sid="head-r1lv67ml">
+    <title>stdCmnCTemplateFile</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-45xchdz3" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-lwu3n35k" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-zb64ot9y" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-9ai0l3xf" width="320px"/>
+    <cl:model std:sid="model-63w39c0p">
+      
+      
+      
+    <cl:dataset id="dsUnitSystemRcdList" std:sid="d-set-4l1vq385">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-5l7893v9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strUnitSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFileSerialNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFileNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCmnTemplateFile" info="CMN_TEMPLATE_FILE@FILE_SERIAL_NO" std:sid="d-set-2binbu45">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="FILE_SERIAL_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPLOAD_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="USER_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_PATH" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_EXIST_YN" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnTemplateFile/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-b7bx0bt8">
+        
+        
+      <cl:responsedata dataid="dsUnitSystemRcdList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTemplateFile/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-fht38c87">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsCmnTemplateFile"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTemplateFile/" id="subDelete" mediatype="application/x-www-form-urlencoded" std:sid="submission-554yv6z0">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTemplateFile/" id="subUpload" mediatype="application/x-www-form-urlencoded" std:sid="submission-mr73kb3w">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCmnCTemplateFile"/>
+  </head>
+  <body std:sid="body-v24i77pb" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-mne0a882"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-1519q9mb"/>
+<cl:udc id="appheader1" std:sid="ud-control-107we2dp" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-b48vlgca">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-56y7qw67"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-eh7pp7qm" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-87obock8"/>
+</cl:button>
+<cl:output id="optUnitSystemRcd" std:sid="output-jf8z18z3" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-UNITSYSTEM" property="value"/>
+</cl:output>
+<cl:combobox id="cbbUnitSystemRcd" std:sid="c-box-i1v87v7t">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsUnitSystemRcdList" label="CD_NM" value="CD"/>
+<cl:item label="전체" std:sid="item-9u96xf17" value=""/>
+<cl:expbind category="PROPERTY" expression="#optUnitSystemRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strUnitSystemRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+</cl:group>
+<cl:group id="grp_rptCmnTemplateFile" std:sid="group-hc529078">
+        <cl:xylayoutdata height="600px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-rrydib5j"/>
+      <cl:udc std:sid="ud-control-q3yr46e2" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-FORMDOWN" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCmnTemplateFile"/>
+      </cl:udc>
+<cl:button class="btn-commit" id="btnUpload" std:sid="button-13t3a6on" value="파일업로드">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1120px" std:sid="xyl-data-fa9a14b9" top="4px" verticalAnchor="TOP" width="98px"/>
+      <cl:listener handler="onBtnUploadClick" name="click" std:sid="listener-wi3wnq11"/>
+</cl:button>
+<cl:grid datasetid="dsCmnTemplateFile" id="grdCmnTemplateFile" std:sid="grid-58n58y63">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-kf80ik7u">
+          <cl:gridrow height="27px" std:sid="g-row-0pkxxlgz"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-93dy5447" text="No"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-5q0t2rsu">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-UNITSYSTEM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-750l4096">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-FILENAME" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-sg3z50t1">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-FILE-PATH" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-d6q19pog">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-REGISTRANT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-5bemq451" text="업로드일시"/>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-5oy94ou1" text="파일존재여부"/>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-2383sr52">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-FILEDOWN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gh-cell-l4mp54n4">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-FILEDEL" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="9" rowindex="0" std:sid="gh-cell-rj81ai6r" text="파일순번" visible="false"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-x0qvk35n" width="40px"/>
+<cl:gridcolumn std:sid="g-column-jd5eq591" width="123px"/>
+<cl:gridcolumn std:sid="g-column-93a1290j" width="181px"/>
+<cl:gridcolumn std:sid="g-column-t2qc23e5" width="334px"/>
+<cl:gridcolumn std:sid="g-column-4qg9enmv" width="101px"/>
+<cl:gridcolumn std:sid="g-column-o2y69inf" width="131px"/>
+<cl:gridcolumn std:sid="g-column-7jy523yd" width="99px"/>
+<cl:gridcolumn std:sid="g-column-s530q119" width="90px"/>
+<cl:gridcolumn std:sid="g-column-kfn63w52" width="81px"/>
+<cl:gridcolumn std:sid="g-column-4u5g64jr" width="106px"/>
+<cl:griddetail std:sid="gd-band-75gv6pnl">
+          <cl:gridrow height="25px" std:sid="g-row-s3o2pp3d"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-3s3hn08g" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="UNIT_SYSTEM_RCD_NM" rowindex="0" std:sid="gd-cell-216g97ua"/>
+<cl:gridcell colindex="2" columnname="FILE_NM" rowindex="0" std:sid="gd-cell-dfkvg5ph"/>
+<cl:gridcell colindex="3" columnname="FILE_PATH" rowindex="0" std:sid="gd-cell-c63u1k44"/>
+<cl:gridcell colindex="4" columnname="USER_NM" rowindex="0" std:sid="gd-cell-8188i3wc" style="text-align:center;"/>
+<cl:gridcell colindex="5" columnname="UPLOAD_DTHR" rowindex="0" std:sid="gd-cell-7z149a17">
+<cl:output datatype="date" format="YYYY-MM-DD HH:mm:ss" id="gdDipUploadDthr" std:sid="output-716ud09a" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="FILE_EXIST_YN" rowindex="0" std:sid="gd-cell-3o7o1k2o">
+<cl:checkbox enabled="false" falsevalue="" id="gdCkbFileExistYn" std:sid="c-box-67952795" style="text-align:center;" text="" truevalue="Y" value=""/>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="" rowindex="0" std:sid="gd-cell-itk7snfj">
+<cl:button id="gdBtnDown" std:sid="button-5j57c6y8"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" columnname="" rowindex="0" std:sid="gd-cell-9j0gspll">
+<cl:button id="gdBtnDel" std:sid="button-jq91f14l"/>
+</cl:gridcell>
+<cl:gridcell colindex="9" columnname="FILE_SERIAL_NO" rowindex="0" std:sid="gd-cell-d6cg207d">
+<cl:inputbox id="gdIpbFileSerialNo" maxlength="15" std:sid="i-box-d025das0">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

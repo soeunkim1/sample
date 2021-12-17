@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-bdbbdd3c" version="1.0.0.0">
+  <head std:sid="head-6cd19625">
+    <title>fileupload</title>
+    <screen std:sid="screen-8952b9ce" id="default" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-387fc563" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-a6ceee39" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-68697ed3"/>
+    <cl:appspec>
+      <cl:event name="filesend" type="cpr.events.CEvent"/>
+      <cl:event name="filecancle" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-c47f5a49" style="top:0px; left:0px; width:800px; height:600px;">
+    <cl:group std:sid="group-6541269d" id="grpComFileUpLoad" style="border-right-style:solid; border-bottom-color:#c5c5c5; border-top-width:1px; border-right-width:1px; border-left-color:#c5c5c5; border-right-color:#c5c5c5; border-left-width:1px; border-top-style:solid; background-color:#ffffff; border-left-style:solid; border-bottom-width:1px; border-top-color:#c5c5c5; border-bottom-style:solid;">
+      <cl:xylayoutdata std:sid="xyl-data-6cec34e8" height="208px" horizontalAnchor="CENTER" verticalAnchor="CENTER" width="433px"/>
+      <cl:fileupload std:sid="f-upload-c5ae6040" id="fudComFileUpLoad" maxfilecount="1">
+        <cl:listener std:sid="listener-9bb697b3" handler="onFud1SendbuttonClick" name="sendbutton-click"/>
+        <cl:listener std:sid="listener-a8205d57" handler="onFudComFileUpLoadMaxsizeExceed" name="maxsize-exceed"/>
+        <cl:listener std:sid="listener-bae341ca" handler="onFudComFileUpLoadMaxcountExceed" name="maxcount-exceed"/>
+        <cl:listener std:sid="listener-280b7047" handler="onFudComFileUpLoadExtensionViolate" name="extension-violate"/>
+        <cl:xylayoutdata std:sid="xyl-data-ab41fd9e" bottom="5px" horizontalAnchor="BOTH" left="5px" right="5px" top="30px" verticalAnchor="BOTH"/>
+      </cl:fileupload>
+      <cl:button std:sid="button-29ea36b7" id="btnCancle" class="btn-normal" value="취소">
+        <cl:listener std:sid="listener-9940ab18" handler="onBtnCancleClick" name="click"/>
+        <cl:langbind property="value" keypath="UI-GLS-CANCEL"/>
+        <cl:xylayoutdata std:sid="xyl-data-338e8abd" height="20px" horizontalAnchor="RIGHT" right="5px" top="5px" verticalAnchor="TOP" width="60px"/>
+      </cl:button>
+      <cl:xylayout std:sid="xylayout-598e137a"/>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-0866ef20"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

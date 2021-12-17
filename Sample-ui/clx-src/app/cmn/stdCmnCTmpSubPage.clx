@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-y47vc4f1" version="1.0.0.0">
+  <head std:sid="head-u6pw937f">
+    <title>stdCmnCTmpSubPage</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-zoiip622" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-283rply0" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-g75d29qy" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-t88fcx64" width="320px"/>
+    <cl:model std:sid="model-4t72u9c4">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-6kufm22t">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRepNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-941d80sw">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/stdCmnTmpSubPage/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-3jqbw9xs">
+        
+        
+      <cl:responsedata dataid="dmResOnLoad"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCmnCTmpSubPage"/>
+  </head>
+  <body std:sid="body-6ttc27db" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-5729a0a6"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-2k0bh7fq"/>
+<cl:udc id="appheader1" std:sid="ud-control-856600vx" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-9egxicl1">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-rp716se0"/>
+      <cl:output id="optStudNo" std:sid="output-33p9hej7" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-STUD_ID" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbStudNo" std:sid="i-box-184z553s">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="130px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStudNo.value" property="fieldLabel"/>
+<cl:listener handler="onIpbStudNoValueChange" name="value-change" std:sid="listener-e65s8v7x"/>
+<cl:datamapbind columnname="strStudNo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-pop-search" id="btnStudNo" std:sid="button-qth87f7h" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="240px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="20px"/>
+      <cl:listener handler="onBtnStudNoClick" name="click" std:sid="listener-5mn91pg3"/>
+</cl:button>
+<cl:button class="btn-search" id="btnSearch" std:sid="button-e7dxn415" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-37v1617q"/>
+</cl:button>
+</cl:group>
+<cl:group id="grpData" std:sid="group-kw3733j0">
+        <cl:xylayoutdata height="468px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="207px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-125pybxk"/>
+      <cl:htmlobject id="hojFrame" std:sid="htmlobject-0v9j53ye">
+        <cl:xylayoutdata height="456px" horizontalAnchor="LEFT" left="190px" std:sid="xyl-data-5608d431" top="5px" verticalAnchor="TOP" width="1030px"/>
+      </cl:htmlobject>
+</cl:group>
+<cl:embeddedapp id="emaStdCsrPStSearch" src="../csr/impStdCsrPStSearch.clx" std:sid="e-app-3rd7ycfo">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-7c6988f9" top="680px" verticalAnchor="TOP" width="60px"/>
+      </cl:embeddedapp>
+<cl:embeddedapp id="emaStudInfo" src="../csr/impStudInf02.clx" std:sid="e-app-w966541k">
+        <cl:xylayoutdata height="130px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="72px" verticalAnchor="TOP" width="1225px"/>
+      <cl:listener handler="onEmaStudInfoAppReady" name="app-ready" std:sid="listener-samut004"/>
+</cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

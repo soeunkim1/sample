@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-2xd1dp17" version="1.0.0.0">
+  <head std:sid="head-yf3aqe4g">
+    <title>extCsrSNewEarlyRemoStatPrt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-67j7ls19" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-267re0ik" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-14172pup" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-ba5fxo51" width="320px"/>
+    <cl:model std:sid="model-causelpu">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-382fl02o">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEndDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCapIoDivRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPrevEndDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPrevStDt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsSchYearRcdList" std:sid="d-set-2k2mmjbp">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtRcdList" std:sid="d-set-r43uinpw">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-3bq3e8s7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEndDate" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCapIoDivRcdList" std:sid="d-set-kmf26r8p">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResGetKeyDate" std:sid="d-map-33dm0qi2">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEndDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPrevStDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPrevEndDt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-f6xhoxoq">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSaList" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/csr/ExtCsrNewEarlyRemoStatPrt/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-pujh4111">
+        
+        
+      <cl:responsedata dataid="dsSchYearRcdList"/>
+<cl:responsedata dataid="dsSmtRcdList"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+<cl:responsedata dataid="dsCapIoDivRcdList"/>
+<cl:responsedata dataid="dmReqList"/>
+</cl:submission>
+<cl:submission action="/csr/ExtCsrNewEarlyRemoStatPrt/" id="subGetKeyDate" mediatype="application/x-www-form-urlencoded" std:sid="submission-8tdvol7k">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dmResGetKeyDate"/>
+</cl:submission>
+<cl:submission action="/csr/ExtCsrNewEarlyRemoStatPrt/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-5j50zao2">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dmResList"/>
+<cl:responsedata dataid="dmReqList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="extCsrSNewEarlyRemoStatPrt"/>
+  </head>
+  <body std:sid="body-0hy56638" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-8m72rexk"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-109280n4"/>
+<cl:udc id="appheader1" std:sid="ud-control-0pd9e0k0" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-6ys2703v">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-ob16mr12"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-fl1q8idn" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-wni3ba16"/>
+</cl:button>
+<cl:output class="require" id="optYearRcd" std:sid="output-1389hrf5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="value"/>
+</cl:output>
+<cl:combobox id="cbbYearRcd" std:sid="c-box-l73w7n8e">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="90px"/>
+        
+        
+      <cl:itemset datasetid="dsSchYearRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optYearRcd.value" property="fieldLabel"/>
+<cl:listener handler="onCbbYearRcdSelectionChange" name="selection-change" std:sid="listener-0436q35t"/>
+<cl:datamapbind columnname="strSchYearRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+<cl:output id="optAltEndDt" std:sid="output-x284459w" value="">
+        <cl:xylayoutdata height="16px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-548c5467" top="9px" verticalAnchor="TOP" width="10px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-GENDER" property="value"/>
+</cl:output>
+<cl:output id="optAltStDt" std:sid="output-dq8859kt" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="220px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="10px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-GENDER" property="value"/>
+</cl:output>
+<cl:output class="require" id="optAltDt" std:sid="output-z158p2m1" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="190px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="200"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-ALT_DT" property="value"/>
+</cl:output>
+<cl:dateinput id="ipbPrevStDt" std:sid="d-input-o69ruxs2">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="395px" std:sid="xyl-data-28ed790d" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optAltStDt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strPrevStDt" datacontrolid="dmReqList" property="value"/>
+</cl:dateinput>
+<cl:output id="opt" std:sid="output-a4de756z" value="~">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="485px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="15px"/>
+      </cl:output>
+<cl:dateinput id="ipbPrevEndDt" std:sid="d-input-dyt1zw0s">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="500px" std:sid="xyl-data-28ed790d" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:expbind category="PROPERTY" expression="#optAltEndDt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strPrevEndDt" datacontrolid="dmReqList" property="value"/>
+</cl:dateinput>
+<cl:output class="require" id="optCapIoDivRcd" std:sid="output-dz904902" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="810px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CAPACITY" property="value"/>
+</cl:output>
+<cl:combobox id="cbbCapIoDivRcd" std:sid="c-box-3i1nz835">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="895px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="115px"/>
+        
+        
+      <cl:itemset datasetid="dsCapIoDivRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optCapIoDivRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strCapIoDivRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+<cl:output id="opt1" std:sid="output-075beul5" value=",">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="590" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="15px"/>
+      </cl:output>
+<cl:dateinput id="ipbStDt" std:sid="d-input-249fj4w7">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="605px" std:sid="xyl-data-28ed790d" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optAltStDt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStDt" datacontrolid="dmReqList" property="value"/>
+</cl:dateinput>
+<cl:output id="opt2" std:sid="output-c3c8d4i3" value="~">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="695px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="15px"/>
+      </cl:output>
+<cl:dateinput id="ipbEndDt" std:sid="d-input-ps46x3qr">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="710px" std:sid="xyl-data-28ed790d" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:expbind category="PROPERTY" expression="#optAltEndDt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strEndDt" datacontrolid="dmReqList" property="value"/>
+</cl:dateinput>
+</cl:group>
+<cl:group id="grp_rptCsrShreg" std:sid="group-093z3162">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-zirhht0m"/>
+      <cl:htmlobject id="hojReport" std:sid="htmlobject-50815386">
+        <cl:xylayoutdata height="588px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-5608d431" top="5px" verticalAnchor="TOP" width="1215px"/>
+      </cl:htmlobject>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-7j3b538p" version="1.0.0.0">
+  <head std:sid="head-40kve59p">
+    <title>impExtCsrIfrSndCommon</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-hz77f30g" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-zm11p367" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-4w4cy7j1" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-8769vrnh" width="320px"/>
+    <cl:model std:sid="model-u97al566">
+      
+      
+      
+    <cl:dataset id="dsIfrSheetRcdDivList" std:sid="d-set-5uw0m667">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmCurrentDateInfo" std:sid="d-map-m520p5vp">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="CUT_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="BEF_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqList" std:sid="d-map-kiqyqu8o">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSndDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strIfrSheetDivRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/csr/ImpExtCsrIfrSndCommon/" id="subOnLoadByImpExtCsrIfrSndCommon" mediatype="application/x-www-form-urlencoded" std:sid="submission-58k98el0">
+        
+        
+      <cl:responsedata dataid="dsIfrSheetRcdDivList"/>
+<cl:responsedata dataid="dmCurrentDateInfo"/>
+</cl:submission>
+<cl:submission action="/csr/ImpExtCsrIfrSndCommon/" id="subSaveByImpExtCsrIfrSndCommon" mediatype="application/x-www-form-urlencoded" std:sid="submission-87e41h32">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="impExtCsrIfrSndCommon"/>
+  </head>
+  <body std:sid="body-52q76wxt" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-k63d797h"/>
+  <cl:output id="optImpSndDtByImpExtCsrIfrSnd" std:sid="output-k53l02da" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SNDDT" property="value"/>
+</cl:output>
+<cl:dateinput id="dipSndDtByImpExtCsrIfrSnd" std:sid="d-input-636e0355">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="85px" std:sid="xyl-data-28ed790d" top="0px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optImpSndDtByImpExtCsrIfrSnd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSndDt" datacontrolid="dmReqList" property="value"/>
+</cl:dateinput>
+<cl:button id="btnPrintByImpExtCsrIfrSnd" std:sid="button-m320188h" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="180px" std:sid="xyl-data-fa9a14b9" top="0px" verticalAnchor="TOP" width="75px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NOTICEPRINT" property="value"/>
+<cl:listener handler="onBtnPrintByImpExtCsrIfrSndClick" name="click" std:sid="listener-9nk39m4e"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSaveByImpExtCsrIfrSnd" std:sid="button-u27g12j2" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="260px" std:sid="xyl-data-fa9a14b9" top="0px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SELECT-SND" property="value"/>
+<cl:listener handler="onBtnSaveByImpExtCsrIfrSndClick" name="click" std:sid="listener-v2z5693y"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

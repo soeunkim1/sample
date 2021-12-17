@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-2m64p201" version="1.0.0.0">
+  <head std:sid="head-9x79o7b4">
+    <title>stdCmnCTbPhysicAgrCnfm</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-up0vmfbq" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-4tbvg4jt" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-3b5rx56q" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-z7820648" width="320px"/>
+    <cl:model std:sid="model-nlqmc1zk">
+      
+      
+      
+    <cl:datamap id="dmReqData" std:sid="d-map-tdai8sj3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCkb" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsMst" info="CMN_GLOSSARY@PHYSIC_WORD" std:sid="d-set-8q0g26k9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="COLUMN_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DATA_TYPE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DATA_LENGTH" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TABLE_NAME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NEXT_COL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NEXT_DATA_TYPE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NEXT_DATA_LENGTH" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TF" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RN" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsCkbDivList" std:sid="d-set-7hu35f4s">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnTbPhysicAgrCnfm/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-kj0a3cxi">
+        
+        
+      <cl:requestdata dataid="dmReqData"/>
+<cl:responsedata dataid="dsMst"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTbPhysicAgrCnfm/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-2i4i7684">
+        
+        
+      <cl:responsedata dataid="dsCkbDivList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-x7nr30g9" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-guc4nj4q"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-1456o5n7"/>
+<cl:group class="search-box" id="grpSearch" std:sid="group-jf69klok">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-6hz7dw8t"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-r74yq8t5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-ew43f03z"/>
+</cl:button>
+<cl:output id="optDivCd" std:sid="output-dcnmcn03" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TBDEFDIVRCD" property="value"/>
+</cl:output>
+<cl:checkboxgroup fixedwidth="false" id="ckbSelect" std:sid="cb-group-hv00o8ax">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-f98abaf6" top="5px" verticalAnchor="TOP" width="753px"/>
+        
+        
+      <cl:itemset datasetid="dsCkbDivList" label="CD_NM" value="CD_PRP1"/>
+<cl:datamapbind columnname="strCkb" datacontrolid="dmReqData" property="value"/>
+</cl:checkboxgroup>
+</cl:group>
+<cl:group id="grpMst" std:sid="group-98ikutvn">
+        <cl:xylayoutdata height="550px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="42px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-w727iptc"/>
+      <cl:udc std:sid="ud-control-5k647hm7" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PHYSIC_AHR_CNFM" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdMst"/>
+      </cl:udc>
+<cl:grid datasetid="dsMst" id="grdMst" std:sid="grid-6e767a75">
+        <cl:xylayoutdata height="515px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdMstSelectionChange" name="selection-change" std:sid="listener-h1828c3b"/>
+<cl:gridheader std:sid="gh-band-x9do9gq3">
+          <cl:gridrow height="27px" std:sid="g-row-ttp27n89"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNoTableMain" rowindex="0" std:sid="gh-cell-kgvxa585">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" comment="ghBtnColumnName" rowindex="0" std:sid="gh-cell-12s4f8o0">
+<cl:langbind category="PROPERTY" keypath="UI-DB-COLNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghBtnDataType" rowindex="0" std:sid="gh-cell-66h8d13a">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-DATA_TYPE" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghBtnDataLength" rowindex="0" std:sid="gh-cell-0s4pz92i">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-DATA_LENGTH" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" comment="ghBtnTableName" rowindex="0" std:sid="gh-cell-9vy4833x">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TBNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" comment="ghBtnNextCol" rowindex="0" std:sid="gh-cell-14uncw79">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-NEXT_COL" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" comment="ghBtnNextDataType" rowindex="0" std:sid="gh-cell-9h6rt072">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-NEXT_DATA_TYPE" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" comment="ghBtnNextDataLength" rowindex="0" std:sid="gh-cell-6j08kmev">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-NEXT_DATA_LENGTH" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" comment="ghBtnTf" rowindex="0" std:sid="gh-cell-lqw45yxq">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-COL_TF" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-04zqqs28" width="40px"/>
+<cl:gridcolumn std:sid="g-column-d0en6p1y" width="160px"/>
+<cl:gridcolumn std:sid="g-column-24g5903m" width="140px"/>
+<cl:gridcolumn std:sid="g-column-na4e356r" width="100px"/>
+<cl:gridcolumn std:sid="g-column-9224hrm4" width="205px"/>
+<cl:gridcolumn std:sid="g-column-9sufo9fk" width="140px"/>
+<cl:gridcolumn std:sid="g-column-8oidi66w" width="152px"/>
+<cl:gridcolumn std:sid="g-column-5w9d152x" width="140px"/>
+<cl:gridcolumn std:sid="g-column-iy738awo" width="128px"/>
+<cl:griddetail std:sid="gd-band-3c32mi3l">
+          <cl:gridrow height="25px" std:sid="g-row-7v6thx08"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-88760xkk" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="COLUMN_NAME" rowindex="0" std:sid="gd-cell-5y70qjgl"/>
+<cl:gridcell colindex="2" columnname="DATA_TYPE" rowindex="0" std:sid="gd-cell-v33971u7"/>
+<cl:gridcell colindex="3" columnname="DATA_LENGTH" rowindex="0" std:sid="gd-cell-z7e2207r"/>
+<cl:gridcell colindex="4" columnname="TABLE_NAME" rowindex="0" std:sid="gd-cell-52nec1w4"/>
+<cl:gridcell colindex="5" columnname="NEXT_COL" rowindex="0" std:sid="gd-cell-onl164q6"/>
+<cl:gridcell colindex="6" columnname="NEXT_DATA_TYPE" rowindex="0" std:sid="gd-cell-6if5rwmw"/>
+<cl:gridcell colindex="7" columnname="NEXT_DATA_LENGTH" rowindex="0" std:sid="gd-cell-9hs74893"/>
+<cl:gridcell colindex="8" columnname="TF" rowindex="0" std:sid="gd-cell-ou6jmx46"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-3r7dm6vw" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

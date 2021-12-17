@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-2p0jvcuk" version="1.0.0.0">
+  <head std:sid="head-jfu4mi6p">
+    <title>stdCrsCDivPayType</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-4e1n719r" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-5w70vymw" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-8wc37m24" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-ztqb357b" width="320px"/>
+    <cl:model std:sid="model-1de2n0mp">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-761b7x47">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strDivPayTypeCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRefKey" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListItemCd" std:sid="d-set-jr91rs6x">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="ITEM_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITEM_CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListBlncAddMethodRcd" std:sid="d-set-q2pe02s3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListLanDivRcd" std:sid="d-set-lq852t6j">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListItvTypeRcd" std:sid="d-set-rgf5160o">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmCurrentDate" std:sid="d-map-azi98942">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="BEF_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CUT_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-63kgf7v7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strDivPayCnt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsDivPayType" info="CRS_DIV_PAY_TYPE@DIV_PAY_TYPE_CD" std:sid="d-set-w6o0i6u9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="DATA_FLAG" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_TYPE_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_IP_MAC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXP_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXP_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REF_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_TYPE_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REMARK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITV_TYPE_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RND_LOC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITV_VAL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BLNC_ADD_METHOD_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_IP_MAC" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsDivPayLan" info="CRS_DIV_PAY_TYPE_LAN@REF_KEY,DIV_PAY_TYPE_CD,LAN_DIV_RCD" std:sid="d-set-b4992894">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="DIV_PAY_TYPE_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_IP_MAC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REF_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_TYPE_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_IP_MAC" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsDivPayDtl" info="CRS_DIV_PAY_TYPE_DTL@DIV_PAY_TYPE_CD,DIV_PAY_SEQ,ITEM_CD" std:sid="d-set-53589813">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="DIV_PAY_TYPE_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_IP_MAC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_TYPE_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RATE_NUR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITEM_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RATE_DEN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_IP_MAC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_SEQ" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-ll355dv2">
+        
+        
+      <cl:responsedata dataid="dsListItemCd"/>
+<cl:responsedata dataid="dsListBlncAddMethodRcd"/>
+<cl:responsedata dataid="dsListLanDivRcd"/>
+<cl:responsedata dataid="dsListItvTypeRcd"/>
+<cl:responsedata dataid="dmCurrentDate"/>
+<cl:responsedata dataid="dsDivPayType"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subListDivPayTp" mediatype="application/x-www-form-urlencoded" std:sid="submission-5g7091a5">
+        
+        
+      <cl:responsedata dataid="dsDivPayType"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subListLan" mediatype="application/x-www-form-urlencoded" std:sid="submission-em60782r">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsDivPayLan"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subListDivPayDtl" mediatype="application/x-www-form-urlencoded" std:sid="submission-bs995444">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsDivPayDtl"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subSaveDivPayTp" mediatype="application/x-www-form-urlencoded" std:sid="submission-39k32me8">
+        
+        
+      <cl:requestdata dataid="dsDivPayType"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subSaveLan" mediatype="application/x-www-form-urlencoded" std:sid="submission-03a7ex4r">
+        
+        
+      <cl:requestdata dataid="dsDivPayLan"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subSaveDivPayDtl" mediatype="application/x-www-form-urlencoded" std:sid="submission-m9q9ydvj">
+        
+        
+      <cl:requestdata dataid="dsDivPayDtl"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsDivPayType/" id="subRefKey" mediatype="application/x-www-form-urlencoded" std:sid="submission-728272n9">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmReqKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCrsCDivPayType"/>
+  </head>
+  <body std:sid="body-3wuy4u15" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-32jvg9ma"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-0k3y0v52"/>
+<cl:udc id="appheader1" std:sid="ud-control-j7x971pz" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-we48x32r">
+        <cl:xylayoutdata height="640px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-nwrk850i"/>
+      <cl:tabfolder id="tabMain" std:sid="t-folder-577w94n7">
+        <cl:xylayoutdata height="600px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-4t9nx5xm" top="34px" verticalAnchor="TOP" width="1215px"/>
+        
+      <cl:tabitem name="tpgDivPayType" selected="true" std:sid="t-item-1x71vq1o" text="tab1">
+          
+          <cl:group id="grptpgDivPayType" std:sid="group-om1wvh8t">
+            <std:metadata>
+              <std:property key="locked" value="true"/>
+            </std:metadata>
+            <cl:formlayout bottom-margin="0px" hspace="0px" left-margin="0px" right-margin="0px" std:sid="f-layout-966gbj8y" top-margin="0px" vspace="0px">
+              <cl:rows length="1" unit="FRACTION"/>
+              <cl:columns length="1" unit="FRACTION"/>
+            </cl:formlayout>
+          <cl:button class="btn-save" id="btnSaveDivPayType" std:sid="button-p2r22y86" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1150px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveDivPayTypeClick" name="click" std:sid="listener-x8l7puk4"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestoreDivPayType" std:sid="button-2d150f17" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1085px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreDivPayTypeClick" name="click" std:sid="listener-779s57ot"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDeleteDivPayType" std:sid="button-y74n10mm" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1020px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDeleteDivPayTypeClick" name="click" std:sid="listener-9ls4w4v6"/>
+</cl:button>
+<cl:button class="btn-new" id="btnNewDivPayType" std:sid="button-f58866xb" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="955px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW" property="value"/>
+<cl:listener handler="onBtnNewDivPayTypeClick" name="click" std:sid="listener-7cw1u1y7"/>
+</cl:button>
+<cl:grid datasetid="dsDivPayType" id="grdDivPayType" std:sid="grid-xh07cnf1">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1205px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdDivPayTypeSelectionChange" name="selection-change" std:sid="listener-s0urg706"/>
+<cl:gridheader std:sid="gh-band-ri58mw28">
+          <cl:gridrow height="27px" std:sid="g-row-mkn18ov2"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-516j61vq"/>
+<cl:gridcell colindex="1" comment="ghBtnUptStatusType" rowindex="0" std:sid="gh-cell-gkmssni8" text="F"/>
+<cl:gridcell colindex="2" comment="ghBtnNoType" rowindex="0" std:sid="gh-cell-lfc890zy" text="No"/>
+<cl:gridcell class="require" colindex="3" comment="ghBtnDivPayTypeCd" rowindex="0" std:sid="gh-cell-5q7xxtrj">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIV_PAY_TYPE_CD" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="4" comment="ghBtnDivPayTypeNm" rowindex="0" std:sid="gh-cell-r040604e">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIV_PAY_TYPE_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="5" comment="ghBtnDivPayCnt" rowindex="0" std:sid="gh-cell-6j9mp55z">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIV_PAY_CNT" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="6" comment="ghBtnItvTypeRcd" rowindex="0" std:sid="gh-cell-iil8f7l7">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-INTERTYPE" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="7" comment="ghBtnItvVal" rowindex="0" std:sid="gh-cell-x4wjux87">
+<cl:langbind category="PROPERTY" keypath="UI-DB-ITV_VAL" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="8" comment="ghBtnRndLoc" rowindex="0" std:sid="gh-cell-2mc1345e">
+<cl:langbind category="PROPERTY" keypath="UI-DB-RND_LOC" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="9" comment="ghBtnBlncAddMethodRcd" rowindex="0" std:sid="gh-cell-tmux8wiz">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-BALADDWAY" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="10" comment="ghBtnExpYnType" rowindex="0" std:sid="gh-cell-w5334k9w">
+<cl:langbind category="PROPERTY" keypath="UI-DB-EXP_YN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="11" comment="ghBtnExpDtType" rowindex="0" std:sid="gh-cell-3h037vo7">
+<cl:langbind category="PROPERTY" keypath="UI-DB-EXP_DT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="12" comment="ghBtnRemarkType" rowindex="0" std:sid="gh-cell-28egdg67">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-REMARK" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-zep52y75" width="25px"/>
+<cl:gridcolumn std:sid="g-column-6l75m3y1" width="25px"/>
+<cl:gridcolumn std:sid="g-column-d19htg73" width="40px"/>
+<cl:gridcolumn std:sid="g-column-5ms3e44c" width="137px"/>
+<cl:gridcolumn std:sid="g-column-y3733i11" width="172px"/>
+<cl:gridcolumn std:sid="g-column-ch59p048" width="80px"/>
+<cl:gridcolumn std:sid="g-column-93n2979u" width="98px"/>
+<cl:gridcolumn std:sid="g-column-hnx82751" width="73px"/>
+<cl:gridcolumn std:sid="g-column-k701w9qh" width="75px"/>
+<cl:gridcolumn std:sid="g-column-6s04e5w3" width="121px"/>
+<cl:gridcolumn std:sid="g-column-382b404w" width="72px"/>
+<cl:gridcolumn std:sid="g-column-egd576l0" width="104px"/>
+<cl:gridcolumn std:sid="g-column-1z1rgi78" width="185px"/>
+<cl:griddetail std:sid="gd-band-n6lqcb6z">
+          <cl:gridrow height="25px" std:sid="g-row-86914i51"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-9c634l5p" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-h4677u73">
+<cl:output std:sid="output-j9722uug" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columntype="rowindex" rowindex="0" std:sid="gd-cell-w7xn2086" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="DIV_PAY_TYPE_CD" rowindex="0" std:sid="gd-cell-m1n0tap7">
+<cl:inputbox id="gdIpbDivPayTypeCd" maxlength="10" std:sid="i-box-70ew11ro" style="text-align:center;">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="DIV_PAY_TYPE_NM" rowindex="0" std:sid="gd-cell-21569k13">
+<cl:inputbox id="gdIptDivPayTypeNm" maxlength="100" std:sid="i-box-qo4mg6a7">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="DIV_PAY_CNT" rowindex="0" std:sid="gd-cell-z85e27q2">
+<cl:numbereditor format="99" id="gdIptDivPayCnt" spinbutton="false" std:sid="n-editor-3818d0if">
+<cl:attribute name="require" value="Y"/>
+</cl:numbereditor>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="ITV_TYPE_RCD" rowindex="0" std:sid="gd-cell-elhnr28n">
+<cl:combobox id="gdCbbItvTypeRcd" std:sid="c-box-89333657">
+<cl:itemset datasetid="dsListItvTypeRcd" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-9l0u61nh" value=""/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="ITV_VAL" rowindex="0" std:sid="gd-cell-4n044w7o">
+<cl:numbereditor format="999" id="gdIptItvVal" spinbutton="false" std:sid="n-editor-q952ey85">
+<cl:attribute name="require" value="Y"/>
+</cl:numbereditor>
+</cl:gridcell>
+<cl:gridcell colindex="8" columnname="RND_LOC" rowindex="0" std:sid="gd-cell-549bn9pk">
+<cl:numbereditor format="99" id="gdIptRndLoc" spinbutton="false" std:sid="n-editor-t0et81c7">
+<cl:attribute name="require" value="Y"/>
+</cl:numbereditor>
+</cl:gridcell>
+<cl:gridcell colindex="9" columnname="BLNC_ADD_METHOD_RCD" rowindex="0" std:sid="gd-cell-3y91s5bx">
+<cl:combobox id="gdCbbBlncAddMethodRcd" std:sid="c-box-vsyk14cn">
+<cl:itemset datasetid="dsListBlncAddMethodRcd" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-gnl31z26" value=""/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="10" columnname="EXP_YN" rowindex="0" std:sid="gd-cell-o00s3jxm">
+<cl:checkbox falsevalue="" id="gdChkExpYnType" std:sid="c-box-mjy8611k" style="text-align:center;" text="" truevalue="Y" value=""/>
+</cl:gridcell>
+<cl:gridcell colindex="11" columnname="EXP_DT" rowindex="0" std:sid="gd-cell-1op604av">
+<cl:dateinput id="gdDipExpDtType" std:sid="d-input-39322250" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="12" columnname="REMARK" rowindex="0" std:sid="gd-cell-52h8se6q">
+<cl:inputbox id="gdIpbRemarkType" maxlength="1000" std:sid="i-box-1x4wjj44"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:udc std:sid="ud-control-gvur1zt7" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYTYPELST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="290px"/>
+        <cl:property name="ctrl" type="control" value="grdDivPayType"/>
+      </cl:udc>
+</cl:group>
+        </cl:tabitem>
+<cl:tabitem name="tpgDivPayLan" selected="true" std:sid="t-item-wjs0n573" text="tab1">
+          
+          <cl:group id="grptpgDivPayLan" std:sid="group-6r469r2h">
+            <std:metadata>
+              <std:property key="locked" value="true"/>
+            </std:metadata>
+            <cl:formlayout bottom-margin="0px" hspace="0px" left-margin="0px" right-margin="0px" std:sid="f-layout-g6rmmm76" top-margin="0px" vspace="0px">
+              <cl:rows length="1" unit="FRACTION"/>
+              <cl:columns length="1" unit="FRACTION"/>
+            </cl:formlayout>
+          <cl:udc std:sid="ud-control-96o6wkc7" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYTYPLANLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdDivPayLan"/>
+      </cl:udc>
+<cl:grid datasetid="dsDivPayLan" id="grdDivPayLan" std:sid="grid-37jflyth">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1205px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdDivPayLanSelectionChange" name="selection-change" std:sid="listener-53vj4vvx"/>
+<cl:gridheader std:sid="gh-band-5bz1nxi2">
+          <cl:gridrow height="27px" std:sid="g-row-monp0l92"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-87062dm9"/>
+<cl:gridcell colindex="1" comment="ghBtnUptStatusLan" rowindex="0" std:sid="gh-cell-tm4v8zs6" text="F"/>
+<cl:gridcell colindex="2" comment="ghBtnNoLan" rowindex="0" std:sid="gh-cell-8e6onb84" text="No"/>
+<cl:gridcell class="require" colindex="3" comment="ghBtnDivPayTypeCdLan" rowindex="0" std:sid="gh-cell-57c1t1sy">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIV_PAY_TYPE_CD" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="4" comment="ghBtnLanDivRcdLan" rowindex="0" std:sid="gh-cell-17c2s89d">
+<cl:langbind category="PROPERTY" keypath="UI-DB-LAN_DIV_RCD" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="5" comment="ghBtnDivPayTypeNmLan" rowindex="0" std:sid="gh-cell-37w87sk1">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIV_PAY_TYPE_NM" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-j596fc63" width="25px"/>
+<cl:gridcolumn std:sid="g-column-ea8owv1i" width="25px"/>
+<cl:gridcolumn std:sid="g-column-n4l5xsn5" width="40px"/>
+<cl:gridcolumn std:sid="g-column-r03hry88" width="160px"/>
+<cl:gridcolumn std:sid="g-column-6xk52lf5" width="168px"/>
+<cl:gridcolumn std:sid="g-column-3812587j" width="281px"/>
+<cl:griddetail std:sid="gd-band-9s429730">
+          <cl:gridrow height="25px" std:sid="g-row-o7r9i1lw"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-ha30awoh" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-2evyj30f">
+<cl:output std:sid="output-25k1x3qe" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columntype="rowindex" rowindex="0" std:sid="gd-cell-d355wl9p" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="DIV_PAY_TYPE_CD" rowindex="0" std:sid="gd-cell-2v24y875">
+<cl:inputbox id="gdIpbDivPayTypeCdLan" maxlength="10" readonly="true" std:sid="i-box-1b4j7355" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="LAN_DIV_RCD" rowindex="0" std:sid="gd-cell-g6awl5r8">
+<cl:combobox id="gdCbbLanDivRcdLan" std:sid="c-box-254t1l86">
+<cl:itemset datasetid="dsListLanDivRcd" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-t53daqh8" value=""/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="DIV_PAY_TYPE_NM" rowindex="0" std:sid="gd-cell-9hfuvo57">
+<cl:inputbox id="gdIpbDivPayTypeNmLan" maxlength="100" std:sid="i-box-7qqwjr8z">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:button class="btn-new" id="btnNewLan" std:sid="button-8t4wyv1u" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="955px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW" property="value"/>
+<cl:listener handler="onBtnNewLanClick" name="click" std:sid="listener-eklj11vx"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDeleteLan" std:sid="button-sjew53w1" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1020px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDeleteLanClick" name="click" std:sid="listener-b3of35yz"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestoreLan" std:sid="button-74yn41a5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1085px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreLanClick" name="click" std:sid="listener-2357753o"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSaveLan" std:sid="button-a8o28685" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1150px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveLanClick" name="click" std:sid="listener-9ad5ngr7"/>
+</cl:button>
+</cl:group>
+        </cl:tabitem>
+<cl:tabitem name="tpgDivPayDtl" selected="true" std:sid="t-item-81112925" text="tab1">
+          
+          <cl:group id="grptpgDivPayDtl" std:sid="group-yg48234f">
+            <std:metadata>
+              <std:property key="locked" value="true"/>
+            </std:metadata>
+            <cl:formlayout bottom-margin="0px" hspace="0px" left-margin="0px" right-margin="0px" std:sid="f-layout-r2wl6obq" top-margin="0px" vspace="0px">
+              <cl:rows length="1" unit="FRACTION"/>
+              <cl:columns length="1" unit="FRACTION"/>
+            </cl:formlayout>
+          <cl:udc std:sid="ud-control-y07ixc5o" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYTYPDETLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdDivPayDtl"/>
+      </cl:udc>
+<cl:grid datasetid="dsDivPayDtl" id="grdDivPayDtl" std:sid="grid-5gwm5412">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1205px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-j4f68r3c">
+          <cl:gridrow height="27px" std:sid="g-row-7747595j"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-33h29bo1"/>
+<cl:gridcell colindex="1" comment="ghBtnUptStatusDtl" rowindex="0" std:sid="gh-cell-o56u2hr6" text="F"/>
+<cl:gridcell colindex="2" comment="ghBtnNoDtl" rowindex="0" std:sid="gh-cell-40e789tz" text="No"/>
+<cl:gridcell class="require" colindex="3" comment="ghBtnDivPayTypeCdDtl" rowindex="0" std:sid="gh-cell-4bg515l0">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-PAYTYPE" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="4" comment="ghBtnDivPaySeqDtl" rowindex="0" std:sid="gh-cell-m1n26lt1">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIV_PAY_SEQ" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="5" comment="ghBtnItemCdDtl" rowindex="0" std:sid="gh-cell-elhk0rfp">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TUITIONITEM" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="6" comment="ghBtnRateNurDtl" rowindex="0" std:sid="gh-cell-30pljmk9">
+<cl:langbind category="PROPERTY" keypath="UI-DB-RATE_NUR" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="7" comment="ghBtnRateDenDtl" rowindex="0" std:sid="gh-cell-i9m7wt5o">
+<cl:langbind category="PROPERTY" keypath="UI-DB-RATE_DEN" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-8rj2js5m" width="25px"/>
+<cl:gridcolumn std:sid="g-column-tnto0r1j" width="25px"/>
+<cl:gridcolumn std:sid="g-column-f9e0p37q" width="40px"/>
+<cl:gridcolumn std:sid="g-column-mwhp563c" width="160px"/>
+<cl:gridcolumn std:sid="g-column-0bxyaz85" width="80px"/>
+<cl:gridcolumn std:sid="g-column-68s2bm8m" width="230px"/>
+<cl:gridcolumn std:sid="g-column-v0w5q3ux" width="80px"/>
+<cl:gridcolumn std:sid="g-column-bof5ju9o" width="94px"/>
+<cl:griddetail std:sid="gd-band-a5uc3043">
+          <cl:gridrow height="25px" std:sid="g-row-c1gkeh9b"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-y5co0da5" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-6askal56">
+<cl:output std:sid="output-c2x36491" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columntype="rowindex" rowindex="0" std:sid="gd-cell-0h25zc0e" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="DIV_PAY_TYPE_CD" rowindex="0" std:sid="gd-cell-l756pf5i">
+<cl:inputbox id="gdIpbDivPayTypeCdDtl" maxlength="10" readonly="true" std:sid="i-box-5810p6qu" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="DIV_PAY_SEQ" rowindex="0" std:sid="gd-cell-l3toi77j">
+<cl:numbereditor format="99" id="gdIpbDivPaySeqDtl" spinbutton="false" std:sid="n-editor-1g88emwm">
+<cl:attribute name="require" value="Y"/>
+</cl:numbereditor>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="ITEM_CD" rowindex="0" std:sid="gd-cell-m99kc942">
+<cl:combobox id="gdCbbItemCdDtl" std:sid="c-box-i9q1tkc8">
+<cl:itemset datasetid="dsListItemCd" label="ITEM_NM" value="ITEM_CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-w2734y0y" value=""/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="RATE_NUR" rowindex="0" std:sid="gd-cell-6wtwj7eb">
+<cl:inputbox id="gdIpbRateNurDtl" maxlength="2" std:sid="i-box-292ddyih">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="RATE_DEN" rowindex="0" std:sid="gd-cell-q02qo48e">
+<cl:inputbox id="gdIpbRateDenDtl" maxlength="2" std:sid="i-box-19hp146j">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:button class="btn-new" id="btnNewDtl" std:sid="button-v1iag1a0" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="955px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW" property="value"/>
+<cl:listener handler="onBtnNewDtlClick" name="click" std:sid="listener-h3o4t8bg"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDeleteDtl" std:sid="button-pxhnhyq6" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1020px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDeleteDtlClick" name="click" std:sid="listener-x3c1e1c7"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestoreDtl" std:sid="button-l5a2bq2x" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1085px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreDtlClick" name="click" std:sid="listener-6yaq3q1d"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSaveDtl" std:sid="button-60v66q4g" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1150px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveDtlClick" name="click" std:sid="listener-umzgs114"/>
+</cl:button>
+</cl:group>
+        </cl:tabitem>
+</cl:tabfolder>
+<cl:button id="tabBtnDivPayType" std:sid="button-y64p6l1h" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="7px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYTYPE" property="value"/>
+<cl:listener handler="onTabBtnDivPayTypeClick" name="click" std:sid="listener-r01kyq7y"/>
+</cl:button>
+<cl:button id="tabBtnDivPayLan" std:sid="button-49l5cygq" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="146px" std:sid="xyl-data-fa9a14b9" top="7px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYTYPELAN" property="value"/>
+<cl:listener handler="onTabBtnDivPayLanClick" name="click" std:sid="listener-e1248q92"/>
+</cl:button>
+<cl:button id="tabBtnDivPayDtl" std:sid="button-cn33p0h0" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="287px" std:sid="xyl-data-fa9a14b9" top="7px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYTYPEDET" property="value"/>
+<cl:listener handler="onTabBtnDivPayDtlClick" name="click" std:sid="listener-705at83w"/>
+</cl:button>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

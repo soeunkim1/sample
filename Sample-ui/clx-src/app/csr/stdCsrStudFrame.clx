@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-13pz8479" version="1.0.0.0">
+  <head std:sid="head-9n6i2548">
+    <title>stdCsrStudFrame</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-qz1zhg04" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-quyib48f" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-2o6739o8" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-eyz4a200" width="320px"/>
+    <cl:model std:sid="model-824v2884">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-h7v09760">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strAuthChkStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsTrvMenuList" std:sid="d-set-roobyf3v">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PRT_ORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STD_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ULAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_LEN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_DESC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_SHORT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_CLS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_ST_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP6" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP4" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/csr/StdCsrStudFrame/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-xxb2g4vf">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsTrvMenuList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCsrMstFrame"/>
+  </head>
+  <body std:sid="body-48yc7w0n" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-6ucy9xdb"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-ofv3181m"/>
+<cl:udc id="appheader1" std:sid="ud-control-8z6fcy97" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grp_impStudInfo" std:sid="group-41q3774b">
+        <cl:xylayoutdata height="635px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-0i82mg0a"/>
+      <cl:htmlobject id="htmlObjFrame" std:sid="htmlobject-h5o2ih5p">
+        <cl:xylayoutdata height="500px" horizontalAnchor="LEFT" left="190px" std:sid="xyl-data-5608d431" top="130px" verticalAnchor="TOP" width="1030px"/>
+      </cl:htmlobject>
+<cl:embeddedapp id="emaStudInfo" src="../csr/impStudInf02.clx" std:sid="e-app-06tk2xj0">
+        <cl:xylayoutdata height="120px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="5px" verticalAnchor="TOP" width="1215px"/>
+      <cl:listener handler="onEmaStudInfoAppReady" name="app-ready" std:sid="listener-u722qrj4"/>
+</cl:embeddedapp>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

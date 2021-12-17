@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-8oum7m8k" version="1.0.0.0">
+  <head std:sid="head-utk4ho31">
+    <title>impDialogCrsRegFeeObjPrcd</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-zim6fgg4" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-3uxp31mp" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-0jf175nr" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-tba7e591" width="320px"/>
+    <cl:model std:sid="model-u92ka98n">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-1kcix0ag">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strPrcdCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strErrorMsg" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListPrcdCd" std:sid="d-set-d5jokx71">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PRCD_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PRCD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/crs/StdCrsRegFeeObjPrcd/" id="subOnLoadImp" mediatype="application/x-www-form-urlencoded" std:sid="submission-800ea448">
+        
+        
+      <cl:responsedata dataid="dsListPrcdCd"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="등록금 자동생성"/>
+  </head>
+  <body std:sid="body-zgt93g5s" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-275euw8e"/>
+  <cl:group id="grpDataDtl" std:sid="group-x66g6q6x">
+        <cl:xylayoutdata height="90px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-9c4c06d1" top="0px" verticalAnchor="TOP" width="425px"/>
+        <cl:xylayout std:sid="xylayout-p2kq5865"/>
+      <cl:udc std:sid="ud-control-z49461w3" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-QUESTION" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="5px" verticalAnchor="TOP" width="415px"/>
+      </cl:udc>
+<cl:button id="btnSaveYes" std:sid="button-b6qnu3ft" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="295px" std:sid="xyl-data-fa9a14b9" top="30px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-YES" property="value"/>
+<cl:listener handler="onBtnSaveYesClick" name="click" std:sid="listener-k5no8mx1"/>
+</cl:button>
+<cl:button id="btnNo" std:sid="button-6ldn44f6" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="360px" std:sid="xyl-data-fa9a14b9" top="30px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NOO" property="value"/>
+<cl:listener handler="onBtnNoClick" name="click" std:sid="listener-as9f9n6o"/>
+</cl:button>
+<cl:output class="require" id="optcbbPrcdCdImp" std:sid="output-3jk45b60" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TUITCALPRC" property="value"/>
+</cl:output>
+<cl:combobox id="cbbPrcdCdImp" std:sid="c-box-q83ip9u5">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="30px" verticalAnchor="TOP" width="180px"/>
+        
+        
+      <cl:itemset datasetid="dsListPrcdCd" label="PRCD_NM" value="PRCD_CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optcbbPrcdCdImp.value" property="fieldLabel"/>
+<cl:listener handler="onCbbPrcdCdImpSelectionChange" name="selection-change" std:sid="listener-3i63obmq"/>
+<cl:datamapbind columnname="strPrcdCd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:output id="optErrorMsgImp" std:sid="output-sl88h4ip" value="">
+        <cl:xylayoutdata height="30px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="415px"/>
+      <cl:datamapbind columnname="strErrorMsg" datacontrolid="dmReqKey" property="value"/>
+</cl:output>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

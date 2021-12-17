@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-320pa5z1" version="1.0.0.0">
+  <head std:sid="head-c4n8gc6u">
+    <title>stdCmnPMenuNotice</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-t75v3d32" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-n1u607w3" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-b8r525i8" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-72lpxkb9" width="320px"/>
+    <cl:model std:sid="model-debvh843">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-m2h81co9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strMenuId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-umoa571e">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strContent" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnAnnounceBoard/" id="subMenuNotice" mediatype="application/x-www-form-urlencoded" std:sid="submission-eyf6z6d8">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="공지사항 팝업"/>
+  </head>
+  <body std:sid="body-syu1vz0n" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-31hc7bb3"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-653j2850"/>
+<cl:udc id="appheader1" std:sid="ud-control-h9d773ei" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:button id="btnClose" std:sid="button-sb1os390" value="닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="538px" std:sid="xyl-data-fa9a14b9" top="378px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnCloseClick" name="click" std:sid="listener-vgfu5045"/>
+</cl:button>
+<cl:group id="group2" std:sid="group-13y277xv">
+        <cl:xylayoutdata height="337px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="595px"/>
+        <cl:xylayout std:sid="xylayout-27a7691p"/>
+      <cl:htmlobject id="hojContent" std:sid="htmlobject-pjpvy90a">
+        <cl:xylayoutdata height="325px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-5608d431" top="5px" verticalAnchor="TOP" width="585px"/>
+      </cl:htmlobject>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

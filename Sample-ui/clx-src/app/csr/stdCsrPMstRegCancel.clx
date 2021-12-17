@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-u48rk8t0" version="1.0.0.0">
+  <head std:sid="head-962wizl0">
+    <title>stdCsrPMstRegCancel</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-98g848i8" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-kmng955d" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-8i309077" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-ma1lws4d" width="320px"/>
+    <cl:model std:sid="model-q5j6q3dv">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-28yfhjwo">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEnrollDivRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSaCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strProcDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSpDivRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSpCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRegStatRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudInfo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudViewId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCsrEnroll" std:sid="d-set-y7293q48">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SA_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SP_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SHREG_ALT_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SP_DIV_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ENROLL_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ENROLL_RSN_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STUD_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SP_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ENROLL_CANCEL_RSN_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ENROLL_RSN_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CANCEL_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REG_STAT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ST_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UREF_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REF_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REG_STAT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ENROLL_DIV_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCH_YEAR_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CUR_APLY_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SP_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROC_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SA_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CUR_APLY_YEAR_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-09bu0r45">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="stDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="canDt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsReasonList" std:sid="d-set-87f6wl38">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PRT_ORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STD_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_LEN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ULAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_DESC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_SHORT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_CLS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_ST_DT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsStatList" std:sid="d-set-q2n322mp">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PRT_ORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STD_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_LEN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ULAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_DESC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_SHORT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_CLS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_ST_DT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/csr/StdCsrMstRegCancel/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-5dn0jbcf">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+<cl:responsedata dataid="dsReasonList"/>
+<cl:responsedata dataid="dsStatList"/>
+<cl:responsedata dataid="dsCsrEnroll"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrMstRegCancel/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-96h4e9l6">
+        
+        
+      </cl:submission>
+</cl:model>
+    <cl:appspec title="등록취소"/>
+  </head>
+  <body std:sid="body-2be46303" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-95b6b13t"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-423d9ac0"/>
+<cl:group id="grp_frfCsrEnroll" std:sid="group-5zl93870">
+        <cl:xylayoutdata height="300px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="590px"/>
+        <cl:xylayout std:sid="xylayout-rm3n03n2"/>
+      <cl:group class="form-box" id="frfCsrEnroll" std:sid="group-x164w6g0">
+        <cl:xylayoutdata height="205px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="90px" verticalAnchor="TOP" width="580px"/>
+        <cl:xylayout std:sid="xylayout-21j45ra6"/>
+      <cl:output id="optSaNm" std:sid="output-08bn12hr" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SA" property="value"/>
+</cl:output>
+<cl:output id="optFrfSchYearRcd" std:sid="output-h6p7546r" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="value"/>
+</cl:output>
+<cl:output id="optFrfEnrollDivRcd" std:sid="output-g2mtg8s0" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCREGDIV" property="value"/>
+</cl:output>
+<cl:output id="optFrfEnrollRsnRcd" std:sid="output-8r0kno89" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="105px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCHREGRSN" property="value"/>
+</cl:output>
+<cl:output id="optFrfCurAplyYearRcd" std:sid="output-1cvnb672" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-548c5467" top="105px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SUBPROCYRS" property="value"/>
+</cl:output>
+<cl:output id="optFrfStDt" std:sid="output-e6itpd0t" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="130px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-EFETSTDT" property="value"/>
+</cl:output>
+<cl:output id="optFrfOgCdNm" std:sid="output-dpq4k53c" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="155px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-OG" property="value"/>
+</cl:output>
+<cl:output id="optFrfSmtRcd" std:sid="output-95y4bt36" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SMT" property="value"/>
+</cl:output>
+<cl:output id="optFrfSpDivRcd" std:sid="output-ria8aw88" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SPCORSDIV" property="value"/>
+</cl:output>
+<cl:output id="optFrfSpCd" std:sid="output-w8c5kwtg" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="80px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SP" property="value"/>
+</cl:output>
+<cl:output id="optFrfEndDt" std:sid="output-p7ly2l5e" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-548c5467" top="130px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-EFETEDDT" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbFrfSaCd" std:sid="i-box-zy122t80" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="565px" std:sid="xyl-data-bb8b81f4" top="60px" verticalAnchor="TOP" width="10px"/>
+      <cl:expbind category="PROPERTY" expression="#optSaNm.value" property="fieldLabel"/>
+<cl:datamapbind columnname="SA_CD" datacontrolid="dmRow" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbFrfStudId" std:sid="i-box-0e476xz9" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="500px" std:sid="xyl-data-bb8b81f4" top="130px" verticalAnchor="TOP" width="10px"/>
+      <cl:datamapbind columnname="STUD_ID" datacontrolid="dmRow" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbFrfOgCd" std:sid="i-box-o842ialc" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="515px" std:sid="xyl-data-bb8b81f4" top="130px" verticalAnchor="TOP" width="10px"/>
+      <cl:datamapbind columnname="OG_CD" datacontrolid="dmRow" property="value"/>
+</cl:inputbox>
+<cl:output id="optFrfSchYearRcd" std:sid="output-e248y45m" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="150px"/>
+      <cl:datamapbind columnname="SCH_YEAR_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfEnrollDivRcd" std:sid="output-mi3wm53g" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="150px"/>
+      <cl:datamapbind columnname="ENROLL_DIV_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optSaNm" std:sid="output-j7k1z710" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="450px"/>
+      <cl:datamapbind columnname="SA_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfSmtRcd" std:sid="output-w5yiq6fv" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="410px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="165px"/>
+      <cl:datamapbind columnname="SMT_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfSpDivRcd" std:sid="output-o7ix76a6" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="410px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="165px"/>
+      <cl:datamapbind columnname="SP_DIV_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfSpCd" std:sid="output-6b9vi7bs" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="80px" verticalAnchor="TOP" width="450px"/>
+      <cl:datamapbind columnname="SP_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfEnrollRsnRcd" std:sid="output-8p8zj738" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="105px" verticalAnchor="TOP" width="150px"/>
+      <cl:datamapbind columnname="ENROLL_RSN_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfCurAplyYearRcd" std:sid="output-62n623lt" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="410px" std:sid="xyl-data-548c5467" top="105px" verticalAnchor="TOP" width="165px"/>
+      <cl:datamapbind columnname="CUR_APLY_YEAR_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output datatype="date" format="YYYY-MM-DD" id="optFrfStDt" std:sid="output-wb3gf6dk" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="130px" verticalAnchor="TOP" width="70px"/>
+      <cl:datamapbind columnname="ST_DT" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output datatype="date" format="YYYY-MM-DD" id="optFrfEndDt" std:sid="output-795rj8m2" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="410px" std:sid="xyl-data-548c5467" top="130px" verticalAnchor="TOP" width="70px"/>
+      <cl:datamapbind columnname="END_DT" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfOgCdNm" std:sid="output-pb8cz88c" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="155px" verticalAnchor="TOP" width="150px"/>
+      <cl:datamapbind columnname="OG_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFrfRegStatNm" std:sid="output-6w8v03x8" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-548c5467" top="155px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-REGSTATU" property="value"/>
+</cl:output>
+<cl:output id="optFrfRegStatNm" std:sid="output-7h7f4244" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="410px" std:sid="xyl-data-548c5467" top="155px" verticalAnchor="TOP" width="165px"/>
+      <cl:datamapbind columnname="REG_STAT_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output class="require" id="optFrfEnrollCancelRsnRcd" std:sid="output-3tw9o999" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="180px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCREGCACLRS" property="value"/>
+</cl:output>
+<cl:combobox id="cbbFrfEnrollCancelRsnRcd" std:sid="c-box-rt34a925">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-757d2a0f" top="180px" verticalAnchor="TOP" width="150px"/>
+        
+        
+      <cl:itemset datasetid="dsReasonList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optFrfEnrollCancelRsnRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="ENROLL_CANCEL_RSN_RCD" datacontrolid="dmRow" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optFrfCancelDt" std:sid="output-g18mwele" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-548c5467" top="180px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCHREGRSN" property="value"/>
+</cl:output>
+<cl:dateinput id="iptFrfCancelDt" std:sid="d-input-xa6qr36p">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="410px" std:sid="xyl-data-28ed790d" top="180px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optFrfCancelDt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="CANCEL_DT" datacontrolid="dmRow" property="value"/>
+</cl:dateinput>
+<cl:inputbox id="iptFrfRegStatRcd" std:sid="i-box-nxrefonx" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="530px" std:sid="xyl-data-bb8b81f4" top="130px" verticalAnchor="TOP" width="10px"/>
+      <cl:datamapbind columnname="REG_STAT_RCD" datacontrolid="dmRow" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:udc std:sid="ud-control-i415k9th" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-STUDTINFO" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="65px" verticalAnchor="TOP" width="285px"/>
+        <cl:property name="ctrl" type="control" value="grdCsrEnroll"/>
+      </cl:udc>
+<cl:group class="form-box" id="frfStudInfo" std:sid="group-46i0jwp5">
+        <cl:xylayoutdata height="55px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="580px"/>
+        <cl:xylayout std:sid="xylayout-42zvvbi3"/>
+      <cl:output id="optStud" std:sid="output-900oospx" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="450px"/>
+      <cl:datamapbind columnname="strStudInfo" datacontrolid="dmReqKey" property="value"/>
+</cl:output>
+<cl:output id="optStudNm" std:sid="output-yj9yt5io" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-PER_NM" property="value"/>
+</cl:output>
+<cl:output id="optStudNo" std:sid="output-219s2m9y" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="115px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-STUD_ID" property="value"/>
+</cl:output>
+<cl:output id="optStudNo" std:sid="output-sn5h2wqv" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="125px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="450px"/>
+      <cl:datamapbind columnname="strStudNo" datacontrolid="dmReqKey" property="value"/>
+</cl:output>
+</cl:group>
+</cl:group>
+<cl:button id="btnCloseCancel" std:sid="button-562or3bc" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="340px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-hnwfi0r9"/>
+</cl:button>
+<cl:udc id="appheader1" std:sid="ud-control-o2n3ca8u" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:button class="btn-save" id="btnSave" std:sid="button-ik2d8yf8" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="530px" std:sid="xyl-data-fa9a14b9" top="340px" verticalAnchor="TOP" width="65px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-2aaq36us"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

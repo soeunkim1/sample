@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-bddff06a" version="1.0.0.0">
+  <head std:sid="head-b1fa9ad3">
+    <title>cmnMenuSch</title>
+    <screen std:sid="screen-97e18032" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-d24516dd" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-b220158e" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-4f790259">
+      <cl:datamap std:sid="d-map-e9b0aa53" id="dmCmnPMenuSch">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="UNIT_SYSTEM_RCD"/>
+          <cl:datacolumn name="MENU_ID"/>
+          <cl:datacolumn name="MENU_NM"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-a56c1942" id="dmCmnPMenuSchCount">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="count"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-6fe5bfb9" id="dmReqKey">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="strSystemRcd"/>
+          <cl:datacolumn name="strMenuId"/>
+          <cl:datacolumn name="strMenuNm"/>
+          <cl:datacolumn name="strPgmDtlTypeRcd"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:submission std:sid="submission-5112b7fa" id="subPrecheckStdCmnPMenuSch" action="cmn/CmnMenuSch/preCheck.do">
+        <cl:requestdata dataid="dmReqKey"/>
+        <cl:responsedata dataid="dmCmnPMenuSch"/>
+        <cl:responsedata dataid="dmCmnPMenuSchCount"/>
+      </cl:submission>
+    </cl:model>
+    <cl:appspec>
+      <cl:property bindable="true" default="false" std:desc="조회조건내에 위치하는지 여부" name="iIsParentGrpSearch" type="boolean"/>
+      <cl:property bindable="true" std:desc="단위시스템코드" name="iSystemRcd" type="string"/>
+      <cl:property bindable="true" std:desc="메뉴 ID" name="iMenuId" type="string"/>
+      <cl:property bindable="true" std:desc="메뉴명" name="iMenuNm" type="string"/>
+      <cl:property bindable="true" std:desc="프로그램테이블의 의 프로그램 세부유형 코드 등록시 프로그램 SELECT" name="iPgmDtlTypeRcd" type="string"/>
+      <cl:property bindable="true" std:desc="단위시스템코드" name="oSystemRcd" type="string"/>
+      <cl:property bindable="true" std:desc="메뉴ID" name="oMenuId" type="string"/>
+      <cl:property bindable="true" std:desc="메뉴명" name="oMenuNm" type="string"/>
+      <cl:event name="searchCallBack" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-783b79a1" style="top:0px; left:0px; width:105px; height:25px;">
+    <cl:listener std:sid="listener-eeae99a9" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:listener std:sid="listener-03f49a57" handler="onBodyLoad" name="load"/>
+    <cl:group std:sid="group-8d0539bf" id="grpUdcPMenu">
+      <cl:xylayoutdata std:sid="xyl-data-f2c2d8f3" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:inputbox std:sid="i-box-851bd474" id="ipbUdcMenuId">
+        <cl:listener std:sid="listener-391c50da" handler="onIpbUdcMenuIdValueChange" name="value-change"/>
+        <cl:listener std:sid="listener-3bf2b73d" handler="onIpbUdcMenuIdKeydown" name="keydown"/>
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iMenuId"/>
+        <cl:formdata std:sid="f-data-78e1b7ed" col="0" row="0"/>
+      </cl:inputbox>
+      <cl:button std:sid="button-077f963b" id="btnUdcMenu" class="btn-pop-search">
+        <cl:listener std:sid="listener-5fc4867a" handler="onBtnSearchUdcMenuClick" name="click"/>
+        <cl:formdata std:sid="f-data-2ec5f0fd" col="2" row="0"/>
+      </cl:button>
+      <cl:inputbox std:sid="i-box-3c8e3490" id="ipbUdcMenuNm" readonly="true">
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iMenuNm"/>
+        <cl:formdata std:sid="f-data-71babd72" col="1" row="0"/>
+      </cl:inputbox>
+      <cl:formlayout std:sid="f-layout-45d9dca2" hspace="0">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="5" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="5" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="20" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-d264bd9c"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

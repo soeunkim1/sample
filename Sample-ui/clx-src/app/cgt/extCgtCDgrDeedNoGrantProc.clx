@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-tg2805d7" version="1.0.0.0">
+  <head std:sid="head-b2nde1i0">
+    <title>extCgtCDgrDeedNoGrantProc</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-50yv5x7i" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-101s7k9f" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-cl5p81s7" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-7ay3654s" width="320px"/>
+    <cl:model std:sid="model-8b5rf4w0">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-e77y11pp">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStartDgrNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStartDeedNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCgtCnt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStartShDgrNo" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-1423f033">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCheckCgtDgrDeedNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strProcCnt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsSchYearList" std:sid="d-set-ubbv9kv8">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtList" std:sid="d-set-o4h5m9b2">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-30gl9w78">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strDefSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDefSmtRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmDgrNoAndDeedNoInfo" std:sid="d-map-367on1qa">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="START_DGR_NO" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="START_DEED_NO" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="START_SH_DGR_NO" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="START_GRDT_CNT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cgt/ExtCgtDgrDeedNoGrantProc/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-vkr137w3">
+        
+        
+      <cl:responsedata dataid="dsSchYearList"/>
+<cl:responsedata dataid="dsSmtList"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+<cl:responsedata dataid="dmDgrNoAndDeedNoInfo"/>
+</cl:submission>
+<cl:submission action="/cgt/ExtCgtDgrDeedNoGrantProc/" id="subStartVal" mediatype="application/x-www-form-urlencoded" std:sid="submission-vh1dd7bf">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmDgrNoAndDeedNoInfo"/>
+</cl:submission>
+<cl:submission action="/cgt/ExtCgtDgrDeedNoGrantProc/" id="subPreCheck" mediatype="application/x-www-form-urlencoded" std:sid="submission-a5fp783n">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/cgt/ExtCgtDgrDeedNoGrantProc/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-b19348k4">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="학위/증서번호 부여"/>
+  </head>
+  <body std:sid="body-ye280j30" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-rswbeu4p"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-308975mm"/>
+<cl:udc id="appheader1" std:sid="ud-control-9onp309z" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:button class="btn-save" id="btnSave" std:sid="button-x3o76b24" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1110px" std:sid="xyl-data-fa9a14b9" top="36px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-GRASRNEXEC" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-n1g3t5t9"/>
+</cl:button>
+<cl:udc std:sid="ud-control-e8e0r9m0" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-EXECCDT" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="35px" verticalAnchor="TOP" width="150px"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearchExecCond" std:sid="group-wv4r87f6">
+        <cl:xylayoutdata height="57px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="60px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-4g22c6z6"/>
+      <cl:output class="require" id="optSchYear" std:sid="output-5g9ufkv1" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-GRADUYRS" property="value"/>
+</cl:output>
+<cl:output class="require" id="optSmt" std:sid="output-cl8sv6f5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="260px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-GRASMT" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSchYear" std:sid="c-box-374js8vn">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsSchYearList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSchYear.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSchYearSelectionChange" name="selection-change" std:sid="listener-9199ud20"/>
+<cl:datamapbind columnname="strSchYearRcd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:combobox id="cbbSmt" std:sid="c-box-65131758">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="375px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtList" label="CD_PRP3" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSmt.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSmtSelectionChange" name="selection-change" std:sid="listener-5j25jbk5"/>
+<cl:datamapbind columnname="strSmtRcd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optStartDgrNo" std:sid="output-7x3pf33e" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="515px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-STDGNUM" property="value"/>
+</cl:output>
+<cl:output class="require" id="optStartDeedNo" std:sid="output-l8u8a59g" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-STDDEEDNUM" property="value"/>
+</cl:output>
+<cl:output class="require" id="optCgtCnt" std:sid="output-23shvnp9" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="260px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CGDT_CNT" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbStartDgrNo" std:sid="i-box-5908xpzy">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="660px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStartDgrNo.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStartDgrNo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbStartDeedNo" std:sid="i-box-3ai77s7k">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-bb8b81f4" top="30px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStartDeedNo.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStartDeedNo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:numbereditor format="999,999,999,999,999" id="ipbCgtCnt" std:sid="n-editor-rtk61320">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="375px" std:sid="xyl-data-2cf1f2b6" top="30px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optCgtCnt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strCgtCnt" datacontrolid="dmReqKey" property="value"/>
+</cl:numbereditor>
+<cl:output class="require" id="optStartShDgrNo" std:sid="output-d56t7v13" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="759px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-STDGNUM" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbStartShDgrNo" std:sid="i-box-az3x5ccp">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="904px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStartShDgrNo.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStartShDgrNo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

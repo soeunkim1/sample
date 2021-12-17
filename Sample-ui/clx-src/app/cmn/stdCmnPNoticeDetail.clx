@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-h0ndw19r" version="1.0.0.0">
+  <head std:sid="head-7x22b8s2">
+    <title>stdCmnPNoticeDetail</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-23ez87k1" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-56614g97" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-5g2k6bf9" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-30bgv11l" width="320px"/>
+    <cl:model std:sid="model-03wz76xq">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-712bnc3w">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="SEQ" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsResBoard" std:sid="d-set-e58qj827">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SEQ" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ANNC_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ANNC_FUND_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EMGCY_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="USER_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ANNC_ST_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ANNC_END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TITLE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="IQY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LINK_URL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_NM1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_NM2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_NM3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_ORG_NM1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_ORG_NM2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_ORG_NM3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ANNC_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_SERIAL_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_CNT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnMainNotice/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-chh6bxo2">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsResBoard"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="공지사항 상세"/>
+  </head>
+  <body std:sid="body-6353qmb9" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-fd511g06"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-k56r9jwr"/>
+<cl:group id="grpDataImp" std:sid="group-rj26513s">
+        <cl:xylayoutdata height="435px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="890px"/>
+        <cl:xylayout std:sid="xylayout-epe618mi"/>
+      <cl:output id="optLink" std:sid="output-9m06514x" value="링크">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="60px"/>
+      </cl:output>
+<cl:output id="optFile" std:sid="output-3695637m" value="첨부파일">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="60px"/>
+      </cl:output>
+<cl:output class="require" id="optLinkContent" std:sid="output-t83lo917" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="815px"/>
+      <cl:datamapbind columnname="LINK_URL" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optContent" std:sid="output-s973w2f4" value="내용">
+        <cl:xylayoutdata height="350px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="80px" verticalAnchor="TOP" width="60px"/>
+      </cl:output>
+<cl:button id="btnFileDownLoad" std:sid="button-i76439m9" value="다운로드">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="55px" verticalAnchor="TOP" width="80px"/>
+      <cl:listener handler="onBtnFileDownLoadClick" name="click" std:sid="listener-19775qiq"/>
+</cl:button>
+<cl:output id="optFileCnt" std:sid="output-3z80p0a5" style="text-align:right;" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="260px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="50px"/>
+      <cl:datamapbind columnname="FILE_CNT" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optFileCnt" std:sid="output-080hzl08" value="첨부파일 개수">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="155px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:output id="optTitle" std:sid="output-3k26nc9r" value="제목">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="60px"/>
+      </cl:output>
+<cl:output class="require" id="optTitleContent" std:sid="output-36o80fsi" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="730px"/>
+      <cl:datamapbind columnname="TITLE" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:group id="grpDataImpContent" std:sid="group-y4v2i3wk">
+        <cl:xylayoutdata height="350px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-9c4c06d1" top="80px" verticalAnchor="TOP" width="815px"/>
+        <cl:xylayout std:sid="xylayout-0x7zh391"/>
+      <cl:htmlobject id="hojContent" std:sid="htmlobject-90f8jsq5">
+        <cl:xylayoutdata height="347px" horizontalAnchor="LEFT" left="1px" std:sid="xyl-data-5608d431" top="1px" verticalAnchor="TOP" width="811px"/>
+      </cl:htmlobject>
+</cl:group>
+<cl:output id="optFileSerialNo" std:sid="output-j9klcodr" value="" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="800px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="50px"/>
+      <cl:datamapbind columnname="FILE_SERIAL_NO" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optSeq" std:sid="output-f32cwc12" value="" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="690px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="50px"/>
+      <cl:datamapbind columnname="SEQ" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="optAnncFundNm" std:sid="output-vpy81fdz" value="" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="745px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="50px"/>
+      <cl:datamapbind columnname="ANNC_FUND_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:button id="btnList" std:sid="button-u841tsbc" value="목록보기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="805px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:listener handler="onBtnListClick" name="click" std:sid="listener-lcwwno2q"/>
+</cl:button>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-1g1f3408" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:embeddedapp id="emaFile" src="../imp/impFileUtil.clx" std:sid="e-app-aq4m8937">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="30px" std:sid="xyl-data-7c6988f9" top="501px" verticalAnchor="TOP" width="95px"/>
+      </cl:embeddedapp>
+<cl:button id="btnClose" std:sid="button-3ew66u12" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-fa9a14b9" top="477px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseClick" name="click" std:sid="listener-7y66a6a1"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

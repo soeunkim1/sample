@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-be8884fc" version="1.0.0.0">
+  <head std:sid="head-02264a81">
+    <title>pagetitle</title>
+    <screen std:sid="screen-333c82f0" id="default" height="600px" name="default" width="800px"/>
+    <cl:model std:sid="model-397e38d2"/>
+    <cl:appspec>
+      <cl:property bindable="true" default="grpSearch" std:desc="조회조건 그룹 ID (default:grpSearch)" name="grpSchIds" type="string"/>
+      <cl:property bindable="true" std:desc="작업영역 그룹 ID" name="grpDataIds" type="string"/>
+      <cl:property bindable="true" std:desc="그리드 ID" name="gridIds" type="string"/>
+      <cl:property bindable="true" std:desc="앱 타이틀 (팝업일 경우만 지정)" name="title" type="string"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-60e5a2e8" class="grp-title" style="top:0px; left:0px; width:300px; height:24px;">
+    <cl:listener std:sid="listener-8df5b780" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:listener std:sid="listener-1eaecabf" handler="onBodyLoad" name="load"/>
+    <cl:listener std:sid="listener-874d29cb" handler="onBodyInit" name="init"/>
+    <cl:group std:sid="group-b78c32ce" id="grpUdcAppHeader">
+      <cl:xylayoutdata std:sid="xyl-data-b81cf312" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:img std:sid="image-fc5d7f16" style="font-size:0px;" src="../../theme/images/button/icon_home.png">
+        <cl:listener std:sid="listener-078186d4" handler="onImageContextmenu" name="contextmenu"/>
+        <cl:responsivexylayoutdata std:sid="rxyl-data-f787f277">
+          <cl:xylayoutdata std:sid="sxyl-data-3251e7f8" height="16px" horizontalAnchor="LEFT" left="0px" top="5px" verticalAnchor="TOP" width="16px" screenid="default"/>
+        </cl:responsivexylayoutdata>
+      </cl:img>
+      <cl:output std:sid="output-cd7815e5" id="otp_title" style="font-weight:bold; vertical-align:middle;" value="">
+        <cl:apppropbind category="PROPERTY" property="value" app-property="title"/>
+        <cl:responsivexylayoutdata std:sid="rxyl-data-44d661f5">
+          <cl:xylayoutdata std:sid="sxyl-data-dcd38741" height="24px" horizontalAnchor="BOTH" left="21px" right="79px" top="0px" verticalAnchor="TOP" screenid="default"/>
+        </cl:responsivexylayoutdata>
+      </cl:output>
+      <cl:inputbox std:sid="i-box-c8d13f39" id="ipbPgmTitle" style="border-right-style:none; background-color:transparent; color:#ffffff; border-left-style:none; border-bottom-style:none; border-top-style:none;" readonly="true">
+        <cl:responsivexylayoutdata std:sid="rxyl-data-dec33e93">
+          <cl:xylayoutdata std:sid="sxyl-data-5339388f" height="24px" horizontalAnchor="RIGHT" right="5px" top="0px" verticalAnchor="TOP" width="67px" screenid="default"/>
+        </cl:responsivexylayoutdata>
+      </cl:inputbox>
+      <cl:responsivexylayout std:sid="r-xylayout-c578a0a3"/>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-19b89ec4"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler>
+      <std:guide position="106"/>
+    </std:vruler>
+  </std:studiosetting>
+</html>

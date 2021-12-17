@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-5o093983" version="1.0.0.0">
+  <head std:sid="head-ga44t27g">
+    <title>다국어사용검색팝업</title>
+    <screen customHeight="600" height="768px" id="default" minwidth="1024px" name="default" std:sid="screen-m0h0i24b" width="1024px"/>
+    <screen customHeight="600" height="667px" id="tablet" maxwidth="1024px" name="tablet" std:sid="screen-362z4dku" width="500px"/>
+    <cl:model std:sid="model-z19839j3">
+      
+      
+      
+    <cl:datamap id="dmReqCmd" std:sid="d-map-sses8n58">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strMsgCd"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCmnUseMulti" std:sid="d-set-i8b106gx">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="FILE_NM"/>
+<cl:datacolumn name="USE_LABEL"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListLanDivRcd" std:sid="d-set-67r85ry3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD"/>
+<cl:datacolumn name="CD_NM"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="cmn/CmnMultiLang/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-oi8f5917">
+        
+        
+      <cl:requestdata dataid="dmReqCmd"/>
+</cl:submission>
+<cl:submission action="cmn/CmnMultiLang/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-nm9c5d6x">
+        
+        
+      <cl:requestdata dataid="dmReqCmd"/>
+<cl:responsedata dataid="dsCmnUseMulti"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec/>
+  </head>
+  <body std:sid="body-l058h514" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-38ca1rk7"/>
+  <cl:udc id="appheader1" std:sid="ud-control-l04h444h" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:button class="btn-save" id="btnCloseCancel" std:sid="button-zmu5aat5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-fa9a14b9" top="415px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS-TOOLTIP" property="tooltip"/>
+</cl:button>
+<cl:group id="grpSearch" std:sid="group-goop7g6n">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="640px"/>
+        <cl:xylayout std:sid="xylayout-h0plqg3h"/>
+      <cl:output class="required" id="lblNatNm" std:sid="output-2q9hr391" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:langbind keypath="UI-GLS-MSG" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-GLS-MSG-TOOLTIP" property="tooltip"/>
+</cl:output>
+<cl:inputbox id="ipbMsgCd" std:sid="i-box-425lk419">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="100px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="245px"/>
+      <cl:datamapbind columnname="strMsgCd" datacontrolid="dmReqCmd" property="value"/>
+</cl:inputbox>
+
+<cl:button class="btn-search" id="btnSearch" std:sid="button-6aa37y68">
+<cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="575px" std:sid="xyl-data-1y3kf718" top="5px" verticalAnchor="TOP" width="60px"/>
+<cl:langbind keypath="UI-GLS-IQY" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-GLS-IQY-TOOLTIP" property="tooltip"/>
+</cl:button>
+</cl:group>
+<cl:group id="grp_rptCmnUseMulti" std:sid="group-q626hek3">
+        <cl:xylayoutdata height="338px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="640px"/>
+        <cl:xylayout std:sid="xylayout-441x83tl"/>
+      <cl:output id="lblTitlerptCmnUseMulti" std:sid="output-tc28u7a9" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="141px"/>
+      <cl:langbind keypath="UI-SCR-FILEINFO" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-SCR-FILEINFO-TOOLTIP" property="tooltip"/>
+</cl:output>
+<cl:grid datasetid="dsCmnUseMulti" id="grdCmnUseMulti" std:sid="grid-6ymv34yb">
+        <cl:xylayoutdata height="303px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="630px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-2c47qs36">
+          <cl:gridrow height="27px" std:sid="g-row-c9nhvl6h"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-a37rmrgm" text="NO">
+<cl:output id="ghBtnNo" std:sid="output-69d5409a">
+<cl:langbind keypath="UI-GLS-NO" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO-TOOLTIP" property="tooltip"/>
+</cl:output>
+</cl:gridcell>
+<cl:gridcell colindex="1" rowindex="0" sortcolumnname="CD" std:sid="gh-cell-vu0fo87a" text="파일명">
+<cl:output id="ghBtnCd" std:sid="output-ax3yh25r">
+<cl:langbind keypath="UI-SCR-FILENAME" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-SCR-FILENAME-TOOLTIP" property="tooltip"/>
+</cl:output>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" sortcolumnname="CD_NM" std:sid="gh-cell-0300030m" text="사용label명">
+<cl:output id="ghBtnCdNm" std:sid="output-k8g9222u">
+<cl:langbind keypath="UI-SCR-CNTRYNM" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-SCR-CNTRYNM-TOOLTIP" property="tooltip"/>
+</cl:output>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" sortcolumnname="CD_NM" std:sid="gh-cell-1kuvio39" text="메뉴열기">
+<cl:output id="ghBtnCdNm1" std:sid="output-0x8xbz26">
+<cl:langbind keypath="UI-SCR-MENUSEE" property="value"/>
+<cl:langbind category="PROPERTY" keypath="UI-SCR-MENUSEE-TOOLTIP" property="tooltip"/>
+</cl:output>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-6v780nhe" width="40px"/>
+<cl:gridcolumn std:sid="g-column-4q40v2lo" width="239px"/>
+<cl:gridcolumn std:sid="g-column-tz9694n3" width="258px"/>
+<cl:gridcolumn std:sid="g-column-5430493b" width="77px"/>
+<cl:griddetail std:sid="gd-band-ad34drcb">
+          <cl:gridrow height="22px" std:sid="g-row-qx76p166"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-65ce05yo">
+<cl:output id="gdOptNo" std:sid="output-dstf269z"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columnname="FILE_NM" rowindex="0" std:sid="gd-cell-hhj5j8or">
+<cl:inputbox id="inputbox1" std:sid="i-box-8fgr0394"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="USE_LABEL" rowindex="0" std:sid="gd-cell-u45957o1">
+<cl:inputbox id="inputbox2" std:sid="i-box-o2w6nsh5"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" columnname="word" rowindex="0" std:sid="gd-cell-98ja8x95">
+<cl:button id="button1" std:sid="button-jlxyp5sz"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:udc id="lblRowCnt_grdCmnUseMulti" std:sid="ud-control-v42sw7h4" type="udc.com.grid_title">
+        <cl:xylayoutdata height="24px" horizontalAnchor="LEFT" left="355px" std:sid="xyl-data-459c55b6" top="6px" verticalAnchor="TOP" width="280px"/>
+        <cl:property name="gridId" type="string" value="grdCmnUseMulti"/>
+      </cl:udc>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

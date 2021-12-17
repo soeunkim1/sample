@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-32924oim" version="1.0.0.0">
+  <head std:sid="head-400u4lg4">
+    <title>stdCgdPEstTplPopup</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-y82hl589" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-w11m8vmr" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-l10gy4v7" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-c521qix3" width="320px"/>
+    <cl:model std:sid="model-bd075667">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-8kq1t47z">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strEstTplCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEstTplNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCgdEstTpl" std:sid="d-set-g1yk35c7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="EST_TPL_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EST_TPL_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UEST_TPL_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REF_KEY" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cgd/StdCgdEstTplPopup/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-53019mv6">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsCgdEstTpl"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="평가템플릿검색"/>
+  </head>
+  <body std:sid="body-050v6457" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-ygfsy477"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-4zf20f79"/>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-3du9v0i3" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="375px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-143rj919"/>
+</cl:button>
+<cl:button id="btnCloseOk" std:sid="button-700u2qs5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="575px" std:sid="xyl-data-fa9a14b9" top="375px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CHOICLS" property="value"/>
+<cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-kohegoy3"/>
+</cl:button>
+<cl:group id="grpData" std:sid="group-c8525079">
+        <cl:xylayoutdata height="298px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="630px"/>
+        <cl:xylayout std:sid="xylayout-b8yxlsq7"/>
+      <cl:grid datasetid="dsCgdEstTpl" id="grdCgdEstTpl" std:sid="grid-w5u78a3k">
+        <cl:xylayoutdata height="261px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="618px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCgdEstTplDblclick" name="dblclick" std:sid="listener-w05560eo"/>
+<cl:gridheader std:sid="gh-band-25x28ycw">
+          <cl:gridrow height="27px" std:sid="g-row-191v91tp"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-130i3io3" text="NO"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-f35tg236">
+<cl:langbind category="PROPERTY" keypath="UI-DB-EST_TPL_CD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-o5109tm0">
+<cl:langbind category="PROPERTY" keypath="UI-DB-EST_TPL_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-13bnf89j" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-UPEVALUTPL" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-j03296c2" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-REF_KEY" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-be0hxo8p" width="40px"/>
+<cl:gridcolumn std:sid="g-column-t98dj1b9" width="280px"/>
+<cl:gridcolumn std:sid="g-column-p77ebn8x" width="282px"/>
+<cl:gridcolumn std:sid="g-column-602hlkg1" width="110px"/>
+<cl:gridcolumn std:sid="g-column-5zh0v84x" width="100px"/>
+<cl:griddetail std:sid="gd-band-6229map4">
+          <cl:gridrow height="25px" std:sid="g-row-48c87zsq"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-2e80036d" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="EST_TPL_CD" rowindex="0" std:sid="gd-cell-vkg960o2"/>
+<cl:gridcell colindex="2" columnname="EST_TPL_NM" rowindex="0" std:sid="gd-cell-8ip882ku"/>
+<cl:gridcell colindex="3" columnname="UEST_TPL_CD" rowindex="0" std:sid="gd-cell-41s77r22"/>
+<cl:gridcell colindex="4" columnname="REF_KEY" rowindex="0" std:sid="gd-cell-j21ti8m5"/>
+</cl:griddetail>
+</cl:grid>
+<cl:udc std:sid="ud-control-94rmhagi" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-EVALUTPLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="235px"/>
+        <cl:property name="ctrl" type="control" value="grdCgdEstTpl"/>
+      </cl:udc>
+</cl:group>
+<cl:group class="search-box" id="grpSearch" std:sid="group-k2p52nz5">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="630px"/>
+        <cl:xylayout std:sid="xylayout-f6ru39lt"/>
+      <cl:output id="optEstTplNm" std:sid="output-4d1348nd" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="260px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-EST_TPL_NM" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbEstTplCd" maxlength="50" std:sid="i-box-3uku2419">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="120px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="130px"/>
+      <cl:expbind category="PROPERTY" expression="#optEstTplCd.value" property="fieldLabel"/>
+<cl:listener handler="onIpbEstTplCdKeydown" name="keydown" std:sid="listener-l50q9moe"/>
+<cl:datamapbind columnname="strEstTplCd" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:output class="require" id="optEstTplCd" std:sid="output-12658m16" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-EST_TPL_CD" property="value"/>
+</cl:output>
+<cl:button class="btn-search" id="btnSearch" std:sid="button-l9bxm350" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="563px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-6xrn9mdq"/>
+</cl:button>
+<cl:inputbox id="ipbEstTplNm" maxlength="50" std:sid="i-box-u2y88i05">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="375px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="130px"/>
+      <cl:expbind category="PROPERTY" expression="#optEstTplNm.value" property="fieldLabel"/>
+<cl:listener handler="onIpbEstTplNmKeydown" name="keydown" std:sid="listener-ac5sx117"/>
+<cl:datamapbind columnname="strEstTplNm" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-66m71zy3" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-1251q89r" version="1.0.0.0">
+  <head std:sid="head-518fhmwj">
+    <title>extCcsCMonFeeProc</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-2l59cq38" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-5w6s683j" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-o5gk2u3k" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-r87wu2t2" width="320px"/>
+    <cl:model std:sid="model-xpx5vrh5">
+      
+      
+      
+    <cl:dataset id="dsListStaffSubGrpRcd" std:sid="d-set-vi5qf61b">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtRcdList" std:sid="d-set-63k9rfq5">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsDayNightDivRcdList" std:sid="d-set-nzw3o5s9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSchYearRcdList" std:sid="d-set-deqri3b8">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsCuList" std:sid="d-set-vuu87hlv">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="OBJ_CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OBJ_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PATH" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-429a3i04">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strLanDivRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCutDt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListWkdtyRcd" std:sid="d-set-h5vwp5bi">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListWeekSeq" std:sid="d-set-a41jc8ea">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="WEEK_SEQ" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PRT_WEEK_SEQ" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListDutyTime" std:sid="d-set-5i625vzw">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="DUTY_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CALC_DIV_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-x2bi8l63">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStaffSubGrpRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStep" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strProfObjNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strMm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStWeek" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEndWeek" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsMapProfObjNo" std:sid="d-set-iih6kp3w">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_OBJ_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHAG_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_CONT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXPT_RSN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_OBJ_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="WKDTY_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_DIV_RCD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STAFF_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_WK_DIV_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResList" std:sid="d-map-447lj6nj">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strMsg" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsFrfDetail" std:sid="d-set-ix9659h4">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_OBJ_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHAG_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ST_WEEK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="END_WEEK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REMARK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXPT_RSN_CONT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_OBJ_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="WKDTY_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STAFF_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="WKGRD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_DIV_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STAFF_SUB_GRP_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STAFF_SUB_GRP_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsMain" std:sid="d-set-6a48gk21">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_OBJ_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DUTY_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHAG_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ADD_CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_DAY_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_NIGHT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_IN_DAY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_IN_NIGHT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_CONSI_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ESS_CONSI_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_TIME_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ST_WEEK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="END_WEEK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REMARK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EXPT_RSN_CONT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_OBJ_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="WKDTY_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STAFF_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="WKGRD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROF_DIV_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STAFF_SUB_GRP_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STAFF_SUB_GRP_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmKeyDateMap" std:sid="d-map-te8x0eo3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="BEF_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="YEAR" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SMT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="ST_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="END_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/ccs/ExtCcsMonFeeProc/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-v22l8358">
+        
+        
+      <cl:responsedata dataid="dsSchYearRcdList"/>
+<cl:responsedata dataid="dsSmtRcdList"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+<cl:responsedata dataid="dsListWkdtyRcd"/>
+<cl:responsedata dataid="dmKeyDateMap"/>
+<cl:responsedata dataid="dsListStaffSubGrpRcd"/>
+</cl:submission>
+<cl:submission action="/ccs/ExtCcsMonFeeProc/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-1362u04e">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:requestdata dataid="dmKeyDateMap"/>
+<cl:responsedata dataid="dsMain"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnDateTime/" id="subDate" mediatype="application/x-www-form-urlencoded" std:sid="submission-m1dy23rk">
+        
+        
+      <cl:requestdata dataid="dmKeyDateMap"/>
+<cl:responsedata dataid="dmKeyDateMap"/>
+</cl:submission>
+<cl:submission action="/ccs/ExtCcsMonFeeProc/" id="subSaveByBatch" mediatype="application/x-www-form-urlencoded" std:sid="submission-x06etai5">
+        
+        
+      <cl:requestdata dataid="dmKeyDateMap"/>
+<cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+<cl:responsedata dataid="dmReqKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="개설분반관리"/>
+  </head>
+  <body std:sid="body-k5i4z7f9" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-78ffcb80"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-9ov06571"/>
+<cl:udc id="appheader1" std:sid="ud-control-1329pkuh" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSch" std:sid="group-6pd2epra">
+        <cl:xylayoutdata height="635px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-61y7w543"/>
+      <cl:output class="require" id="optSchYearRcd" std:sid="output-92ay91ha" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="15px" std:sid="xyl-data-548c5467" top="15px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSchYearRcd" std:sid="c-box-05y67c8m">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="100px" std:sid="xyl-data-757d2a0f" top="15px" verticalAnchor="TOP" width="90px"/>
+        
+        
+      <cl:itemset datasetid="dsSchYearRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-71si1o91" value=""/>
+<cl:expbind category="PROPERTY" expression="#optSchYearRcd.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSchYearRcdSelectionChange" name="selection-change" std:sid="listener-0ype39ve"/>
+<cl:datamapbind columnname="YEAR" datacontrolid="dmKeyDateMap" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optSmtRcd" std:sid="output-2f22g641" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="200px" std:sid="xyl-data-548c5467" top="15px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SMT" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSmtRcd" std:sid="c-box-5saqhrp3">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="285px" std:sid="xyl-data-757d2a0f" top="15px" verticalAnchor="TOP" width="90px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-o555l1zz" value=""/>
+<cl:expbind category="PROPERTY" expression="#optSmtRcd.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSmtRcdSelectionChange" name="selection-change" std:sid="listener-4o15mb5t"/>
+<cl:datamapbind columnname="SMT" datacontrolid="dmKeyDateMap" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optSmtRcd2" std:sid="output-1229av71" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="384px" std:sid="xyl-data-548c5467" top="15px" verticalAnchor="TOP" width="96px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SMT" property="value"/>
+</cl:output>
+<cl:combobox id="cbbMm" std:sid="c-box-h7wgq4b2">
+        <cl:xylayoutdata height="26px" horizontalAnchor="LEFT" left="485px" std:sid="xyl-data-757d2a0f" top="15px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:item label="1월" std:sid="item-4w30txn7" value="1"/>
+<cl:item label="2월" std:sid="item-k7widqob" value="2"/>
+<cl:item label="3월" std:sid="item-55qh4sxc" value="3"/>
+<cl:item label="4월" std:sid="item-h167gl8i" value="4"/>
+<cl:item label="5월" std:sid="item-zhg9f5av" value="5"/>
+<cl:item label="6월" std:sid="item-04tq202y" value="6"/>
+<cl:item label="7월" std:sid="item-g1c8q2v3" value="7"/>
+<cl:item label="8월" std:sid="item-k03fq8jw" value="8"/>
+<cl:item label="9월" std:sid="item-76t4w1d9" value="9"/>
+<cl:item label="10월" std:sid="item-kbj86l99" value="10"/>
+<cl:item label="11월" std:sid="item-4j005ich" value="11"/>
+<cl:item label="12월" std:sid="item-b059fu5o" value="12"/>
+<cl:datamapbind columnname="strMm" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:button class="btn-commit" id="btnSaDivclsBat" std:sid="button-0p36a8fc" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="624px" std:sid="xyl-data-fa9a14b9" top="15px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SADIVCLSBAT" property="value"/>
+<cl:listener handler="onBtnSaDivclsBatClick" name="click" std:sid="listener-5h2laxy1"/>
+</cl:button>
+<cl:output id="label2" std:sid="output-cjh1q7za" value="[업무순서] 책임시수 기준관리 -&gt; 강의시수 산정내역관리 -&gt; 월별 강의시수 관리 -&gt; 월별 강사료 계산&#10;&#10;[작업주의] 강사료 재계산은 급여계산이 되기 전까지는 가능하나, 급여지급이 완료 된 이후에는 불가능 합니다.">
+        <cl:xylayoutdata height="65px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="60px" verticalAnchor="TOP" width="840px"/>
+      </cl:output>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

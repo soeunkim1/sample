@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-a47cc2d8" version="1.0.0.0">
+  <head std:sid="head-a2aa18f3">
+    <title>left</title>
+    <screen std:sid="screen-866d53b1" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-42e72af1" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-0508578b" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-d95e70cd">
+      <cl:dataset std:sid="d-set-a73a298b" id="leftMenuList">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="MENU_KEY"/>
+          <cl:datacolumn name="UMENU_KEY"/>
+          <cl:datacolumn name="MENU_NM"/>
+          <cl:datacolumn name="CALL_PAGE"/>
+        </cl:datacolumnlist>
+      </cl:dataset>
+      <cl:submission std:sid="submission-ae57f1dd" id="subGetMenuList" action="cmn/Main/getMenuList.do">
+        <cl:listener std:sid="listener-a7e6f3f1" handler="onSubGetMenuListSubmitSuccess" name="submit-success"/>
+        <cl:requestdata dataid="dmReqKey"/>
+        <cl:responsedata dataid="leftMenuList"/>
+      </cl:submission>
+      <cl:datamap std:sid="d-map-58169a86" id="dmReqKey">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="strTopMenuId"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+    </cl:model>
+    <cl:appspec>
+      <cl:event name="menu_before_select" type="cpr.events.CSelectionEvent"/>
+      <cl:event name="menu_select" type="cpr.events.CSelectionEvent"/>
+      <cl:event name="menu_click" type="cpr.events.CItemEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-da7736d1" style="background-color:#f0eeef; top:0px; left:0px; width:200px; height:768px;">
+    <cl:listener std:sid="listener-0353c7cd" handler="onBodyLoad" name="load"/>
+    <cl:menu std:sid="menu-505b0a21" id="mnu">
+      <cl:listener std:sid="listener-3553b467" handler="onMnuBeforeSelectionChange" name="before-selection-change"/>
+      <cl:listener std:sid="listener-1adb3b34" handler="onMnuSelectionChange" name="selection-change"/>
+      <cl:listener std:sid="listener-f08d130c" handler="onMnuItemClick" name="item-click"/>
+      <cl:xylayoutdata std:sid="xyl-data-0b3e6823" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:menuitemset datasetid="leftMenuList" label="MENU_NM" value="MENU_KEY" parent="UMENU_KEY" accessKey="CALL_PAGE"/>
+    </cl:menu>
+    <cl:xylayout std:sid="xylayout-7efa1c82"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

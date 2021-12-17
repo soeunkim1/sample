@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-592iq7yu" version="1.0.0.0">
+  <head std:sid="head-gfsm12jq">
+    <title>stdCmnCDbStMgt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-259c7d32" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-14331m80" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-47m2l7b2" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-55y6zj0l" width="320px"/>
+    <cl:model std:sid="model-0j751swv">
+      
+      
+      
+    <cl:datamap id="dmReqCmd" std:sid="d-map-5syj63k7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCdCls" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsPageInfo" std:sid="d-set-39q6t859">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_CLS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ULAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_SHORT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_LEN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PRT_ORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_ST_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_DESC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STD_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP4" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP5" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP6" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP7" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP8" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP9" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP10" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CRT_IP_MAC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UPD_IP_MAC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnDbStMgt/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-36l0wfk8">
+        
+        
+      <cl:requestdata dataid="dmReqCmd"/>
+<cl:responsedata dataid="dsPageInfo"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="트리거생성"/>
+  </head>
+  <body std:sid="body-2uw38psa" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-6e11401n"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-jn81l224"/>
+<cl:udc id="appheader1" std:sid="ud-control-9kv6b8qz" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:button id="tabBtnTableData" std:sid="button-2s45ul6d" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TABLE_MGT" property="value"/>
+<cl:listener handler="onTabBtnTableDataClick" name="click" std:sid="listener-905c9456"/>
+</cl:button>
+<cl:button id="tabBtnUserSource" std:sid="button-o486i62e" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="106px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-USER_SOURCE" property="value"/>
+<cl:listener handler="onTabBtnUserSourceClick" name="click" std:sid="listener-j9wp8mg3"/>
+</cl:button>
+<cl:button id="tabBtnDomainMgt" std:sid="button-1992d54o" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="207px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DOMAIN_MGT" property="value"/>
+<cl:listener handler="onTabBtnDomainMgtClick" name="click" std:sid="listener-p319z6ti"/>
+</cl:button>
+<cl:button id="tabBtnDicMng" std:sid="button-992496l7" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="308px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DIC_MGT" property="value"/>
+<cl:listener handler="onTabBtnDicMngClick" name="click" std:sid="listener-cs3ro6t7"/>
+</cl:button>
+<cl:button id="tabBtnPhysicAgrCnfm" std:sid="button-v7g08858" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="409px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="110px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PHYSIC_AGR_CNFM" property="value"/>
+<cl:listener handler="onTabBtnPhysicAgrCnfmClick" name="click" std:sid="listener-3l3w609t"/>
+</cl:button>
+<cl:button id="tabBtnStdComment" std:sid="button-i036duz6" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="520px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-COMMENT_CRT" property="value"/>
+<cl:listener handler="onTabBtnStdCommentClick" name="click" std:sid="listener-6m9im168"/>
+</cl:button>
+<cl:button id="tabBtnUsePhysic" std:sid="button-132uxaoh" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="661px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="150px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PHYSIC_USE_CHK" property="value"/>
+<cl:listener handler="onTabBtnUsePhysicClick" name="click" std:sid="listener-82ae9h1u"/>
+</cl:button>
+<cl:button id="tabBtnChkPhysicNm" std:sid="button-ok941y24" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="812px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PHYSIC_CHK" property="value"/>
+<cl:listener handler="onTabBtnChkPhysicNmClick" name="click" std:sid="listener-2sv71401"/>
+</cl:button>
+<cl:button id="tabBtnCrtComment" std:sid="button-snt931hm" value="">
+        <cl:xylayoutdata height="28px" horizontalAnchor="LEFT" left="913px" std:sid="xyl-data-fa9a14b9" top="35px" verticalAnchor="TOP" width="112px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-COMMENT_CRT" property="value"/>
+<cl:listener handler="onTabBtnCrtCommentClick" name="click" std:sid="listener-kdn4j476"/>
+</cl:button>
+<cl:htmlobject id="subPage" std:sid="htmlobject-7f4x3q69">
+        <cl:xylayoutdata height="607px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-5608d431" top="63px" verticalAnchor="TOP" width="1235px"/>
+      </cl:htmlobject>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

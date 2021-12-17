@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-0zr3r07y" version="1.0.0.0">
+  <head std:sid="head-2p749nm5">
+    <title>stdCrsPSchYearPop</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-93ytuq47" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-398673rm" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-151p1nmg" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-y1632ifa" width="320px"/>
+    <cl:model std:sid="model-gjalkjrw">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-957kuh1t">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSchYearRcdNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsSchYear" std:sid="d-set-vcg1z513">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-32qoxpx8">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsSchYear"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="학년도 목록 검색"/>
+  </head>
+  <body std:sid="body-a59q2t6i" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-wb63rza4"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-14mib428"/>
+<cl:udc id="appheader1" std:sid="ud-control-8wn3f007" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-n0m6f211">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="440px"/>
+        <cl:xylayout std:sid="xylayout-8lbj95hh"/>
+      <cl:inputbox id="ipbSchYearRcdNm" maxlength="10" std:sid="i-box-enq0h33e">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="150px"/>
+      <cl:expbind category="PROPERTY" expression="#optSchYearRcdNm.value" property="fieldLabel"/>
+<cl:listener handler="onIpbSchYearRcdNmKeydown" name="keydown" std:sid="listener-95l8041o"/>
+<cl:datamapbind columnname="strSchYearRcdNm" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:output id="optSchYearRcdNm" std:sid="output-qnr8q8wl" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-SCH_YEAR_RCD_NM" property="value"/>
+</cl:output>
+<cl:button class="btn-search" id="btnSearch" std:sid="button-9u10m0hf" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="375px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-1i945asd"/>
+</cl:button>
+</cl:group>
+<cl:group id="grpData" std:sid="group-d516e2zr">
+        <cl:xylayoutdata height="348px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="440px"/>
+        <cl:xylayout std:sid="xylayout-sz6mz5ri"/>
+      <cl:udc std:sid="ud-control-9l7j94a8" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-SCHYEARLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="256px"/>
+        <cl:property name="ctrl" type="control" value="grdSchYear"/>
+      </cl:udc>
+<cl:grid datasetid="dsSchYear" id="grdSchYear" std:sid="grid-h1bjhml3">
+        <cl:xylayoutdata height="313px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="430px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdSchYearRowDblclick" name="row-dblclick" std:sid="listener-c0y2qshm"/>
+<cl:gridheader std:sid="gh-band-275cu9k0">
+          <cl:gridrow height="27px" std:sid="g-row-p7js3p90"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-uck5ck2z">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-STAFFNO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" comment="ghBtnCd" rowindex="0" std:sid="gh-cell-0695q5q1">
+<cl:langbind category="PROPERTY" keypath="UI-DB-SCH_YEAR_RCD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghBtnCdNm" rowindex="0" std:sid="gh-cell-wkv8p05c">
+<cl:langbind category="PROPERTY" keypath="UI-DB-SCH_YEAR_RCD_NM" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-94f5504n" width="40px"/>
+<cl:gridcolumn std:sid="g-column-85e8uzht" width="145px"/>
+<cl:gridcolumn std:sid="g-column-8rft9t3t" width="145px"/>
+<cl:griddetail std:sid="gd-band-ut6on63l">
+          <cl:gridrow height="25px" std:sid="g-row-v511yli8"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-r7cx2ya5" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="CD" rowindex="0" std:sid="gd-cell-q509n343" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="CD_NM" rowindex="0" std:sid="gd-cell-h91y9l39"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button id="btnCloseOk" std:sid="button-y59m8rb3" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="385px" std:sid="xyl-data-fa9a14b9" top="425px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CHOICLS" property="value"/>
+<cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-340p6sj8"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-743c3389" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="425px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-v1zx4c9z"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

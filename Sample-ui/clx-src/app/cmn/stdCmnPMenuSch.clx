@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-k58i5xng" version="1.0.0.0">
+  <head std:sid="head-y2t57246">
+    <title>stdCmnPMenuSch</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-67g2p6u8" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-xksd6815" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-h326jo21" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-80q97ys6" width="320px"/>
+    <cl:model std:sid="model-3o8l6697">
+      
+      
+      
+    <cl:dataset id="dsUnitSystemRcdList" std:sid="d-set-6zg2fbm0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-3m8140g3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strMenuId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPgmDtlTypeRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCmnMenu" std:sid="d-set-vr39nka0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="MENU_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PGM_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="MENU_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UMENU_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnMenuSch/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-7yv27g71">
+        
+        
+      <cl:responsedata dataid="dsUnitSystemRcdList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnMenuSch/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-i0224830">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsCmnMenu"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="메뉴검색팝업"/>
+  </head>
+  <body std:sid="body-p548695r" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-8e9359a6"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-0zjj3b10"/>
+<cl:udc id="appheader1" std:sid="ud-control-0o1mva1b" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-dhpyp08s">
+        <cl:xylayoutdata height="310px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="67px" verticalAnchor="TOP" width="685px"/>
+        <cl:xylayout std:sid="xylayout-48108j1e"/>
+      <cl:udc std:sid="ud-control-8nmv24qg" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-GLS-REQZ" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="215px"/>
+        <cl:property name="ctrl" type="control" value="grdCmnMenu"/>
+      </cl:udc>
+<cl:grid datasetid="dsCmnMenu" id="grdCmnMenu" std:sid="grid-h13c96hd">
+        <cl:xylayoutdata height="275px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="675px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCmnMenuRowDblclick" name="row-dblclick" std:sid="listener-1wi7xcxt"/>
+<cl:gridheader std:sid="gh-band-a72a17q8">
+          <cl:gridrow height="27px" std:sid="g-row-8v5lvdo4"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-70xeex1o" text="No"/>
+<cl:gridcell colindex="1" comment="ghBtnMenuId" rowindex="0" std:sid="gh-cell-35tjpkz5" text="메뉴ID"/>
+<cl:gridcell colindex="2" comment="ghBtnPgmNm" rowindex="0" std:sid="gh-cell-36lohy48" text="메뉴명"/>
+<cl:gridcell colindex="3" comment="ghBtnUnitSystemRcd" rowindex="0" std:sid="gh-cell-4hp73h2h" text="단위시스템"/>
+<cl:gridcell colindex="4" comment="ghBtnUmenuNm" rowindex="0" std:sid="gh-cell-74a5d0dt" text="상위메뉴명"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-k0nq4d0c" width="40px"/>
+<cl:gridcolumn std:sid="g-column-oz331788" width="178px"/>
+<cl:gridcolumn std:sid="g-column-m7ym5se4" width="225px"/>
+<cl:gridcolumn std:sid="g-column-3k5w172d" width="102px"/>
+<cl:gridcolumn std:sid="g-column-4wi8ey5k" width="110px"/>
+<cl:griddetail std:sid="gd-band-31lv3ls3">
+          <cl:gridrow height="25px" std:sid="g-row-6vpzna6l"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-egzq192q" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="MENU_ID" rowindex="0" std:sid="gd-cell-3b2t5eq4"/>
+<cl:gridcell colindex="2" columnname="MENU_NM" rowindex="0" std:sid="gd-cell-ay1f2py3"/>
+<cl:gridcell colindex="3" columnname="UNIT_SYSTEM_RCD" rowindex="0" std:sid="gd-cell-1459xgw5">
+<cl:combobox enabled="false" hidebutton="true" id="gdCbbUnitSystemRcd" std:sid="c-box-f5z1x99z">
+<cl:itemset datasetid="dsUnitSystemRcdList" label="CD_NM" value="CD"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="UMENU_NM" rowindex="0" std:sid="gd-cell-cv170151"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:group class="search-box" id="grpSearch" std:sid="group-u7g5s9d1">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="685px"/>
+        <cl:xylayout std:sid="xylayout-512df6lx"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-8ago8ung" value="조회">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="620px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-572nk3oz"/>
+</cl:button>
+<cl:output id="optUnitSystemRcd" std:sid="output-2k5brh79" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SYSTEMDIV" property="value"/>
+</cl:output>
+<cl:combobox id="cbbUnitSystemRcd" std:sid="c-box-v519u2u6">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsUnitSystemRcdList" label="CD_NM" value="CD"/>
+<cl:item label="전체" std:sid="item-257p2zn5" value=""/>
+<cl:expbind category="PROPERTY" expression="#optUnitSystemRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSystemRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+<cl:output id="optMenuId" std:sid="output-05m9ls73" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="250px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-MENU_ID" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbMenuId" std:sid="i-box-80714042">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="355px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="200px"/>
+      <cl:listener handler="onIpbMenuIdKeydown" name="keydown" std:sid="listener-hfz6jq20"/>
+<cl:datamapbind columnname="strMenuId" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:button id="btnClose" std:sid="button-0179l50a" value="화면닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="380px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnCloseClick" name="click" std:sid="listener-8jr7g6f1"/>
+</cl:button>
+<cl:button id="btnCloseOk" std:sid="button-4ek07w2f" value="선택닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="630px" std:sid="xyl-data-fa9a14b9" top="380px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-2i7s2n57"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

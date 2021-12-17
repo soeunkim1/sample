@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-12ou455b" version="1.0.0.0">
+  <head std:sid="head-50y86r4w">
+    <title>stdCmnCIPAccessFilter</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-t553unw9" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-6d2k4jp2" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-112jssyj" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-3wmi95mf" width="320px"/>
+    <cl:model std:sid="model-mj86xbmq">
+      
+      
+      
+    <cl:dataset id="dsUserDivRcdList" std:sid="d-set-53ih59sy">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-5a205x79">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strUserDivRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCmnIpFilter" info="CMN_IP_FILTER@USER_DIV_RCD,PERMIT_IP_ST" std:sid="d-set-78r55j7h">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="USER_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PERMIT_IP_ST" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PERMIT_IP_FINAL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="USE_YN" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnIPAccessFilter/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-00c3a4zg">
+        
+        
+      <cl:responsedata dataid="dsUserDivRcdList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnIPAccessFilter/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-1q2dl0r6">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsCmnIpFilter"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnIPAccessFilter/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-6337f1k7">
+        
+        
+      <cl:requestdata dataid="dsCmnIpFilter"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCmnCIPAccessFilter"/>
+  </head>
+  <body std:sid="body-4qa272t6" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-315e17t1"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-e727312i"/>
+<cl:udc id="appheader1" std:sid="ud-control-g6391hq7" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-30j65zy9">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-ife43ae3"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-267by287" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-7l4keo67"/>
+</cl:button>
+<cl:output id="optUserDivRcd" std:sid="output-x5pqnzah" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-USERDIV" property="value"/>
+</cl:output>
+<cl:combobox id="cbbUserDivRcd" std:sid="c-box-3r1l794t">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsUserDivRcdList" label="CD_NM" value="CD"/>
+<cl:item label="전체" std:sid="item-3886076k" value=""/>
+<cl:expbind category="PROPERTY" expression="#optUserDivRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strUserDivRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+</cl:group>
+<cl:group id="grpData" std:sid="group-i2ipclrk">
+        <cl:xylayoutdata height="600px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-k04c94qj"/>
+      <cl:udc std:sid="ud-control-mjz05x3t" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-IPFILTERLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCmnIpFilter"/>
+      </cl:udc>
+<cl:button class="btn-new" id="btnNew" std:sid="button-afdrnu82" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="965px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW" property="value"/>
+<cl:listener handler="onBtnNewClick" name="click" std:sid="listener-7u1gh2i7"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-3eli7i82" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1030px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDelClick" name="click" std:sid="listener-2fd1l4r0"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-3t18890w" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1095px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-5ueyvgol"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-245g1lnp" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-9bj9wp9u"/>
+</cl:button>
+<cl:grid datasetid="dsCmnIpFilter" id="grdCmnIpFilter" std:sid="grid-iolu551q">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCmnIpFilterSelectionChange" name="selection-change" std:sid="listener-jd045ama"/>
+<cl:gridheader std:sid="gh-band-zprqubwh">
+          <cl:gridrow height="27px" std:sid="g-row-6e7324ih"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-at8f94w2"/>
+<cl:gridcell colindex="1" comment="ghBtnUptStatus" rowindex="0" std:sid="gh-cell-7c7m8i15" text="F"/>
+<cl:gridcell colindex="2" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-0b3n15l4" text="번호"/>
+<cl:gridcell class="require" colindex="3" comment="ghBtnUserDivRcd" rowindex="0" std:sid="gh-cell-4h796469">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-USERDIV" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="4" comment="ghBtnPermitIpSt" rowindex="0" std:sid="gh-cell-1kc2f336">
+<cl:langbind category="PROPERTY" keypath="UI-DB-PERMIT_IP_ST" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" comment="ghBtnPermitIpFinal" rowindex="0" std:sid="gh-cell-28twgc2k">
+<cl:langbind category="PROPERTY" keypath="UI-DB-PERMIT_IP_FINAL" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" comment="ghBtnUseYn" rowindex="0" std:sid="gh-cell-4ji3b894">
+<cl:langbind category="PROPERTY" keypath="UI-DB-USE_YN" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-26ywptdr" width="25px"/>
+<cl:gridcolumn std:sid="g-column-426nw08k" width="25px"/>
+<cl:gridcolumn std:sid="g-column-63tyahvc" width="40px"/>
+<cl:gridcolumn std:sid="g-column-579c8zl1" width="182px"/>
+<cl:gridcolumn std:sid="g-column-071f0v6l" width="229px"/>
+<cl:gridcolumn std:sid="g-column-jcok6mi7" width="229px"/>
+<cl:gridcolumn std:sid="g-column-m4pd8lt2" width="78px"/>
+<cl:griddetail std:sid="gd-band-tzl73spo">
+          <cl:gridrow height="25px" std:sid="g-row-cchc15e3"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-y9ml5m6o" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-gxn0j8k1">
+<cl:output std:sid="output-83ysftp0" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-mz50l1dw" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="USER_DIV_RCD" rowindex="0" std:sid="gd-cell-pp6wcv64">
+<cl:combobox id="gdCbbUserDivRcd" std:sid="c-box-te896wg2">
+<cl:itemset datasetid="dsUserDivRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="전체" std:sid="item-91me8j49" value="ALL"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="PERMIT_IP_ST" rowindex="0" std:sid="gd-cell-6966kwau">
+<cl:inputbox id="gdIpbPermitIpSt" maxlength="50" std:sid="i-box-0mssgjks">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="PERMIT_IP_FINAL" rowindex="0" std:sid="gd-cell-03k49o30">
+<cl:inputbox id="gdIpbPermitIpFinal" maxlength="50" std:sid="i-box-27wy0638"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="USE_YN" rowindex="0" std:sid="gd-cell-90ww25ye">
+<cl:checkbox falsevalue="" id="gdCkbUseYn" std:sid="c-box-38g44x46" style="text-align:center;" text="" truevalue="Y" value=""/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:output id="optCont" std:sid="output-m41hg89g" value="※ 허용IP시작에 *이 포함 될 경우 허용IP끝은 입력하지 않음. 또한 허용IP끝에 *은 포함 될 수 없음.">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="80px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="705px"/>
+      </cl:output>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

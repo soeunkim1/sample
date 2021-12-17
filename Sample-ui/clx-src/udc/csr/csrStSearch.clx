@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-357e770a" version="1.0.0.0">
+  <head std:sid="head-75aff56b">
+    <title>cmnStuSearch</title>
+    <screen std:sid="screen-4ed69a2a" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-199c84ef" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-8befdc7b" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-f9cdee29">
+      <cl:datamap std:sid="d-map-34xeufo3" id="dmResult">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="STUD_ID"/>
+          <cl:datacolumn datatype="string" name="STUD_NO"/>
+          <cl:datacolumn datatype="string" name="REP_NM"/>
+          <cl:datacolumn datatype="string" name="STAT_RCD"/>
+          <cl:datacolumn datatype="string" name="STAT_NM"/>
+          <cl:datacolumn datatype="string" name="PROC_RSLT"/>
+          <cl:datacolumn datatype="string" name="PROC_RSLT_YEAR"/>
+          <cl:datacolumn datatype="string" name="SA_CD"/>
+          <cl:datacolumn datatype="string" name="SA_NM"/>
+          <cl:datacolumn datatype="string" name="SP_CD"/>
+          <cl:datacolumn datatype="string" name="SP_NM"/>
+          <cl:datacolumn datatype="string" name="OG_CD"/>
+          <cl:datacolumn datatype="string" name="OG_NM"/>
+          <cl:datacolumn datatype="string" name="BIRTHDAY"/>
+          <cl:datacolumn datatype="string" name="BIRTHDAY_DISP"/>
+          <cl:datacolumn datatype="string" name="GENDER_RCD"/>
+          <cl:datacolumn datatype="string" name="GENDER_NM"/>
+          <cl:datacolumn datatype="string" name="STUD_DIV_RCD"/>
+          <cl:datacolumn datatype="string" name="STUD_DIV_NM"/>
+          <cl:datacolumn datatype="string" name="BANK_RCD"/>
+          <cl:datacolumn datatype="string" name="BANK_NM"/>
+          <cl:datacolumn datatype="string" name="OWNER_NM"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-o3ubfs9z" id="dmRes">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="count"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-40i74puh" id="dmReq">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="strStudId"/>
+          <cl:datacolumn datatype="string" name="strStudNo"/>
+          <cl:datacolumn datatype="string" name="strStudNm"/>
+          <cl:datacolumn datatype="string" name="strOprtRoleId"/>
+          <cl:datacolumn datatype="string" name="strKeyDate"/>
+          <cl:datacolumn datatype="string" name="authRngRcd"/>
+          <cl:datacolumn datatype="string" name="strSaCd"/>
+          <cl:datacolumn datatype="string" name="strSaNm"/>
+          <cl:datacolumn datatype="string" name="strStatus"/>
+          <cl:datacolumn datatype="string" name="strObjDivRcd"/>
+          <cl:datacolumn datatype="string" name="strObjCd"/>
+          <cl:datacolumn datatype="string" name="strAuthYN"/>
+          <cl:datacolumn datatype="string" name="strStudDivRcd"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:submission std:sid="submission-ogpgr34v" id="subPrecheckStdCsrPStSearch" action="csr/CsrStSearch/preCheckCount.do" mediatype="application/x-www-form-urlencoded">
+        <cl:requestdata dataid="dmReq"/>
+        <cl:responsedata dataid="dmResult"/>
+        <cl:responsedata dataid="dmRes"/>
+      </cl:submission>
+    </cl:model>
+    <cl:appspec>
+      <cl:property bindable="true" default="" std:desc="조회조건내에 위치하는지 여부" name="iIsParentGrpSearch" type="boolean"/>
+      <cl:property bindable="true" std:desc="(선택) 검색조건 학번" name="iStudNo" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 검색조건 학번오브젝트" name="iStudId" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 이름" name="iStudNm" type="string"/>
+      <cl:property bindable="true" std:desc="(필수) 기준일" name="iKeyDate" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 객체구분코드" name="iObjDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 부서코드" name="iObjCd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 부서명" name="iObjNm" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 학적상태" name="iStatRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 학생구분" name="iStudDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="학생오브젝트" name="oStudId" type="string"/>
+      <cl:property bindable="true" std:desc="학번" name="oStudNo" type="string"/>
+      <cl:property bindable="true" std:desc="이름" name="oStudNm" type="string"/>
+      <cl:property bindable="true" std:desc="학적상태명" name="oStatNm" type="string"/>
+      <cl:property bindable="true" std:desc="학적상태코드" name="oStatRcd" type="string"/>
+      <cl:property bindable="true" std:desc="진급학기" name="oProcRslt" type="string"/>
+      <cl:property bindable="true" std:desc="진급학년" name="oProcRsltYear" type="string"/>
+      <cl:property bindable="true" std:desc="학사부서코드명 " name="oSaCd" type="string"/>
+      <cl:property bindable="true" std:desc="학사부서명 " name="oSaNm" type="string"/>
+      <cl:property bindable="true" std:desc="이수과정코드명" name="oSpCd" type="string"/>
+      <cl:property bindable="true" std:desc="이수과정명" name="oSpNm" type="string"/>
+      <cl:property bindable="true" std:desc="행정부서코드명" name="oOgCd" type="string"/>
+      <cl:property bindable="true" std:desc="행정부서명" name="oOgNm" type="string"/>
+      <cl:property bindable="true" std:desc="학생구분코드" name="oStudDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="학생구분명" name="oStudDivNm" type="string"/>
+      <cl:property bindable="true" std:desc="생년월일" name="oBirthday" type="string"/>
+      <cl:property bindable="true" std:desc="성별코드" name="oGenderRcd" type="string"/>
+      <cl:property bindable="true" std:desc="성별명" name="oGenderNm" type="string"/>
+      <cl:property bindable="true" name="value" type="string"/>
+      <cl:event name="searchCallBack" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-d7c9f1b5" style="top:0px; left:0px; width:105px; height:25px;">
+    <cl:listener std:sid="listener-4eabe29f" handler="onBodyLoad" name="load"/>
+    <cl:listener std:sid="listener-62d1d025" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:group std:sid="group-29786439" id="grp1">
+      <cl:xylayoutdata std:sid="xyl-data-4ffebf05" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:button std:sid="button-ba58ebc5" id="btnPopSearch" class="btn-pop-search" value="">
+        <cl:listener std:sid="listener-c3ac2120" handler="onBtnPopSearchClick" name="click"/>
+        <cl:formdata std:sid="f-data-48e9e06a" col="2" row="0"/>
+      </cl:button>
+      <cl:inputbox std:sid="i-box-14cd831b" id="ipbSchStudNo">
+        <cl:listener std:sid="listener-ee87135b" handler="onIpbSchStudIdValueChange" name="value-change"/>
+        <cl:listener std:sid="listener-df156486" handler="onIpbSchStudNoKeydown" name="keydown"/>
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iStudNo"/>
+        <cl:formdata std:sid="f-data-8d894357" col="0" row="0"/>
+      </cl:inputbox>
+      <cl:inputbox std:sid="i-box-8d294c3b" id="ipbSchStudNm" readonly="true">
+        <cl:datamapbind property="value" columnname="strStudNm" datacontrolid="dmReq"/>
+        <cl:formdata std:sid="f-data-d37697e0" col="1" row="0"/>
+      </cl:inputbox>
+      <cl:formlayout std:sid="f-layout-04d2e82f" hspace="0">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="7" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="3" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="20" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-778746f2"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

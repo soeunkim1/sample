@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-428b0734" version="1.0.0.0">
+  <head std:sid="head-361f5d87">
+    <title>grid_title</title>
+    <screen std:sid="screen-09be975b" id="default" active="true" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-fa1ce73d" id="tablet" active="false" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-b3f49156" id="mobile" active="false" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-35d059a8"/>
+    <cl:appspec>
+      <cl:property bindable="true" std:desc="그리드 ID" name="gridId" type="string"/>
+      <cl:property bindable="true" default="0" std:desc="" name="rowcount" type="string"/>
+      <cl:property bindable="true" std:desc="입력형 그룹일 경우 그룹 ID(그리드X)" name="formId" type="string"/>
+      <cl:property bindable="true" std:desc="그리드 title이 변경될 경우 사용" name="gridTitle" type="string"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-90e500e5" class="grp-title" style="top:0px; left:0px; width:350px; height:25px;">
+    <cl:listener std:sid="listener-16258929" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:listener std:sid="listener-852a94cf" handler="onBodyLoad" name="load"/>
+    <cl:listener std:sid="listener-9563ecf9" handler="onBodyInit" name="init"/>
+    <cl:apppropbind category="PROPERTY" property="enabled" app-property="enabled"/>
+    <cl:group std:sid="group-768d6032" id="grp_title" class="grp-title">
+      <cl:responsivexylayoutdata std:sid="rxyl-data-64345434">
+        <cl:xylayoutdata std:sid="sxyl-data-78769f55" height="25px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="TOP" screenid="default"/>
+        <cl:xylayoutdata std:sid="sxyl-data-78769f55" height="25px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="TOP" screenid="tablet"/>
+        <cl:xylayoutdata std:sid="sxyl-data-78769f55" height="25px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="TOP" screenid="mobile"/>
+      </cl:responsivexylayoutdata>
+      <cl:output std:sid="output-1cbfebf5" id="optSumText" class="small-black-title" style="text-align:right;" value="[">
+        <cl:formdata std:sid="f-data-ea1ea6cd" col="1" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-4ecca660" id="optSumText2" class="small-black-title" value="]">
+        <cl:formdata std:sid="f-data-6302b499" col="3" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-f8dbfb07" id="opt_rowcount" class="small-black-title" style="text-align:center;" value="">
+        <cl:apppropbind category="PROPERTY" property="value" app-property="rowcount"/>
+        <cl:formdata std:sid="f-data-d48a4337" col="2" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-e28482ab" id="optTilte" class="grid-title">
+        <cl:apppropbind category="PROPERTY" property="value" app-property="gridTitle"/>
+        <cl:formdata std:sid="f-data-da818784" col="0" row="0"/>
+      </cl:output>
+      <cl:button std:sid="button-3091295c" id="btnExcelExport" style="background-color:transparent; border-right-style:none; background-repeat:no-repeat; background-size:auto; border-left-style:none; border-bottom-style:none; background-position:center; background-image:url('../../theme/images/icon/icon_file_xls.gif'); border-top-style:none;" value="">
+        <cl:listener std:sid="listener-db9362d0" handler="onBtnExcelExportClick" name="click"/>
+        <cl:formdata std:sid="f-data-f7c66d66" col="4" height="20" row="0" valign="FILL"/>
+      </cl:button>
+      <cl:formlayout std:sid="f-layout-032ee4fd">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="1" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="15" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="40" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="15" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="25" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:responsivexylayout std:sid="r-xylayout-dad811ee"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

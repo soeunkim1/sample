@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-45e4bac4" version="1.0.0.0">
+  <head std:sid="head-08afc326">
+    <title>impSchYearSmt</title>
+    <screen std:sid="screen-3f4ffa34" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-c9923467" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-1b767cb4" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-e9e1d5a5"/>
+    <cl:appspec>
+      <cl:property bindable="true" std:desc="조회조건내에 위치하는지 여부" name="iIsParentGrpSearch" type="boolean"/>
+      <cl:property bindable="true" std:desc="기준일자(유효시작일과 종료일)" name="iKeyDate" type="string"/>
+      <cl:property bindable="true" std:desc="단위 시스템 코드" name="iUnitSystem" type="string"/>
+      <cl:property bindable="true" std:desc="기준일자(유효시작일과 종료일)" name="oKeyDate" type="string"/>
+      <cl:property bindable="true" std:desc="유효시작일" name="oStDt" type="string"/>
+      <cl:property bindable="true" std:desc="유효종료일" name="oEndDt" type="string"/>
+      <cl:property bindable="true" std:desc="학년도" name="oSchYearRcd" type="string"/>
+      <cl:property bindable="true" std:desc="학기" name="oSmtRcd" type="string"/>
+      <cl:property bindable="true" name="value" type="string"/>
+      <cl:event name="searchCallBack" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-1210ad01" style="top:0px; left:0px; width:130px; height:25px;">
+    <cl:listener std:sid="listener-b3c77631" handler="onBodyLoad" name="load"/>
+    <cl:listener std:sid="listener-3d59b1ab" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:group std:sid="group-e6f65b11" id="grp1">
+      <cl:responsivexylayoutdata std:sid="rxyl-data-3a0336fd">
+        <cl:xylayoutdata std:sid="sxyl-data-5098c54e" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH" screenid="default"/>
+      </cl:responsivexylayoutdata>
+      <cl:dateinput std:sid="d-input-99e46072" id="dipKeyDate" format="YYYYMMDDHHmmss">
+        <cl:listener std:sid="listener-0af3f7c8" handler="onDipKeyDateValueChange" name="value-change"/>
+        <cl:listener std:sid="listener-7a4ec263" handler="onDipKeyDateKeydown" name="keydown"/>
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iKeyDate"/>
+        <cl:formdata std:sid="f-data-5c94e253" col="0" row="0"/>
+      </cl:dateinput>
+      <cl:button std:sid="button-0ec2a5e1" id="btnYearSmt" class="btn-pop-search">
+        <cl:listener std:sid="listener-5f88a890" handler="onBtnYearSmtClick" name="click"/>
+        <cl:formdata std:sid="f-data-5cc4618a" col="1" row="0"/>
+      </cl:button>
+      <cl:formlayout std:sid="f-layout-2ac0ef6a" hspace="0" vspace="5">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="1" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="20" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:responsivexylayout std:sid="r-xylayout-e2fa8fa9"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

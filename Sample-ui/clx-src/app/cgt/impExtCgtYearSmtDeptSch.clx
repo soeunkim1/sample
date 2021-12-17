@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-4p39w264" version="1.0.0.0">
+  <head std:sid="head-hx4fs6f5">
+    <title>impExtCgtYearSmtDeptSch</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-t4449w1t" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-0r372345" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-d89gtj1k" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-so7h2del" width="320px"/>
+    <cl:model std:sid="model-9nw00273">
+      
+      
+      
+    <cl:dataset id="dsSchYearList" std:sid="d-set-x91xlyk1">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtList" std:sid="d-set-4bmlvqyj">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-1455o075">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCgtSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCgtSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cgt/ExtCgtSchYearSmtDeptSch/" id="subOnLoadImpCgtSch" mediatype="application/x-www-form-urlencoded" std:sid="submission-ah41m7e2">
+        
+        
+      <cl:responsedata dataid="dsSchYearList"/>
+<cl:responsedata dataid="dsSmtList"/>
+<cl:responsedata dataid="dmReqKey"/>
+</cl:submission>
+<cl:submission action="/cgt/ExtCgtSchYearSmtDeptSch/" id="subDateImpCgtSch" mediatype="application/x-www-form-urlencoded" std:sid="submission-176u7cz6">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmReqKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="impExtCgtYearSmtDeptSch"/>
+  </head>
+  <body std:sid="body-f3ux2bgz" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-7600bpdp"/>
+  <cl:combobox id="cbbSchYearImpCgt" std:sid="c-box-p9897i54">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-757d2a0f" top="0px" verticalAnchor="TOP" width="110px"/>
+        
+        
+      <cl:itemset datasetid="dsSchYearList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSchYearImpCgt.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSchYearImpCgtSelectionChange" name="selection-change" std:sid="listener-9w86o14c"/>
+<cl:datamapbind columnname="strSchYearRcd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optSchYearImpCgt" std:sid="output-71ekvy97" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-GRADUYRS" property="value"/>
+</cl:output>
+<cl:output class="require" id="optSmtImpCgt" std:sid="output-34njua67" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="225px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-GRASMT" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSmtImpCgt" std:sid="c-box-r133sj52">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="330px" std:sid="xyl-data-757d2a0f" top="0px" verticalAnchor="TOP" width="110px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtList" label="CD_PRP3" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSmtImpCgt.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSmtImpCgtSelectionChange" name="selection-change" std:sid="listener-b7s2mg2u"/>
+<cl:datamapbind columnname="strSmtRcd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

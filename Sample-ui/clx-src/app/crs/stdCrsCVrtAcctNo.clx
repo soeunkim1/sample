@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-3i6cmwku" version="1.0.0.0">
+  <head std:sid="head-9a5jnu6t">
+    <title>stdCrsCVrtAcctNo</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-8rrr6x35" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-8zb2n06g" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-un0i7jq4" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-2h8efz4m" width="320px"/>
+    <cl:model std:sid="model-o0j9md02">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-hhx4702y">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strBankRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUseDivCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strBankRcdN" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFilePath" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListUseDiv" std:sid="d-set-8m3804x7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListBank" std:sid="d-set-b843d685">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResList" std:sid="d-map-87n9s5x9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="totalStudNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="procAcctNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="studCount" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="updCount" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/crs/StdCrsVrtAcctNo/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-z5dpeh6s">
+        
+        
+      <cl:responsedata dataid="dsListUseDiv"/>
+<cl:responsedata dataid="dsListBank"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsVrtAcctNo/" id="subRegVrtAcct" mediatype="application/x-www-form-urlencoded" std:sid="submission-688ag5bv">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsVrtAcctNo/" id="subInitVrtAcct" mediatype="application/x-www-form-urlencoded" std:sid="submission-q29y15vx">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsVrtAcctNo/" id="subCrtVrtAcct" mediatype="application/x-www-form-urlencoded" std:sid="submission-2b1md5sw">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="가상계좌관리 및 부여"/>
+  </head>
+  <body std:sid="body-37biwt24" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-us6jf2q6"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-vz2d1l93"/>
+<cl:udc id="appheader1" std:sid="ud-control-3nr050kq" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpExec" std:sid="group-s91f1kvj">
+        <cl:xylayoutdata height="160px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-m391riq1"/>
+      <cl:embeddedapp id="emaCssScalCollSch" src="../crs/impStdCrsCRegFeeCalc.clx" std:sid="e-app-7rx2grji">
+        <cl:xylayoutdata height="50px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="55px" verticalAnchor="TOP" width="1146px"/>
+      <cl:listener handler="onEmaCssScalCollSchAppReady" name="app-ready" std:sid="listener-3rwaq209"/>
+</cl:embeddedapp>
+<cl:udc std:sid="ud-control-15r175t4" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-STDTCHOI" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="30px" verticalAnchor="TOP" width="150px"/>
+      </cl:udc>
+<cl:udc std:sid="ud-control-l05o09bd" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-EXECCDT" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="110px" verticalAnchor="TOP" width="150px"/>
+      </cl:udc>
+<cl:output class="require" id="optBankCd" std:sid="output-j9896pcs" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="135px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-BANK" property="value"/>
+</cl:output>
+<cl:combobox id="cbbBankCd" std:sid="c-box-k30s709f">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="150px" std:sid="xyl-data-757d2a0f" top="135px" verticalAnchor="TOP" width="210px"/>
+        
+        
+      <cl:itemset datasetid="dsListBank" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optBankCd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strBankRcd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:button class="btn-save" id="btnSaveVrtAcctReg" std:sid="button-d8zfpmw8" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1020px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-VIRACTGRANT" property="value"/>
+<cl:listener handler="onBtnSaveVrtAcctRegClick" name="click" std:sid="listener-7n7w4csq"/>
+</cl:button>
+<cl:output class="require" id="optUseDivCd" std:sid="output-s970yn3c" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="370px" std:sid="xyl-data-548c5467" top="135px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-USEDIV" property="value"/>
+</cl:output>
+<cl:combobox id="cbbUseDivCd" std:sid="c-box-yl4pgf60">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="515px" std:sid="xyl-data-757d2a0f" top="135px" verticalAnchor="TOP" width="210px"/>
+        
+        
+      <cl:itemset datasetid="dsListUseDiv" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optUseDivCd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strUseDivCd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:button class="btn-save" id="btnSaveVrtAcctInit" std:sid="button-rl58w8k1" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1115px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="105px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-VIRACTINIT" property="value"/>
+<cl:listener handler="onBtnSaveVrtAcctInitClick" name="click" std:sid="listener-2k42dhyp"/>
+</cl:button>
+</cl:group>
+<cl:group class="search-box" id="grpReg" std:sid="group-f04981zu">
+        <cl:xylayoutdata height="105px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="200px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-q96e018x"/>
+      <cl:output class="require" id="optVrtAcctRegBank" std:sid="output-843w4vle" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="55px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-BANK" property="value"/>
+</cl:output>
+<cl:output class="require" id="optVrtAcctRegFile" std:sid="output-f7r890o5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="80px" verticalAnchor="TOP" width="140px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-FILECHOI" property="value"/>
+</cl:output>
+<cl:combobox id="cbbVrtAcctRegBank" std:sid="c-box-8490zhus">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="150px" std:sid="xyl-data-757d2a0f" top="55px" verticalAnchor="TOP" width="210px"/>
+        
+        
+      <cl:itemset datasetid="dsListBank" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optVrtAcctRegBank.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strBankRcdN" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+<cl:udc std:sid="ud-control-pzt89ikc" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-VIRACTNEWREG" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="30px" verticalAnchor="TOP" width="175px"/>
+      </cl:udc>
+<cl:output id="optFilePath" std:sid="output-66w64z18" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="150px" std:sid="xyl-data-548c5467" top="80px" verticalAnchor="TOP" width="775px"/>
+      <cl:datamapbind columnname="strFilePath" datacontrolid="dmReqKey" property="value"/>
+</cl:output>
+<cl:button class="btn-save" id="btnSaveVrtAcctUpLoad" std:sid="button-b23d7744" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1130px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-VIRACTUP" property="value"/>
+<cl:listener handler="onBtnSaveVrtAcctUpLoadClick" name="click" std:sid="listener-13v3a4eu"/>
+</cl:button>
+<cl:button id="btnSaveBrowse" std:sid="button-uio366p7" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="925px" std:sid="xyl-data-fa9a14b9" top="80px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-EXCEL_UPLOAD" property="value"/>
+<cl:listener handler="onBtnSaveBrowseClick" name="click" std:sid="listener-35m003ju"/>
+</cl:button>
+</cl:group>
+<cl:embeddedapp id="emaStdCrsSimul" src="../crs/impDialogCrsSimulResult.clx" std:sid="e-app-3pt47hk7">
+        <cl:xylayoutdata height="398px" horizontalAnchor="LEFT" left="1240px" std:sid="xyl-data-7c6988f9" top="30px" verticalAnchor="TOP" width="379px"/>
+      </cl:embeddedapp>
+<cl:embeddedapp id="emaStdCrsParm" src="../crs/impDialogCrsParam.clx" std:sid="e-app-5cp9ak6x">
+        <cl:xylayoutdata height="237px" horizontalAnchor="LEFT" left="1240px" std:sid="xyl-data-7c6988f9" top="437px" verticalAnchor="TOP" width="360px"/>
+      </cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-ycvk6sls" version="1.0.0.0">
+  <head std:sid="head-78ep53l3">
+    <title>extCcrCBatchTlsnReq</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-q8p77iwy" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-584n8s03" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-0oi84a0h" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-h360n062" width="320px"/>
+    <cl:model std:sid="model-j8m0b42n">
+      
+      
+      
+    <cl:dataset id="dsSchYearRcdList" std:sid="d-set-17pr4r24">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtRcdList" std:sid="d-set-9o4atp7m">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsCcrTlsnReq" std:sid="d-set-j84p5632">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SA_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REP_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROC_RSLT_YEAR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CLASS_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResList" std:sid="d-map-t4klb4u3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strProcStudCnt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strChkYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strTgtStudCnt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmKeyDateMap" std:sid="d-map-38n05w6k">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="BEF_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="YEAR" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SMT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="ST_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="END_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/ccr/ExtCcrBatchTlsnReq/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-04c406fd">
+        
+        
+      <cl:responsedata dataid="dsSchYearRcdList"/>
+<cl:responsedata dataid="dsSmtRcdList"/>
+<cl:responsedata dataid="dmKeyDateMap"/>
+</cl:submission>
+<cl:submission action="/ccr/ExtCcrBatchTlsnReq/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-z001v1k9">
+        
+        
+      <cl:requestdata dataid="dmKeyDateMap"/>
+<cl:responsedata dataid="dsCcrTlsnReq"/>
+</cl:submission>
+<cl:submission action="/ccr/ExtCcrBatchTlsnReq/" id="subSaveChk" mediatype="application/x-www-form-urlencoded" std:sid="submission-ld57oark">
+        
+        
+      <cl:requestdata dataid="dmKeyDateMap"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/ccr/ExtCcrBatchTlsnReq/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-6942iez4">
+        
+        
+      <cl:requestdata dataid="dmKeyDateMap"/>
+<cl:requestdata dataid="dmResList"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnDateTime/" id="subDate" mediatype="application/x-www-form-urlencoded" std:sid="submission-owf923w2">
+        
+        
+      <cl:requestdata dataid="dmKeyDateMap"/>
+<cl:responsedata dataid="dmKeyDateMap"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="일괄수강신청"/>
+  </head>
+  <body std:sid="body-h01bouxz" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-xk5663g5"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-qunnq8pm"/>
+<cl:udc id="appheader1" std:sid="ud-control-1de88yr8" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-f0fnogx5">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-af7hilsz"/>
+      <cl:output class="require" id="optSchYearRcd" std:sid="output-5091zdbs" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSchYearRcd" std:sid="c-box-8p9wljc5">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="150px"/>
+        
+        
+      <cl:itemset datasetid="dsSchYearRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-4m1g34k3" value=""/>
+<cl:expbind category="PROPERTY" expression="#optSchYearRcd.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSchYearRcdSelectionChange" name="selection-change" std:sid="listener-406e5g04"/>
+<cl:datamapbind columnname="YEAR" datacontrolid="dmKeyDateMap" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optSmtRcd" std:sid="output-q0h7d0hf" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="250px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="NLS-DLG-LBL-L002" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSmtRcd" std:sid="c-box-85h7eo5e">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="335px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="120px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-d9ei8lgh" value=""/>
+<cl:expbind category="PROPERTY" expression="#optSmtRcd.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSmtRcdSelectionChange" name="selection-change" std:sid="listener-ehvxd941"/>
+<cl:datamapbind columnname="SMT" datacontrolid="dmKeyDateMap" property="value"/>
+</cl:combobox>
+<cl:button class="btn-search" id="btnSearch" std:sid="button-8o665kj2" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1158px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-9t2uvxxj"/>
+</cl:button>
+</cl:group>
+<cl:group id="grpData" std:sid="group-11tx69z9">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="720px"/>
+        <cl:xylayout std:sid="xylayout-a1a01a7o"/>
+      <cl:button class="btn-commit" id="btnAllBat" std:sid="button-vtimys24" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="315px" std:sid="xyl-data-fa9a14b9" top="60px" verticalAnchor="TOP" width="90px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CCRTLSNREQBAT" property="value"/>
+<cl:listener handler="onBtnAllBatClick" name="click" std:sid="listener-u6up2ic1"/>
+</cl:button>
+<cl:output id="optComment" std:sid="output-897n8326" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="155px" std:sid="xyl-data-548c5467" top="195px" verticalAnchor="TOP" width="430px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-ASGN" property="value"/>
+</cl:output>
+<cl:output id="optComment1" std:sid="output-twids275" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="155px" std:sid="xyl-data-548c5467" top="235px" verticalAnchor="TOP" width="430px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-ASGN" property="value"/>
+</cl:output>
+<cl:output id="optComment2" std:sid="output-94rkj39z" value="">
+        <cl:xylayoutdata height="45px" horizontalAnchor="LEFT" left="155px" std:sid="xyl-data-548c5467" top="275px" verticalAnchor="TOP" width="430px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-ASGN" property="value"/>
+</cl:output>
+<cl:output id="optComment3" std:sid="output-9a3yxtxj" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="155px" std:sid="xyl-data-548c5467" top="340px" verticalAnchor="TOP" width="430px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-ASGN" property="value"/>
+</cl:output>
+<cl:inputbox enabled="false" id="ipbTgtStudCnt" maxlength="5" readonly="true" std:sid="i-box-523w6m3m">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="390px" std:sid="xyl-data-bb8b81f4" top="100px" verticalAnchor="TOP" width="80px"/>
+      <cl:expbind category="PROPERTY" expression="#optTgtStudCnt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strTgtStudCnt" datacontrolid="dmResList" property="value"/>
+</cl:inputbox>
+<cl:output id="optTgtStudCnt" std:sid="output-xnw537yn" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="265px" std:sid="xyl-data-548c5467" top="100px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TGTSTUDCNT" property="value"/>
+</cl:output>
+<cl:output id="optProcStudCnt" std:sid="output-z51n2a63" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="265px" std:sid="xyl-data-548c5467" top="125px" verticalAnchor="TOP" width="120px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PROCSTUDCNT" property="value"/>
+</cl:output>
+<cl:inputbox enabled="false" id="ipbProcStudCnt" maxlength="5" readonly="true" std:sid="i-box-6n7xe787">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="390px" std:sid="xyl-data-bb8b81f4" top="125px" verticalAnchor="TOP" width="80px"/>
+      <cl:expbind category="PROPERTY" expression="#optProcStudCnt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strProcStudCnt" datacontrolid="dmResList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:group id="grpDataDtl" std:sid="group-710l9372">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="735px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="495px"/>
+        <cl:xylayout std:sid="xylayout-7v215534"/>
+      <cl:udc std:sid="ud-control-q9o0tu92" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-NOLECTSTUD" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCcrTlsnReq"/>
+      </cl:udc>
+<cl:grid datasetid="dsCcrTlsnReq" id="grdCcrTlsnReq" std:sid="grid-83wa72kx">
+        <cl:xylayoutdata height="559px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="483px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-22vyopr7">
+          <cl:gridrow height="27px" std:sid="g-row-9f2rs436"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-b6184j9z" text="No"/>
+<cl:gridcell colindex="1" comment="ghBtnSaNm" rowindex="0" std:sid="gh-cell-tnn33754">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-ASGN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghBtnRepNm" rowindex="0" std:sid="gh-cell-yg8ihz6t">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-NAME" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghBtnProcRsltYear" rowindex="0" std:sid="gh-cell-cumn2004">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-SHYR" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" comment="ghBtnClassRcd" rowindex="0" std:sid="gh-cell-i9saxl3i">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-CLASSZ" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-t30bj44c" width="40px"/>
+<cl:gridcolumn std:sid="g-column-am2829ps" width="207px"/>
+<cl:gridcolumn std:sid="g-column-x2027zw5" width="100px"/>
+<cl:gridcolumn std:sid="g-column-pyv128g8" width="60px"/>
+<cl:gridcolumn std:sid="g-column-enj40srj" width="60px"/>
+<cl:griddetail std:sid="gd-band-dntt3o83">
+          <cl:gridrow height="25px" std:sid="g-row-61d8p85u"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-0z340l65" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="SA_NM" rowindex="0" std:sid="gd-cell-ekf17ms1"/>
+<cl:gridcell colindex="2" columnname="REP_NM" rowindex="0" std:sid="gd-cell-6p9a13bc" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="PROC_RSLT_YEAR" rowindex="0" std:sid="gd-cell-yje745o6" style="text-align:center;"/>
+<cl:gridcell colindex="4" columnname="CLASS_RCD" rowindex="0" std:sid="gd-cell-99sw1yl6" style="text-align:center;"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

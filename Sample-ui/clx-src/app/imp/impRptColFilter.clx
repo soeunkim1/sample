@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-240fn914" version="1.0.0.0">
+  <head std:sid="head-evxnrfxh">
+    <title>impRptColFilter</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-37p65rux" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-3yn0fptq" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-ciqebq1j" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-zdjmz9zr" width="320px"/>
+    <cl:model std:sid="model-tv251zwc">
+      
+      
+      
+    <cl:datamap id="dmExcelFileInfo" std:sid="d-map-v60a6ed0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strExcelPath" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strExcelRealFileNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strExcelChgFileNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmInsExcelReq" std:sid="d-map-59062izr">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="bodyData" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnFileTransUtil/" id="subExportExcel_header" mediatype="application/x-www-form-urlencoded" std:sid="submission-00ae5fu6">
+        
+        
+      <cl:requestdata dataid="dmInsExcelReq"/>
+<cl:responsedata dataid="dmExcelFileInfo"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-61hp51p1" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-w8826826"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-799bih6v"/>
+<cl:output id="optImpTitle" std:sid="output-9hkq911b" value="리피트UTIL">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

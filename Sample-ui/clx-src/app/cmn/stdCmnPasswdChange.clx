@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-36g48q64" version="1.0.0.0">
+  <head std:sid="head-rwov5s31">
+    <title>stdCmnPasswdChange</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-jpp28qa7" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-svs8265o" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-3t634wu9" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-96161w6w" width="320px"/>
+    <cl:model std:sid="model-94u1k343">
+      
+      
+      
+    <cl:dataset id="dsPwdVaildChkList" std:sid="d-set-875q03no">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP4" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP5" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP6" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-0b78r0br">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strUserId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqList" std:sid="d-map-5z18l48e">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strNewPasswd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRePasswd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUserId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCurPasswd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnPasswdChange/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-pqltc277">
+        
+        
+      <cl:responsedata dataid="dsPwdVaildChkList"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnPasswdChange/" id="subPasswd" mediatype="application/x-www-form-urlencoded" std:sid="submission-l69ffydx">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnLogin/" id="subLogout" mediatype="application/x-www-form-urlencoded" std:sid="submission-52dj6dj2">
+        
+        
+      </cl:submission>
+</cl:model>
+    <cl:appspec title="비밀번호변경"/>
+  </head>
+  <body std:sid="body-txqsylu6" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-90o76b18"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-wn79f5ig"/>
+<cl:group id="grpData" std:sid="group-k2o7203f">
+        <cl:xylayoutdata height="642px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="30px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-ffgx95hf"/>
+      <cl:output id="optSubTitle" std:sid="output-9w8bruf5" value="현재 비밀번호를 입력한 후 새로운 비밀번호를 입력하세요.">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="20px" std:sid="xyl-data-548c5467" top="10px" verticalAnchor="TOP" width="590px"/>
+      </cl:output>
+<cl:output id="optPopWarning" std:sid="output-7e2pqj29" value="● 최근 3개월 이상 비밀번호를 변경하지 않고 동일한 비밀번호를 사용중으로 비밀번호 변경을 권해드립니다.">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="20px" std:sid="xyl-data-548c5467" top="35px" verticalAnchor="TOP" width="840px"/>
+      </cl:output>
+<cl:udc std:sid="ud-control-1l7dgt8h" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="20px" std:sid="xyl-data-36446f78" top="80px" verticalAnchor="TOP" width="120px"/>
+      </cl:udc>
+<cl:udc std:sid="ud-control-1e3t1m02" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="20px" std:sid="xyl-data-36446f78" top="125px" verticalAnchor="TOP" width="120px"/>
+      </cl:udc>
+<cl:udc std:sid="ud-control-v867ha5c" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="20px" std:sid="xyl-data-36446f78" top="170px" verticalAnchor="TOP" width="120px"/>
+      </cl:udc>
+<cl:inputbox id="scbCurPasswd" secret="true" std:sid="i-box-wh4fgfy3">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="145px" std:sid="xyl-data-bb8b81f4" top="80px" verticalAnchor="TOP" width="160px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optCurPasswd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strCurPasswd" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="scbNewPasswd" secret="true" std:sid="i-box-293df947">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="145px" std:sid="xyl-data-bb8b81f4" top="125px" verticalAnchor="TOP" width="160px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optNewPasswd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strNewPasswd" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="scbRePasswd" secret="true" std:sid="i-box-3fa3373b">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="145px" std:sid="xyl-data-bb8b81f4" top="170px" verticalAnchor="TOP" width="160px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optRePasswd.value" property="fieldLabel"/>
+<cl:listener handler="onScbRePasswdKeydown" name="keydown" std:sid="listener-j4eg2f16"/>
+<cl:datamapbind columnname="strRePasswd" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+<cl:output id="optWarning" std:sid="output-02g03n8n" value="● 동일한 아이디와 비밀번호로 여러 사이트를 이용하시는 경우&#10;  특히 개인정보 도용 피해에 노출될 가능성이 높습니다.">
+        <cl:xylayoutdata height="40px" horizontalAnchor="LEFT" left="360px" std:sid="xyl-data-548c5467" top="80px" verticalAnchor="TOP" width="460px"/>
+      </cl:output>
+<cl:button class="btn-commit" id="btnChange" std:sid="button-xryr4924" value="변경">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="60px" std:sid="xyl-data-fa9a14b9" top="220px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnChangeClick" name="click" std:sid="listener-wn2zos45"/>
+<cl:listener handler="onBtnChangeClick" name="click" std:sid="listener-9yt6ud44"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnReset" std:sid="button-4opg648a" value="다시입력">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="220px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnResetClick" name="click" std:sid="listener-prhq213j"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnFindPw" std:sid="button-d1xk17h0" value="다음에변경">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="215px" std:sid="xyl-data-fa9a14b9" top="220px" verticalAnchor="TOP" width="75px"/>
+      <cl:listener handler="onBtnFindPwClick" name="click" std:sid="listener-36l25jpp"/>
+</cl:button>
+<cl:img id="imgBar" src="../../images/main/div_bar_bg.gif" std:sid="image-17i31u4o">
+        <cl:xylayoutdata height="200px" horizontalAnchor="LEFT" left="330px" std:sid="xyl-data-6e9a9f7d" top="65px" verticalAnchor="TOP" width="4px"/>
+      </cl:img>
+<cl:output id="optWarning1" std:sid="output-fdmi299l" value="● 아이디와 같은 비밀번호나 주민등록번호, 생일, 학번, 전화번호 등 &#10;  개인정보와 관련된 숫자, 연속된 숫자, 동일 반복된 숫자 등 다른&#10;  사람이 쉽게 알아낼 수 있는 비밀번호는 유출의 위험이 많습니다.">
+        <cl:xylayoutdata height="60px" horizontalAnchor="LEFT" left="360px" std:sid="xyl-data-548c5467" top="125px" verticalAnchor="TOP" width="460px"/>
+      </cl:output>
+<cl:output id="optMinTitle" std:sid="output-79e4qe69" value="● 비밀번호작성규칙정의">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="360px" std:sid="xyl-data-548c5467" top="188px" verticalAnchor="TOP" width="460px"/>
+      </cl:output>
+<cl:output id="optMinTxt" std:sid="output-8k41u718" value="~16자의 영문 대소문자, 숫자, 특수문자를 조합하여 사용하실 수 있습니다.">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="360px" std:sid="xyl-data-548c5467" top="208px" verticalAnchor="TOP" width="500px"/>
+      </cl:output>
+</cl:group>
+<cl:img id="imgHomeTilte1" src="../../images/imgs/icon_home.png" std:sid="image-99mz477g">
+        <cl:xylayoutdata height="16px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-6e9a9f7d" top="7px" verticalAnchor="TOP" width="15px"/>
+      </cl:img>
+<cl:output id="optPagePgTitle1" std:sid="output-xf4kc053" value="비밀번호 변경">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="30px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="360px"/>
+      </cl:output>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

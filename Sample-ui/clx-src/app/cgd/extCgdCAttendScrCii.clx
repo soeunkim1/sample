@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-t5q2127v" version="1.0.0.0">
+  <head std:sid="head-t1i650yx">
+    <title>extCgdCAttendScrCii</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-71b62s01" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-97g461rx" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-p824ykyg" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-gp8d86uj" width="320px"/>
+    <cl:model std:sid="model-la3tnqoa">
+      
+      
+      
+    <cl:dataset id="dsExtCgdAttendScr" info="EXT_CGD_ATTEND_SCR@WEEK_TC,ABN_TC" std:sid="d-set-7o9xhm0q">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="WEEK_TC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ABN_TC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ALLOT_POINT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cgd/ExtCgdAttendScrCii/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-12x0884u">
+        
+        
+      <cl:responsedata dataid="dsExtCgdAttendScr"/>
+</cl:submission>
+<cl:submission action="/cgd/ExtCgdAttendScrCii/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-h2o9ip84">
+        
+        
+      <cl:requestdata dataid="dsExtCgdAttendScr"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="출석기준관리"/>
+  </head>
+  <body std:sid="body-h06sq0bu" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-34xq6199"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-n5l1ez67"/>
+<cl:udc id="appheader1" std:sid="ud-control-j8p58rg5" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-e97dqe62">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-c1ra5ac6"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-m677943y" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1158px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-9nta91g4"/>
+</cl:button>
+</cl:group>
+<cl:group id="grpData" std:sid="group-op8qu04z">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-qzf661n5"/>
+      <cl:udc std:sid="ud-control-s925o4m1" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-ABNTIMECNT" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="215px"/>
+        <cl:property name="ctrl" type="control" value="grdExtCgdAttendScr"/>
+      </cl:udc>
+<cl:button class="btn-new" id="btnNew" std:sid="button-442q9acd" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="963px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW" property="value"/>
+<cl:listener handler="onBtnNewClick" name="click" std:sid="listener-s8w96bg1"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-49b22rjk" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1028px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDelClick" name="click" std:sid="listener-6j5j95yg"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-z8eryx4q" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1093px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-qyit85e0"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-13vk2385" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1158px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-06fd1yv3"/>
+</cl:button>
+<cl:grid datasetid="dsExtCgdAttendScr" id="grdExtCgdAttendScr" std:sid="grid-98s5psfd">
+        <cl:xylayoutdata height="561px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1213px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-v230jy92">
+          <cl:gridrow height="27px" std:sid="g-row-78zsgduf"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-97j44k69"/>
+<cl:gridcell colindex="1" comment="ghBtnUptStatus" rowindex="0" std:sid="gh-cell-njjhi550" text="F"/>
+<cl:gridcell colindex="2" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-j0zbvqt5" text="No"/>
+<cl:gridcell class="require" colindex="3" comment="ghBtnWeekTc" rowindex="0" std:sid="gh-cell-ii81q313">
+<cl:langbind category="PROPERTY" keypath="UI-DB-WEEK_TC" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="4" comment="ghBtnAbnTc" rowindex="0" std:sid="gh-cell-60122xh7">
+<cl:langbind category="PROPERTY" keypath="UI-DB-ABN_TC" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" comment="ghBtnAllotPoint" rowindex="0" std:sid="gh-cell-w4xx7l00">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-ALLOT_POINT" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-590bn2qo" width="25px"/>
+<cl:gridcolumn std:sid="g-column-oby2dke5" width="25px"/>
+<cl:gridcolumn std:sid="g-column-nwna114c" width="40px"/>
+<cl:gridcolumn std:sid="g-column-5938082v" width="150px"/>
+<cl:gridcolumn std:sid="g-column-8h1fg1gq" width="150px"/>
+<cl:gridcolumn std:sid="g-column-s57ls8f7" width="150px"/>
+<cl:griddetail std:sid="gd-band-75r82x97">
+          <cl:gridrow height="25px" std:sid="g-row-1lmu477g"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-107o3bqk" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-98f12yz3">
+<cl:output std:sid="output-2hxm191j" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columntype="rowindex" rowindex="0" std:sid="gd-cell-le69h20i" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="WEEK_TC" rowindex="0" std:sid="gd-cell-1348a5sh">
+<cl:numbereditor format="999" id="gdIpbWeekTc" spinbutton="false" std:sid="n-editor-56df966r">
+<cl:attribute name="require" value="Y"/>
+</cl:numbereditor>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="ABN_TC" rowindex="0" std:sid="gd-cell-d53wa61n">
+<cl:numbereditor format="999" id="gdIpbAbnTc" spinbutton="false" std:sid="n-editor-v5494j1u">
+<cl:attribute name="require" value="Y"/>
+</cl:numbereditor>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="ALLOT_POINT" rowindex="0" std:sid="gd-cell-ymss0zfl">
+<cl:numbereditor format="999" id="gdIpbAllotPoint" spinbutton="false" std:sid="n-editor-8302p3m3"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

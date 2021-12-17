@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-7973c7pk" version="1.0.0.0">
+  <head std:sid="head-2ysogaw8">
+    <title>stdCmnSManualMgt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-br87n32p" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-rsw2p2a9" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-0cskn6us" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-2y97704a" width="320px"/>
+    <cl:model std:sid="model-55iq002e">
+      
+      
+      
+    <cl:dataset id="dsUnitSystemRcdList" std:sid="d-set-1939yx80">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-8evr86ff">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPgmIdNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnSManualMgt/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-p27g33o6">
+        
+        
+      <cl:responsedata dataid="dsUnitSystemRcdList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-3n3989bt" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-021l1z0a"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-2184fmsw"/>
+<cl:udc id="appheader1" std:sid="ud-control-b3ry845e" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-ou78m038">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-5v653n57"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-1732plr5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-nx8u0qhw"/>
+</cl:button>
+<cl:output class="require" id="optUnitSystemRcd" std:sid="output-96t82833" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SYSTEMDIV" property="value"/>
+</cl:output>
+<cl:combobox id="cbbUnitSystemRcd" std:sid="c-box-wo87zw6t">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="115px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="130px"/>
+        
+        
+      <cl:itemset datasetid="dsUnitSystemRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optUnitSystemRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSystemRcd" datacontrolid="dmReqList" property="value"/>
+</cl:combobox>
+<cl:output id="optMenuId" std:sid="output-gngwom3b" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="255px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-MENU_ID" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbMenuId" std:sid="i-box-3lg2cf8w">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="360px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="260px"/>
+      <cl:listener handler="onIpbMenuIdKeydown" name="keydown" std:sid="listener-oz80p3ds"/>
+<cl:datamapbind columnname="strPgmIdNm" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:group id="grp_rptExtCetListPrt" std:sid="group-36us3635">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-9ule068z"/>
+      <cl:htmlobject id="hojReport" std:sid="htmlobject-14k647lu">
+        <cl:xylayoutdata height="586px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-5608d431" top="5px" verticalAnchor="TOP" width="1215px"/>
+      </cl:htmlobject>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

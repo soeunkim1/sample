@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-mkk3e6d4" version="1.0.0.0">
+  <head std:sid="head-poq5tw27">
+    <title>stdCrsPBankPop</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-1h648iir" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-2dk1gr2f" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-iqq71sc8" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-4sz52321" width="320px"/>
+    <cl:model std:sid="model-8dj1tk2z">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-w5m53g8p">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strBankRcdNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsBank" std:sid="d-set-ek97sds4">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-696zvq3f">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsBank"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="은행 목록 검색"/>
+  </head>
+  <body std:sid="body-aqe5410p" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-1nf87o34"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-311sife5"/>
+<cl:udc id="appheader1" std:sid="ud-control-nzikd809" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-5vycy1w1">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="440px"/>
+        <cl:xylayout std:sid="xylayout-2h77g6dv"/>
+      <cl:inputbox id="ipbBankRcdNm" maxlength="100" std:sid="i-box-wx1fj93x">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="150px"/>
+      <cl:expbind category="PROPERTY" expression="#optBankNm.value" property="fieldLabel"/>
+<cl:listener handler="onIpbBankRcdNmKeydown" name="keydown" std:sid="listener-y3r22w53"/>
+<cl:datamapbind columnname="strBankRcdNm" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:output id="optBankNm" std:sid="output-24g62l28" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-BANKNM" property="value"/>
+</cl:output>
+<cl:button class="btn-search" id="btnSearch" std:sid="button-jk3l7nlu" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="375px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-6ay73ci7"/>
+</cl:button>
+</cl:group>
+<cl:group id="grpData" std:sid="group-tm9113g7">
+        <cl:xylayoutdata height="348px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="440px"/>
+        <cl:xylayout std:sid="xylayout-1xe2i6l3"/>
+      <cl:udc std:sid="ud-control-1o2k65rq" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-BANKCDLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="256px"/>
+        <cl:property name="ctrl" type="control" value="grdBank"/>
+      </cl:udc>
+<cl:grid datasetid="dsBank" id="grdBank" std:sid="grid-36vo65g3">
+        <cl:xylayoutdata height="313px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="430px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdBankRowDblclick" name="row-dblclick" std:sid="listener-rr1wb0g1"/>
+<cl:gridheader std:sid="gh-band-38s0n806">
+          <cl:gridrow height="27px" std:sid="g-row-bg6y4lg3"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-dcc01xi6">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-STAFFNO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" comment="ghBtnCd" rowindex="0" std:sid="gh-cell-p28x3l27">
+<cl:langbind category="PROPERTY" keypath="UI-DB-BANK_RCD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" comment="ghBtnCdNm" rowindex="0" std:sid="gh-cell-2d804827">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-BANKNM" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-94n93kbt" width="40px"/>
+<cl:gridcolumn std:sid="g-column-1qt9or5b" width="145px"/>
+<cl:gridcolumn std:sid="g-column-ou97zab2" width="145px"/>
+<cl:griddetail std:sid="gd-band-ao30tgh8">
+          <cl:gridrow height="25px" std:sid="g-row-5e0lwwmo"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-21gr0iqz" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="CD" rowindex="0" std:sid="gd-cell-v3j68842" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="CD_NM" rowindex="0" std:sid="gd-cell-1vm8ne04"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button id="btnCloseOk" std:sid="button-7t5r6r6w" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="385px" std:sid="xyl-data-fa9a14b9" top="425px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CHOICLS" property="value"/>
+<cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-iqc96qq2"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-9vt4ij84" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="425px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-iayvhk36"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

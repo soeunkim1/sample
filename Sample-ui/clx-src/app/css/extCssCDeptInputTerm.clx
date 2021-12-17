@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-mqhs9uq9" version="1.0.0.0">
+  <head std:sid="head-b6a3j9c2">
+    <title>extCssCDeptInputTerm</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-kh7tp0lv" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-c3wx2m3h" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-9f0527t4" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-5bh16f37" width="320px"/>
+    <cl:model std:sid="model-06yu2z67">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-gtszb7ri">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsDptmjScalInputTerm" info="EXT_CSS_DPT_SCAL_TERM@SCH_YEAR_RCD,SMT_RCD,SCAL_FEE_CD,SS_OBJ_DIV_RCD" std:sid="d-set-bxq3tk8s">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCAL_FEE_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SS_OBJ_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ST_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REMARK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCAL_FEE_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/css/ExtCssDeptInputTerm/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-650q75j4">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsDptmjScalInputTerm"/>
+</cl:submission>
+<cl:submission action="/css/ExtCssDeptInputTerm/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-93662w4x">
+        
+        
+      <cl:requestdata dataid="dsDptmjScalInputTerm"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="학과장학생입력기간관리"/>
+  </head>
+  <body std:sid="body-83fs17b8" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-g6a120b5"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-ef111c56"/>
+<cl:udc id="appheader1" std:sid="ud-control-p67zm0o8" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-u95vg497">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-t484k13z"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-23mgdmky" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-22pjud82"/>
+</cl:button>
+<cl:embeddedapp id="emaYearSmt" src="../imp/impYearSmt.clx" std:sid="e-app-lqf120q6">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="5px" verticalAnchor="TOP" width="330px"/>
+      </cl:embeddedapp>
+</cl:group>
+<cl:group id="grpData" std:sid="group-af5b0lft">
+        <cl:xylayoutdata height="598px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-01ih1k4b"/>
+      <cl:udc std:sid="ud-control-fb23kl23" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRSTUDINPUTTERM" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="315px"/>
+        <cl:property name="ctrl" type="control" value="grdDptmjScalInputTerm"/>
+      </cl:udc>
+<cl:button class="btn-new" id="btnNew" std:sid="button-fg263br5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="965px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW" property="value"/>
+<cl:listener handler="onBtnNewClick" name="click" std:sid="listener-6orp03v2"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-pyymp9i2" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1030px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDelClick" name="click" std:sid="listener-61rh86li"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-nq6e6604" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1095px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-3erj7g31"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-z95gnnf1" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-xcp4zfzi"/>
+</cl:button>
+<cl:grid datasetid="dsDptmjScalInputTerm" id="grdDptmjScalInputTerm" std:sid="grid-8596fkrn">
+        <cl:xylayoutdata height="563px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdDptmjScalInputTermSelectionChange" name="selection-change" std:sid="listener-5e4b21ay"/>
+<cl:gridheader std:sid="gh-band-atoyo444">
+          <cl:gridrow height="27px" std:sid="g-row-x860765g"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-jq5pc505"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-k9450147" text="F"/>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-4aj9b397" text="No"/>
+<cl:gridcell class="require" colindex="3" rowindex="0" std:sid="gh-cell-d9n0kd55">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-SCRS" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="5" rowindex="0" std:sid="gh-cell-1n29e312">
+<cl:langbind category="PROPERTY" keypath="UI-DB-ST_DT" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="6" rowindex="0" std:sid="gh-cell-q14n5021">
+<cl:langbind category="PROPERTY" keypath="UI-DB-END_DT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-9x6j18pi" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-REMARK" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gh-cell-si1k932s" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-RATE_DEN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="9" rowindex="0" std:sid="gh-cell-u4og7x23" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-RATE_DEN" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-6ojwf9ms" width="25px"/>
+<cl:gridcolumn std:sid="g-column-a39893qo" width="25px"/>
+<cl:gridcolumn std:sid="g-column-v6699xsg" width="40px"/>
+<cl:gridcolumn std:sid="g-column-7u5ryllr" width="280px"/>
+<cl:gridcolumn std:sid="g-column-2ead47pc" width="148px"/>
+<cl:gridcolumn std:sid="g-column-vb2j8n69" width="145px"/>
+<cl:gridcolumn std:sid="g-column-638v548w" width="264px"/>
+<cl:gridcolumn std:sid="g-column-70tv2c67" width="169px"/>
+<cl:gridcolumn std:sid="g-column-nr6vm84b" width="126px"/>
+<cl:griddetail std:sid="gd-band-07ps23ih">
+          <cl:gridrow height="25px" std:sid="g-row-89cg2lln"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-h4614r6s" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-6w4ax42n">
+<cl:output std:sid="output-w268s2up" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columntype="rowindex" rowindex="0" std:sid="gd-cell-u61w7mb3" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="SCAL_FEE_NM" rowindex="0" std:sid="gd-cell-x2b2j30u">
+<cl:inputbox id="gdIpbScalFeeNm" maxlength="100" std:sid="i-box-hf83194d">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="ST_DT" rowindex="0" std:sid="gd-cell-7684h9dl">
+<cl:dateinput format="YYYY-MM-DD" id="gdDipStDt" std:sid="d-input-tn3a6ag6" style="text-align:center;">
+<cl:attribute name="require" value="Y"/>
+</cl:dateinput>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="END_DT" rowindex="0" std:sid="gd-cell-jbrklr8i">
+<cl:dateinput format="YYYY-MM-DD" id="gdDipEndDt" std:sid="d-input-c4164xl3" style="text-align:center;">
+<cl:attribute name="require" value="Y"/>
+</cl:dateinput>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="REMARK" rowindex="0" std:sid="gd-cell-k9go3735">
+<cl:inputbox id="gdIpbRemark" maxlength="1000" std:sid="i-box-y732z1fq"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" columnname="SS_OBJ_DIV_RCD" rowindex="0" std:sid="gd-cell-ad85799n">
+<cl:inputbox id="gdIpbSsObjDivRcd" std:sid="i-box-3b0jo5w6"/>
+</cl:gridcell>
+<cl:gridcell colindex="9" columnname="SCAL_FEE_CD" rowindex="0" std:sid="gd-cell-680p3mc6">
+<cl:inputbox id="gdIpbScalFeeCd" std:sid="i-box-i8bam80f"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:embeddedapp id="emaStdCssPScalFeeSch" src="../css/impStdCssPScalFeePop.clx" std:sid="e-app-w2i0p019">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="676px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

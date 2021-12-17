@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-bddff06a" version="1.0.0.0">
+  <head std:sid="head-b1fa9ad3">
+    <title>cmnPrsnSearch</title>
+    <screen std:sid="screen-97e18032" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-d24516dd" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-b220158e" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-4f790259">
+      <cl:datamap std:sid="d-map-re34992x" id="dmResult">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="STAT_RCD"/>
+          <cl:datacolumn datatype="string" name="BIRTHDAY"/>
+          <cl:datacolumn datatype="string" name="WKGRD_NM"/>
+          <cl:datacolumn datatype="string" name="STAT_NM"/>
+          <cl:datacolumn datatype="string" name="WKDTY_NM"/>
+          <cl:datacolumn datatype="string" name="SSN"/>
+          <cl:datacolumn datatype="string" name="OG_NM"/>
+          <cl:datacolumn datatype="string" name="STAFF_SUB_GRP_RCD"/>
+          <cl:datacolumn datatype="string" name="POS_NM"/>
+          <cl:datacolumn datatype="string" name="WKGRD_RCD"/>
+          <cl:datacolumn datatype="string" name="OBJ_NO"/>
+          <cl:datacolumn datatype="string" name="POS_CD"/>
+          <cl:datacolumn datatype="string" name="STAFF_GRP_RCD"/>
+          <cl:datacolumn datatype="string" name="WKDTY_RCD"/>
+          <cl:datacolumn datatype="string" name="OG_CD"/>
+          <cl:datacolumn datatype="string" name="REP_NM"/>
+          <cl:datacolumn datatype="string" name="STAFF_NO"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-09cb7228" id="dmRes">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="count"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-7590fz1l" id="dmReq">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="string" name="strStaffNo"/>
+          <cl:datacolumn datatype="string" name="strStatRcd"/>
+          <cl:datacolumn datatype="string" name="strStaffGrpRcd"/>
+          <cl:datacolumn datatype="string" name="strObjCd"/>
+          <cl:datacolumn datatype="string" name="strStaffSubGrpRcd"/>
+          <cl:datacolumn datatype="string" name="strWkdtyAuth"/>
+          <cl:datacolumn datatype="string" name="strOprtRoleId"/>
+          <cl:datacolumn datatype="string" name="strObjDivRcd"/>
+          <cl:datacolumn datatype="string" name="authRngRcd"/>
+          <cl:datacolumn datatype="string" name="strKeyDate"/>
+          <cl:datacolumn datatype="string" name="strRepNm"/>
+          <cl:datacolumn datatype="string" name="strStaffGrpAuth"/>
+          <cl:datacolumn datatype="string" name="strWkgrdRcd"/>
+          <cl:datacolumn datatype="string" name="strPresIncludCls"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:submission std:sid="submission-bu1gpcb3" id="subPrecheckStdCmnRPrsnSearch" action="cmn/CmnPrsnSearch/precheck.do" mediatype="application/x-www-form-urlencoded">
+        <cl:requestdata dataid="dmReq"/>
+        <cl:responsedata dataid="dmRes"/>
+        <cl:responsedata dataid="dmResult"/>
+      </cl:submission>
+    </cl:model>
+    <cl:appspec>
+      <cl:property bindable="true" default="false" std:desc="조회조건내에 위치하는지 여부" name="iIsParentGrpSearch" type="boolean"/>
+      <cl:property bindable="true" std:desc="(선택)셋팅 교직원 그룹에 대한 인사자료권한 적용여부(적용시 : true)" name="istrStaffGrpAuth" type="string"/>
+      <cl:property bindable="true" std:desc="(선택)셋팅 보직에 해당되는 사람 조회여부(조회시 : true), 현재사용하지 않음(2013.04.11)" name="istrWkdtyAuth" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 기준일자(NULL일 경우 현재일자)" name="iKeyDate" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 교직원번호" name="iStaffNo" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 교직원그룹" name="iStaffGrpRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 교직원그룹 잠금적용여부(적용시 : true), 교직원 팝업에서 조건변경해도 활성안됨." name="iStaffGrpRcdLock" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 교직원 하위그룹[CF003]" name="iStaffSubGrpRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 교직원 하위그룹 잠금적용여부(적용시 : true), 교직원 팝업에서 조건변경해도 활성안됨." name="iStaffSubGrpRcdLock" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 상태[CF005](재직, 휴직, 퇴직 등을 말함)" name="iStatusRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 성명" name="iRepNm" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 객체구분코드[CC009]" name="iObjDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 부서코드" name="iObjCd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 부서명" name="iObjNm" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 복수 행정부서 지정(부서에 대한 IN조건 'A','B','C' 형식으로 셋팅)" name="istrObjCdInList" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 직급[CF007]" name="iWkgrdRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 셋팅 부서 조회조건 비활성화 여부 (true 입력시 비활성화됨)" name="iOgDisableCls" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 총장님 포함 여부 (Y 입력시 팝업에서 선택한 교직원그룹과 상관없이 총장님은 무조건 조회 가능 (2016.11.30 출장신청 요청사항으로 인해 옵션추가됨. [전혜정선생님 요청사항]))" name="iPresIncludCls" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 오브젝트번호" name="oObjNo" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 교직원번호" name="oStaffNo" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 성명" name="oRepNm" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 생년월일[CF001]" name="oBirthday" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 상태명" name="oStatNm" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 상태코드" name="oStatRcd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 부서명" name="oOgNm" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 부서코드" name="oOgCd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 직위명" name="oPosNm" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 직위코드" name="oPosCd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 직급명" name="oWkgrdNm" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 직급" name="oWkgrdRcd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 교직원그룹 " name="oStaffGrpRcd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 교직원 하위그룹 " name="oStaffSubGrpRcd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 호봉코드" name="oHoRcd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 주민번호" name="oSsn" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 직책코드 " name="oWkdtyRcd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 직책명 " name="oWkdtyNm" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 법인임용일자      (2016.01.11 정정호 추가) " name="oAfpAppDt" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 연가기준일자      (2016.01.14 정정호 추가) " name="oPvactCiiDt" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 교수구분코드[CF401]  (2016.04.06 정정호 추가) " name="oProfDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="리턴 내외국인구분코드[CB031] (2016.04.06 정정호 추가) " name="oIoForeignDivRcd" type="string"/>
+      <cl:event name="searchCallBack" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-783b79a1" style="top:0px; left:0px; width:105px; height:25px;">
+    <cl:listener std:sid="listener-eeae99a9" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:listener std:sid="listener-03f49a57" handler="onBodyLoad" name="load"/>
+    <cl:group std:sid="group-8d0539bf" id="grpUdcPUser">
+      <cl:xylayoutdata std:sid="xyl-data-f2c2d8f3" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:inputbox std:sid="i-box-851bd474" id="ipbUdcProfNm">
+        <cl:listener std:sid="listener-a9180418" handler="onIpbUdcProfNmValueChange" name="value-change"/>
+        <cl:listener std:sid="listener-96a9da1d" handler="onIpbUdcProfNmKeydown" name="keydown"/>
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iRepNm"/>
+        <cl:formdata std:sid="f-data-78e1b7ed" col="0" row="0"/>
+      </cl:inputbox>
+      <cl:button std:sid="button-077f963b" id="btnUdcProf" class="btn-pop-search">
+        <cl:listener std:sid="listener-3d406af9" handler="onBtnSearchUdcProfClick" name="click"/>
+        <cl:formdata std:sid="f-data-2ec5f0fd" col="2" row="0"/>
+      </cl:button>
+      <cl:inputbox std:sid="i-box-3c8e3490" id="ipbUdcProfNo" readonly="true">
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iStaffNo"/>
+        <cl:formdata std:sid="f-data-71babd72" col="1" row="0"/>
+      </cl:inputbox>
+      <cl:formlayout std:sid="f-layout-45d9dca2" hspace="0">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="7" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="3" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="20" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-d264bd9c"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

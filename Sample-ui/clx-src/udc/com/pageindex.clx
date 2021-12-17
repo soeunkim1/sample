@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-889d5596" version="1.0.0.0">
+  <head std:sid="head-464d3caa">
+    <title>pageindexpolicy</title>
+    <screen std:sid="screen-a7f5def3" id="default" customHeight="600" height="768px" minwidth="1024px" name="default" width="1024px"/>
+    <screen std:sid="screen-8c2d5729" id="tablet" height="667px" maxwidth="1024px" minwidth="500px" name="tablet" width="500px"/>
+    <screen std:sid="screen-2bb5e306" id="mobile" height="525px" maxwidth="500px" name="mobile" width="350px"/>
+    <cl:model std:sid="model-c289c007"/>
+    <cl:appspec>
+      <cl:event name="pagechange" type="cpr.events.CSelectionEvent"/>
+      <cl:event name="before-pagechange"  type="cpr.events.CSelectionEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-ab560aa1" style="top:0px; left:0px; width:1000px; height:50px;">
+    <cl:xylayout std:sid="xylayout-617b9262"/>
+    <cl:group std:sid="group-b59629ed">
+      <cl:xylayoutdata std:sid="xyl-data-04b3deae" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:output std:sid="output-7b028046" style="text-align:right;" value="총건수 :">
+        <cl:formdata std:sid="f-data-3bc7d538" col="0" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-b07c2c3e" id="optTot" datatype="number" format="999,999,999">
+        <cl:formdata std:sid="f-data-ef85251b" col="1" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-33d4427e" style="text-align:right;" value="페이지 :">
+        <cl:formdata std:sid="f-data-c1f99766" col="2" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-3b56fb5d" id="optCurrentIdx" style="text-align:right;">
+        <cl:formdata std:sid="f-data-58c98fa9" col="3" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-4deeb531" style="text-align:center;" value="/">
+        <cl:formdata std:sid="f-data-4f048134" col="4" row="0"/>
+      </cl:output>
+      <cl:output std:sid="output-e359caec" id="optPageCnt" value="0">
+        <cl:formdata std:sid="f-data-0ce84e3c" col="5" row="0"/>
+      </cl:output>
+      <cl:pageindexer std:sid="p-indexer-31b86270" id="pageIndex" style="text-align:right;" viewpagecount="3" visiblefirstbutton="false" visiblelastbutton="false">
+        <cl:listener std:sid="listener-c33e4804" handler="onPageIndexSelectionChange" name="selection-change"/>
+        <cl:listener std:sid="listener-39639243" handler="onPageIndexBeforeSelectionChange" name="before-selection-change"/>
+        <cl:formdata std:sid="f-data-786b0c4e" col="6" height="30" row="0" valign="CENTER"/>
+      </cl:pageindexer>
+      <cl:formlayout std:sid="f-layout-225cab98">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="60" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="60" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="60" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="60" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="10" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="60" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="1" unit="FRACTION"/>
+      </cl:formlayout>
+    </cl:group>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

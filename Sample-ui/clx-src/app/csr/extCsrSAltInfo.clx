@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-m6uz15h2" version="1.0.0.0">
+  <head std:sid="head-pie1f254">
+    <title>extCsrSAltInfo</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-no8q79c2" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-72j23uu0" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-v8cvr0u5" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-j3c05380" width="320px"/>
+    <cl:model std:sid="model-7i6d6fl1">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-anve6u1j">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCsrShregAlt" std:sid="d-set-6x2334u7">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="ALT_DIV_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ALT_RSN_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCH_YEAR_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ALT_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RTN_SCH_YEAR_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RTN_SMT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHG_BEF_DESC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHG_DESC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REG_TRANS_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="RTN_PLAN_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REC_RCOG_YN" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/csr/ExtCsrAltInfo/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-9emfh6n2">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsCsrShregAlt"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="extCsrSAltInfo"/>
+  </head>
+  <body std:sid="body-ep3rt9c6" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-bs078fi1"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-p4ncr259"/>
+<cl:group id="grp_rptCsrShregAlt" std:sid="group-25yx299h">
+        <cl:xylayoutdata height="463px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-9c4c06d1" top="0px" verticalAnchor="TOP" width="1025px"/>
+        <cl:xylayout std:sid="xylayout-g2f2e827"/>
+      <cl:udc std:sid="ud-control-co4g6fkh" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCsrShregAlt"/>
+      </cl:udc>
+<cl:grid datasetid="dsCsrShregAlt" id="grdCsrShregAlt" std:sid="grid-9p5ka3cx">
+        <cl:xylayoutdata height="428px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1015px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-fx2e93wl">
+          <cl:gridrow height="27px" std:sid="g-row-4yzf0kg3"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-97ll5k1o" text="No"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-k3wlj338" text="구분"/>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-h441yx68" text="사유"/>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-q878f13a" text="학년도"/>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-g68p0n26" text="학기"/>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-vx51v25i" text="학적변동일"/>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-9wn780s9" text="복학예정일"/>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-qy501897" text="변경전 내역"/>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gh-cell-hb2u0zi7" text="변경후 내역"/>
+<cl:gridcell colindex="9" rowindex="0" std:sid="gh-cell-b13h19sh">
+<cl:langbind category="PROPERTY" keypath="UI-DB-REG_TRANS_RCD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="10" rowindex="0" std:sid="gh-cell-4e082t9w" text="성적인정"/>
+<cl:gridcell colindex="11" rowindex="0" std:sid="gh-cell-04x01y7b" text="복학예정년도" visible="false"/>
+<cl:gridcell colindex="12" rowindex="0" std:sid="gh-cell-03267jrf" text="복학예정학기" visible="false"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-3rfw8a20" width="40px"/>
+<cl:gridcolumn std:sid="g-column-470mlh06" width="59px"/>
+<cl:gridcolumn std:sid="g-column-a7pw6v31" width="117px"/>
+<cl:gridcolumn std:sid="g-column-35y30gw8" width="70px"/>
+<cl:gridcolumn std:sid="g-column-956r81oy" width="62px"/>
+<cl:gridcolumn std:sid="g-column-h888h394" width="80px"/>
+<cl:gridcolumn std:sid="g-column-hy741oxz" width="80px"/>
+<cl:gridcolumn std:sid="g-column-6x3jj826" width="139px"/>
+<cl:gridcolumn std:sid="g-column-156pmt54" width="136px"/>
+<cl:gridcolumn std:sid="g-column-t2ukbm3z" width="80px"/>
+<cl:gridcolumn std:sid="g-column-l3qr6q89" width="69px"/>
+<cl:gridcolumn std:sid="g-column-lh48127m" width="80px"/>
+<cl:gridcolumn std:sid="g-column-1747935q" width="66px"/>
+<cl:griddetail std:sid="gd-band-66yj9ggn">
+          <cl:gridrow height="25px" std:sid="g-row-7g6hwn8y"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-3bzw3288" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="ALT_DIV_NM" rowindex="0" std:sid="gd-cell-1uf7glx7"/>
+<cl:gridcell colindex="2" columnname="ALT_RSN_NM" rowindex="0" std:sid="gd-cell-vl7jg1fp"/>
+<cl:gridcell colindex="3" columnname="SCH_YEAR_NM" rowindex="0" std:sid="gd-cell-g2w0iba1" style="text-align:center;"/>
+<cl:gridcell colindex="4" columnname="SMT_NM" rowindex="0" std:sid="gd-cell-g592m83g" style="text-align:center;"/>
+<cl:gridcell colindex="5" columnname="ALT_DT" rowindex="0" std:sid="gd-cell-6h142qmc">
+<cl:output datatype="date" format="YYYY-MM-DD" id="gdOptAltDt" std:sid="output-5s38438i" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="RTN_PLAN_DT" rowindex="0" std:sid="gd-cell-k04tj758">
+<cl:output datatype="date" format="YYYY-MM-DD" id="gdOptRtnPlanDt" std:sid="output-z211w219"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="CHG_BEF_DESC" rowindex="0" std:sid="gd-cell-sg6s1fd5"/>
+<cl:gridcell colindex="8" columnname="CHG_DESC" rowindex="0" std:sid="gd-cell-rkf756zt"/>
+<cl:gridcell colindex="9" columnname="REG_TRANS_NM" rowindex="0" std:sid="gd-cell-2no6v8dj"/>
+<cl:gridcell colindex="10" columnname="REC_RCOG_YN" rowindex="0" std:sid="gd-cell-b48vp4jp"/>
+<cl:gridcell colindex="11" columnname="RTN_SCH_YEAR_NM" rowindex="0" std:sid="gd-cell-7o9y3022"/>
+<cl:gridcell colindex="12" columnname="RTN_SMT_NM" rowindex="0" std:sid="gd-cell-9v4me1g9"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:embeddedapp id="emaSbpHeader" src="../imp/impSbpHeader.clx" std:sid="e-app-t3044rm8">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-7c6988f9" top="455px" verticalAnchor="TOP" width="96px"/>
+      <cl:listener handler="onEmaSbpHeaderAppReady" name="app-ready" std:sid="listener-6v0rvnq4"/>
+</cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

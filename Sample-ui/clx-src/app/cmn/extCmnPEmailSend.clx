@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-136r184s" version="1.0.0.0">
+  <head std:sid="head-4mpx8c14">
+    <title>extCmnPEmailSend</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-ae75v36z" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-nak80esp" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-856u9q23" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-a0g758uw" width="320px"/>
+    <cl:model std:sid="model-9vo2h041">
+      
+      
+      
+    <cl:dataset id="dsSendDivList" std:sid="d-set-6f192x29">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="COL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-qh2lcnx1">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strEmailDiv" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqKey" std:sid="d-map-b2i4di64">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strEmailDivCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSndId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsEmailMst" std:sid="d-set-j5i3x954">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="EMAIL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REP_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmMst" std:sid="d-map-p2t7wz60">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="row" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsFile" std:sid="d-set-d659pwxp">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="FILE_PATH" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="FILE_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResList" std:sid="d-map-n3k45c0f">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strTmpFileNms" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqEmailKey" std:sid="d-map-q7qk323y">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strTitle" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSenderEmail" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEmailCont" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPersonalNmEmail" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqFileDelKey" std:sid="d-map-6wlfo531">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strTmpFilePath" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/ExtCmnSmsEmailSend/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-x7a5690w">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+<cl:responsedata dataid="dsSendDivList"/>
+</cl:submission>
+<cl:submission action="/cmn/ExtCmnSmsEmailSend/" id="subEmailSend" mediatype="application/x-www-form-urlencoded" std:sid="submission-20wi7j0u">
+        
+        
+      <cl:requestdata dataid="dsEmailMst"/>
+<cl:requestdata dataid="dmReqEmailKey"/>
+<cl:requestdata dataid="dsFile"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnFileTransUtil/" id="subTmpFileUpLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-rahvxgy9">
+        
+        
+      <cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnFileTransUtil/" id="subTmpFileDel" mediatype="application/x-www-form-urlencoded" std:sid="submission-828yv0y8">
+        
+        
+      <cl:requestdata dataid="dmReqFileDelKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="E-MAIL 보내기"/>
+  </head>
+  <body std:sid="body-ca57tqj6" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-9stc3vy6"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-9ad633l8"/>
+<cl:udc id="appheader1" std:sid="ud-control-17h187a2" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpEmail" std:sid="group-8pfh9alk">
+        <cl:xylayoutdata height="575px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="990px"/>
+        <cl:xylayout std:sid="xylayout-z69joqhq"/>
+      <cl:output class="require" id="optSendlEmail" std:sid="output-2iowoqrj" value="보내는사람 주소">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="30px" verticalAnchor="TOP" width="105px"/>
+      </cl:output>
+<cl:inputbox id="ipbSenderEmail" std:sid="i-box-b8z51668">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="115px" std:sid="xyl-data-bb8b81f4" top="30px" verticalAnchor="TOP" width="220px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSendlEmail.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSenderEmail" datacontrolid="dmReqEmailKey" property="value"/>
+</cl:inputbox>
+<cl:output class="require" id="optEmailTitle" std:sid="output-65lorx64" value="발송제목">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="105px"/>
+      </cl:output>
+<cl:inputbox id="ipbEmailSendTitle" std:sid="i-box-12d2hcsk">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="115px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="575px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optTitle.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strTitle" datacontrolid="dmReqEmailKey" property="value"/>
+</cl:inputbox>
+<cl:udc std:sid="ud-control-dv5va47y" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="60px" verticalAnchor="TOP" width="105px"/>
+      </cl:udc>
+<cl:udc std:sid="ud-control-a2042w5h" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="370px" verticalAnchor="TOP" width="150px"/>
+      </cl:udc>
+<cl:grid datasetid="dsEmailMst" id="grdEmailMst" std:sid="grid-9r4w3w8o">
+        <cl:xylayoutdata height="175px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="395px" verticalAnchor="TOP" width="675px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-ue5eeb04">
+          <cl:gridrow height="27px" std:sid="g-row-w2t522st"/>
+          
+        <cl:gridcell class="require" colindex="0" rowindex="0" std:sid="gh-cell-l668sty3" text="이메일"/>
+<cl:gridcell class="require" colindex="1" rowindex="0" std:sid="gh-cell-5bp9i97r" text="수신자명"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-01bvi034" width="190px"/>
+<cl:gridcolumn std:sid="g-column-oxt4mjk1" width="129px"/>
+<cl:griddetail std:sid="gd-band-gd5myhob">
+          <cl:gridrow height="25px" std:sid="g-row-37m2f8f0"/>
+          
+        <cl:gridcell colindex="0" columnname="EMAIL" rowindex="0" std:sid="gd-cell-538zq49m">
+<cl:inputbox id="gdIpbEmail" std:sid="i-box-s0w0qtq4"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columnname="REP_NM" rowindex="0" std:sid="gd-cell-ww7xz16v">
+<cl:inputbox id="gdIpbRepNm" std:sid="i-box-c418azi8"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:inputbox id="ipbPersonalEmail" std:sid="i-box-aas46i78">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="455px" std:sid="xyl-data-bb8b81f4" top="29px" verticalAnchor="TOP" width="235px"/>
+      <cl:datamapbind columnname="strPersonalNmEmail" datacontrolid="dmReqEmailKey" property="value"/>
+</cl:inputbox>
+<cl:output id="optPersonalEmail" std:sid="output-47diy7j8" value="보내는사람명">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="345px" std:sid="xyl-data-548c5467" top="29px" verticalAnchor="TOP" width="105px"/>
+      </cl:output>
+<cl:htmlobject id="htmlEmailCont" std:sid="htmlobject-59optatt">
+        <cl:xylayoutdata height="280px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-5608d431" top="85px" verticalAnchor="TOP" width="980px"/>
+      </cl:htmlobject>
+<cl:inputbox id="ipbSendDivEmail" readonly="true" std:sid="i-box-q791kf31">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="115px" std:sid="xyl-data-bb8b81f4" top="60px" verticalAnchor="TOP" width="870px"/>
+      <cl:datamapbind columnname="strEmailDiv" datacontrolid="dmResOnLoad" property="value"/>
+</cl:inputbox>
+<cl:button id="btnFile" std:sid="button-1lf7094f" value="파일첨부">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="915px" std:sid="xyl-data-fa9a14b9" top="370px" verticalAnchor="TOP" width="70px"/>
+      <cl:listener handler="onBtnFileClick" name="click" std:sid="listener-0u8duk94"/>
+</cl:button>
+<cl:grid datasetid="dsFile" id="grdFile" std:sid="grid-fx7n7p24">
+        <cl:xylayoutdata height="175px" horizontalAnchor="LEFT" left="690px" std:sid="xyl-data-f2950b99" top="395px" verticalAnchor="TOP" width="295px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-qy74483w">
+          <cl:gridrow height="27px" std:sid="g-row-3k4k3kr5"/>
+          
+        <cl:gridcell class="require" colindex="0" rowindex="0" std:sid="gh-cell-476v5m8e" text="첨부파일"/>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-6p4m4802" text="파일경로" visible="false"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-lb98ozgt" width="277px"/>
+<cl:gridcolumn std:sid="g-column-627z50br" width="111px"/>
+<cl:griddetail std:sid="gd-band-9v52b8pa">
+          <cl:gridrow height="25px" std:sid="g-row-vaitz2c1"/>
+          
+        <cl:gridcell colindex="0" columnname="FILE_NM" rowindex="0" std:sid="gd-cell-z61y8be7"/>
+<cl:gridcell colindex="1" columnname="" rowindex="0" std:sid="gd-cell-493joq64">
+<cl:button id="gdbtnFileDel" std:sid="button-gnhn325k"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="FILE_PATH" rowindex="0" std:sid="gd-cell-lkjp1f33">
+<cl:inputbox id="gdFilePath" std:sid="i-box-4ov4q33s"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button id="btnClose" std:sid="button-htbwfbhd" value="닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="612px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnCloseClick" name="click" std:sid="listener-bf767wlq"/>
+</cl:button>
+<cl:button id="btnSend" std:sid="button-qk77d844" value="발송">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="935px" std:sid="xyl-data-fa9a14b9" top="612px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSendClick" name="click" std:sid="listener-b35ehd08"/>
+</cl:button>
+<cl:embeddedapp id="emaCmnEditor" src="../cmn/impStdCmnEditor.clx" std:sid="e-app-or3740es">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-7c6988f9" top="650px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-763h33ua" version="1.0.0.0">
+  <head std:sid="head-189mi9wp">
+    <title>extCsrSCapaIqy</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-0k862ydv" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-ky5rn588" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-4203ik5e" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-kz10gtfh" width="320px"/>
+    <cl:model std:sid="model-v3y4ny5y">
+      
+      
+      
+    <cl:dataset id="dsCapIoDivRcdList" std:sid="d-set-67ipzotu">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-3hmr038t">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqList" std:sid="d-map-irx2favf">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strEndDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCapIoDivRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsEmpty" info="CSR_STATUS@STUD_ID,STAT_RCD,ST_DT,END_DT,ATV_STAT_RCD,PROC_DT" std:sid="d-set-5536n43h">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SA_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SP_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SA_SP_DAY_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROC_RSLT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="INVIT_NOP" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CAP_IO_IN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CAP_IO_OUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHG_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHAN_EMPTY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REEN_EMPTY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EMPTY_CNT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/csr/ExtCsrCapaIqy/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-z11gmvg1">
+        
+        
+      <cl:responsedata dataid="dsCapIoDivRcdList"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+</cl:submission>
+<cl:submission action="/csr/ExtCsrCapaIqy/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-r46hw549">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsEmpty"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="extCsrSCapaIqy"/>
+  </head>
+  <body std:sid="body-olc94a1b" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-630tf8c3"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-3x6hy0q8"/>
+<cl:udc id="appheader1" std:sid="ud-control-607574xt" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-d0n3bnuq">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-8756aesb"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-49kk6d23" value="조회">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-8hbw5tv7"/>
+</cl:button>
+<cl:output class="require" id="optKeyDate" std:sid="output-fc7l07ct" value="기준일">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      </cl:output>
+<cl:dateinput id="dipKeyDate" std:sid="d-input-98623646" style="text-align:center;">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-28ed790d" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optKeyDate.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strKeyDate" datacontrolid="dmReqList" property="value"/>
+</cl:dateinput>
+<cl:dateinput id="dipEndDt" std:sid="d-input-3479hvrg" style="text-align:center;">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="195px" std:sid="xyl-data-28ed790d" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:expbind category="PROPERTY" expression="#optKeyDate.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strEndDt" datacontrolid="dmReqList" property="value"/>
+</cl:dateinput>
+<cl:output id="optCapIoDivRcd" std:sid="output-mwca890w" value="정원내외">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="295px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      </cl:output>
+<cl:output id="label1" std:sid="output-e7fj1149" value="~">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="180px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="15px"/>
+      </cl:output>
+<cl:radiobutton id="rdbCapIoDivRcd" std:sid="r-button-8ede25d6">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="380px" std:sid="xyl-data-8688bddc" top="5px" verticalAnchor="TOP" width="285px"/>
+        
+        
+      <cl:itemset datasetid="dsCapIoDivRcdList" label="CD_NM" value="CD"/>
+<cl:expbind category="PROPERTY" expression="#optCapIoDivRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strCapIoDivRcd" datacontrolid="dmReqList" property="value"/>
+</cl:radiobutton>
+</cl:group>
+<cl:group id="grp_rptEmpty" std:sid="group-20pgnri3">
+        <cl:xylayoutdata height="600px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-eq2nf0gd"/>
+      <cl:udc std:sid="ud-control-0qwzg0cn" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdEmpty"/>
+      </cl:udc>
+<cl:grid datasetid="dsEmpty" id="grdEmpty" std:sid="grid-27h87714">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-096h6hnk">
+          <cl:gridrow height="27px" std:sid="g-row-3o2ny6rm"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-fl6te9l1" text="No"/>
+<cl:gridcell colindex="1" comment="ghBtnSaSpDayNm" rowindex="0" std:sid="gh-cell-0o3liw0f" text="소속"/>
+<cl:gridcell colindex="2" comment="ghBtnProcRslt" rowindex="0" std:sid="gh-cell-9856nxzm" text="학년"/>
+<cl:gridcell colindex="3" comment="ghBtnInvitNop" rowindex="0" std:sid="gh-cell-9939s25d" text="입학정원수"/>
+<cl:gridcell colindex="4" comment="ghBtnCapIoInCnt" rowindex="0" std:sid="gh-cell-507t2dof" text="정원내제적생"/>
+<cl:gridcell colindex="5" comment="ghBtnCapIoOutCnt" rowindex="0" std:sid="gh-cell-em89bqv5" text="정원외제적생"/>
+<cl:gridcell colindex="6" comment="ghBtnReenEmptyCnt" rowindex="0" std:sid="gh-cell-y8481g9b" text="재입학 여석수&#10;(입학정원-학년재적수)"/>
+<cl:gridcell colindex="7" comment="ghBtnChgCnt" rowindex="0" std:sid="gh-cell-n39wczg7" text="전과생수&#10;(1학기/2학기)"/>
+<cl:gridcell colindex="8" comment="ghBtnChanEmptyCnt" rowindex="0" std:sid="gh-cell-1z26578b" text="전과 여석수&#10;(제적수-재입학수-전과수)"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-i4nwb5q3" width="40px"/>
+<cl:gridcolumn std:sid="g-column-65f823a9" width="323px"/>
+<cl:gridcolumn std:sid="g-column-g8z82q85" width="49px"/>
+<cl:gridcolumn std:sid="g-column-abdztz7b" width="84px"/>
+<cl:gridcolumn std:sid="g-column-sj71iw06" width="107px"/>
+<cl:gridcolumn std:sid="g-column-306356c0" width="111px"/>
+<cl:gridcolumn std:sid="g-column-g9918t08" width="178px"/>
+<cl:gridcolumn std:sid="g-column-8zs94ium" width="111px"/>
+<cl:gridcolumn std:sid="g-column-3c4az93k" width="198px"/>
+<cl:griddetail std:sid="gd-band-8sc20284">
+          <cl:gridrow height="25px" std:sid="g-row-7fbc830n"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-64a72jjf" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="SA_SP_DAY_NM" rowindex="0" std:sid="gd-cell-dbezn34h"/>
+<cl:gridcell colindex="2" columnname="PROC_RSLT" rowindex="0" std:sid="gd-cell-d56lcyq6" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="INVIT_NOP" rowindex="0" std:sid="gd-cell-m21u2qg1" style="text-align:right;"/>
+<cl:gridcell colindex="4" columnname="CAP_IO_IN_CNT" rowindex="0" std:sid="gd-cell-ao12c3l6" style="text-align:right;"/>
+<cl:gridcell colindex="5" columnname="CAP_IO_OUT_CNT" rowindex="0" std:sid="gd-cell-2k87lu40" style="text-align:right;"/>
+<cl:gridcell colindex="6" columnname="REEN_EMPTY_CNT" rowindex="0" std:sid="gd-cell-q38rwo9o" style="text-align:right;"/>
+<cl:gridcell colindex="7" columnname="CHG_CNT" rowindex="0" std:sid="gd-cell-q9u9s843" style="text-align:right;"/>
+<cl:gridcell colindex="8" columnname="CHAN_EMPTY_CNT" rowindex="0" std:sid="gd-cell-s6cm30f1" style="text-align:right;"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

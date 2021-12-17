@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-02n75o2m" version="1.0.0.0">
+  <head std:sid="head-qna2jqkw">
+    <title>extCsrSAltAplyIqy</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-lf8s2zq5" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-gwt48iq9" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-5210m6y0" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-aw8v1gnv" width="320px"/>
+    <cl:model std:sid="model-w16451aa">
+      
+      
+      
+    <cl:datamap id="dmFrfAbsResult" std:sid="d-map-1xj3kuvy">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="APLY_STAT_NM" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="DISP_APLY_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="APLY_RESULT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CANCEL_REMARK" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="APLY_STAT_RCD" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmFrfRtnResult" std:sid="d-map-868e5395">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="APLY_STAT_NM" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="DISP_APLY_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="APLY_RESULT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CANCEL_REMARK" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="APLY_STAT_RCD" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-969660db">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strAbsPlanYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRtnPlanYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strAbsYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRtnYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strAbsAplyFalseRsn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRtnAplyFalseRsn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="frfAbsResultYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="frfRtnResultYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strAbsStDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strAbsEndDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRtnStDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRtnEndDt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmYearSmt" std:sid="d-map-5w0ggrhb">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="CD_PRP4" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="LAN_DIV_RCD" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CD_PRP3" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CD_CLS" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CD" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqList" std:sid="d-map-916peguz">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/csr/ExtCsrAltAplyIqy/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-h0r2oj6g">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+<cl:responsedata dataid="dmFrfAbsResult"/>
+<cl:responsedata dataid="dmFrfRtnResult"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="학적변동신청내역조회"/>
+  </head>
+  <body std:sid="body-4r3j7d2j" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-66gbsa7c"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-31j2i8gy"/>
+<cl:group id="grpData" std:sid="group-6x8ad74h">
+        <cl:xylayoutdata height="635px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-02340xbm"/>
+      <cl:group id="group6" std:sid="group-4xld1569">
+        <cl:xylayoutdata height="240px" horizontalAnchor="LEFT" left="15px" std:sid="xyl-data-9c4c06d1" top="70px" verticalAnchor="TOP" width="1170px"/>
+        <cl:xylayout std:sid="xylayout-k8g1w907"/>
+      <cl:group id="group9" std:sid="group-857v2654">
+        <cl:xylayoutdata height="215px" horizontalAnchor="LEFT" left="550px" std:sid="xyl-data-9c4c06d1" top="10px" verticalAnchor="TOP" width="60px"/>
+        <cl:xylayout std:sid="xylayout-8yusfow0"/>
+      </cl:group>
+</cl:group>
+<cl:output id="optRtnTitle" std:sid="output-8ep1699c" value="">
+        <cl:xylayoutdata height="45px" horizontalAnchor="LEFT" left="30px" std:sid="xyl-data-548c5467" top="10px" verticalAnchor="TOP" width="1159px"/>
+      </cl:output>
+<cl:button id="btnNewRtnReq" std:sid="button-n41vmzgw" value="복학 신청">
+        <cl:xylayoutdata height="174px" horizontalAnchor="LEFT" left="30px" std:sid="xyl-data-fa9a14b9" top="105px" verticalAnchor="TOP" width="525px"/>
+      <cl:listener handler="onBtnNewRtnReqClick" name="click" std:sid="listener-xg8wzqy6"/>
+</cl:button>
+<cl:output id="optRtnAplyFalseRsn" std:sid="output-4w511l28" value="">
+        <cl:xylayoutdata height="70px" horizontalAnchor="LEFT" left="40px" std:sid="xyl-data-548c5467" top="320px" verticalAnchor="TOP" width="1135px"/>
+      </cl:output>
+<cl:group id="group8" std:sid="group-0yxc2dq6">
+        <cl:xylayoutdata height="167px" horizontalAnchor="LEFT" left="635px" std:sid="xyl-data-9c4c06d1" top="110px" verticalAnchor="TOP" width="535px"/>
+        <cl:xylayout std:sid="xylayout-ue0b1fk1"/>
+      </cl:group>
+<cl:group class="form-box" id="frfRtnResult" std:sid="group-r86dc85o" visible="false">
+        <cl:xylayoutdata height="144px" horizontalAnchor="LEFT" left="645px" std:sid="xyl-data-9c4c06d1" top="115px" verticalAnchor="TOP" width="530px"/>
+        <cl:xylayout std:sid="xylayout-y74xt375"/>
+      <cl:output id="optFrfRtnAplyDt" std:sid="output-q8oyem46" value="신청일자 :">
+        <cl:xylayoutdata height="55px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="10px" verticalAnchor="TOP" width="170px"/>
+      </cl:output>
+<cl:output id="optFrfRtnProcResult" std:sid="output-5x16tvm7" value="처리상태 :">
+        <cl:xylayoutdata height="55px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="75px" verticalAnchor="TOP" width="170px"/>
+      </cl:output>
+<cl:output id="optFrfRtnProcResult" std:sid="output-4emeozqa" value="">
+        <cl:xylayoutdata height="55px" horizontalAnchor="LEFT" left="190px" std:sid="xyl-data-548c5467" top="75px" verticalAnchor="TOP" width="310px"/>
+      <cl:datamapbind columnname="APLY_RESULT" datacontrolid="dmFrfRtnResult" property="value"/>
+</cl:output>
+<cl:output datatype="date" format="YYYY.MM.DD" id="optFrfRtnAplyDt" std:sid="output-b3244v07" value="">
+        <cl:xylayoutdata height="55px" horizontalAnchor="LEFT" left="190px" std:sid="xyl-data-548c5467" top="10px" verticalAnchor="TOP" width="235px"/>
+      <cl:datamapbind columnname="DISP_APLY_DT" datacontrolid="dmFrfRtnResult" property="value"/>
+</cl:output>
+<cl:output id="frfOptRtnCancelRemark" std:sid="output-t40bzp76" value="" visible="false">
+        <cl:xylayoutdata height="35px" horizontalAnchor="LEFT" left="630px" std:sid="xyl-data-548c5467" top="10px" verticalAnchor="TOP" width="10px"/>
+      <cl:datamapbind columnname="CANCEL_REMARK" datacontrolid="dmFrfRtnResult" property="value"/>
+</cl:output>
+<cl:output id="output2" std:sid="output-4icbof7t" value="" visible="false">
+        <cl:xylayoutdata height="40px" horizontalAnchor="LEFT" left="660px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="15px"/>
+      <cl:datamapbind columnname="APLY_STAT_RCD" datacontrolid="dmFrfRtnResult" property="value"/>
+</cl:output>
+</cl:group>
+<cl:output id="label3" std:sid="output-hna4an76" value="※ 신청결과를 다음날 오후에 확인 후 수강신청 해 주십시오.">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="30px" std:sid="xyl-data-548c5467" top="405px" verticalAnchor="TOP" width="675px"/>
+      </cl:output>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-m258j756" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:embeddedapp id="emaort1" src="../csr/impExtCsrPAplyAbs.clx" std:sid="e-app-97363eob">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="45px" std:sid="xyl-data-7c6988f9" top="675px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+<cl:embeddedapp id="emaort2" src="../csr/impExtCsrPAplyRetu.clx" std:sid="e-app-0v87i66k">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="150px" std:sid="xyl-data-7c6988f9" top="675px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+<cl:output id="optRtnFalse" std:sid="output-takygqn4" value="">
+        <cl:xylayoutdata height="40px" horizontalAnchor="LEFT" left="580px" std:sid="xyl-data-548c5467" top="155px" verticalAnchor="TOP" width="40px"/>
+      </cl:output>
+<cl:output id="optRtnProc" std:sid="output-4h6pd330" value="">
+        <cl:xylayoutdata height="40px" horizontalAnchor="LEFT" left="580px" std:sid="xyl-data-548c5467" top="205px" verticalAnchor="TOP" width="40px"/>
+      </cl:output>
+<cl:output id="optRtnAply" std:sid="output-38y998y4" value="">
+        <cl:xylayoutdata height="40px" horizontalAnchor="LEFT" left="580px" std:sid="xyl-data-548c5467" top="255px" verticalAnchor="TOP" width="40px"/>
+      </cl:output>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

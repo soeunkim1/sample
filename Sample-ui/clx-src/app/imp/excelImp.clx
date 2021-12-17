@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-2i6c2syo" version="1.0.0.0">
+  <head std:sid="head-107u3l01">
+    <title>excelImp</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-q3d71mt7" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-xx98p2a8" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-jb9b2478" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-s30567y8" width="320px"/>
+    <cl:model std:sid="model-34b56cy3">
+      
+      
+      
+    <cl:datamap id="dmInsExcelReq" std:sid="d-map-bbr56j29">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="excel_headers" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="excel_filename" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="insRes" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="bodyData" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmData" std:sid="d-map-868s9i63">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="row" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmFileIns" std:sid="d-map-n2ovi815">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="file_nm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-55gmqzk7" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-10qtrzqf"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-3zy0vu1z"/>
+<cl:inputbox id="ibpExcelPath" std:sid="i-box-5d3j2a8g">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="285px"/>
+      <cl:datamapbind columnname="file_nm" datacontrolid="dmFileIns" property="value"/>
+</cl:inputbox>
+<cl:button id="btnExcelImport" std:sid="button-1vtg562o" value="import">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="300px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="67px"/>
+      <cl:listener handler="onBtnExcelImportClick" name="click" std:sid="listener-rf07kuq9"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

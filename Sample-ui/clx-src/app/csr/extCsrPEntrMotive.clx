@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-gf78mpw3" version="1.0.0.0">
+  <head std:sid="head-76jum18h">
+    <title>extCsrPEntrMotive</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-67nfuv39" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-34tu8cvh" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-23s90212" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-98xwpz9q" width="320px"/>
+    <cl:model std:sid="model-rxh19b4c">
+      
+      
+      
+    <cl:datamap id="dmFrfCsrEntrInfo" std:sid="d-map-a9k47857">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="ENTR_MOTIVE_RCD" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="PSRV_COL3" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="STUD_ID" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsMotiveList" std:sid="d-set-814mtr06">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-j1z99q13">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/csr/ExtCsrEntrMotive/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-4s27frwp">
+        
+        
+      <cl:responsedata dataid="dsMotiveList"/>
+<cl:responsedata dataid="dmFrfCsrEntrInfo"/>
+</cl:submission>
+<cl:submission action="/csr/ExtCsrEntrMotive/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-0uuqy07t">
+        
+        
+      <cl:requestdata dataid="dmFrfCsrEntrInfo"/>
+<cl:requestdata dataid="dmReqKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="입학동기입력팝업"/>
+  </head>
+  <body std:sid="body-2837w025" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-1iz52u3f"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-88g4f694"/>
+<cl:udc id="appheader1" std:sid="ud-control-22bn2602" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="form-box" id="frfCsrEntrInfo" std:sid="group-530btghe">
+        <cl:xylayoutdata height="56px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="34px" verticalAnchor="TOP" width="265px"/>
+        <cl:xylayout std:sid="xylayout-yu06f2tw"/>
+      <cl:output class="require" id="optFrfEntrMotive" std:sid="output-2y54tk55" value="입학동기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="95px"/>
+      </cl:output>
+<cl:combobox id="cbbFrfMotive" std:sid="c-box-lb7jvz73">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="145px"/>
+        
+        
+      <cl:itemset datasetid="dsMotiveList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optFrfMotive.value" property="fieldLabel"/>
+<cl:listener handler="onCbbFrfMotiveSelectionChange" name="selection-change" std:sid="listener-4sk1lc3w"/>
+<cl:datamapbind columnname="ENTR_MOTIVE_RCD" datacontrolid="dmFrfCsrEntrInfo" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optFrfStudId1" std:sid="output-2h5vt216" value="오브젝트번호">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="730px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:inputbox enabled="false" id="ipbStudId1" std:sid="i-box-c9chidlj" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="835px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="75px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optFrfStudId.value" property="fieldLabel"/>
+<cl:datamapbind columnname="STUD_ID" datacontrolid="dmFrfCsrEntrInfo" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbEntrMotive" std:sid="i-box-4i8z79b2" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-bb8b81f4" top="30px" verticalAnchor="TOP" width="145px"/>
+      <cl:datamapbind columnname="PSRV_COL3" datacontrolid="dmFrfCsrEntrInfo" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:button id="btnCloseCancel" std:sid="button-hs4j2n4t" value="" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="104px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-1ap1qzjn"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnEntr" std:sid="button-888p2r7g" value="저장">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="115px" std:sid="xyl-data-fa9a14b9" top="94px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnEntrClick" name="click" std:sid="listener-m10w0x5n"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

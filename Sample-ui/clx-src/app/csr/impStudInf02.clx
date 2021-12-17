@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-9k7z447z" version="1.0.0.0">
+  <head std:sid="head-uk58508o">
+    <title>impStudInf02</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-1aeia54a" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-mc4h3387" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-41kdthk3" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-n8y1ldc7" width="320px"/>
+    <cl:model std:sid="model-6c4738ii">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-8329x324">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strAuthRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStatCiiDtRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-4mu4gn4m">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strPhoto" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmFrfInfo" std:sid="d-map-bc9djfgc">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDept" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStud" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCourse" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRemark" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPhoto" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strImg" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStatus" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResUploadImg" std:sid="d-map-12ze81a5">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="fileName" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmRoot" std:sid="d-map-0f2yvy78">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDept" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStud" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCourse" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRemark" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPhoto" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strExistYn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStatNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/csr/StdCsrStudInfo/" id="subStudInfo1" mediatype="application/x-www-form-urlencoded" std:sid="submission-f858nfqh">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmRoot"/>
+<cl:responsedata dataid="dmFrfInfo"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrStudInfo/" id="subCheckAuth" mediatype="application/x-www-form-urlencoded" std:sid="submission-7pvkoh9f">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+</cl:submission>
+<cl:submission action="/csr/StdCsrImage/" id="subUploadStudImg" mediatype="application/x-www-form-urlencoded" std:sid="submission-fg1s63v7">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dmResUploadImg"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="insStudInfo02"/>
+  </head>
+  <body std:sid="body-sz2v7241" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-gj65o0fu"/>
+  <cl:img id="imgPhoto_Imp" src="../../images/imgs/noimages.png" std:sid="image-q2980833">
+        <cl:xylayoutdata height="120px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-6e9a9f7d" top="0px" verticalAnchor="TOP" width="100px"/>
+      </cl:img>
+<cl:inputbox id="ipbMainDept_Imp" readonly="true" std:sid="i-box-bk8izgel">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="185px" std:sid="xyl-data-bb8b81f4" top="50px" verticalAnchor="TOP" width="1030px"/>
+      <cl:datamapbind columnname="strDept" datacontrolid="dmFrfInfo" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbMainHit_Imp" readonly="true" std:sid="i-box-dc891660" style="text-align:center;" visible="false">
+        <cl:xylayoutdata height="117px" horizontalAnchor="LEFT" left="1250px" std:sid="xyl-data-bb8b81f4" top="0px" verticalAnchor="TOP" width="167px"/>
+      <cl:datamapbind columnname="strStatNm" datacontrolid="dmRoot" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbMainRemark_Imp" readonly="true" std:sid="i-box-hvsu3aa2">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="185px" std:sid="xyl-data-bb8b81f4" top="100px" verticalAnchor="TOP" width="1030px"/>
+      <cl:datamapbind columnname="strRemark" datacontrolid="dmFrfInfo" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbMainCourse_Imp" readonly="true" std:sid="i-box-aw70z7wt">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="185px" std:sid="xyl-data-bb8b81f4" top="75px" verticalAnchor="TOP" width="1030px"/>
+      <cl:datamapbind columnname="strCourse" datacontrolid="dmFrfInfo" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbMainStud_Imp" readonly="true" std:sid="i-box-pylkpb12">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="185px" std:sid="xyl-data-bb8b81f4" top="25px" verticalAnchor="TOP" width="1030px"/>
+      <cl:datamapbind columnname="strStud" datacontrolid="dmFrfInfo" property="value"/>
+</cl:inputbox>
+<cl:inputbox id="ipbStudId_Imp" readonly="true" std:sid="i-box-n4b9gf9u">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="185px" std:sid="xyl-data-bb8b81f4" top="0px" verticalAnchor="TOP" width="1030px"/>
+      <cl:datamapbind columnname="strStudNo" datacontrolid="dmFrfInfo" property="value"/>
+</cl:inputbox>
+<cl:button id="btnUploadStudImg" std:sid="button-l9ew1318" value="up">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="80px" std:sid="xyl-data-fa9a14b9" top="100px" verticalAnchor="TOP" width="20px"/>
+      <cl:listener handler="onBtnUploadStudImgClick" name="click" std:sid="listener-yok4oudo"/>
+</cl:button>
+<cl:output id="optMainRemark_Imp" std:sid="output-zl12xe15" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-548c5467" top="100px" verticalAnchor="TOP" width="75px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-ETC" property="value"/>
+</cl:output>
+<cl:output id="optMainCourse_Imp" std:sid="output-0784uwr9" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-548c5467" top="75px" verticalAnchor="TOP" width="75px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-CRS" property="value"/>
+</cl:output>
+<cl:output id="optMainDept_Imp" std:sid="output-l74as53j" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-548c5467" top="50px" verticalAnchor="TOP" width="75px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-ASGN" property="value"/>
+</cl:output>
+<cl:output id="optMainStud_Imp" std:sid="output-h10n6ass" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-548c5467" top="25px" verticalAnchor="TOP" width="75px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-STUD" property="value"/>
+</cl:output>
+<cl:output id="optMainStudId_Imp" std:sid="output-tl6q164m" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="75px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-STUD_ID" property="value"/>
+</cl:output>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

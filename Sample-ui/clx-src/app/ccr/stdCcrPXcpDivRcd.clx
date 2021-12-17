@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-h32s415h" version="1.0.0.0">
+  <head std:sid="head-exi80y8q">
+    <title>stdCcrPXcpDivRcd</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-dnfr65am" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-83t9p91g" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-ka5hm9qn" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-6d5dyz08" width="320px"/>
+    <cl:model std:sid="model-d41cz3tw">
+      
+      
+      
+    <cl:dataset id="dsXcpDivRcdList" std:sid="d-set-96cj4t87">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-uq83f197">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strXcpDivRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/ccr/StdCcrTlsnReq/" id="subXcpDivRcdList" mediatype="application/x-www-form-urlencoded" std:sid="submission-cj23u9fu">
+        
+        
+      <cl:responsedata dataid="dsXcpDivRcdList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="삭제사유"/>
+  </head>
+  <body std:sid="body-hlk7n3ym" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-1l94o00n"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-d77y1x45"/>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-s40g04mf" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="70px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-kwv31n30"/>
+</cl:button>
+<cl:button id="btnCloseOk" std:sid="button-0pm38pyl" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="205px" std:sid="xyl-data-fa9a14b9" top="70px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CHOICLS" property="value"/>
+<cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-ot93p9n8"/>
+</cl:button>
+<cl:output class="require" id="optXcpDivRcd" std:sid="output-6c2u1x4u" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="75px"/>
+      <cl:langbind category="PROPERTY" keypath="NLS-DLG-LBL-L001" property="value"/>
+</cl:output>
+<cl:combobox id="cbbXcpDivRcd" std:sid="c-box-34y6585q">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="85px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="180px"/>
+        
+        
+      <cl:itemset datasetid="dsXcpDivRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-u0q96l43" value=""/>
+<cl:expbind category="PROPERTY" expression="#optXcpDivRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strXcpDivRcd" datacontrolid="dmReqKey" property="value"/>
+</cl:combobox>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-8x8kg92e" version="1.0.0.0">
+  <head std:sid="head-8eija9s3">
+    <title>stdCmnPPsnConsentApply</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-g6s12o46" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-753rg6mp" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-v2jx4k51" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-63w0ywnb" width="320px"/>
+    <cl:model std:sid="model-579k3957">
+      
+      
+      
+    <cl:datamap id="dmResList" std:sid="d-map-kp11h6gt">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strUserId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUserNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsFrfCmnPsnConsent" std:sid="d-set-gk69l87i">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITEM_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITEM_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSENT_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITEM_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CONSENT_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="COLLECT_CONT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-2490p031">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCheckAllYn" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsConDivRcdList" std:sid="d-set-0jrd7a6z">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnPsnConsentApply/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-nu0osqts">
+        
+        
+      <cl:responsedata dataid="dmResList"/>
+<cl:responsedata dataid="dsFrfCmnPsnConsent"/>
+<cl:responsedata dataid="dsConDivRcdList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnPsnConsentApply/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-uhmg1zc3">
+        
+        
+      <cl:requestdata dataid="dsFrfCmnPsnConsent"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="개인정보동의팝업"/>
+  </head>
+  <body std:sid="body-ejb40gu7" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-98j55i10"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-mjis2863"/>
+<cl:group id="grpData" std:sid="group-aq22v2ql">
+        <cl:xylayoutdata height="615px" horizontalAnchor="LEFT" left="-5px" std:sid="xyl-data-9c4c06d1" top="-5px" verticalAnchor="TOP" width="700px"/>
+        <cl:xylayout std:sid="xylayout-134g1ar0"/>
+      <cl:group id="frfCmnPsnConsent" std:sid="group-64869531">
+        <cl:xylayoutdata height="435px" horizontalAnchor="LEFT" left="15px" std:sid="xyl-data-9c4c06d1" top="140px" verticalAnchor="TOP" width="675px"/>
+        <cl:xylayout std:sid="xylayout-h7ywpl14"/>
+      <cl:textarea id="txtFrfCont" readonly="true" std:sid="t-area-k63wa4br">
+        <cl:xylayoutdata height="160px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-007df396" top="30px" verticalAnchor="TOP" width="655px"/>
+      <cl:datamapbind columnname="COLLECT_CONT" datacontrolid="dmRow" property="value"/>
+</cl:textarea>
+<cl:combobox enabled="false" hidebutton="true" id="cbbFrfConDivRcd" std:sid="c-box-8t9k60m1">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="585px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="60px"/>
+        
+        
+      <cl:itemset datasetid="dsConDivRcdList" label="CD_NM" value="CD"/>
+<cl:datamapbind columnname="CONSENT_DIV_RCD" datacontrolid="dmRow" property="value"/>
+</cl:combobox>
+<cl:checkbox falsevalue="" id="ckbFrfConsentYn" std:sid="c-box-77kqek4t" style="text-align:center;" text="" truevalue="Y" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="630px" std:sid="xyl-data-fc8c2a80" top="5px" verticalAnchor="TOP" width="20px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optFrfItemNm.value" property="fieldLabel"/>
+<cl:datamapbind columnname="CONSENT_YN" datacontrolid="dmRow" property="value"/>
+</cl:checkbox>
+<cl:output id="optFrfItemNm" std:sid="output-d0v4vhx5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="355px"/>
+      <cl:datamapbind columnname="ITEM_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+</cl:group>
+<cl:output id="optMsg" std:sid="output-bg313nbi" value="시스템 사용에 대한 업무협조와 각 사이트 로그인 정보제공에 관해 동의를 받아야 합니다.&#10;관련 업무부분의 '개인정보 수집ㆍ이용' 에 대한 안내를 반드시 읽고 동의해 주세요.&#10;동의를 하지 않더라도 저장버튼을 한번 클릭하셔야 다시 뜨지 않습니다.">
+        <cl:xylayoutdata height="70px" horizontalAnchor="LEFT" left="15px" std:sid="xyl-data-548c5467" top="45px" verticalAnchor="TOP" width="675px"/>
+      </cl:output>
+<cl:button id="btnPrivacyTable" std:sid="button-74255u5j" value="개인정보파일 보유기간 책정 기준표">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="420px" std:sid="xyl-data-fa9a14b9" top="15px" verticalAnchor="TOP" width="270px"/>
+      <cl:listener handler="onBtnPrivacyTableClick" name="click" std:sid="listener-m2562r4s"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-cs051q81" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="627px" std:sid="xyl-data-fa9a14b9" top="115px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-12kg010q"/>
+</cl:button>
+<cl:checkbox falsevalue="" id="ckbAll" std:sid="c-box-xbfr6kx8" text="전체동의" truevalue="Y" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="532px" std:sid="xyl-data-fc8c2a80" top="115px" verticalAnchor="TOP" width="80px"/>
+      <cl:listener handler="onCkbAllValueChange" name="value-change" std:sid="listener-vfwq311y"/>
+<cl:datamapbind columnname="strCheckAllYn" datacontrolid="dmReqList" property="value"/>
+</cl:checkbox>
+<cl:button id="btnClose" std:sid="button-3md8b2f5" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="630px" std:sid="xyl-data-fa9a14b9" top="585px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseClick" name="click" std:sid="listener-l63dz7s6"/>
+</cl:button>
+<cl:output id="optBottomMsg" std:sid="output-0eqc87s5" value="* 수집한 개인정보는 정보주체의 동의 없이 수집한 목적 외로 사용하거나 제 3자에게 제공되지 않습니다.">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="15px" std:sid="xyl-data-548c5467" top="585px" verticalAnchor="TOP" width="575px"/>
+      </cl:output>
+<cl:udc std:sid="ud-control-c7zni6p1" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="15px" std:sid="xyl-data-36446f78" top="15px" verticalAnchor="TOP" width="300px"/>
+      </cl:udc>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

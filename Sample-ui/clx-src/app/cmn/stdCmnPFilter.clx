@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-emh9ek0l" version="1.0.0.0">
+  <head std:sid="head-48m3yab5">
+    <title>stdCmnPFilter</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-313903o6" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-685ci01i" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-v4le79xs" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-dm8a5wmh" width="320px"/>
+    <cl:model std:sid="model-528gi3z1">
+      
+      
+      
+    <cl:datamap id="dmList" std:sid="d-map-lglh1bem">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="column" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="check" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="name" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="columnType" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="allcolumn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="datatype" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="column" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="sorttype" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="sortorder" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="andor" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="columnType" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="allcolumn" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="datatype" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-7za8cp42" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-29d033w7"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-vvhk721h"/>
+<cl:group id="group4" std:sid="group-jgoucv82">
+        <cl:xylayoutdata height="290px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="45px" verticalAnchor="TOP" width="565px"/>
+        <cl:xylayout std:sid="xylayout-qs2966o6"/>
+      <cl:grid datasetid="dsTempLSortList" id="grdLeft" std:sid="grid-8l4u8t03">
+        <cl:xylayoutdata height="279px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="6px" verticalAnchor="TOP" width="181px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-zn7681xx">
+          <cl:gridrow height="27px" std:sid="g-row-ebyec67r"/>
+          
+        <cl:gridcell colindex="0" comment="button16" rowindex="0" std:sid="gh-cell-936631g9" text=""/>
+<cl:gridcell colindex="2" comment="button3" rowindex="0" std:sid="gh-cell-ba1pnze2" text="필터링대상"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-6y338ui4" width="41px"/>
+<cl:gridcolumn std:sid="g-column-6jp5bhdj" width="120px"/>
+<cl:griddetail std:sid="gd-band-747213s5">
+          <cl:gridrow height="25px" std:sid="g-row-602h84nf"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-1683229o">
+<cl:inputbox enabled="false" id="inputbox17" std:sid="i-box-t4ap4kx0"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columnname="check" rowindex="0" std:sid="gd-cell-20x7bvv3">
+<cl:checkbox falsevalue="" id="chkFilter" std:sid="c-box-qs16261h" style="text-align:center;" text="" truevalue="Y" value=""/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="name" rowindex="0" std:sid="gd-cell-4f4mq9v0"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button id="button1" std:sid="button-s81bx31p" value="+필터">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="443px" std:sid="xyl-data-fa9a14b9" top="20px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onButton1Click" name="click" std:sid="listener-c1h2xv9f"/>
+</cl:button>
+<cl:button id="button2" std:sid="button-68j8g5hq" value="reset">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="508px" std:sid="xyl-data-fa9a14b9" top="20px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onButton2Click" name="click" std:sid="listener-q26067r3"/>
+</cl:button>
+<cl:grid datasetid="dsTempRSortList" id="grdRight" std:sid="grid-hkd8n0j8">
+        <cl:xylayoutdata height="279px" horizontalAnchor="LEFT" left="219px" std:sid="xyl-data-f2950b99" top="51px" verticalAnchor="TOP" width="346px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-40g535w9">
+          <cl:gridrow height="27px" std:sid="g-row-tg2g30em"/>
+          
+        <cl:gridcell colindex="0" comment="button4" rowindex="0" std:sid="gh-cell-f32qwvwi" text=""/>
+<cl:gridcell colindex="1" comment="button5" rowindex="0" std:sid="gh-cell-jeh397lq" text="필터링대상"/>
+<cl:gridcell colindex="2" comment="button6" rowindex="0" std:sid="gh-cell-42ee3y7o" text="계산식"/>
+<cl:gridcell colindex="3" comment="button7" rowindex="0" std:sid="gh-cell-9r7x84hi" text="data"/>
+<cl:gridcell colindex="4" comment="button8" rowindex="0" std:sid="gh-cell-49g35auy" text="a/o"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-025e6vqc" width="21px"/>
+<cl:gridcolumn std:sid="g-column-ajiojdq4" width="120px"/>
+<cl:gridcolumn std:sid="g-column-ao9r254x" width="51px"/>
+<cl:gridcolumn std:sid="g-column-yr4h73km" width="90px"/>
+<cl:gridcolumn std:sid="g-column-x796q950" width="51px"/>
+<cl:griddetail std:sid="gd-band-6f142x06">
+          <cl:gridrow height="25px" std:sid="g-row-37oct2g1"/>
+          
+        <cl:gridcell colindex="0" columnname="DEL_CKB" rowindex="0" std:sid="gd-cell-r4v37wz8">
+<cl:checkbox falsevalue="" id="checkbox1" std:sid="c-box-5ll4v071" style="text-align:center;" text="" truevalue="Y" value=""/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columnname="column" rowindex="0" std:sid="gd-cell-8s27tb7v">
+<cl:combobox enabled="false" hidebutton="true" id="combobox4" std:sid="c-box-4h0e2a41">
+<cl:itemset datasetid="dsTempLSortList" label="name" value="column"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="sorttype" rowindex="0" std:sid="gd-cell-99klng30">
+<cl:combobox id="combobox2" std:sid="c-box-78i60y9h">
+<cl:itemset datasetid="dsTempCalcType" label="CD_NM" value="CD"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="3" columnname="sortorder" rowindex="0" std:sid="gd-cell-b9dij25o">
+<cl:inputbox id="inputbox2" std:sid="i-box-x2nj17wg"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="andor" rowindex="0" std:sid="gd-cell-4a909sv8">
+<cl:combobox id="combobox5" std:sid="c-box-6drh3bz9">
+<cl:item label="and" std:sid="item-pk846lv2" value="and"/>
+<cl:item label="or" std:sid="item-m88fk36e" value="or"/>
+</cl:combobox>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:button id="btnChange" std:sid="button-endv5ux1" value="&gt;">
+        <cl:xylayoutdata height="50px" horizontalAnchor="LEFT" left="198px" std:sid="xyl-data-fa9a14b9" top="111px" verticalAnchor="TOP" width="14px"/>
+      <cl:listener handler="onBtnChangeClick" name="click" std:sid="listener-5rp2bkzl"/>
+</cl:button>
+<cl:output id="optPagePgTitle1" std:sid="output-c825546x" value="필터">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="193px"/>
+      </cl:output>
+<cl:button class="btn-save" id="btnSave" std:sid="button-586950s6" value="닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="507px" std:sid="xyl-data-fa9a14b9" top="340px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-03h0vo03"/>
+</cl:button>
+<cl:button id="btnChange1" std:sid="button-49182enz" value="&lt;">
+        <cl:xylayoutdata height="50px" horizontalAnchor="LEFT" left="198px" std:sid="xyl-data-fa9a14b9" top="176px" verticalAnchor="TOP" width="14px"/>
+      <cl:listener handler="onBtnChange1Click" name="click" std:sid="listener-1p0emo05"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

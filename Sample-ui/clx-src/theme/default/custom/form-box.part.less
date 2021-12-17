@@ -1,0 +1,34 @@
+@import "../settings.part.less";
+@import "../custom-settings.part.less";
+
+/* 프리폼 영역 스타일 */ 
+.cl-container.form-box {
+	background-color: @white;
+    border : 1px solid @component-border-color;
+    
+   .cl-output {
+		font: @font-base;
+		text-align: right;
+		font-weight: bold; 
+		background-repeat: no-repeat;
+		border: 1px solid @component-border-color;
+		
+		&:not(.cl-disabled){
+			background-color: #EDEFF6;				
+		} 
+		&.require {
+			background-image : url(../images/search/output_required.png);
+			background-position: right center;
+			padding-right: 8px;
+		}
+		&.cl-disabled {
+			background-image: none;
+			background-color: none;
+		}
+	}
+	 /* disabled style */
+	&.cl-disabled {
+		background-image: none;
+		background-color: @component-disabled-background-color;
+	}
+}

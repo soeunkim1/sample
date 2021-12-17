@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-nkg26j2v" version="1.0.0.0">
+  <head std:sid="head-p21wf1eb">
+    <title>stdCmnPNat</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-90070q10" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-98432hcc" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-3e7z7l7s" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-6g6dd2wi" width="320px"/>
+    <cl:model std:sid="model-4hbwiks3">
+      
+      
+      
+    <cl:datamap id="dmReqCmd" std:sid="d-map-942f10h4">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strNatNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strLanDivRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCmnNat" std:sid="d-set-gby7n3p3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PRT_ORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="OG_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_LEN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP10" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP1" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ULAN_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP3" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP4" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP5" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP6" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP7" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP8" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_DESC" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP9" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_SHORT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_CLS" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_ST_DT" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListLanDivRcd" std:sid="d-set-s3l2zb25">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnNat/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-kh8hp8gk">
+        
+        
+      <cl:responsedata dataid="dmReqCmd"/>
+<cl:responsedata dataid="dsListLanDivRcd"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnNat/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-38bych06">
+        
+        
+      <cl:requestdata dataid="dmReqCmd"/>
+<cl:responsedata dataid="dsCmnNat"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="국가검색화면(PopUp)"/>
+  </head>
+  <body std:sid="body-ld240diz" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-l8836l01"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-p0889bjn"/>
+<cl:udc id="appheader1" std:sid="ud-control-7t1ed680" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:button id="btnCloseOk" std:sid="button-j2cin853" value="선택닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="582px" std:sid="xyl-data-fa9a14b9" top="415px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-km40pbnu"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-ur9j5si4" value="화면닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-fa9a14b9" top="415px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-238010r0"/>
+</cl:button>
+<cl:group class="search-box" id="grpSearch" std:sid="group-4g4m2dk2">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="640px"/>
+        <cl:xylayout std:sid="xylayout-q45kf044"/>
+      <cl:output class="require" id="optNatNm" std:sid="output-yu6hb5ul" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CNTRYNM" property="value"/>
+</cl:output>
+<cl:output class="require" id="optLanDivRcd" std:sid="output-qs9czwv0" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="250px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="90px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-LANKEY" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbNatNm" std:sid="i-box-41477ral">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="100px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="140px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optNatNm.value" property="fieldLabel"/>
+<cl:listener handler="onIpbNatNmKeydown" name="keydown" std:sid="listener-a893j17g"/>
+<cl:datamapbind columnname="strNatNm" datacontrolid="dmReqCmd" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-search" id="btnSearch" std:sid="button-dhf3m5y4" value="조회">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="575px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-ox0g301z"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-03ec3693"/>
+</cl:button>
+<cl:combobox id="cbbLanDivRcd" std:sid="c-box-ixsu4wsq">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="344px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="140px"/>
+        
+        
+      <cl:itemset datasetid="dsListLanDivRcd" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="전체" std:sid="item-ask48qng" value=""/>
+<cl:expbind category="PROPERTY" expression="#optLanDivRcd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strLanDivRcd" datacontrolid="dmReqCmd" property="value"/>
+</cl:combobox>
+</cl:group>
+<cl:group id="grp_rptCmnNat" std:sid="group-aigzvs1j">
+        <cl:xylayoutdata height="338px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="640px"/>
+        <cl:xylayout std:sid="xylayout-2l9k4by6"/>
+      <cl:udc std:sid="ud-control-0f45sy9k" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="256px"/>
+        <cl:property name="ctrl" type="control" value="grdCmnNat"/>
+      </cl:udc>
+<cl:grid datasetid="dsCmnNat" id="grdCmnNat" std:sid="grid-5824960d">
+        <cl:xylayoutdata height="303px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="630px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCmnNatRowDblclick" name="row-dblclick" std:sid="listener-0kg9vx8o"/>
+<cl:gridheader std:sid="gh-band-m8cur05c">
+          <cl:gridrow height="27px" std:sid="g-row-e863jx1n"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-4z1u5044">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-4849r9o8">
+<cl:langbind category="PROPERTY" keypath="UI-DB-NAT_RCD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-7b08d9zx">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-CNTRYNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-56ar8yrj" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-DIVISION" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-y2g16cnp" text="CD_CLS" visible="false"/>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-1y4347lt" text="PRT_ORD" visible="false"/>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-9ye17g7e" text="CD_PRP1" visible="false"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-m943a9v0" width="40px"/>
+<cl:gridcolumn std:sid="g-column-wewedmm4" width="120px"/>
+<cl:gridcolumn std:sid="g-column-w5f265u2" width="452px"/>
+<cl:gridcolumn std:sid="g-column-0iw4gz1h" width="67px"/>
+<cl:gridcolumn std:sid="g-column-20oi133r" width="100px"/>
+<cl:gridcolumn std:sid="g-column-qv55gh49" width="100px"/>
+<cl:gridcolumn std:sid="g-column-3zf605fu" width="100px"/>
+<cl:griddetail std:sid="gd-band-w397p512">
+          <cl:gridrow height="25px" std:sid="g-row-q974f44r"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-d1b8ro6m" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="CD" rowindex="0" std:sid="gd-cell-3pk0965t" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="CD_NM" rowindex="0" std:sid="gd-cell-02q18i06"/>
+<cl:gridcell colindex="3" columnname="LAN_DIV_RCD" rowindex="0" std:sid="gd-cell-k36gu4me"/>
+<cl:gridcell colindex="4" columnname="CD_CLS" rowindex="0" std:sid="gd-cell-f9m1r6wh"/>
+<cl:gridcell colindex="5" columnname="PRT_ORD" rowindex="0" std:sid="gd-cell-1f9ryal0"/>
+<cl:gridcell colindex="6" columnname="CD_PRP1" rowindex="0" std:sid="gd-cell-28w16570"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

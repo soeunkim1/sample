@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-30ah7ohk" version="1.0.0.0">
+  <head std:sid="head-85s7096e">
+    <title>stdCgdPRcogRecUnitRcd</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-vtu1l6o1" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-jjj04425" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-w9i027on" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-8kh73gq5" width="320px"/>
+    <cl:model std:sid="model-82635s31">
+      
+      
+      
+    <cl:dataset id="dsRcogRecUnitRcdList" std:sid="d-set-9z564m8a">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-6e6rqpw9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCdCls" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cgd/StdCgdRecRcog/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-sj0f69kf">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsRcogRecUnitRcdList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="인정성적단위"/>
+  </head>
+  <body std:sid="body-363jassa" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-he2326w4"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-q4563cd3"/>
+<cl:group id="grpData" std:sid="group-kr0n8147">
+        <cl:xylayoutdata height="265px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="160px"/>
+        <cl:xylayout std:sid="xylayout-v5jw106o"/>
+      <cl:grid datasetid="dsRcogRecUnitRcdList" id="grdCmnConfCode" std:sid="grid-63b9zym4">
+        <cl:xylayoutdata height="253px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="5px" verticalAnchor="TOP" width="148px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCmnConfCodeDblclick" name="dblclick" std:sid="listener-2p878r4d"/>
+<cl:gridheader std:sid="gh-band-v14x85wa">
+          <cl:gridrow height="27px" std:sid="g-row-02622511"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-b1td991h">
+<cl:langbind category="PROPERTY" keypath="UI-DB-OS_CD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-238s737l" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-CD" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-h505i63i" width="129px"/>
+<cl:gridcolumn std:sid="g-column-i2r350v1" width="129px"/>
+<cl:griddetail std:sid="gd-band-4n0c319q">
+          <cl:gridrow height="25px" std:sid="g-row-x708ab35"/>
+          
+        <cl:gridcell colindex="0" columnname="CD_NM" rowindex="0" std:sid="gd-cell-3frg0v66"/>
+<cl:gridcell colindex="1" columnname="CD" rowindex="0" std:sid="gd-cell-o48oqsaz"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-998un4eg" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="275px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-68ca55w4"/>
+</cl:button>
+<cl:button id="btnCloseOk" std:sid="button-28usd947" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="275px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CHOICLS" property="value"/>
+<cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-27t7iw8t"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

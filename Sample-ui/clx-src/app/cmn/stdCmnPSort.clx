@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-7ha8a7y8" version="1.0.0.0">
+  <head std:sid="head-0qyne150">
+    <title>stdCmnPSort</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-7g670k9p" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-u238m3rh" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-8nqmy93h" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-u82jv052" width="320px"/>
+    <cl:model std:sid="model-5r7tv7e8">
+      
+      
+      
+    <cl:datamap id="dmList" std:sid="d-map-kcr63gd8">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="column" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="sorttype" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="sortorder" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="andor" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-89zzu16w" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-1qip3383"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-n4dso1ee"/>
+<cl:group id="group4" std:sid="group-4r1p6z86">
+        <cl:xylayoutdata height="305px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="30px" verticalAnchor="TOP" width="365px"/>
+        <cl:xylayout std:sid="xylayout-60g3aoio"/>
+      <cl:button class="btn-new" id="btnNew" std:sid="button-r79057s3" value="신규">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="233px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnNewClick" name="click" std:sid="listener-w516x5xn"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-6ji26376" value="삭제">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="299px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnDelClick" name="click" std:sid="listener-81a12x1d"/>
+</cl:button>
+<cl:grid datasetid="dsTempRSortList" id="grdRight" std:sid="grid-6d054k7b">
+        <cl:xylayoutdata height="269px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="355"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-f18v1c96">
+          <cl:gridrow height="27px" std:sid="g-row-t7326q00"/>
+          
+        <cl:gridcell colindex="0" comment="button4" rowindex="0" std:sid="gh-cell-qlrp7c22" text=""/>
+<cl:gridcell colindex="1" comment="button5" rowindex="0" std:sid="gh-cell-d3o48571" text="정렬대상"/>
+<cl:gridcell colindex="2" comment="button6" rowindex="0" std:sid="gh-cell-y3130b4r" text="정렬Type"/>
+<cl:gridcell colindex="3" comment="button7" rowindex="0" std:sid="gh-cell-9r11r8l9" text="정렬방식"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-l9s759o4" width="21px"/>
+<cl:gridcolumn std:sid="g-column-j1y71vl3" width="120px"/>
+<cl:gridcolumn std:sid="g-column-tktv7367" width="91px"/>
+<cl:gridcolumn std:sid="g-column-i0ep6f51" width="112px"/>
+<cl:griddetail std:sid="gd-band-lwm2arc5">
+          <cl:gridrow height="25px" std:sid="g-row-4rg2w98q"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-wmaa6cn0">
+<cl:inputbox enabled="false" id="inputbox1" readonly="true" std:sid="i-box-f8x8i54i"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columnname="column" rowindex="0" std:sid="gd-cell-gt475ip0">
+<cl:combobox id="combobox4" std:sid="c-box-96nre235">
+<cl:itemset datasetid="dsTempLSortList" label="name" value="column"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="sorttype" rowindex="0" std:sid="gd-cell-566p2rw4">
+<cl:combobox id="combobox2" std:sid="c-box-9qstaa9b">
+<cl:item label="문자" std:sid="item-hl104r2q" value="text"/>
+<cl:item label="숫자" std:sid="item-98wty3ag" value="number"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="3" columnname="sortorder" rowindex="0" std:sid="gd-cell-3286900y">
+<cl:combobox id="combobox1" std:sid="c-box-b06gxb3s">
+<cl:item label="오름차순" std:sid="item-8y8c01c1" value="true"/>
+<cl:item label="내림차순" std:sid="item-z83kt3m8" value="false"/>
+</cl:combobox>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button id="button1" std:sid="button-tdc019sf" value="정렬">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="238px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onButton1Click" name="click" std:sid="listener-02k338y5"/>
+</cl:button>
+<cl:button id="button2" std:sid="button-02s00oz8" value="reset">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="304px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onButton2Click" name="click" std:sid="listener-a1d0c9m3"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-1shc04k9" value="닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="307px" std:sid="xyl-data-fa9a14b9" top="340px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-u21y9hl4"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

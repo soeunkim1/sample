@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-4yf2k2l9" version="1.0.0.0">
+  <head std:sid="head-8tf20070">
+    <title>stdCmnCDicMng</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-x6954mfp" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-le84r6t5" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-10xl5ciq" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-8vs24ite" width="320px"/>
+    <cl:model std:sid="model-7r8xc24j">
+      
+      
+      
+    <cl:datamap id="dmReqList" std:sid="d-map-l099a7d0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strDivCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsMst" info="CMN_GLOSSARY@PHYSIC_WORD" std:sid="d-set-rnh41x1h">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="PHYSIC_WORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LOGIC_WORD_EXPL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LOGIC_SYNM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LOGIC_WORD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PHYSIC_WORD_EXPL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PHYSIC_SYNM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SEQ_NUM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmFileInfo" std:sid="d-map-dv32o3qa">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strFileDir" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFileNm" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strFileChgNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmRoot" std:sid="d-map-0ag26w69">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="resOnLoad" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnDicMng/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-4g63jjo9">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsMst"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnDicMng/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-o164u3i7">
+        
+        
+      <cl:requestdata dataid="dsMst"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnDicMng/" id="subFileDown" mediatype="application/x-www-form-urlencoded" std:sid="submission-9ujt76gv">
+        
+        
+      <cl:responsedata dataid="dmFileInfo"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-3jfx1r9z" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-cl4h850y"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-2j1x9615"/>
+<cl:group class="search-box" id="grpSearch" std:sid="group-yhty4c45">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-3mm758f7"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-k04g3679" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-g14ctq66"/>
+</cl:button>
+<cl:output id="optSearchNm" std:sid="output-9m57t501" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="320px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SRCHVALU" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbSearchNm" std:sid="i-box-0el0anhm">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="425px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="200px"/>
+      <cl:expbind category="PROPERTY" expression="#optTableNm.value" property="fieldLabel"/>
+<cl:listener handler="onIpbSearchNmKeydown" name="keydown" std:sid="listener-8v5guh36"/>
+<cl:datamapbind columnname="strNm" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+<cl:output id="optDivCd" std:sid="output-6y0vn6k1" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-TGT_DIV_RCD" property="value"/>
+</cl:output>
+<cl:button class="btn-new" id="btnNewFile" std:sid="button-5g47awsj" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1095px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW_FILE" property="value"/>
+<cl:listener handler="onBtnNewFileClick" name="click" std:sid="listener-3xf4018n"/>
+</cl:button>
+<cl:radiobutton id="rdbDivCd" std:sid="r-button-8ede25d6">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-8688bddc" top="5px" verticalAnchor="TOP" width="200px"/>
+        
+        
+      <cl:item label="논리용어" std:sid="item-49c109e9" value="1"/>
+<cl:item label="물리용어" std:sid="item-49c109e9" value="2"/>
+<cl:datamapbind columnname="strDivCd" datacontrolid="dmReqList" property="value"/>
+</cl:radiobutton>
+</cl:group>
+<cl:group id="grpMst" std:sid="group-n76x6271">
+        <cl:xylayoutdata height="550px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="42px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-pxa4va70"/>
+      <cl:udc std:sid="ud-control-qk4y5m58" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-CMNDICLIST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdMst"/>
+      </cl:udc>
+<cl:grid datasetid="dsMst" id="grdMst" std:sid="grid-48ybfnch">
+        <cl:xylayoutdata height="515px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdMstSelectionChange" name="selection-change" std:sid="listener-71e495xt"/>
+<cl:gridheader std:sid="gh-band-cp35m62q">
+          <cl:gridrow height="27px" std:sid="g-row-m5952u15"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnUptStatus" rowindex="0" std:sid="gh-cell-p972819t" text="F"/>
+<cl:gridcell colindex="1" comment="ghBtnNoTableMain" rowindex="0" std:sid="gh-cell-tq7dv8q5">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="2" comment="ghBtnLogicWord" rowindex="0" std:sid="gh-cell-4jwnm136" text="논리용어"/>
+<cl:gridcell colindex="3" comment="ghBtnLogicWordExpl" rowindex="0" std:sid="gh-cell-1f7041id">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-CREATEDT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" comment="ghBtnLogicSynm" rowindex="0" std:sid="gh-cell-ux49b72x" text="논리동의어"/>
+<cl:gridcell class="require" colindex="5" comment="ghBtnPhysicWord" rowindex="0" std:sid="gh-cell-39wb89yw">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-WRITER" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" comment="ghBtnPhysicWordExpl" rowindex="0" std:sid="gh-cell-kw9w165q">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-EXPLAIN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" comment="ghBtnPHYSIC_SYNM" rowindex="0" std:sid="gh-cell-7iraxruk">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-EXPLAIN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" comment="ghBtnSeqNum" rowindex="0" std:sid="gh-cell-367cxx0b">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-EXPLAIN" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-y3d48869" width="25px"/>
+<cl:gridcolumn std:sid="g-column-3hic1e10" width="40px"/>
+<cl:gridcolumn std:sid="g-column-7o2407am" width="160px"/>
+<cl:gridcolumn std:sid="g-column-v817l60p" width="250px"/>
+<cl:gridcolumn std:sid="g-column-585l79vz" width="160px"/>
+<cl:gridcolumn std:sid="g-column-682v4g38" width="160px"/>
+<cl:gridcolumn std:sid="g-column-s25fk7zf" width="260px"/>
+<cl:gridcolumn std:sid="g-column-65fq3651" width="152px"/>
+<cl:gridcolumn std:sid="g-column-16y4p67r" width="140px"/>
+<cl:griddetail std:sid="gd-band-9b0ol875">
+          <cl:gridrow height="25px" std:sid="g-row-ns389azs"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gd-cell-g1888uf2">
+<cl:output std:sid="output-fo5ayv38" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columntype="rowindex" rowindex="0" std:sid="gd-cell-kv368lul" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="LOGIC_WORD" rowindex="0" std:sid="gd-cell-0b35w24r">
+<cl:inputbox id="gdIpbLogicWogd" maxlength="200" std:sid="i-box-76q5k51b">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="3" columnname="LOGIC_WORD_EXPL" rowindex="0" std:sid="gd-cell-7akm652n">
+<cl:inputbox id="gdIpbLogicWogdExpl" maxlength="1000" std:sid="i-box-2d2c25bz"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="LOGIC_SYNM" rowindex="0" std:sid="gd-cell-f4f8at40">
+<cl:inputbox id="gdIpbLogicSynm" maxlength="200" std:sid="i-box-w7st3c59"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="PHYSIC_WORD" rowindex="0" std:sid="gd-cell-jop7x3xo">
+<cl:inputbox id="gdIpbPhysicWogd" maxlength="200" std:sid="i-box-3w9866fc">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="PHYSIC_WORD_EXPL" rowindex="0" std:sid="gd-cell-70n4n67x">
+<cl:inputbox id="gdIpbPhysicWogdExpl" maxlength="1000" std:sid="i-box-3hdovlnc"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="PHYSIC_SYNM" rowindex="0" std:sid="gd-cell-9901l836">
+<cl:inputbox id="gdIpbPhysicSynm" maxlength="200" std:sid="i-box-3y2is3h4"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" columnname="SEQ_NUM" rowindex="0" std:sid="gd-cell-r4j4ou76">
+<cl:inputbox id="gdIpbSeqNum" maxlength="1000" std:sid="i-box-awvr4v7u"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+<cl:button class="btn-new" id="btnNew" std:sid="button-0qlkl125" value="신규">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="965px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnNewClick" name="click" std:sid="listener-ed307410"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-iff89qv9" value="삭제">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1030px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnDelClick" name="click" std:sid="listener-91x955wb"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-wm3tp91q" value="취소">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1095px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-v66v65u1"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-k12ek4ic" value="저장">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-et298lxr"/>
+</cl:button>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-y6v5cyuh" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

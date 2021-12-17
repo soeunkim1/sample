@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-hno283a3" version="1.0.0.0">
+  <head std:sid="head-34v8d5iw">
+    <title>extCssSStudScalList</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-jqv9w65y" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-6s762i59" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-7vkyawc5" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-r08kuw35" width="320px"/>
+    <cl:model std:sid="model-0nmo5r16">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-1ca68a0c">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudNo" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsStudScal" info="EXT_CSS_DPTMJ_SCAL_INPUT_TERM@SCH_YEAR_RCD,SMT_RCD,SCAL_FEE_CD,SS_OBJ_DIV_RCD" std:sid="d-set-qt8av94r">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCH_YEAR_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCAL_FEE_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCAL_FEE_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PMNT_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PMNT_DIV_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ENT_SCAL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TUT_SCAL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ETC_SCAL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCAL_FNDTN_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCAL_FNDTN_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmDate" std:sid="d-map-jk9wmol6">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="CUT_DT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/css/ExtCssStudScalList/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-6445d1ci">
+        
+        
+      <cl:responsedata dataid="dmDate"/>
+</cl:submission>
+<cl:submission action="/css/ExtCssStudScalList/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-d7w880oe">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsStudScal"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="학생별장학수혜이력조회"/>
+  </head>
+  <body std:sid="body-4z66i99k" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-ecra1727"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-ckj279pz"/>
+<cl:group id="grpData" std:sid="group-140upd1o">
+        <cl:xylayoutdata height="131px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-9gc4tc88"/>
+      <cl:embeddedapp id="emaStudInfo" src="../csr/impStudInf02.clx" std:sid="e-app-816ozny5">
+        <cl:xylayoutdata height="120px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="5px" verticalAnchor="TOP" width="1215px"/>
+      <cl:listener handler="onEmaStudInfoAppReady" name="app-ready" std:sid="listener-0m9o2qa3"/>
+</cl:embeddedapp>
+</cl:group>
+<cl:group class="search-box" id="grpSearch" std:sid="group-a2717qdk">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-p26393hc"/>
+      <cl:output class="require" id="optSchStId" std:sid="output-qji08yjm" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="70px"/>
+      <cl:langbind category="PROPERTY" keypath="NLS-SCR-STUDID" property="value"/>
+</cl:output>
+<cl:button class="btn-search" id="btnSearch" std:sid="button-pqh97nbi" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-00p3b115"/>
+</cl:button>
+<cl:inputbox id="ipbSchStudId" maxlength="100" std:sid="i-box-8gwi8x3s">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="80px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="130px"/>
+      <cl:expbind category="PROPERTY" expression="#optSchStId.value" property="fieldLabel"/>
+<cl:listener handler="onIpbSchStudIdValueChange" name="value-change" std:sid="listener-s125o2r2"/>
+<cl:datamapbind columnname="strStudNo" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-pop-search" id="btnPopSearch" std:sid="button-qj59558j" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="20px"/>
+      <cl:listener handler="onBtnPopSearchClick" name="click" std:sid="listener-4u09gt7b"/>
+</cl:button>
+<cl:inputbox id="ipbSchStudIdObj" std:sid="i-box-wkzy02r8" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="230px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="96px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSchStId.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStudId" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:udc id="appheader1" std:sid="ud-control-f247u8aw" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:embeddedapp id="emaort2" src="../csr/impStdCsrPStSearch.clx" std:sid="e-app-2baj8x6k">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="675px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+<cl:group id="grpDataDtl" std:sid="group-084mqdy1">
+        <cl:xylayoutdata height="467px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="208px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-8i808bhw"/>
+      <cl:udc std:sid="ud-control-i5zlkj33" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRSBFRCLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="315px"/>
+        <cl:property name="ctrl" type="control" value="grdStudScal"/>
+      </cl:udc>
+<cl:grid datasetid="dsStudScal" id="grdStudScal" std:sid="grid-54qzjf30">
+        <cl:xylayoutdata height="432px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1210px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-ke29w9om">
+          <cl:gridrow height="27px" std:sid="g-row-qjh39l18"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-01g5he1h" text="No"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-z731xzk7">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-jy1l3535">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-SMT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-x7z1289v">
+<cl:langbind category="PROPERTY" keypath="UI-DB-SCAL_FEE_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-45008b35">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-PMNTDIV" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-l7mv93u1">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-ENTSCALFEE" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-y49lkq07">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TUTSCALFEE" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-sht56l64">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-ETCSCALFEE" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gh-cell-kpgjnqso">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-SCALAGENCY" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-s5t0kj8k" width="40px"/>
+<cl:gridcolumn std:sid="g-column-39jj00nu" width="116px"/>
+<cl:gridcolumn std:sid="g-column-n5p5e6fu" width="94px"/>
+<cl:gridcolumn std:sid="g-column-207ib3e2" width="215px"/>
+<cl:gridcolumn std:sid="g-column-8l00lb1j" width="119px"/>
+<cl:gridcolumn std:sid="g-column-d382sty6" width="140px"/>
+<cl:gridcolumn std:sid="g-column-b70a9296" width="140px"/>
+<cl:gridcolumn std:sid="g-column-8l19k55l" width="140px"/>
+<cl:gridcolumn std:sid="g-column-w9411287" width="195px"/>
+<cl:griddetail std:sid="gd-band-bqbiuo45">
+          <cl:gridrow height="25px" std:sid="g-row-75letl01"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-j3im3ak0" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="SCH_YEAR_NM" rowindex="0" std:sid="gd-cell-3rbxp349" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="SMT_NM" rowindex="0" std:sid="gd-cell-0pkzyybf" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="SCAL_FEE_NM" rowindex="0" std:sid="gd-cell-g2dg5nc0"/>
+<cl:gridcell colindex="4" columnname="PMNT_DIV_NM" rowindex="0" std:sid="gd-cell-3f2zo881"/>
+<cl:gridcell colindex="5" columnname="ENT_SCAL" rowindex="0" std:sid="gd-cell-gv00v06i">
+<cl:output datatype="number" format="s#,###" id="gdOptEntScal" std:sid="output-m86yp891" style="text-align:right;"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="TUT_SCAL" rowindex="0" std:sid="gd-cell-7j68ko5t">
+<cl:output datatype="number" format="s#,###" id="gdOptTutScal" std:sid="output-l511u7wl" style="text-align:right;"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="ETC_SCAL" rowindex="0" std:sid="gd-cell-r4sqrj2f">
+<cl:output datatype="number" format="s#,###" id="gdOptEtcScal" std:sid="output-k664s5s3" style="text-align:right;"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" columnname="SCAL_FNDTN_NM" rowindex="0" std:sid="gd-cell-ptijma04"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

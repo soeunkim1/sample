@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-7nv8134y" version="1.0.0.0">
+  <head std:sid="head-vp5pdn5z">
+    <title>extCrsCRegFeeBillStr</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-85808jj0" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-h5kukk3s" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-42p9yt8b" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-kcoir4sl" width="320px"/>
+    <cl:model std:sid="model-71057w1f">
+      
+      
+      
+    <cl:datamap id="dmRoot" std:sid="d-map-os1vgo2k">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="resOnLoad" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="reqList" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmFrfExtCrsPrtTxt" std:sid="d-map-jg5x695i">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="BILL_PRT_STR" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmResList" std:sid="d-map-hey2vfv5">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="rowCnt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/crs/ExtCrsRegFeeBillStr/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-s3qxzjfp">
+        
+        
+      <cl:requestdata dataid="dmRoot"/>
+<cl:responsedata dataid="dmFrfExtCrsPrtTxt"/>
+<cl:responsedata dataid="dmResList"/>
+</cl:submission>
+<cl:submission action="/crs/ExtCrsRegFeeBillStr/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-4133ond0">
+        
+        
+      <cl:requestdata dataid="dmFrfExtCrsPrtTxt"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="extCrsCRegFeeBillStr"/>
+  </head>
+  <body std:sid="body-1462775e" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-rww021jb"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-n6bp41qf"/>
+<cl:udc id="appheader1" std:sid="ud-control-7tq785z6" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-2v83rrfq">
+        <cl:xylayoutdata height="342" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-n874zy93"/>
+      <cl:button class="btn-save" id="btnSave" std:sid="button-e552g1mp" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-60i7g93p"/>
+</cl:button>
+<cl:group class="form-box" id="frfExtCrsPrtTxt" std:sid="group-951svo1t">
+        <cl:xylayoutdata height="306" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="30px" verticalAnchor="TOP" width="1215px"/>
+        <cl:xylayout std:sid="xylayout-w5u9nc0q"/>
+      <cl:output id="optFrfRegPrtStr" std:sid="output-v726b5u3" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="195px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CRS_BILL" property="value"/>
+</cl:output>
+<cl:textarea id="txtFrfRegPrtStr" maxlength="1000" std:sid="t-area-d1lm9eq8">
+        <cl:xylayoutdata height="295px" horizontalAnchor="LEFT" left="205px" std:sid="xyl-data-007df396" top="5px" verticalAnchor="TOP" width="740px"/>
+      <cl:expbind category="PROPERTY" expression="#optFrfRegPrtStr.value" property="fieldLabel"/>
+<cl:datamapbind columnname="BILL_PRT_STR" datacontrolid="dmFrfExtCrsPrtTxt" property="value"/>
+</cl:textarea>
+</cl:group>
+<cl:udc std:sid="ud-control-1z2061r3" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PRT_TXT" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="5px" verticalAnchor="TOP" width="135px"/>
+      </cl:udc>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

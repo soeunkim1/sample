@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-4j2248tj" version="1.0.0.0">
+  <head std:sid="head-6q9oqp7w">
+    <title>impYearSmt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-542e679g" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-85n9d017" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-yq8x714m" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-h829vqs7" width="320px"/>
+    <cl:model std:sid="model-4909c2tb">
+      
+      
+      
+    <cl:datamap id="dmRequest" std:sid="d-map-s318c81i">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strUnitSystem" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsYearList" std:sid="d-set-s49ffh95">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtList" std:sid="d-set-6y3tqlj6">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmDate" std:sid="d-map-l765kd2y">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="YEAR" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="ST_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="END_DT" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SMT" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/css/StdCssDateTime/" id="subOnLoadImpNS" mediatype="application/x-www-form-urlencoded" std:sid="submission-tc3isnsx">
+        
+        
+      <cl:requestdata dataid="dmRequest"/>
+<cl:responsedata dataid="dsYearList"/>
+<cl:responsedata dataid="dsSmtList"/>
+<cl:responsedata dataid="dmDate"/>
+</cl:submission>
+<cl:submission action="/css/StdCssDateTime/" id="subDateImpNS" mediatype="application/x-www-form-urlencoded" std:sid="submission-5236t7u1">
+        
+        
+      <cl:requestdata dataid="dmRequest"/>
+<cl:requestdata dataid="dmDate"/>
+<cl:responsedata dataid="dmDate"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="impYearSmt"/>
+  </head>
+  <body std:sid="body-52fl6904" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-0ok7w905"/>
+  <cl:combobox id="cbbYearImpNS" std:sid="c-box-0eq3q9fx">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="55px" std:sid="xyl-data-757d2a0f" top="0px" verticalAnchor="TOP" width="105px"/>
+        
+        
+      <cl:itemset datasetid="dsYearList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optYearImpNS.value" property="fieldLabel"/>
+<cl:listener handler="onCbbYearImpNSSelectionChange" name="selection-change" std:sid="listener-guv031vi"/>
+<cl:listener handler="onCbbYearImpNSFocus" name="focus" std:sid="listener-9z3k76ru"/>
+<cl:datamapbind columnname="YEAR" datacontrolid="dmDate" property="value"/>
+</cl:combobox>
+<cl:output class="require" id="optYearImpNS" std:sid="output-7adbj8lo" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="50px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="value"/>
+</cl:output>
+<cl:output class="require" id="optSmtImpNS" std:sid="output-6pzj1x09" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="170px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="50px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SMT" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSmtImpNS" std:sid="c-box-69o0078n">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="225px" std:sid="xyl-data-757d2a0f" top="0px" verticalAnchor="TOP" width="105px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSmtImpNS.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSmtImpNSSelectionChange" name="selection-change" std:sid="listener-o94ht2s9"/>
+<cl:listener handler="onCbbSmtImpNSFocus" name="focus" std:sid="listener-y1917d94"/>
+<cl:datamapbind columnname="SMT" datacontrolid="dmDate" property="value"/>
+</cl:combobox>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-7l041rb6" version="1.0.0.0">
+  <head std:sid="head-261n2keu">
+    <title>stdCcrCYearSmt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-579z7gm2" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-vi70c3us" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-z1bu9fih" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-7cg7m7p9" width="320px"/>
+    <cl:model std:sid="model-13ct5bdy">
+      
+      
+      
+    <cl:dataset id="dsSchYearRcdList" std:sid="d-set-y2rfvb92">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtRcdList" std:sid="d-set-s9tlq1l1">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-93283u86">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strUnitSystem" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmMapYearSmt" std:sid="d-map-w929d6j9">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="CD" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CD_PRP1" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CD_PRP2" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CD_CLS" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="LAN_DIV_RCD" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/ccr/StdCcrYearSmt/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-59d45e1r">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsSchYearRcdList"/>
+<cl:responsedata dataid="dsSmtRcdList"/>
+<cl:responsedata dataid="dmMapYearSmt"/>
+</cl:submission>
+<cl:submission action="/ccr/StdCcrYearSmt/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-4jrdlt39">
+        
+        
+      <cl:requestdata dataid="dmMapYearSmt"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="수강학년도학기"/>
+  </head>
+  <body std:sid="body-9nc117mv" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-3170mlf7"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-4dr627i8"/>
+<cl:udc id="appheader1" std:sid="ud-control-60x5l81k" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-osv11vt7">
+        <cl:xylayoutdata height="640px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-9b18f29p"/>
+      <cl:output class="require" id="optSmt" std:sid="output-7tl9omv6" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="485px" std:sid="xyl-data-548c5467" top="340px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="NLS-DLG-LBL-L002" property="value"/>
+</cl:output>
+<cl:output class="require" id="optYear" std:sid="output-y4425nz6" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="485px" std:sid="xyl-data-548c5467" top="315px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="value"/>
+</cl:output>
+<cl:combobox id="cbbYear" std:sid="c-box-tcwn2y91">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="590px" std:sid="xyl-data-757d2a0f" top="315px" verticalAnchor="TOP" width="160px"/>
+        
+        
+      <cl:itemset datasetid="dsSchYearRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optYear.value" property="fieldLabel"/>
+<cl:listener handler="onCbbYearSelectionChange" name="selection-change" std:sid="listener-x923u1p8"/>
+<cl:datamapbind columnname="CD_PRP1" datacontrolid="dmMapYearSmt" property="value"/>
+</cl:combobox>
+<cl:button class="btn-save" id="btnSave" std:sid="button-8410pzh7" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="590px" std:sid="xyl-data-fa9a14b9" top="390px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-8d06vg83"/>
+</cl:button>
+<cl:combobox id="cbbSmt" std:sid="c-box-to37nx28">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="590px" std:sid="xyl-data-757d2a0f" top="340px" verticalAnchor="TOP" width="160px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtRcdList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSmt.value" property="fieldLabel"/>
+<cl:listener handler="onCbbSmtSelectionChange" name="selection-change" std:sid="listener-bch1n0os"/>
+<cl:listener handler="onCbbSmtSelectionChange" name="selection-change" std:sid="listener-1lyl488c"/>
+<cl:datamapbind columnname="CD_PRP2" datacontrolid="dmMapYearSmt" property="value"/>
+</cl:combobox>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

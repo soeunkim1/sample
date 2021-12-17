@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-ug7au5e1" version="1.0.0.0">
+  <head std:sid="head-z93e0209">
+    <title>stdCcsPTimeSche</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-604727o0" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-jp8yf4xj" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-nn78v6lv" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-f7g8ab4a" width="320px"/>
+    <cl:model std:sid="model-9g3h928w">
+      
+      
+      
+    <cl:dataset id="dsWdayRcdList" std:sid="d-set-cw535a01">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-f93gn35f">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strLanDivRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCcsLectInfo" info="CCS_TIME_SCHE@REF_KEY,WDAY_RCD,ST_TIME,LTTM" std:sid="d-set-l55w4rj8">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="WDAY_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LTTM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ST_TIME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="END_TIME" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LECT_ROOM_CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LECT_ROOM_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIVCLS_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REF_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LTTM_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-03dzs40q">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strLectRoomCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strKeyDate" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strLectRoomNm" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/ccs/StdCcsTimeSchePopup/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-a9tl277x">
+        
+        
+      <cl:responsedata dataid="dsWdayRcdList"/>
+<cl:responsedata dataid="dmResOnLoad"/>
+</cl:submission>
+<cl:submission action="/ccs/StdCcsTimeSchePopup/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-7k1r95fs">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsCcsLectInfo"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="강의실별 시간표"/>
+  </head>
+  <body std:sid="body-65q7muo6" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-73352oq9"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-q9e1i8o5"/>
+<cl:udc id="appheader1" std:sid="ud-control-ytz02tv0" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-g85z7q34">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="820px"/>
+        <cl:xylayout std:sid="xylayout-mebvkn20"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-bhb7bpj1" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="753px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-vn1d6ts4"/>
+</cl:button>
+<cl:output class="require" id="optLectRoomNm" std:sid="output-pl2ejcvj" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="80px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-SA_CD_NM" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbLectRoomNm" maxlength="100" std:sid="i-box-4764fpl9">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="90px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="115px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optLectRoomNm.value" property="fieldLabel"/>
+<cl:listener handler="onIpbLectRoomNmValueChange" name="value-change" std:sid="listener-xz6bv740"/>
+<cl:datamapbind columnname="strLectRoomNm" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+<cl:button class="btn-pop-search" id="btnLectRoomCd" std:sid="button-op4xahmx" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="205px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="20px"/>
+      <cl:listener handler="onBtnLectRoomCdClick" name="click" std:sid="listener-zx404une"/>
+</cl:button>
+</cl:group>
+<cl:embeddedapp id="emaStdCcsPRoomPopup" src="../ccs/impStdCcsPRoomPopup.clx" std:sid="e-app-m2d25oft">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-7c6988f9" top="430px" verticalAnchor="TOP" width="100px"/>
+      </cl:embeddedapp>
+<cl:group id="grpSchedule" std:sid="group-o287a173">
+        <cl:xylayoutdata height="323px" horizontalAnchor="LEFT" left="530px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="295px"/>
+        <cl:xylayout std:sid="xylayout-bv55b7u8"/>
+      <cl:group id="grp00" std:sid="group-3k1e79y5">
+        <cl:xylayoutdata height="19px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="6px" verticalAnchor="TOP" width="283px"/>
+        <cl:xylayout std:sid="xylayout-aq5x3827"/>
+      <cl:output id="optTime" std:sid="output-00etb1l2" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="2px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-LTTM" property="value"/>
+</cl:output>
+<cl:output id="optDay1" std:sid="output-5600h046" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-548c5467" top="2px" verticalAnchor="TOP" width="30px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-DB-MM" property="value"/>
+</cl:output>
+<cl:output id="optDay2" std:sid="output-ic21036g" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-548c5467" top="2px" verticalAnchor="TOP" width="30px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-TUES" property="value"/>
+</cl:output>
+<cl:output id="optDay3" std:sid="output-hj868en6" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-548c5467" top="2px" verticalAnchor="TOP" width="30px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WED" property="value"/>
+</cl:output>
+<cl:output id="optDay4" std:sid="output-dgv8qiql" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-548c5467" top="2px" verticalAnchor="TOP" width="30px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-THUR" property="value"/>
+</cl:output>
+<cl:output id="optDay5" std:sid="output-5t257qdx" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-548c5467" top="2px" verticalAnchor="TOP" width="30px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-FEE" property="value"/>
+</cl:output>
+<cl:output id="optDay6" std:sid="output-p2se7s1m" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-548c5467" top="2px" verticalAnchor="TOP" width="30px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SAT" property="value"/>
+</cl:output>
+</cl:group>
+<cl:group id="grp01" std:sid="group-hg3o5uyu">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="26px" verticalAnchor="TOP" width="283px"/>
+        <cl:xylayout std:sid="xylayout-pz745970"/>
+      <cl:output id="optTime1" std:sid="output-469xs43i" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO1CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn01CL10201" std:sid="button-qt113538" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn01CL10202" std:sid="button-206301e2" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn01CL10203" std:sid="button-7shvkgx7" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn01CL10204" std:sid="button-ykfcd0tc" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn01CL10205" std:sid="button-g45uds18" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn01CL10206" std:sid="button-02pqfnc9" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp02" std:sid="group-10tm715j">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="44px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-fbz62nh7"/>
+      <cl:output id="optTime2" std:sid="output-2wg3ami0" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO2CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn02CL10201" std:sid="button-4274lrm3" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn02CL10202" std:sid="button-7k4dksmt" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn02CL10203" std:sid="button-7jx34zwr" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn02CL10204" std:sid="button-ij3g68ut" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn02CL10205" std:sid="button-75je6b8i" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn02CL10206" std:sid="button-22r55e32" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp03" std:sid="group-3zt20uh0">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="62px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-89m8b940"/>
+      <cl:output id="optTime3" std:sid="output-hv1fhyq6" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO3CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn03CL10201" std:sid="button-7zf8jf37" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn03CL10202" std:sid="button-294nh8zc" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn03CL10203" std:sid="button-9391q90o" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn03CL10204" std:sid="button-h68vnor0" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn03CL10205" std:sid="button-a7c673c2" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn03CL10206" std:sid="button-tlg57lku" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp04" std:sid="group-7hgzuxeb">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="80px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-jk1go32v"/>
+      <cl:output id="optTime4" std:sid="output-3zf219kd" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO4CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn04CL10201" std:sid="button-2977306r" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn04CL10202" std:sid="button-sy5a644d" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn04CL10203" std:sid="button-wk1109u9" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn04CL10204" std:sid="button-f6c41sj9" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn04CL10205" std:sid="button-2ca3i3s8" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn04CL10206" std:sid="button-7ejmomq2" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp05" std:sid="group-406mku1y">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="98px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-138lk5qi"/>
+      <cl:output id="optTime5" std:sid="output-7o5az562" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO5CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn05CL10201" std:sid="button-3o338a2t" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn05CL10202" std:sid="button-44b112s5" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn05CL10203" std:sid="button-22li1a0e" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn05CL10204" std:sid="button-mofjm999" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn05CL10205" std:sid="button-page9i92" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn05CL10206" std:sid="button-h73164d9" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp06" std:sid="group-o2a4n78r">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="116px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-8da84052"/>
+      <cl:output id="optTime6" std:sid="output-r3oa69wn" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO6CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn06CL10201" std:sid="button-vs841hks" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn06CL10202" std:sid="button-5ot73tvs" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn06CL10203" std:sid="button-qq6fc9rt" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn06CL10204" std:sid="button-q7v8dfkz" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn06CL10205" std:sid="button-5l1k9m14" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn06CL10206" std:sid="button-s29yj13m" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp07" std:sid="group-35cyfd23">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="134px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-t691434f"/>
+      <cl:output id="optTime7" std:sid="output-9tvs2ibh" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO7CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn07CL10201" std:sid="button-5jh53d17" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn07CL10202" std:sid="button-64p1aw7z" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn07CL10203" std:sid="button-e6gj89e4" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn07CL10204" std:sid="button-4abr314e" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn07CL10205" std:sid="button-bd031g47" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn07CL10206" std:sid="button-vx423uto" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp08" std:sid="group-h6g5ta36">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="152px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-78p0ywex"/>
+      <cl:output id="optTime8" std:sid="output-nb542ue9" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO8CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn08CL10201" std:sid="button-b30y7ja9" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn08CL10202" std:sid="button-t1wqz1d3" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn08CL10203" std:sid="button-8zfq9k0l" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn08CL10204" std:sid="button-1306t15i" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn08CL10205" std:sid="button-778i4357" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn08CL10206" std:sid="button-7r9h95m9" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp09" std:sid="group-4w97gf7n">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="170px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-639ez5q4"/>
+      <cl:output id="optTime9" std:sid="output-w8222p13" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO9CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn09CL10201" std:sid="button-j3otc7wp" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="29px"/>
+      </cl:button>
+<cl:button id="btn09CL10202" std:sid="button-usdefban" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="29px"/>
+      </cl:button>
+<cl:button id="btn09CL10203" std:sid="button-n6q1qwof" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="29px"/>
+      </cl:button>
+<cl:button id="btn09CL10204" std:sid="button-29157fhb" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="29px"/>
+      </cl:button>
+<cl:button id="btn09CL10205" std:sid="button-6j24ds12" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="28px"/>
+      </cl:button>
+<cl:button id="btn09CL10206" std:sid="button-h961r363" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp10" std:sid="group-70y24z4m">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="188px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-oc11mk0r"/>
+      <cl:output id="optTime10" std:sid="output-26r5on3a" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO10CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn10CL10201" std:sid="button-r67c96g6" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn10CL10202" std:sid="button-x49kfe7d" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn10CL10203" std:sid="button-dw6846vi" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn10CL10204" std:sid="button-el55t8t4" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn10CL10205" std:sid="button-8an95o52" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn10CL10206" std:sid="button-5o7f3d1q" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp11" std:sid="group-ku1852g8">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="206px" verticalAnchor="TOP" width="284px"/>
+        <cl:xylayout std:sid="xylayout-70mrd8qr"/>
+      <cl:output id="optTime11" std:sid="output-x0r8s12c" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO11CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn11CL10201" std:sid="button-1pt4h7tt" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn11CL10202" std:sid="button-rs6a0b92" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn11CL10203" std:sid="button-2tw52f3r" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn11CL10204" std:sid="button-49061q59" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn11CL10205" std:sid="button-5h8j5o84" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn11CL10206" std:sid="button-2hyd3b41" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp12" std:sid="group-45z96z39">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="224px" verticalAnchor="TOP" width="283px"/>
+        <cl:xylayout std:sid="xylayout-69nd66u3"/>
+      <cl:output id="optTime12" std:sid="output-76egq5av" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO12CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn12CL10201" std:sid="button-42n2vhm4" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn12CL10202" std:sid="button-43c8ipzl" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn12CL10203" std:sid="button-c6jm74ki" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn12CL10204" std:sid="button-ry5vehe7" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn12CL10205" std:sid="button-70s9xh47" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn12CL10206" std:sid="button-a829837m" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp13" std:sid="group-mlpmkqiy">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="242px" verticalAnchor="TOP" width="283px"/>
+        <cl:xylayout std:sid="xylayout-ly4i0251"/>
+      <cl:output id="optTime13" std:sid="output-c5sv1187" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO13CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn13CL10201" std:sid="button-k3cp1ofo" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn13CL10202" std:sid="button-843mp70a" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn13CL10203" std:sid="button-bxk21o00" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn13CL10204" std:sid="button-rcvnjv8q" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn13CL10205" std:sid="button-44fb7508" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn13CL10206" std:sid="button-o963c447" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp14" std:sid="group-43vh4x80">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="260px" verticalAnchor="TOP" width="283px"/>
+        <cl:xylayout std:sid="xylayout-wfu1d8c9"/>
+      <cl:output id="optTime14" std:sid="output-wnqv9n4r" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO14CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn14CL10201" std:sid="button-i3315o0y" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn14CL10202" std:sid="button-18yg4d2w" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn14CL10203" std:sid="button-t3ey5azb" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn14CL10204" std:sid="button-33i481mc" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn14CL10205" std:sid="button-9zk105s3" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn14CL10206" std:sid="button-4ddxfm09" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp15" std:sid="group-jfvg23oq">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="278px" verticalAnchor="TOP" width="283px"/>
+        <cl:xylayout std:sid="xylayout-9616fp31"/>
+      <cl:output id="optTime15" std:sid="output-7a3j47iu" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO15CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn15CL10201" std:sid="button-58vy04t7" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn15CL10202" std:sid="button-703k92k4" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn15CL10203" std:sid="button-2q8xm640" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn15CL10204" std:sid="button-0ku1t3o8" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn15CL10205" std:sid="button-76ie742v" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn15CL10206" std:sid="button-dstu6294" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+<cl:group id="grp16" std:sid="group-3g6luk52">
+        <cl:xylayoutdata height="17px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="296px" verticalAnchor="TOP" width="283px"/>
+        <cl:xylayout std:sid="xylayout-83js2z8s"/>
+      <cl:output id="optTime16" std:sid="output-j8359q3j" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="1px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NO16CLASS" property="value"/>
+</cl:output>
+<cl:button id="btn16CL10201" std:sid="button-o5e33l50" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn16CL10202" std:sid="button-441k0ky3" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn16CL10203" std:sid="button-p46l24aa" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="140px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn16CL10204" std:sid="button-5b09nx50" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="175px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn16CL10205" std:sid="button-s0415sra" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="210px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+<cl:button id="btn16CL10206" std:sid="button-77fn60q8" value="">
+        <cl:xylayoutdata height="15px" horizontalAnchor="LEFT" left="245px" std:sid="xyl-data-fa9a14b9" top="1px" verticalAnchor="TOP" width="30px"/>
+      </cl:button>
+</cl:group>
+</cl:group>
+<cl:group id="grpData" std:sid="group-qv2n6i60">
+        <cl:xylayoutdata height="323px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="515px"/>
+        <cl:xylayout std:sid="xylayout-8f57fvsr"/>
+      <cl:udc std:sid="ud-control-82a6jy6t" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-DB-CLASSROOM_NM" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="195px"/>
+        <cl:property name="ctrl" type="control" value="grdCcsLectInfo"/>
+      </cl:udc>
+<cl:grid datasetid="dsCcsLectInfo" id="grdCcsLectInfo" std:sid="grid-4h6v0t6a">
+        <cl:xylayoutdata height="286px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="503px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCcsLectInfoSelectionChange" name="selection-change" std:sid="listener-hifslrf3"/>
+<cl:gridheader std:sid="gh-band-0481yh56">
+          <cl:gridrow height="27px" std:sid="g-row-2r5hsft6"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-k9x2507h" text="No"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-ziv77fx4">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-WDAY" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-235r9nuj">
+<cl:langbind category="PROPERTY" keypath="UI-DB-LTTM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-j09h56m4">
+<cl:langbind category="PROPERTY" keypath="UI-DB-ST_TIME" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-ozx8l395">
+<cl:langbind category="PROPERTY" keypath="UI-DB-END_TIME" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-y3k2eqou">
+<cl:langbind category="PROPERTY" keypath="UI-DB-LECT_ROOM_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-3ulkp8ro">
+<cl:langbind category="PROPERTY" keypath="UI-DB-LECT_ROOM_NM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-30pf0631" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-REF_KEY" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gh-cell-zwqw225d" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-LECT_ROOM_CD" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="9" rowindex="0" std:sid="gh-cell-849bfu5z" visible="false">
+<cl:langbind category="PROPERTY" keypath="UI-DB-LTTM" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-x7zl6pma" width="40px"/>
+<cl:gridcolumn std:sid="g-column-90bt7k93" width="60px"/>
+<cl:gridcolumn std:sid="g-column-y8ec48gu" width="50px"/>
+<cl:gridcolumn std:sid="g-column-n7nyrqv7" width="65px"/>
+<cl:gridcolumn std:sid="g-column-279ip5qh" width="65px"/>
+<cl:gridcolumn std:sid="g-column-j1upzb08" width="110px"/>
+<cl:gridcolumn std:sid="g-column-28w71059" width="98px"/>
+<cl:gridcolumn std:sid="g-column-p2h41ex5" width="90px"/>
+<cl:gridcolumn std:sid="g-column-h80sf978" width="80px"/>
+<cl:gridcolumn std:sid="g-column-97lbx974" width="50px"/>
+<cl:griddetail std:sid="gd-band-6aco3to6">
+          <cl:gridrow height="25px" std:sid="g-row-qd7mp9v0"/>
+          
+        <cl:gridcell colindex="0" columntype="rowindex" rowindex="0" std:sid="gd-cell-7996wgja" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="WDAY_RCD" rowindex="0" std:sid="gd-cell-971cllue">
+<cl:combobox hidebutton="true" id="gdCbbWdayRcd" std:sid="c-box-9i6nh3q5">
+<cl:itemset datasetid="dsWdayRcdList" label="CD_NM" value="CD"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="2" columnname="LTTM_NM" rowindex="0" std:sid="gd-cell-l8jl8yk1" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="ST_TIME" rowindex="0" std:sid="gd-cell-2n4ty1x8">
+<cl:output id="gdOptStTime" std:sid="output-btfnqvkz" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="END_TIME" rowindex="0" std:sid="gd-cell-fn4yy4k8">
+<cl:output id="gdOptEndTime" std:sid="output-pyr60jd8" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="LECT_ROOM_CD_NM" rowindex="0" std:sid="gd-cell-ggh73ud0"/>
+<cl:gridcell colindex="6" columnname="DIVCLS_NM" rowindex="0" std:sid="gd-cell-k02a983f"/>
+<cl:gridcell colindex="7" columnname="REF_KEY" rowindex="0" std:sid="gd-cell-090zz125"/>
+<cl:gridcell colindex="8" columnname="LECT_ROOM_CD" rowindex="0" std:sid="gd-cell-m7574844"/>
+<cl:gridcell colindex="9" columnname="LTTM" rowindex="0" std:sid="gd-cell-1uw7nb36" style="text-align:center;"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-31025y8b" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="385px" std:sid="xyl-data-fa9a14b9" top="400px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-mmzmzph3"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

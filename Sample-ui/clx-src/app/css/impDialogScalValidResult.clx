@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-1140i0n7" version="1.0.0.0">
+  <head std:sid="head-m8r61q64">
+    <title>impDialogScalValidResult</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-7reg1677" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-wnu6iw74" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-a29cr443" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-ymkij8p4" width="320px"/>
+    <cl:model std:sid="model-49ux42k0">
+      
+      
+      
+    <cl:datamap id="dmRequest" std:sid="d-map-5298qtpy">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="OBJ_DIV_RCD" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strWrkDeptCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strOgObjDivRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="SCAL_FEE_CD" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strProgMode" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListResult" std:sid="d-set-i084t79i">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="MSG" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+</cl:model>
+    <cl:appspec title="impDialogScalValidResult"/>
+  </head>
+  <body std:sid="body-a93gqcyw" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-u12n1uz8"/>
+  <cl:udc std:sid="ud-control-1w1dt8sb" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="415px"/>
+        <cl:property name="ctrl" type="control" value="grdScalValuation"/>
+      </cl:udc>
+<cl:button id="btnYes" std:sid="button-oy7ej58q" value="예">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="490px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnYesClick" name="click" std:sid="listener-2u06z6k2"/>
+</cl:button>
+<cl:button id="btnNo" std:sid="button-6b5pqsi2" value="아니요">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="555px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnNoClick" name="click" std:sid="listener-m61bl790"/>
+</cl:button>
+<cl:grid datasetid="dsListResult" id="grdScalValuation" std:sid="grid-i614s6rb">
+        <cl:xylayoutdata height="205px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="610"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-90teze4m">
+          <cl:gridrow height="27px" std:sid="g-row-4g3f8x88"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-ra729k3o">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-STAFFNO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" comment="ghBtnMsg" rowindex="0" std:sid="gh-cell-u2e93r3w">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-STAFFNO" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-45s13tq1" width="40px"/>
+<cl:gridcolumn std:sid="g-column-dg08e4zu" width="557px"/>
+<cl:griddetail std:sid="gd-band-gj49cfqr">
+          <cl:gridrow height="25px" std:sid="g-row-m30sxati"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-r5n3uoho" style="text-align:center;"/>
+<cl:gridcell colindex="1" columnname="MSG" rowindex="0" std:sid="gd-cell-7vhg1567"/>
+</cl:griddetail>
+</cl:grid>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

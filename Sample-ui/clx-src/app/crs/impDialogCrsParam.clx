@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-8dn90638" version="1.0.0.0">
+  <head std:sid="head-ql7bxif1">
+    <title>impDialogCrsParam</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-9us17k97" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-9cu4u185" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-70vaxrmx" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-3i4f4101" width="320px"/>
+    <cl:model std:sid="model-q8zw12o3">
+      
+      
+      
+    <cl:datamap id="dmFrfParamImp" std:sid="d-map-vtr2k9hb">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strTemp" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:datamap id="dmReqPopParam" std:sid="d-map-2twb7yx0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strAuthRange" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strObjDivRcd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsSchYear" std:sid="d-set-871p5evn">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmt" std:sid="d-set-k5fjwk1a">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsBank" std:sid="d-set-pl3x28zv">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsObj" std:sid="d-set-f59xcj0o">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsStudDiv" std:sid="d-set-626glvod">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subCrsPSchYearPopList" mediatype="application/x-www-form-urlencoded" std:sid="submission-ovx0n0ij">
+        
+        
+      <cl:requestdata dataid="dmReqPopParam"/>
+<cl:responsedata dataid="dsSchYear"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subCrsPSmtPopList" mediatype="application/x-www-form-urlencoded" std:sid="submission-0so1v05t">
+        
+        
+      <cl:requestdata dataid="dmReqPopParam"/>
+<cl:responsedata dataid="dsSmt"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subCrsPStudDivPopList" mediatype="application/x-www-form-urlencoded" std:sid="submission-k458e0to">
+        
+        
+      <cl:requestdata dataid="dmReqPopParam"/>
+<cl:responsedata dataid="dsStudDiv"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subCrsPBankPopList" mediatype="application/x-www-form-urlencoded" std:sid="submission-1enutxuc">
+        
+        
+      <cl:requestdata dataid="dmReqPopParam"/>
+<cl:responsedata dataid="dsBank"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subCrsPOGCdPopList" mediatype="application/x-www-form-urlencoded" std:sid="submission-g834exme">
+        
+        
+      <cl:requestdata dataid="dmReqPopParam"/>
+<cl:responsedata dataid="dsObj"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsOptGrpPop/" id="subCrsPSACdPopList" mediatype="application/x-www-form-urlencoded" std:sid="submission-y8428z95">
+        
+        
+      <cl:requestdata dataid="dmReqPopParam"/>
+<cl:responsedata dataid="dsObj"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="impDialogCrsParam"/>
+  </head>
+  <body std:sid="body-b9o1fa4n" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-210x9384"/>
+  <cl:udc std:sid="ud-control-l2xsxbse" type="udc.com.comFormTitle">
+        <cl:langbind category="PROPERTY" keypath="NLS-DLG-TLT-T002" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-36446f78" top="5px" verticalAnchor="TOP" width="170px"/>
+      </cl:udc>
+<cl:group class="form-box" id="frfParamImp" std:sid="group-3a9g6233">
+        <cl:xylayoutdata height="200px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="30px" verticalAnchor="TOP" width="350px"/>
+        <cl:xylayout std:sid="xylayout-d11v75hq"/>
+      <cl:inputbox enabled="false" id="ipbFrfResilt10" std:sid="i-box-03105web" style="text-align:center;">
+        <cl:xylayoutdata height="1px" horizontalAnchor="LEFT" left="11px" std:sid="xyl-data-bb8b81f4" top="6px" verticalAnchor="TOP" width="1px"/>
+      <cl:datamapbind columnname="strTemp" datacontrolid="dmFrfParamImp" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:button id="btnParamOkImp" std:sid="button-xf15521q" value="OK">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="230px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnParamOkImpClick" name="click" std:sid="listener-qem7riyl"/>
+</cl:button>
+<cl:button id="btnParamCancelImp" std:sid="button-be456758" value="Cancel">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="295px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnParamCancelImpClick" name="click" std:sid="listener-6u9epdex"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

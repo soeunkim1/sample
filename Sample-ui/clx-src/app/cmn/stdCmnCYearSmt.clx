@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-3k11g02r" version="1.0.0.0">
+  <head std:sid="head-453985yx">
+    <title>stdCmnCYearSmt</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-58u2q2vg" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-qsw4y5q1" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-886z0295" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-7y4s0lan" width="320px"/>
+    <cl:model std:sid="model-5240h07t">
+      
+      
+      
+    <cl:datamap id="dmDefYearSmt" std:sid="d-map-945yhx4l">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="CD_PRP1" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="CD_PRP2" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsYearList" std:sid="d-set-sc1921se">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtList" std:sid="d-set-1mdo7y7c">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmResOnLoad" std:sid="d-map-lh605s9m">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="defYearSmtList" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnYearSmt/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-f43exo7n">
+        
+        
+      <cl:responsedata dataid="dsYearList"/>
+<cl:responsedata dataid="dsSmtList"/>
+<cl:responsedata dataid="dmDefYearSmt"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnYearSmt/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-kxul960d">
+        
+        
+      <cl:requestdata dataid="dmDefYearSmt"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="공통학년도학기"/>
+  </head>
+  <body std:sid="body-920c9673" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-vagm49ro"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-d5q2ikdi"/>
+<cl:udc id="appheader1" std:sid="ud-control-0c3nrc8c" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-8n773mf6">
+        <cl:xylayoutdata height="639px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-it1092f2"/>
+      <cl:button class="btn-save" id="btnSave" std:sid="button-i73tyn4o" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="543px" std:sid="xyl-data-fa9a14b9" top="286px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-p8o0w09p"/>
+</cl:button>
+<cl:output class="require" id="optSmt" std:sid="output-8dyaj96u" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="479px" std:sid="xyl-data-548c5467" top="256px" verticalAnchor="TOP" width="85px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SMT" property="value"/>
+</cl:output>
+<cl:output class="require" id="optYear" std:sid="output-2fhib42l" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="479px" std:sid="xyl-data-548c5467" top="231px" verticalAnchor="TOP" width="85px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-SCH_YEAR" property="value"/>
+</cl:output>
+<cl:combobox id="cbbYear" std:sid="c-box-4s8o67hr">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="568px" std:sid="xyl-data-757d2a0f" top="231px" verticalAnchor="TOP" width="135px"/>
+        
+        
+      <cl:itemset datasetid="dsYearList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optYear.value" property="fieldLabel"/>
+<cl:datamapbind columnname="CD_PRP1" datacontrolid="dmDefYearSmt" property="value"/>
+</cl:combobox>
+<cl:combobox id="cbbSmt" std:sid="c-box-3a07mp70">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="568px" std:sid="xyl-data-757d2a0f" top="256px" verticalAnchor="TOP" width="135px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optSmt.value" property="fieldLabel"/>
+<cl:datamapbind columnname="CD_PRP2" datacontrolid="dmDefYearSmt" property="value"/>
+</cl:combobox>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

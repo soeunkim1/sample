@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-1pzmkc2a" version="1.0.0.0">
+  <head std:sid="head-ndwc8o5i">
+    <title>stdCmnCSmtGroup</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-040ot7s4" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-85yo9k5x" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-sv5yr982" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-4bc96g4k" width="320px"/>
+    <cl:model std:sid="model-g637b9a6">
+      
+      
+      
+    <cl:datamap id="dmReqCmd" std:sid="d-map-1iggai3c">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strCdCls" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtGrpCd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCmnConfSmtGrp" info="CMN_CONF_SMT_GRP@SMT_GRP_RCD,SMT_RCD" std:sid="d-set-1vvw57w1">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SMT_GRP_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtGrpList" std:sid="d-set-4w77swc3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsSmtList" std:sid="d-set-bk05by7v">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_SHORT_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnSmtGroup/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-036qym2t">
+        
+        
+      <cl:responsedata dataid="dsSmtGrpList"/>
+<cl:responsedata dataid="dsSmtList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnSmtGroup/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-54pw749q">
+        
+        
+      <cl:requestdata dataid="dmReqCmd"/>
+<cl:responsedata dataid="dsCmnConfSmtGrp"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnSmtGroup/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-zq4mwih5">
+        
+        
+      <cl:requestdata dataid="dsCmnConfSmtGrp"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="선택그룹조건입력"/>
+  </head>
+  <body std:sid="body-1zx00fn7" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-88ek8247"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-tu2k7vxh"/>
+<cl:udc id="appheader1" std:sid="ud-control-a95d6588" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-543060mo">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-it83v5o3"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-qqmfg706" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCH" property="value"/>
+<cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-96wr8917"/>
+</cl:button>
+<cl:output id="optSmtGrpCd" std:sid="output-cjp6sf6w" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SELEGRP" property="value"/>
+</cl:output>
+<cl:combobox id="cbbSmtGrpCd" std:sid="c-box-gc2843p7">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-757d2a0f" top="5px" verticalAnchor="TOP" width="250px"/>
+        
+        
+      <cl:itemset datasetid="dsSmtGrpList" label="CD_NM" value="CD"/>
+<cl:item label="전체" std:sid="item-4d3261eo" value="%"/>
+<cl:expbind category="PROPERTY" expression="#optOptGrpCd.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSmtGrpCd" datacontrolid="dmReqCmd" property="value"/>
+</cl:combobox>
+</cl:group>
+<cl:group id="grp_rptCmnConfSmtGrp" std:sid="group-59qvfz33">
+        <cl:xylayoutdata height="600px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-9039y13z"/>
+      <cl:udc std:sid="ud-control-8lxocr39" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-SMTGRPMPLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="355px"/>
+        <cl:property name="ctrl" type="control" value="grdCmnConfSmtGrp"/>
+      </cl:udc>
+<cl:button class="btn-new" id="btnNew" std:sid="button-2yfw367b" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="965px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-NEW" property="value"/>
+<cl:listener handler="onBtnNewClick" name="click" std:sid="listener-099e19he"/>
+</cl:button>
+<cl:button class="btn-delete" id="btnDel" std:sid="button-1tdth26a" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1030px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-DELETE" property="value"/>
+<cl:listener handler="onBtnDelClick" name="click" std:sid="listener-xdpuq489"/>
+</cl:button>
+<cl:button class="btn-restore" id="btnRestore" std:sid="button-97y5wpu2" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1095px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKCANCL" property="value"/>
+<cl:listener handler="onBtnRestoreClick" name="click" std:sid="listener-01t9cghl"/>
+</cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-xzng3tyy" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-WRKSAVE" property="value"/>
+<cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-we4d36za"/>
+</cl:button>
+<cl:grid datasetid="dsCmnConfSmtGrp" id="grdCmnConfSmtGrp" std:sid="grid-49t471zo">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdCmnConfSmtGrpSelectionChange" name="selection-change" std:sid="listener-00e87s8k"/>
+<cl:gridheader std:sid="gh-band-z172c2pc">
+          <cl:gridrow height="27px" std:sid="g-row-ubi7ov1d"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-93u070u7"/>
+<cl:gridcell colindex="1" comment="ghBtnUptStatus" rowindex="0" std:sid="gh-cell-4bf92lgw" text="F"/>
+<cl:gridcell colindex="2" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-fy59chl1">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="3" comment="ghBtnSmtGrpRcd" rowindex="0" std:sid="gh-cell-n38kfz74">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-SMTGRP" property="text"/>
+</cl:gridcell>
+<cl:gridcell class="require" colindex="4" comment="ghBtnSmtRcd" rowindex="0" std:sid="gh-cell-n59m51qu">
+<cl:langbind category="PROPERTY" keypath="UI-DB-SMT_RCD" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-3m537620" width="25px"/>
+<cl:gridcolumn std:sid="g-column-875185t6" width="25px"/>
+<cl:gridcolumn std:sid="g-column-h6f9646q" width="40px"/>
+<cl:gridcolumn std:sid="g-column-a3j074en" width="181px"/>
+<cl:gridcolumn std:sid="g-column-tq0k2uow" width="459px"/>
+<cl:griddetail std:sid="gd-band-m019qk8x">
+          <cl:gridrow height="25px" std:sid="g-row-1269xmpe"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-5p4ww9t8" style="text-align:center;"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gd-cell-ati4taty">
+<cl:output std:sid="output-344jw024" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="2" columntype="rowindex" rowindex="0" std:sid="gd-cell-14ci54t6" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="SMT_GRP_RCD" rowindex="0" std:sid="gd-cell-h258fg84">
+<cl:combobox id="gdCbbSmtGrpRcd" std:sid="c-box-zoz4v84v">
+<cl:itemset datasetid="dsSmtGrpList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-7r7oqn2g" value=""/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="SMT_RCD" rowindex="0" std:sid="gd-cell-6pd51694">
+<cl:combobox id="gdCbbSmtRcd" std:sid="c-box-6302iwq6">
+<cl:itemset datasetid="dsSmtList" label="CD_NM" value="CD"/>
+<cl:attribute name="require" value="Y"/>
+<cl:item label="선택" std:sid="item-3x20qcit" value=""/>
+</cl:combobox>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

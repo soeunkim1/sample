@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-kp9s8310" version="1.0.0.0">
+  <head std:sid="head-u0il8r9c">
+    <title>impDialogScalPmntProc</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-08gap45z" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-lxi41zn5" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-rft586s4" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-mokj427s" width="320px"/>
+    <cl:model std:sid="model-bj8zo171">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-99w1hl9y">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strProcDt" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+</cl:model>
+    <cl:appspec title="impDialogScalPmntProc"/>
+  </head>
+  <body std:sid="body-crqxaa01" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-w3j82tvr"/>
+  <cl:output class="require" id="optProcDtImp" std:sid="output-p2opah2y" value="처리예정일">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="90px"/>
+      </cl:output>
+<cl:button id="btnOkImp" std:sid="button-nqhe2997" value="OK">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="85px" std:sid="xyl-data-fa9a14b9" top="30px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnOkImpClick" name="click" std:sid="listener-1jv0eihz"/>
+</cl:button>
+<cl:button id="btnCloseImp" std:sid="button-xyfsrb15" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="150px" std:sid="xyl-data-fa9a14b9" top="30px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseImpClick" name="click" std:sid="listener-66t24u8c"/>
+</cl:button>
+<cl:dateinput id="dipProcDtImp" std:sid="d-input-qt00s01s" style="text-align:center;">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="100px" std:sid="xyl-data-28ed790d" top="5px" verticalAnchor="TOP" width="110px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optProcDtImp.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strProcDt" datacontrolid="dmReqKey" property="value"/>
+</cl:dateinput>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

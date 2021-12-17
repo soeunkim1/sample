@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-3zi792x0" version="1.0.0.0">
+  <head std:sid="head-59e068o9">
+    <title>stdCmnCTest</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-au4c1d7l" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-ia801xp7" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-9mar61i3" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-4wa56kq5" width="320px"/>
+    <cl:model std:sid="model-1ix052zx">
+      
+      
+      
+    <cl:dataset id="dsUserDivRcdList" std:sid="d-set-qwe03130">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsAsgnDeptDivRcdList" std:sid="d-set-cp6763hi">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqList" std:sid="d-map-619tk2y1">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSTUDNM" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsCmnUseUser" info="CMN_USE_USER@USER_ID" std:sid="d-set-0dy3jy7l">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="USER_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EMAIL" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SSN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="USER_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PARTY_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PWD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TMP_PWD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="USER_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ASGN_DEPT_DIV_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ASGN_DEPT_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="USE_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SYSTEM_MGR_YN" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_ST_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="EFFT_END_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REMARK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PWD_ERROR_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PWD_CHG_DTHR" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CERT_BOOK_INFO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="LOGIN_DTHR" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/cmn/StdCmnTest/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-sjm7prog">
+        
+        
+      <cl:responsedata dataid="dsUserDivRcdList"/>
+<cl:responsedata dataid="dsAsgnDeptDivRcdList"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTest/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-85hefw56">
+        
+        
+      <cl:requestdata dataid="dmReqList"/>
+<cl:responsedata dataid="dsCmnUseUser"/>
+</cl:submission>
+<cl:submission action="/cmn/StdCmnTest/" id="subSave" mediatype="application/x-www-form-urlencoded" std:sid="submission-kkkp9c24">
+        
+        
+      </cl:submission>
+</cl:model>
+    <cl:appspec title="stdCmnCTest"/>
+  </head>
+  <body std:sid="body-1d23z305" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-6l7dh408"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-nh6fo115"/>
+<cl:udc id="appheader1" std:sid="ud-control-h31ym9j3" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group class="search-box" id="grpSearch" std:sid="group-3az11r1m">
+        <cl:xylayoutdata height="32px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-33cds4sr"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-t805id3a" value="조회">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      </cl:button>
+<cl:output class="require" id="optStudId" std:sid="output-925q142a" value="STUD_ID">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:inputbox id="ipbStudId" std:sid="i-box-a6s4msa5">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="130px"/>
+      <cl:attribute name="require" value="Y"/>
+<cl:expbind category="PROPERTY" expression="#optStudId.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strStudId" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+<cl:output id="optSTUDNM" std:sid="output-4f4nkgx5" value="STUD_NM">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="250px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="100px"/>
+      </cl:output>
+<cl:inputbox id="ipbSTUDNM" std:sid="i-box-f7z1vcm5">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="355px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="130px"/>
+      <cl:expbind category="PROPERTY" expression="#optSTUDNM.value" property="fieldLabel"/>
+<cl:datamapbind columnname="strSTUDNM" datacontrolid="dmReqList" property="value"/>
+</cl:inputbox>
+</cl:group>
+<cl:group id="grp_rptCmnUseUser" std:sid="group-ygr3p834">
+        <cl:xylayoutdata height="600px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="72px" verticalAnchor="TOP" width="1225px"/>
+        <cl:xylayout std:sid="xylayout-d0mzt24g"/>
+      <cl:udc std:sid="ud-control-b6e60h86" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdCmnUseUser"/>
+      </cl:udc>
+<cl:button id="btnNew" std:sid="button-719xh1uj" value="신규">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="965px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      </cl:button>
+<cl:button id="btnDel" std:sid="button-1svz4683" value="삭제">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1030px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      </cl:button>
+<cl:button id="btnRestore" std:sid="button-362o3pn0" value="작업취소">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1095px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      </cl:button>
+<cl:button class="btn-save" id="btnSave" std:sid="button-j15du7q8" value="작업저장">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1160px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      </cl:button>
+<cl:grid datasetid="dsCmnUseUser" id="grdCmnUseUser" std:sid="grid-3293re64">
+        <cl:xylayoutdata height="565px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1215px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-11uul664">
+          <cl:gridrow height="27px" std:sid="g-row-61l0771y"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-3ga19i8g"/>
+<cl:gridcell colindex="0" comment="ghBtnUptStatus" rowindex="0" std:sid="gh-cell-ag58lmgw" text="F"/>
+<cl:gridcell colindex="1" comment="ghBtnNo" rowindex="0" std:sid="gh-cell-197v9jng" text="No"/>
+<cl:gridcell class="require" colindex="3" comment="ghBtnUserId" rowindex="0" std:sid="gh-cell-769ivrdr" text="사용자ID"/>
+<cl:gridcell colindex="4" comment="ghBtnEmail" rowindex="0" std:sid="gh-cell-3n1xdcnv" text="이메일"/>
+<cl:gridcell colindex="5" comment="ghBtnSsn" rowindex="0" std:sid="gh-cell-l8v2c2e5" text="SSN"/>
+<cl:gridcell colindex="6" comment="ghBtnUserDivRcd" rowindex="0" std:sid="gh-cell-bdg01hb5" text="사용자구분코드[CC005]"/>
+<cl:gridcell colindex="7" comment="ghBtnPartyId" rowindex="0" std:sid="gh-cell-a3pyin0c" text="구성원ID"/>
+<cl:gridcell colindex="8" comment="ghBtnId" rowindex="0" std:sid="gh-cell-1whq6q5i" text="ID"/>
+<cl:gridcell colindex="9" comment="ghBtnPwd" rowindex="0" std:sid="gh-cell-676m1q84" text="패스워드"/>
+<cl:gridcell colindex="10" comment="ghBtnTmpPwd" rowindex="0" std:sid="gh-cell-q99g508e" text="임시패스워드"/>
+<cl:gridcell colindex="11" comment="ghBtnUserNm" rowindex="0" std:sid="gh-cell-y1z7x938" text="사용자명"/>
+<cl:gridcell colindex="12" comment="ghBtnAsgnDeptDivRcd" rowindex="0" std:sid="gh-cell-uf37sta3" text="소속부서구분코드[CC009]"/>
+<cl:gridcell colindex="13" comment="ghBtnAsgnDeptCd" rowindex="0" std:sid="gh-cell-q2ycx869" text="소속부서코드"/>
+<cl:gridcell colindex="14" comment="ghBtnUseYn" rowindex="0" std:sid="gh-cell-l8jy88wv" text="사용여부"/>
+<cl:gridcell colindex="15" comment="ghBtnSystemMgrYn" rowindex="0" std:sid="gh-cell-4hpy63i9" text="시스템관리자여부"/>
+<cl:gridcell colindex="16" comment="ghBtnEfftStDt" rowindex="0" std:sid="gh-cell-us399kkx" text="유효시작일자"/>
+<cl:gridcell colindex="17" comment="ghBtnEfftEndDt" rowindex="0" std:sid="gh-cell-2jf9d85z" text="유효종료일자"/>
+<cl:gridcell colindex="18" comment="ghBtnRemark" rowindex="0" std:sid="gh-cell-c5hcv537" text="비고"/>
+<cl:gridcell colindex="19" comment="ghBtnPwdErrorCnt" rowindex="0" std:sid="gh-cell-i867fr75" text="비밀번호 오류횟수"/>
+<cl:gridcell colindex="20" comment="ghBtnPwdChgDthr" rowindex="0" std:sid="gh-cell-735rc816" text="비밀변호 변경일시"/>
+<cl:gridcell colindex="21" comment="ghBtnCertBookInfo" rowindex="0" std:sid="gh-cell-p43pcep9" text="인증서DN정보"/>
+<cl:gridcell colindex="22" comment="ghBtnLoginDthr" rowindex="0" std:sid="gh-cell-nl51p94s" text="로그인일시"/>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-4wm6886h" width="25px"/>
+<cl:gridcolumn std:sid="g-column-472tm75t" width="25px"/>
+<cl:gridcolumn std:sid="g-column-1rix646y" width="40px"/>
+<cl:gridcolumn std:sid="g-column-zuk8r7m2" width="75px"/>
+<cl:gridcolumn std:sid="g-column-5c20i6u1" width="45px"/>
+<cl:gridcolumn std:sid="g-column-7105je52" width="45px"/>
+<cl:gridcolumn std:sid="g-column-z33j19wo" width="210px"/>
+<cl:gridcolumn std:sid="g-column-19w1g27a" width="75px"/>
+<cl:gridcolumn std:sid="g-column-893w06o8" width="30px"/>
+<cl:gridcolumn std:sid="g-column-34yc7rp4" width="60px"/>
+<cl:gridcolumn std:sid="g-column-dl26hl10" width="90px"/>
+<cl:gridcolumn std:sid="g-column-95imr081" width="60px"/>
+<cl:gridcolumn std:sid="g-column-04ajp567" width="225px"/>
+<cl:gridcolumn std:sid="g-column-f6h6k1n5" width="90px"/>
+<cl:gridcolumn std:sid="g-column-u17u98r3" width="60px"/>
+<cl:gridcolumn std:sid="g-column-78o6igrs" width="120px"/>
+<cl:gridcolumn std:sid="g-column-4s048g86" width="90px"/>
+<cl:gridcolumn std:sid="g-column-i58ocvc1" width="90px"/>
+<cl:gridcolumn std:sid="g-column-il1aar31" width="30px"/>
+<cl:gridcolumn std:sid="g-column-7n3eeqf4" width="135px"/>
+<cl:gridcolumn std:sid="g-column-1p677d21" width="135px"/>
+<cl:gridcolumn std:sid="g-column-26s02985" width="105px"/>
+<cl:gridcolumn std:sid="g-column-1r75x91x" width="75px"/>
+<cl:griddetail std:sid="gd-band-8qfp4uwe">
+          <cl:gridrow height="25px" std:sid="g-row-b03uj6r6"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gd-cell-32y0gt86">
+<cl:output std:sid="output-bd7mu1nd" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="0" rowindex="0" std:sid="gd-cell-zz61ya87">
+<cl:output std:sid="output-u06mgt31" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="1" columntype="rowindex" rowindex="0" std:sid="gd-cell-gdm04359" style="text-align:center;"/>
+<cl:gridcell colindex="3" columnname="USER_ID" rowindex="0" std:sid="gd-cell-964nt3bk">
+<cl:inputbox id="gdIpbUserId" maxlength="50" std:sid="i-box-81ho8oa6">
+<cl:attribute name="require" value="Y"/>
+</cl:inputbox>
+</cl:gridcell>
+<cl:gridcell colindex="4" columnname="EMAIL" rowindex="0" std:sid="gd-cell-1qn166e9">
+<cl:inputbox id="gdIpbEmail" maxlength="100" std:sid="i-box-oc3705m2"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="SSN" rowindex="0" std:sid="gd-cell-tpd0bu78">
+<cl:inputbox id="gdIpbSsn" maxlength="30" std:sid="i-box-kr0nj323"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="USER_DIV_RCD" rowindex="0" std:sid="gd-cell-s2t53t76"/>
+<cl:gridcell colindex="7" columnname="PARTY_ID" rowindex="0" std:sid="gd-cell-qi85nvuv">
+<cl:inputbox id="gdIpbPartyId" maxlength="50" std:sid="i-box-070yln62"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" columnname="ID" rowindex="0" std:sid="gd-cell-d95zz8g1">
+<cl:inputbox id="gdIpbId" maxlength="20" std:sid="i-box-736p2570"/>
+</cl:gridcell>
+<cl:gridcell colindex="9" columnname="PWD" rowindex="0" std:sid="gd-cell-uz2b3f7s">
+<cl:inputbox id="gdIpbPwd" maxlength="200" std:sid="i-box-o683yzp5"/>
+</cl:gridcell>
+<cl:gridcell colindex="10" columnname="TMP_PWD" rowindex="0" std:sid="gd-cell-2o57cir4">
+<cl:inputbox id="gdIpbTmpPwd" maxlength="200" std:sid="i-box-26r9m6qa"/>
+</cl:gridcell>
+<cl:gridcell colindex="11" columnname="USER_NM" rowindex="0" std:sid="gd-cell-63u71416">
+<cl:inputbox id="gdIpbUserNm" maxlength="100" std:sid="i-box-0jtz16lj"/>
+</cl:gridcell>
+<cl:gridcell colindex="12" columnname="ASGN_DEPT_DIV_RCD" rowindex="0" std:sid="gd-cell-i1962624"/>
+<cl:gridcell colindex="13" columnname="ASGN_DEPT_CD" rowindex="0" std:sid="gd-cell-l1kqurm1">
+<cl:inputbox id="gdIpbAsgnDeptCd" maxlength="10" std:sid="i-box-2t6oulp2"/>
+</cl:gridcell>
+<cl:gridcell colindex="14" columnname="USE_YN" rowindex="0" std:sid="gd-cell-vkjw05gr">
+<cl:inputbox id="gdIpbUseYn" maxlength="1" std:sid="i-box-z2z3hmsx"/>
+</cl:gridcell>
+<cl:gridcell colindex="15" columnname="SYSTEM_MGR_YN" rowindex="0" std:sid="gd-cell-zhhd09v2">
+<cl:inputbox id="gdIpbSystemMgrYn" maxlength="1" std:sid="i-box-rbf3y9z1"/>
+</cl:gridcell>
+<cl:gridcell colindex="16" columnname="EFFT_ST_DT" rowindex="0" std:sid="gd-cell-9iopnyk6">
+<cl:dateinput id="gdDipEfftStDt" std:sid="d-input-9wxla7u8"/>
+</cl:gridcell>
+<cl:gridcell colindex="17" columnname="EFFT_END_DT" rowindex="0" std:sid="gd-cell-mqrr89w3">
+<cl:dateinput id="gdDipEfftEndDt" std:sid="d-input-0l8lxs0t"/>
+</cl:gridcell>
+<cl:gridcell colindex="18" columnname="REMARK" rowindex="0" std:sid="gd-cell-f8db4bzq">
+<cl:inputbox id="gdIpbRemark" maxlength="1000" std:sid="i-box-895i67rr"/>
+</cl:gridcell>
+<cl:gridcell colindex="19" columnname="PWD_ERROR_CNT" rowindex="0" std:sid="gd-cell-661ao14d">
+<cl:inputbox id="gdIpbPwdErrorCnt" maxlength="15" std:sid="i-box-f1qs7v3x"/>
+</cl:gridcell>
+<cl:gridcell colindex="20" columnname="PWD_CHG_DTHR" rowindex="0" std:sid="gd-cell-wk212t5a">
+<cl:dateinput id="gdDipPwdChgDthr" std:sid="d-input-m9df1d3n"/>
+</cl:gridcell>
+<cl:gridcell colindex="21" columnname="CERT_BOOK_INFO" rowindex="0" std:sid="gd-cell-lma6517q">
+<cl:inputbox id="gdIpbCertBookInfo" maxlength="200" std:sid="i-box-98w37b25"/>
+</cl:gridcell>
+<cl:gridcell colindex="22" columnname="LOGIN_DTHR" rowindex="0" std:sid="gd-cell-774g6erg">
+<cl:dateinput id="gdDipLoginDthr" std:sid="d-input-erue1790"/>
+</cl:gridcell>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-sm3ny744" version="1.0.0.0">
+  <head std:sid="head-hul0951e">
+    <title>stdCmnPSearch</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-o92j3okz" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-si516p4x" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-64w60782" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-q8x58n71" width="320px"/>
+    <cl:model std:sid="model-qlh7b6q6">
+      
+      
+      
+    <cl:datamap id="dmList" std:sid="d-map-vmvz8qc0">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="column" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="sorttype" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="sortorder" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="andor" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+</cl:model>
+    <cl:appspec title="Untitled"/>
+  </head>
+  <body std:sid="body-68v15ywt" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-8g07ckq4"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-97vn430m"/>
+<cl:group id="group1" std:sid="group-6q0t06g3">
+        <cl:xylayoutdata height="115px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="355px"/>
+        <cl:xylayout std:sid="xylayout-27h5tn67"/>
+      <cl:combobox id="cbbFind" std:sid="c-box-5o3730v1">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="106px" std:sid="xyl-data-757d2a0f" top="35px" verticalAnchor="TOP" width="95px"/>
+        
+        
+      <cl:itemset datasetid="dsTempLSortList" label="name" value="column"/>
+<cl:listener handler="onCbbFindSelectionChange" name="selection-change" std:sid="listener-oa6ef3ap"/>
+<cl:datamapbind columnname="column" datacontrolid="dmList" property="value"/>
+</cl:combobox>
+<cl:output id="optPagePgTitle" std:sid="output-03283apv" value="찾기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="225px"/>
+      </cl:output>
+<cl:output class="require" id="optData" std:sid="output-o25tbq8w" value="찾을 데이터">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="35px" verticalAnchor="TOP" width="95px"/>
+      </cl:output>
+<cl:inputbox id="ipbData" std:sid="i-box-278bk7j3">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="205px" std:sid="xyl-data-bb8b81f4" top="35px" verticalAnchor="TOP" width="145px"/>
+      <cl:listener handler="onIpbDataValueChange" name="value-change" std:sid="listener-214by9v1"/>
+</cl:inputbox>
+<cl:output class="require" id="optSearchCond" std:sid="output-9955a7te" value="찾을 조건">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="60px" verticalAnchor="TOP" width="95px"/>
+      </cl:output>
+<cl:radiobutton id="rdbSearchCond" std:sid="r-button-8ede25d6">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-8688bddc" top="60px" verticalAnchor="TOP" width="245px"/>
+        
+        
+      <cl:item label="일치" std:sid="item-49c109e9" value="=="/>
+<cl:item label="포함" std:sid="item-49c109e9" value="like"/>
+<cl:listener handler="onRdbSearchCondValueChange" name="value-change" std:sid="listener-v07j1sjq"/>
+</cl:radiobutton>
+<cl:button class="btn-save" id="btnSave" std:sid="button-3p00c1c7" value="닫기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="290px" std:sid="xyl-data-fa9a14b9" top="85px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnSaveClick" name="click" std:sid="listener-u8t77554"/>
+</cl:button>
+<cl:button id="btnFind" std:sid="button-y8d9y5eq" value="찾기">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="225px" std:sid="xyl-data-fa9a14b9" top="85px" verticalAnchor="TOP" width="60px"/>
+      <cl:listener handler="onBtnFindClick" name="click" std:sid="listener-4d344f7h"/>
+</cl:button>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

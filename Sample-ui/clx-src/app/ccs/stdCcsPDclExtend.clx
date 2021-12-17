@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-7vdoqm9z" version="1.0.0.0">
+  <head std:sid="head-789th932">
+    <title>stdCcsPDclExtend</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-7ta3d66f" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-0u5d140h" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-f3mw9vu7" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-p77w03p7" width="320px"/>
+    <cl:model std:sid="model-dfb1uf6k">
+      
+      
+      
+    <cl:dataset id="dsDclRcdList" std:sid="d-set-k2a9h3s3">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD_PRP2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_PRP2_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_AND_CD_PRP2_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CHECK_DCL" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-b0743316">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strChkValues" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strCmpDivRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRefKey" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDclRcdList" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsGrxMst" std:sid="d-set-341etd9d">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="REF_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DCL_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/ccs/StdCcsDclExtend/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-163mznmm">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsDclRcdList"/>
+</cl:submission>
+<cl:submission action="/ccs/StdCcsRoomPopup/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-9vd5tf63">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="학문분야"/>
+  </head>
+  <body std:sid="body-8f7vxocu" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-0zf97896"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-s09d0f41"/>
+<cl:udc id="appheader1" std:sid="ud-control-qh2d8xz6" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-7o19hbnr">
+        <cl:xylayoutdata height="258px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="37px" verticalAnchor="TOP" width="330px"/>
+        <cl:xylayout std:sid="xylayout-4y96hs3s"/>
+      <cl:udc std:sid="ud-control-3noh6k3k" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-CLSRMLIST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="220px"/>
+        <cl:property name="ctrl" type="control" value="grdCcsRoom"/>
+      </cl:udc>
+<cl:group id="rptDclExtend" std:sid="group-81mb95ji">
+        <cl:xylayoutdata height="220px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="33px" verticalAnchor="TOP" width="320px"/>
+        <cl:xylayout std:sid="xylayout-yk78vgz5"/>
+      <cl:checkbox falsevalue="" id="checkbox1" std:sid="c-box-ov5i6ktg" style="text-align:center;" text="" truevalue="Y" value="">
+        <cl:xylayoutdata height="23px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-fc8c2a80" top="0px" verticalAnchor="TOP" width="20px"/>
+      <cl:datamapbind columnname="CHECK_DCL" datacontrolid="dmRow" property="value"/>
+</cl:checkbox>
+<cl:output id="output1" std:sid="output-0h3yqt4x" value="">
+        <cl:xylayoutdata height="23px" horizontalAnchor="LEFT" left="19px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="282px"/>
+      <cl:datamapbind columnname="CD_AND_CD_PRP2_NM" datacontrolid="dmRow" property="value"/>
+</cl:output>
+<cl:output id="output2" std:sid="output-h9i8046z" value="" visible="false">
+        <cl:xylayoutdata height="23px" horizontalAnchor="LEFT" left="300px" std:sid="xyl-data-548c5467" top="0px" verticalAnchor="TOP" width="100px"/>
+      <cl:datamapbind columnname="CD_PRP2" datacontrolid="dmRow" property="value"/>
+</cl:output>
+</cl:group>
+</cl:group>
+<cl:button id="btnCloseOk" std:sid="button-xwl5qh66" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="270px" std:sid="xyl-data-fa9a14b9" top="300px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CHOICLS" property="value"/>
+<cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-1j9hr72s"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-h8244d0h" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="10px" std:sid="xyl-data-fa9a14b9" top="300px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-h1w7e97a"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-8202915e" version="1.0.0.0">
+  <head std:sid="head-54f33681">
+    <title>gridbuttons</title>
+    <screen std:sid="screen-3b69505f" id="default" customHeight="600" height="768px" name="default" width="1024px"/>
+    <cl:model std:sid="model-13ed5523"/>
+    <cl:appspec>
+      <cl:property std:desc=" 그리드 ID" name="gridId" type="string"/>
+      <cl:property std:desc="신규 후 최초 포커스 컬럼명" name="insFocusColumn" type="string"/>
+      <cl:property default="" std:desc="디폴트 이벤트 적용 (예. insert,restore,delete)" name="defaultEvent" type="string"/>
+      <cl:event std:desc="신규 클릭 이벤트" name="insert" type="cpr.event.CUIEvent"/>
+      <cl:event std:desc="삭제 클릭 이벤트" name="delete" type="cpr.event.CUIEvent"/>
+      <cl:event std:desc="저장 클릭 이벤트" name="save" type="cpr.event.CUIEvent"/>
+      <cl:event std:desc="취소 클릭 이벤트" name="restore" type="cpr.events.CUIEvent"/>
+      <cl:event std:desc="신규, 삭제, 취소 클릭 공통 이벤트(e.status 로 구분가능)" name="idrCommonEvent" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-069f3a47" class="grp-btns" style="top:0px; left:0px; width:295px; height:25px;">
+    <cl:listener std:sid="listener-901ee3ab" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:listener std:sid="listener-100be453" handler="onBodyLoad" name="load"/>
+    <cl:group std:sid="group-1ba2f0a8" id="grpIdsBtn" class="grp-btns">
+      <cl:apppropbind category="PROPERTY" property="enabled" app-property="enabled"/>
+      <cl:xylayoutdata std:sid="xyl-data-c06cfa25" height="25px" horizontalAnchor="LEFT" left="0px" top="0px" verticalAnchor="TOP" width="295px"/>
+      <cl:button std:sid="button-e6c5cb4d" id="btnInsert" class="btn-insert" value="신규">
+        <cl:listener std:sid="listener-e7321d13" handler="onBtnInsertClick" name="click"/>
+        <cl:apppropbind category="PROPERTY" property="enabled" app-property="insEnabled"/>
+        <cl:langbind property="value" keypath="UI-SCR-NEW"/>
+        <cl:formdata std:sid="f-data-c54b3229" col="0" row="0"/>
+      </cl:button>
+      <cl:button std:sid="button-34210bff" id="btnDel" class="btn-del" value="삭제">
+        <cl:listener std:sid="listener-d3eadf3f" handler="onBtnDelClick" name="click"/>
+        <cl:apppropbind category="PROPERTY" property="enabled" app-property="delEnabled"/>
+        <cl:langbind property="value" keypath="UI-SCR-DELETE"/>
+        <cl:formdata std:sid="f-data-2ca80ac6" col="1" row="0"/>
+      </cl:button>
+      <cl:button std:sid="button-a6e65d76" id="btnRestore" class="btn-restore" value="취소">
+        <cl:listener std:sid="listener-580d44a4" handler="onBtnRestoreClick" name="click"/>
+        <cl:apppropbind category="PROPERTY" property="enabled" app-property="restoreEnabled"/>
+        <cl:langbind property="value" keypath="UI-SCR-WRKCANCL"/>
+        <cl:formdata std:sid="f-data-66e1b808" col="2" row="0"/>
+      </cl:button>
+      <cl:button std:sid="button-b2910a2a" id="btnSave" class="btn-save" value="저장">
+        <cl:listener std:sid="listener-c1b8e997" handler="onBtnSaveClick" name="click"/>
+        <cl:apppropbind category="PROPERTY" property="enabled" app-property="saveEnabled"/>
+        <cl:langbind property="value" keypath="UI-SCR-WRKSAVE"/>
+        <cl:formdata std:sid="f-data-4e84107c" col="3" row="0" width="100"/>
+      </cl:button>
+      <cl:formlayout std:sid="f-layout-0befba1a">
+        <cl:rows length="25" shadecolor="transparent" shadetype="NONE" unit="PIXEL"/>
+        <cl:columns length="1" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="1" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="1" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="1" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-967ea9d6"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler>
+      <std:guide position="-49"/>
+    </std:vruler>
+  </std:studiosetting>
+</html>

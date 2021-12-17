@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-0aba594f" version="1.0.0.0">
+  <head std:sid="head-93b03205">
+    <title>cmnPObjSch</title>
+    <screen std:sid="screen-6dd22cf0" id="default" customHeight="600" height="768px" name="default" width="1024px"/>
+    <cl:model std:sid="model-5036286c">
+      <cl:datamap std:sid="d-map-2bbb817b" id="dmReqKey">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="strObjNm"/>
+          <cl:datacolumn name="strOprtRoleId"/>
+          <cl:datacolumn name="strObjDivRcd"/>
+          <cl:datacolumn name="strObjCd"/>
+          <cl:datacolumn name="authRngRcd"/>
+          <cl:datacolumn name="strKeyDate"/>
+          <cl:datacolumn name="strLanDivRcd"/>
+          <cl:datacolumn name="strKeyEndDate"/>
+          <cl:datacolumn defaultvalue="N" name="strOtIsTreeView"/>
+          <cl:datacolumn name="strStartObject"/>
+          <cl:datacolumn name="strOtDivRcd"/>
+          <cl:datacolumn name="strBetweenEndDtYn"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-3a87fd4e" id="dmCmnPObjSchCount">
+        <cl:datacolumnlist>
+          <cl:datacolumn datatype="number" name="count"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:datamap std:sid="d-map-c6c8eb7d" id="dmObjInfo">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="strObjDivRcd"/>
+          <cl:datacolumn name="strObjNm"/>
+          <cl:datacolumn name="strObjCd"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+      <cl:submission std:sid="submission-c781cf44" id="subPrecheckCmnPObjSch" action="cmn/CmnObjSch/precheck.do">
+        <cl:requestdata dataid="dmReqKey"/>
+        <cl:responsedata dataid="dmCmnPObjSchCount"/>
+        <cl:responsedata dataid="dmCmnPObjSch"/>
+      </cl:submission>
+      <cl:submission std:sid="submission-88e03743" id="subTopObjInfo" action="cmn/CmnObjSch/listTopObjInfo.do">
+        <cl:responsedata dataid="dmObjInfo"/>
+      </cl:submission>
+      <cl:datamap std:sid="d-map-9538f247" id="dmCmnPObjSch">
+        <cl:datacolumnlist>
+          <cl:datacolumn name="END_DT"/>
+          <cl:datacolumn name="OBJ_DIV_RCD"/>
+          <cl:datacolumn name="LAN_DIV_RCD"/>
+          <cl:datacolumn name="CD"/>
+          <cl:datacolumn name="REF_KEY"/>
+          <cl:datacolumn name="CD_NM"/>
+          <cl:datacolumn name="ST_DT"/>
+        </cl:datacolumnlist>
+      </cl:datamap>
+    </cl:model>
+    <cl:appspec>
+      <cl:property bindable="true" default="" std:desc="조회조건내에 위치하는지 여부" name="iIsParentGrpSearch" type="boolean"/>
+      <cl:property bindable="true" std:desc="(선택) 검색조건 코드" name="iCdNm" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 검색조건 부서명" name="iCd" type="string"/>
+      <cl:property bindable="true" std:desc="(필수) 검색될 객체구분코드 종류(CC009OG,CC009SA,CC009SP,CC009CU,CC009OT)" name="iObjDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 검색시작부서 (&quot;CC009OG20000,CC009OG70000&quot;,)" name="iStartObject" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 외부부서구분코드 (외부부서[CC009OT]일때 사용) (&quot;CB008UNIV, CB008HSCL&quot;)" name="iOtDivRcd" type="string"/>
+      <cl:property bindable="true" default="N" std:desc="(선택) 트리보이기 유무 default : N (외부부서[CC009OT]일때 사용) &quot;Y&quot;" name="iOtIsTreeView" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 시작일자와 종료일자 사이의 유효한 객체만 검색 (Y 지정시 종료일자 필수지정) 행정용" name="iBetweenEndDtYn" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 언어키" name="iLanDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="(필수) 기준일" name="iKeyDate" type="string"/>
+      <cl:property bindable="true" std:desc="(선택) 기준종료일 행정용" name="iKeyEndDate" type="string"/>
+      <cl:property bindable="true" std:desc="객체구분코드" name="oObjDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="부서코드" name="oCd" type="string"/>
+      <cl:property bindable="true" std:desc="부서명" name="oCdNm" type="string"/>
+      <cl:property bindable="true" std:desc="시작일" name="oBegDt" type="string"/>
+      <cl:property bindable="true" std:desc="종료일" name="oEndDt" type="string"/>
+      <cl:property bindable="true" std:desc="언어키" name="oLanDivRcd" type="string"/>
+      <cl:property bindable="true" std:desc="value (필수조건일 경우 반드시 지정한다.)" name="value" type="string"/>
+      <cl:event name="searchCallBack" type="cpr.events.CUIEvent"/>
+    </cl:appspec>
+  </head>
+  <body std:sid="body-428f772a" style="top:0px; left:0px; width:100px; height:20px;">
+    <cl:listener std:sid="listener-cd9230f4" handler="onBodyPropertyChange" name="property-change"/>
+    <cl:listener std:sid="listener-1e3a5ed9" handler="onBodyLoad" name="load"/>
+    <cl:group std:sid="group-466c8ff0" id="grpUdcPObj">
+      <cl:xylayoutdata std:sid="xyl-data-7334222a" bottom="0px" horizontalAnchor="BOTH" left="0px" right="0px" top="0px" verticalAnchor="BOTH"/>
+      <cl:button std:sid="button-d2ea95ca" id="btnUdcObj" class="btn-pop-search">
+        <cl:listener std:sid="listener-539ab518" handler="onBtnSearchUdcObjClick" name="click"/>
+        <cl:formdata std:sid="f-data-0776adf5" col="2" halign="FILL" height="25" row="0" valign="FILL" width="20"/>
+      </cl:button>
+      <cl:inputbox std:sid="i-box-87a69723" id="ipbUdcObjNm">
+        <cl:listener std:sid="listener-95184d44" handler="onIpbUdcObjNmValueChange" name="value-change"/>
+        <cl:listener std:sid="listener-fc9cd932" handler="onIpbUdcObjNmBeforeValueChange" name="before-value-change"/>
+        <cl:listener std:sid="listener-b0c9cbfb" handler="onIpbUdcObjNmKeydown" name="keydown"/>
+        <cl:attribute name="required" value=""/>
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iCdNm"/>
+        <cl:formdata std:sid="f-data-71fd71aa" col="0" row="0"/>
+      </cl:inputbox>
+      <cl:inputbox std:sid="i-box-ea553426" id="ipbUdcObjCd" readonly="true">
+        <cl:apppropbind category="PROPERTY" property="value" app-property="iCd"/>
+        <cl:formdata std:sid="f-data-9239f7c7" col="1" halign="FILL" row="0" width="55"/>
+      </cl:inputbox>
+      <cl:formlayout std:sid="f-layout-8cd18c18" hspace="0">
+        <cl:rows length="1" unit="FRACTION"/>
+        <cl:columns length="70" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="30" shadecolor="#000000" shadetype="NONE" unit="FRACTION"/>
+        <cl:columns length="20" shadecolor="#000000" shadetype="NONE" unit="PIXEL"/>
+      </cl:formlayout>
+    </cl:group>
+    <cl:xylayout std:sid="xylayout-6f5e5adc"/>
+  </body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

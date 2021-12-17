@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-an72d9kx" version="1.0.0.0">
+  <head std:sid="head-i239i857">
+    <title>stdCrsCRegFeePay</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-8vew0y78" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-214x983g" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-x49dp6u9" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-054449me" width="320px"/>
+    <cl:model std:sid="model-a2wt74pj">
+      
+      
+      
+    <cl:datamap id="dmReqKey" std:sid="d-map-688n44ft">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strStudId" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRegClsRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strItemCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strPayGrpKey" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:dataset id="dsListPayAcctRcd" std:sid="d-set-t8y16y78">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="CD_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsListItemCd" std:sid="d-set-30qeqdjn">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="ITEM_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITEM_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:dataset id="dsRegFeePay" info="CRS_REG_FEE_PAY@ITEM_CD,SERIAL_NO,STUD_ID,SCH_YEAR_RCD,SMT_RCD,REG_CLS_RCD,DESC_TYPE_RCD" std:sid="d-set-m0513j48">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="ITEM_CD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ITEM_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SERIAL_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="AMT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PROC_DT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PAY_ACCT_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DIV_PAY_SERIAL_NO" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PAY_GRP_KEY" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REMARK" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="REG_CLS_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="STUD_ID" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DESC_TYPE_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SCH_YEAR_RCD" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="SMT_RCD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:submission action="/crs/StdCrsRegFeePay/" id="subOnLoad" mediatype="application/x-www-form-urlencoded" std:sid="submission-k25r4b97">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsListPayAcctRcd"/>
+<cl:responsedata dataid="dsListItemCd"/>
+<cl:responsedata dataid="dsRegFeePay"/>
+</cl:submission>
+<cl:submission action="/crs/StdCrsRegFeePay/" id="subCancel" mediatype="application/x-www-form-urlencoded" std:sid="submission-p9h0qivt">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="stdCrsCRegFeePay"/>
+  </head>
+  <body std:sid="body-x64l3sv7" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-5zqig4tc"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-w1dnw6m3"/>
+<cl:group class="search-box" id="grpSearchRegi" std:sid="group-79n8y289">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="465px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="115px"/>
+        <cl:xylayout std:sid="xylayout-s11355q3"/>
+      <cl:button class="btn-search" id="btnSearch" std:sid="button-eov9401h" value="조회" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="110px" std:sid="xyl-data-fa9a14b9" top="0px" verticalAnchor="TOP" width="15px"/>
+      <cl:listener handler="onBtnSearchClick" name="click" std:sid="listener-7319k06u"/>
+</cl:button>
+</cl:group>
+<cl:embeddedapp id="emaSbpHeader" src="../imp/impSbpHeader.clx" std:sid="e-app-8548iblu">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-7c6988f9" top="415px" verticalAnchor="TOP" width="96px"/>
+      <cl:listener handler="onEmaSbpHeaderAppReady" name="app-ready" std:sid="listener-seyn394d"/>
+</cl:embeddedapp>
+<cl:group id="grpDataDtl" std:sid="group-357zd242">
+        <cl:xylayoutdata height="430px" horizontalAnchor="LEFT" left="0px" std:sid="xyl-data-9c4c06d1" top="0px" verticalAnchor="TOP" width="1025px"/>
+        <cl:xylayout std:sid="xylayout-re860s78"/>
+      <cl:udc std:sid="ud-control-rofa77i9" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYRECLST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="265px"/>
+        <cl:property name="ctrl" type="control" value="grdRegFeePay"/>
+      </cl:udc>
+<cl:button class="btn-new" id="btnNew" std:sid="button-dg7ahf12" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="894px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYNEW" property="value"/>
+<cl:listener handler="onBtnNewClick" name="click" std:sid="listener-j7081i3r"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnDel" std:sid="button-988ls27r" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="959px" std:sid="xyl-data-fa9a14b9" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-PAYCANCEL" property="value"/>
+<cl:listener handler="onBtnDelClick" name="click" std:sid="listener-8rkxsvk9"/>
+</cl:button>
+<cl:grid datasetid="dsRegFeePay" id="grdRegFeePay" std:sid="grid-26fe3xu8">
+        <cl:xylayoutdata height="394px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1014px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-6n4ab755">
+          <cl:gridrow height="27px" std:sid="g-row-b714e258"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gh-cell-kp9670o2"/>
+<cl:gridcell colindex="1" rowindex="0" std:sid="gh-cell-vot4jfyq" text="No"/>
+<cl:gridcell colindex="2" rowindex="0" std:sid="gh-cell-80d16h0w">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TUITIONITEM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" rowindex="0" std:sid="gh-cell-0yp967f3">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-SERIAL_NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" rowindex="0" std:sid="gh-cell-8q0v3b77">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-PAYAMT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" rowindex="0" std:sid="gh-cell-41r7h4j8">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-PAYDT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" rowindex="0" std:sid="gh-cell-60z656vp">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-PAYACT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" rowindex="0" std:sid="gh-cell-t3a577jk">
+<cl:langbind category="PROPERTY" keypath="NLS-SCR-DIVPAYNO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="8" rowindex="0" std:sid="gh-cell-3d55g17o">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIV_PAY_SERIAL_NO" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="9" rowindex="0" std:sid="gh-cell-at0fll6r">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-PAYGRPKEY" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="10" rowindex="0" std:sid="gh-cell-cdpkj433">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-REMARK" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-qqn953de" width="25px"/>
+<cl:gridcolumn std:sid="g-column-8bwgk561" width="40px"/>
+<cl:gridcolumn std:sid="g-column-214tclmb" width="95px"/>
+<cl:gridcolumn std:sid="g-column-9rqdqng4" width="51px"/>
+<cl:gridcolumn std:sid="g-column-j5k6fbbd" width="98px"/>
+<cl:gridcolumn std:sid="g-column-b01a4f8f" width="86px"/>
+<cl:gridcolumn std:sid="g-column-6q9y34zm" width="117px"/>
+<cl:gridcolumn std:sid="g-column-yq9977nl" width="134px"/>
+<cl:gridcolumn std:sid="g-column-77q7k8q7" width="68px"/>
+<cl:gridcolumn std:sid="g-column-zl41605h" width="134px"/>
+<cl:gridcolumn std:sid="g-column-i2525414" width="162px"/>
+<cl:griddetail std:sid="gd-band-57ty94en">
+          <cl:gridrow height="25px" std:sid="g-row-h3k37760"/>
+          
+        <cl:gridcell colindex="0" columntype="checkbox" rowindex="0" std:sid="gd-cell-99zpznfl" style="text-align:center;"/>
+<cl:gridcell colindex="1" columntype="rowindex" rowindex="0" std:sid="gd-cell-9xyzu30v" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="ITEM_CD" rowindex="0" std:sid="gd-cell-q36ujgn5">
+<cl:combobox enabled="false" hidebutton="true" id="gdCbbItemCd" std:sid="c-box-b5vx6gfn">
+<cl:itemset datasetid="dsListItemCd" label="ITEM_NM" value="ITEM_CD"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="3" columnname="SERIAL_NO" rowindex="0" std:sid="gd-cell-p6s3o9v7" style="text-align:center;"/>
+<cl:gridcell colindex="4" columnname="AMT" rowindex="0" std:sid="gd-cell-7m9o4fi6">
+<cl:output datatype="number" format="s#,###" id="gdOptAmt" std:sid="output-5s07fi01" style="text-align:right;"/>
+</cl:gridcell>
+<cl:gridcell colindex="5" columnname="PROC_DT" rowindex="0" std:sid="gd-cell-rsgl4k2e">
+<cl:output datatype="date" format="YYYY-MM-DD" id="gdOptProcDt" std:sid="output-t8b5m2bv" style="text-align:center;"/>
+</cl:gridcell>
+<cl:gridcell colindex="6" columnname="PAY_ACCT_RCD" rowindex="0" std:sid="gd-cell-iv84o1pk">
+<cl:combobox enabled="false" hidebutton="true" id="gdCbbPayAcctRcd" std:sid="c-box-a2k6j7ar">
+<cl:itemset datasetid="dsListPayAcctRcd" label="CD_NM" value="CD"/>
+</cl:combobox>
+</cl:gridcell>
+<cl:gridcell colindex="7" columnname="DIV_PAY_NO" rowindex="0" std:sid="gd-cell-n5acxv5s" style="text-align:center;"/>
+<cl:gridcell colindex="8" columnname="DIV_PAY_SERIAL_NO" rowindex="0" std:sid="gd-cell-o9qgf38c" style="text-align:center;"/>
+<cl:gridcell colindex="9" columnname="PAY_GRP_KEY" rowindex="0" std:sid="gd-cell-23f0a975" style="text-align:center;"/>
+<cl:gridcell colindex="10" columnname="REMARK" rowindex="0" std:sid="gd-cell-2jfiax7n"/>
+</cl:griddetail>
+<cl:gridfooter std:sid="gf-band-9yom9et3">
+          <cl:gridrow height="25px" std:sid="g-row-w1yqn3jk"/>
+          
+        <cl:gridcell colindex="0" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-xg1ld43l"/>
+<cl:gridcell colindex="1" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-k7l6xe9f"/>
+<cl:gridcell colindex="2" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-s3aj15f0"/>
+<cl:gridcell colindex="3" expr="&quot;합계&quot;" rowindex="0" std:sid="gf-cell-xxne11j6"/>
+<cl:gridcell colindex="4" expr="getSum(&quot;AMT&quot;)" rowindex="0" std:sid="gf-cell-r3548rmz"/>
+<cl:gridcell colindex="5" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-27eq8ypb"/>
+<cl:gridcell colindex="6" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-81b7agc3"/>
+<cl:gridcell colindex="7" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-4wu1cpro"/>
+<cl:gridcell colindex="8" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-98yp1n74"/>
+<cl:gridcell colindex="9" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-6ogd458z"/>
+<cl:gridcell colindex="10" expr="&quot;&quot;" rowindex="0" std:sid="gf-cell-ka7ypt6b"/>
+</cl:gridfooter>
+</cl:grid>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-c6m2f76o" version="1.0.0.0">
+  <head std:sid="head-c6sh06f9">
+    <title>stdCmnPProjectProgressRateMenu</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-963eno7r" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-57suaths" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-11c01u1z" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-7n9yo61a" width="320px"/>
+    <cl:model std:sid="model-p1qw4l3p">
+      
+      
+      
+    <cl:dataset id="dsProgressDtl" info="CMN_LOG@TABLE_NAME,TRIGGER_NAME" std:sid="d-set-mgb92jac">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="SYS_DIV_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UNIT_SYSTEM_NM" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PGM_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="INPUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PRT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="QUERY_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="ETC_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_PLAN_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DRAW_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DRAW_RATE2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_RPT_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_NRPT_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_PWEEK_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PWEEK_DRAW_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_PLAN_DEV_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_DEV_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_DEV_INPUT_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_DEV_ETC_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DEV_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="TOT_PWEEK_DEV_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PWEEK_DEV_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BWEEK_PLAN_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BWEEK_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BWEEK_DRAW_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PWEEK_DRAW_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BWEEK_PLAN_DEV_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BWEEK_DEV_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="BWEEK_DEV_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="PWEEK_DEV_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DEV_PSN_TEST_PLAN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DEV_PSN_TEST_CMPL_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DEV_PSN_TEST_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DRAW_PSN_TEST_PLAN_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DRAW_PSN_TEST_CMPL_CNT" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DRAW_PSN_TEST_RATE" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="DEV_RATE2" std:sid="d-column-9b1bc944"/>
+<cl:datacolumn name="UMENU_NM" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-726jt6l8">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strBaseDt" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strUnitSystemRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strBaseYoil" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cmn/StdCmnProjectProgressRate/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-36qk8267">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsProgressDtl"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="단위시스템 중메뉴별 프로그램 진척률"/>
+  </head>
+  <body std:sid="body-25d9dy7l" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-0317eyfs"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-m6699n8x"/>
+<cl:udc id="appheader1" std:sid="ud-control-4373fw5n" type="udc.com.appHeader">
+        <cl:xylayoutdata height="25px" horizontalAnchor="BOTH" left="5px" right="5px" std:sid="xyl-data-c60f948e" top="5px" verticalAnchor="TOP"/>
+      </cl:udc>
+<cl:group id="grpData" std:sid="group-8ysg7692">
+        <cl:xylayoutdata height="335px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="35px" verticalAnchor="TOP" width="1110px"/>
+        <cl:xylayout std:sid="xylayout-gnnhr876"/>
+      <cl:udc std:sid="ud-control-9xcp9ubt" type="udc.com.comTitle">
+        <cl:langbind category="PROPERTY" keypath="UI-SCR-MENULST" property="title"/>
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-459c55b6" top="5px" verticalAnchor="TOP" width="390px"/>
+        <cl:property name="ctrl" type="control" value="grdProgressDtl"/>
+      </cl:udc>
+<cl:grid datasetid="dsProgressDtl" id="grdProgressDtl" std:sid="grid-x203ukre">
+        <cl:xylayoutdata height="295px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="30px" verticalAnchor="TOP" width="1100px"/>
+        
+        
+        
+        
+      <cl:gridheader std:sid="gh-band-y34bn151">
+          <cl:gridrow height="27px" std:sid="g-row-8059w92o"/>
+          
+        <cl:gridcell colindex="0" comment="ghBtnDtl" rowindex="0" std:sid="gh-cell-68cy1m13" text=""/>
+<cl:gridcell colindex="1" comment="ghBtnNoDtl" rowindex="0" std:sid="gh-cell-o6b64m4o" text="No"/>
+<cl:gridcell colindex="2" comment="ghBtnSysDivNmDtl" rowindex="0" std:sid="gh-cell-1nqruj45">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TBNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="3" comment="ghBtnUnitSystemNmDtl" rowindex="0" std:sid="gh-cell-3dwggp32">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-LOGTBYN" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="4" comment="ghBtnUmenuNmDtl" rowindex="0" std:sid="gh-cell-8o7jw917" text="중메뉴"/>
+<cl:gridcell colindex="5" comment="ghBtnAllDtl" rowindex="0" std:sid="gh-cell-67y5x236" text="전체"/>
+<cl:gridcell colindex="6" comment="ghBtnPgmCntDtl" rowindex="0" std:sid="gh-cell-y1jx9l12">
+<cl:langbind category="PROPERTY" keypath="UI-SCR-TRIGERNM" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="7" comment="ghBtnTypeDtl" rowindex="0" std:sid="gh-cell-neimeu2o" text="유형"/>
+<cl:gridcell colindex="8" comment="ghBtnInputCntDtl" rowindex="0" std:sid="gh-cell-7nu394qy">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="9" comment="ghBtnPrtCntDtl" rowindex="0" std:sid="gh-cell-v16d017x">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="10" comment="ghBtnQueryCntDtl" rowindex="0" std:sid="gh-cell-ajtsauby">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="11" comment="ghBtnEtcCntDtl" rowindex="0" std:sid="gh-cell-2k3f0lpj">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="12" comment="ghBtnDraw1" rowindex="0" std:sid="gh-cell-sb8o0k1c" text="설계(누계)"/>
+<cl:gridcell colindex="13" comment="ghBtnTotPlanDrawCntDtl" rowindex="0" std:sid="gh-cell-pv5o1b4q">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="14" comment="ghBtnTotDrawCntDtl" rowindex="0" std:sid="gh-cell-5zqy4w7x">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="15" comment="ghBtnDrawRateDtl" rowindex="0" std:sid="gh-cell-46ey96ju">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="16" comment="ghBtnDrawRate2Dtl" rowindex="0" std:sid="gh-cell-61r85386">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="17" comment="ghBtnTotPweekDrawCntDtl" rowindex="0" std:sid="gh-cell-e6n0n31a">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="18" comment="ghBtnPweekDrawRateDtl" rowindex="0" std:sid="gh-cell-7f75r1f3">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="19" comment="ghBtnDev1" rowindex="0" std:sid="gh-cell-7h7qd51e" text="개발(누계)"/>
+<cl:gridcell colindex="20" comment="ghBtnTotPlanDevCntDtl" rowindex="0" std:sid="gh-cell-b55j4q16">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="21" comment="ghBtnTotDevCntDtl" rowindex="0" std:sid="gh-cell-og448c34">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="22" comment="ghBtnDevRateDtl" rowindex="0" std:sid="gh-cell-dp84fh4a">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="23" comment="ghBtnTotDevInputCntDtl" rowindex="0" std:sid="gh-cell-929n2271">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="24" comment="ghBtnTotDevEtcCntDtl" rowindex="0" std:sid="gh-cell-n286r1sj">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="25" comment="ghBtnDevRate2Dtl" rowindex="0" std:sid="gh-cell-98om8n9s">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="26" comment="ghBtnTotPweekDevCntDtl" rowindex="0" std:sid="gh-cell-49s975j0">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="27" comment="ghBtnPweekDevRateDtl" rowindex="0" std:sid="gh-cell-a138hk09">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="28" comment="ghBtnDrawWeekDtl" rowindex="0" std:sid="gh-cell-1r730pae" text="설계(금주)"/>
+<cl:gridcell colindex="29" comment="ghBtnBweekPlanDrawCntDtl" rowindex="0" std:sid="gh-cell-y72xqh74">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="30" comment="ghBtnBweekDrawCntDtl" rowindex="0" std:sid="gh-cell-793e791l">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="31" comment="ghBtnBweekDrawRateDtl" rowindex="0" std:sid="gh-cell-17ot0kcy">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="32" comment="ghBtnDevWeekDtl" rowindex="0" std:sid="gh-cell-w69a5pv2" text="개발(금주)"/>
+<cl:gridcell colindex="33" comment="ghBtnBweekPlanDevCntDtl" rowindex="0" std:sid="gh-cell-a645h84x">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="34" comment="ghBtnBweekDevCntDtl" rowindex="0" std:sid="gh-cell-5t8u27c1">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="35" comment="ghBtnBweekDevRateDtl" rowindex="0" std:sid="gh-cell-m881xt6v">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="36" comment="ghDevTestDtl" rowindex="0" std:sid="gh-cell-nvk249it" text="단위테스트(개발자)"/>
+<cl:gridcell colindex="37" comment="ghBtnDevPsnTestPlanCntDtl" rowindex="0" std:sid="gh-cell-l3z41cl5">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="38" comment="ghBtnDevPsnTestCmplCntDtl" rowindex="0" std:sid="gh-cell-0bk5x569">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="39" comment="ghBtnDevPsnTestRateDtl" rowindex="0" std:sid="gh-cell-90i8ysf3">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="40" comment="ghDrawTestDtl" rowindex="0" std:sid="gh-cell-8kp1q753" text="단위테스트(설계자)"/>
+<cl:gridcell colindex="41" comment="ghBtnDrawPsnTestPlanCntDtl" rowindex="0" std:sid="gh-cell-v7w713d8">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="42" comment="ghBtnDrawPsnTestCmplCntDtl" rowindex="0" std:sid="gh-cell-1dcm74s7">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+<cl:gridcell colindex="43" comment="ghBtnDrawPsnTestRateDtl" rowindex="0" std:sid="gh-cell-0055eay4">
+<cl:langbind category="PROPERTY" keypath="UI-GLS-STAT" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-0hlr90cc" width="245px"/>
+<cl:gridcolumn std:sid="g-column-526jgpl0" width="40px"/>
+<cl:gridcolumn std:sid="g-column-p04a3n65" width="58px"/>
+<cl:gridcolumn std:sid="g-column-0ygi3qoj" width="70px"/>
+<cl:gridcolumn std:sid="g-column-0thhg69u" width="80px"/>
+<cl:gridcolumn std:sid="g-column-64r5l39n" width="69px"/>
+<cl:gridcolumn std:sid="g-column-532069kj" width="69px"/>
+<cl:gridcolumn std:sid="g-column-4h14z67z" width="157px"/>
+<cl:gridcolumn std:sid="g-column-9h6l39ra" width="40px"/>
+<cl:gridcolumn std:sid="g-column-lq950w68" width="40px"/>
+<cl:gridcolumn std:sid="g-column-x1c7b539" width="40px"/>
+<cl:gridcolumn std:sid="g-column-pthlmcp4" width="40px"/>
+<cl:gridcolumn std:sid="g-column-4f7634ub" width="312px"/>
+<cl:gridcolumn std:sid="g-column-lt3k9e0d" width="40px"/>
+<cl:gridcolumn std:sid="g-column-j13p226k" width="40px"/>
+<cl:gridcolumn std:sid="g-column-9fxcnxld" width="50px"/>
+<cl:gridcolumn std:sid="g-column-pxkdhp64" width="78px"/>
+<cl:gridcolumn std:sid="g-column-1gjw5uf8" width="40px"/>
+<cl:gridcolumn std:sid="g-column-2idhk4u5" width="69px"/>
+<cl:gridcolumn std:sid="g-column-q14gn6qs" width="392px"/>
+<cl:gridcolumn std:sid="g-column-yh1zcj53" width="40px"/>
+<cl:gridcolumn std:sid="g-column-5x917f16" width="40px"/>
+<cl:gridcolumn std:sid="g-column-2e759x28" width="50px"/>
+<cl:gridcolumn std:sid="g-column-tr4gjp6y" width="40px"/>
+<cl:gridcolumn std:sid="g-column-vyg3t7j2" width="40px"/>
+<cl:gridcolumn std:sid="g-column-h31qu067" width="80px"/>
+<cl:gridcolumn std:sid="g-column-8e4xcw08" width="40px"/>
+<cl:gridcolumn std:sid="g-column-kg940pj0" width="69px"/>
+<cl:gridcolumn std:sid="g-column-y04gckiv" width="128px"/>
+<cl:gridcolumn std:sid="g-column-5uti2stc" width="40px"/>
+<cl:gridcolumn std:sid="g-column-dw414c6w" width="40px"/>
+<cl:gridcolumn std:sid="g-column-g9e243x2" width="50px"/>
+<cl:gridcolumn std:sid="g-column-60iych6s" width="128px"/>
+<cl:gridcolumn std:sid="g-column-064wpx3c" width="40px"/>
+<cl:gridcolumn std:sid="g-column-858xk289" width="40px"/>
+<cl:gridcolumn std:sid="g-column-7yay7dla" width="50px"/>
+<cl:gridcolumn std:sid="g-column-25fi4097" width="137px"/>
+<cl:gridcolumn std:sid="g-column-obi43j37" width="40px"/>
+<cl:gridcolumn std:sid="g-column-7fe8y72m" width="40px"/>
+<cl:gridcolumn std:sid="g-column-107h7n3i" width="59px"/>
+<cl:gridcolumn std:sid="g-column-sd6oron8" width="131px"/>
+<cl:gridcolumn std:sid="g-column-7dg3ts3o" width="40px"/>
+<cl:gridcolumn std:sid="g-column-5y833kor" width="40px"/>
+<cl:gridcolumn std:sid="g-column-a1302f2q" width="53px"/>
+<cl:griddetail std:sid="gd-band-845skhey">
+          <cl:gridrow height="25px" std:sid="g-row-y5i02yvl"/>
+          
+        <cl:gridcell colindex="0" columnname="_repeatindex" rowindex="0" std:sid="gd-cell-16d31tdp" style="text-align:center;"/>
+<cl:gridcell colindex="1" columntype="rowindex" rowindex="0" std:sid="gd-cell-cjejrf53" style="text-align:center;"/>
+<cl:gridcell colindex="2" columnname="UNIT_SYSTEM_NM" rowindex="0" std:sid="gd-cell-19m4p6ox" style="text-align:right;"/>
+<cl:gridcell colindex="3" columnname="UMENU_NM" rowindex="0" std:sid="gd-cell-enwlq01m"/>
+<cl:gridcell colindex="5" columnname="TOT_CNT" rowindex="0" std:sid="gd-cell-3797d5vz" style="text-align:right;"/>
+<cl:gridcell colindex="7" columnname="INPUT_CNT" rowindex="0" std:sid="gd-cell-j57fws71" style="text-align:right;"/>
+<cl:gridcell colindex="8" columnname="PRT_CNT" rowindex="0" std:sid="gd-cell-g15vb4c2" style="text-align:right;"/>
+<cl:gridcell colindex="9" columnname="QUERY_CNT" rowindex="0" std:sid="gd-cell-23gk0tq9" style="text-align:right;"/>
+<cl:gridcell colindex="10" columnname="ETC_CNT" rowindex="0" std:sid="gd-cell-715dt42b" style="text-align:right;"/>
+<cl:gridcell colindex="12" columnname="TOT_PLAN_DRAW_CNT" rowindex="0" std:sid="gd-cell-ai55s088" style="text-align:right;"/>
+<cl:gridcell colindex="13" columnname="TOT_DRAW_CNT" rowindex="0" std:sid="gd-cell-b358639u" style="text-align:right;"/>
+<cl:gridcell colindex="14" columnname="DRAW_RATE" rowindex="0" std:sid="gd-cell-6mk48b44" style="text-align:right;"/>
+<cl:gridcell colindex="15" columnname="DRAW_RATE2" rowindex="0" std:sid="gd-cell-h82766pn" style="text-align:right;"/>
+<cl:gridcell colindex="16" columnname="TOT_PWEEK_DRAW_CNT" rowindex="0" std:sid="gd-cell-3j6n7p0x" style="text-align:right;"/>
+<cl:gridcell colindex="17" columnname="PWEEK_DRAW_RATE" rowindex="0" std:sid="gd-cell-0s9k4u39" style="text-align:right;"/>
+<cl:gridcell colindex="19" columnname="TOT_PLAN_DEV_CNT" rowindex="0" std:sid="gd-cell-90433kfv" style="text-align:right;"/>
+<cl:gridcell colindex="20" columnname="TOT_DEV_CNT" rowindex="0" std:sid="gd-cell-z5458u81" style="text-align:right;"/>
+<cl:gridcell colindex="21" columnname="DEV_RATE" rowindex="0" std:sid="gd-cell-g112uf7j" style="text-align:right;"/>
+<cl:gridcell colindex="22" columnname="TOT_DEV_INPUT_CNT" rowindex="0" std:sid="gd-cell-w5es2sgf" style="text-align:right;"/>
+<cl:gridcell colindex="23" columnname="TOT_DEV_ETC_CNT" rowindex="0" std:sid="gd-cell-cjg3z574" style="text-align:right;"/>
+<cl:gridcell colindex="24" columnname="DEV_RATE2" rowindex="0" std:sid="gd-cell-f4mdtmow" style="text-align:right;"/>
+<cl:gridcell colindex="25" columnname="TOT_PWEEK_DEV_CNT" rowindex="0" std:sid="gd-cell-cuy4r03q" style="text-align:right;"/>
+<cl:gridcell colindex="26" columnname="PWEEK_DEV_RATE" rowindex="0" std:sid="gd-cell-4683328b" style="text-align:right;"/>
+<cl:gridcell colindex="28" columnname="BWEEK_PLAN_DRAW_CNT" rowindex="0" std:sid="gd-cell-ic61o41t" style="text-align:right;"/>
+<cl:gridcell colindex="29" columnname="BWEEK_DRAW_CNT" rowindex="0" std:sid="gd-cell-16yt3m19" style="text-align:right;"/>
+<cl:gridcell colindex="30" columnname="BWEEK_DRAW_RATE" rowindex="0" std:sid="gd-cell-4wndkszb" style="text-align:right;"/>
+<cl:gridcell colindex="32" columnname="BWEEK_PLAN_DEV_CNT" rowindex="0" std:sid="gd-cell-9m13cn6m" style="text-align:right;"/>
+<cl:gridcell colindex="33" columnname="BWEEK_DEV_CNT" rowindex="0" std:sid="gd-cell-42ig7a33" style="text-align:right;"/>
+<cl:gridcell colindex="34" columnname="BWEEK_DEV_RATE" rowindex="0" std:sid="gd-cell-3eg5117u" style="text-align:right;"/>
+<cl:gridcell colindex="36" columnname="DEV_PSN_TEST_PLAN_CNT" rowindex="0" std:sid="gd-cell-ey5511oz" style="text-align:right;"/>
+<cl:gridcell colindex="37" columnname="DEV_PSN_TEST_CMPL_CNT" rowindex="0" std:sid="gd-cell-h15kho90" style="text-align:right;"/>
+<cl:gridcell colindex="38" columnname="DEV_PSN_TEST_RATE" rowindex="0" std:sid="gd-cell-c7h3p1ko" style="text-align:right;"/>
+<cl:gridcell colindex="40" columnname="DRAW_PSN_TEST_PLAN_CNT" rowindex="0" std:sid="gd-cell-b8acf6d4" style="text-align:right;"/>
+<cl:gridcell colindex="41" columnname="DRAW_PSN_TEST_CMPL_CNT" rowindex="0" std:sid="gd-cell-7jckp098" style="text-align:right;"/>
+<cl:gridcell colindex="42" columnname="DRAW_PSN_TEST_RATE" rowindex="0" std:sid="gd-cell-r605ktm2" style="text-align:right;"/>
+</cl:griddetail>
+</cl:grid>
+</cl:group>
+<cl:button id="btnClose" std:sid="button-h98e33a9" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="1055px" std:sid="xyl-data-fa9a14b9" top="380px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseClick" name="click" std:sid="listener-662c91oq"/>
+</cl:button>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>

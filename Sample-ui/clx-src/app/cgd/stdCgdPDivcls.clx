@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cl="http://tomatosystem.co.kr/cleopatra" xmlns:std="http://tomatosystem.co.kr/cleopatra/studio" std:sid="html-55ujw3j5" version="1.0.0.0">
+  <head std:sid="head-okjpw198">
+    <title>stdCgdPDivcls</title>
+    <screen height="675px" id="default" minwidth="1235px" name="default" std:sid="screen-i8572iuz" width="1235px"/>
+    <screen height="540px" id="notebook" maxwidth="1234px" minwidth="1020px" name="notebook" std:sid="screen-g3b04jsl" width="1020px"/>
+    <screen height="820px" id="tablet" maxwidth="1019px" minwidth="760px" name="tablet" std:sid="screen-l8lk4o9z" width="760px"/>
+    <screen height="568px" id="mobile" maxwidth="759px" name="mobile" std:sid="screen-4l4ta52y" width="320px"/>
+    <cl:model std:sid="model-23necxft">
+      
+      
+      
+    <cl:dataset id="dsDivclsList" std:sid="d-set-be5sxp56">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn name="DIVCLS_CD" std:sid="d-column-9b1bc944"/>
+</cl:datacolumnlist>
+        <cl:datarowlist/>
+      </cl:dataset>
+<cl:datamap id="dmReqKey" std:sid="d-map-5tu5g135">
+        <cl:datacolumnlist>
+          
+        <cl:datacolumn datatype="string" name="strSchYearRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strSmtRcd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strRecCd" std:sid="d-column-386864ae"/>
+<cl:datacolumn datatype="string" name="strDivclsCd" std:sid="d-column-386864ae"/>
+</cl:datacolumnlist>
+      </cl:datamap>
+<cl:submission action="/cgd/StdCgdCRec/" id="subList" mediatype="application/x-www-form-urlencoded" std:sid="submission-r2h320hk">
+        
+        
+      <cl:requestdata dataid="dmReqKey"/>
+<cl:responsedata dataid="dsDivclsList"/>
+</cl:submission>
+</cl:model>
+    <cl:appspec title="분반검색"/>
+  </head>
+  <body std:sid="body-3dcl85uh" style="top:0px; left:0px; width:800px; height:600px;">
+    
+    <cl:xylayout std:sid="xylayout-4xi99re1"/>
+  <cl:listener handler="onBodyLoad" name="load" std:sid="listener-5y506otw"/>
+<cl:button id="btnCloseOk" std:sid="button-3p27f850" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="105px" std:sid="xyl-data-fa9a14b9" top="165px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-CHOICLS" property="value"/>
+<cl:listener handler="onBtnCloseOkClick" name="click" std:sid="listener-w44hkkiq"/>
+</cl:button>
+<cl:button class="btn-commit" id="btnCloseCancel" std:sid="button-92ly2ely" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-fa9a14b9" top="165px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-SCR-SCRNCLS" property="value"/>
+<cl:listener handler="onBtnCloseCancelClick" name="click" std:sid="listener-3549wolo"/>
+</cl:button>
+<cl:group id="grpData" std:sid="group-1xbj0uax">
+        <cl:xylayoutdata height="155px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-9c4c06d1" top="5px" verticalAnchor="TOP" width="160px"/>
+        <cl:xylayout std:sid="xylayout-6oivk718"/>
+      <cl:grid datasetid="dsDivclsList" id="grdDivcls" std:sid="grid-3l4ued1s">
+        <cl:xylayoutdata height="143px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-f2950b99" top="5px" verticalAnchor="TOP" width="148px"/>
+        
+        
+        
+        
+      <cl:listener handler="onGrdDivclsDblclick" name="dblclick" std:sid="listener-saxi6d3l"/>
+<cl:gridheader std:sid="gh-band-3xp452rg">
+          <cl:gridrow height="27px" std:sid="g-row-k32ks9r9"/>
+          
+        <cl:gridcell colindex="0" rowindex="0" std:sid="gh-cell-o98ql8b0">
+<cl:langbind category="PROPERTY" keypath="UI-DB-DIVCLS_CD" property="text"/>
+</cl:gridcell>
+</cl:gridheader>
+<cl:gridcolumn std:sid="g-column-23d0eqd0" width="129px"/>
+<cl:griddetail std:sid="gd-band-57179j71">
+          <cl:gridrow height="25px" std:sid="g-row-2d54mx4w"/>
+          
+        <cl:gridcell colindex="0" columnname="DIVCLS_CD" rowindex="0" std:sid="gd-cell-njcwkt49"/>
+</cl:griddetail>
+</cl:grid>
+<cl:output class="require" id="optDivclsCd" std:sid="output-gg4dx77p" value="">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="5px" std:sid="xyl-data-548c5467" top="5px" verticalAnchor="TOP" width="60px"/>
+      <cl:langbind category="PROPERTY" keypath="UI-GLS-STUD_ID" property="value"/>
+</cl:output>
+<cl:inputbox id="ipbDivclsCd" maxlength="100" std:sid="i-box-yu5t93j0" visible="false">
+        <cl:xylayoutdata height="25px" horizontalAnchor="LEFT" left="70px" std:sid="xyl-data-bb8b81f4" top="5px" verticalAnchor="TOP" width="81px"/>
+      <cl:expbind category="PROPERTY" expression="#optDivclsCd.value" property="fieldLabel"/>
+<cl:listener handler="onIpbDivclsCdKeydown" name="keydown" std:sid="listener-96g3jy7m"/>
+<cl:datamapbind columnname="strDivclsCd" datacontrolid="dmReqKey" property="value"/>
+</cl:inputbox>
+</cl:group>
+</body>
+  <std:studiosetting>
+    <std:hruler/>
+    <std:vruler/>
+  </std:studiosetting>
+</html>
